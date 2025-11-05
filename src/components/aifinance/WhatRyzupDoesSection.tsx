@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { LineChart, AlertTriangle, Activity, DollarSign, MessageSquare } from "lucide-react";
+import { LineChart, AlertTriangle, Activity, DollarSign, MessageSquare,Shield } from "lucide-react";
 
 export const WhatRyzupDoesSection = () => {
   const features = [
@@ -27,6 +27,11 @@ export const WhatRyzupDoesSection = () => {
       icon: MessageSquare,
       title: "Finance Co-Pilot",
       description: "Ask questions in plain English and get answers. What changed in payroll cost this month? Which campaign is wasting money? How long will our current cash last?",
+    },
+    {
+      icon: Shield, 
+      title: "Data Anonymization & Security",
+      description: "Your sensitive data is safe and secure. We use industry-leading anonymization techniques to protect proprietary information while delivering accurate insights.",
     },
   ];
 
