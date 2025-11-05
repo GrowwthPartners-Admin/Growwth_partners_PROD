@@ -32,17 +32,21 @@ export const WhyChooseSection: React.FC = () => {
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
             Why Singapore Businesses Choose <span className="text-brand-orange">Part-Time CFO Support</span>
           </h2>
-          <div className="max-w-4xl mx-auto space-y-6 text-lg text-gray-700 leading-relaxed">
-            <p>
-              You're growing. You're moving fast. Your investors expect clarity. Your team expects control. Your finance team expects direction. But hiring a full-time CFO in Singapore is expensive and often premature.
-            </p>
-            <p>
-              That's where part-time CFO and outsourced finance leadership comes in.
-            </p>
-            <p>
-              With Growwth Partners, you get access to a senior finance partner who acts like your CFO, helps drive strategy, and protects cash flow, without adding another permanent executive to payroll. This is the core value of CFO services Singapore founders are now choosing instead of rushing into a full-time hire.
-            </p>
-          </div>
+          <Card className="max-w-4xl mx-auto bg-gradient-to-br from-blue-50/50 via-white to-orange-50/30 border-2 border-blue-100/50 shadow-md">
+            <CardContent className="p-8 md:p-10">
+              <div className="space-y-6 text-lg text-gray-700 leading-relaxed">
+                <p className="text-xl font-medium text-gray-900">
+                  You're growing. You're moving fast. Your investors expect clarity. Your team expects control. Your finance team expects direction. But hiring a full-time CFO in Singapore is expensive and often premature.
+                </p>
+                <p className="text-lg">
+                  That's where <strong className="text-brand-orange">part-time CFO and outsourced finance leadership</strong> comes in.
+                </p>
+                <p className="text-lg">
+                  With Growwth Partners, you get access to a senior finance partner who acts like your CFO, helps drive strategy, and protects cash flow, <strong>without adding another permanent executive to payroll</strong>. This is the core value of CFO services Singapore founders are now choosing instead of rushing into a full-time hire.
+                </p>
+              </div>
+            </CardContent>
+          </Card>
         </motion.div>
 
         <div className="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">

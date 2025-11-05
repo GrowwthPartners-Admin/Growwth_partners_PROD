@@ -11,14 +11,7 @@ import {
   BarChart3,
   ArrowRight
 } from 'lucide-react';
-import {
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogTitle,
-  DialogDescription,
-} from '@/components/ui/dialog';
-import ExpertForm from '../partTimeCFO/ExpertForm';
+import { ContactModal } from '@/components/ui/contact-modal';
 
 export const ServicesSection: React.FC = () => {
   const [contactOpen, setContactOpen] = useState(false);
@@ -171,24 +164,14 @@ export const ServicesSection: React.FC = () => {
               <h3 className="text-2xl font-bold text-gray-900 mb-4">
                 Want investor-ready reporting without hiring a full-time CFO?
               </h3>
-              <Dialog open={contactOpen} onOpenChange={setContactOpen}>
-                <Button
-                  onClick={() => setContactOpen(true)}
-                  className="bg-brand-orange hover:bg-brand-orange/90 text-white px-8 py-6 text-lg font-semibold rounded-xl shadow-lg hover:shadow-xl transform transition-all duration-300 hover:scale-105 group"
-                >
-                  Talk to a CFO Expert
-                  <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-                </Button>
-                <DialogContent className="sm:max-w-md">
-                  <DialogHeader>
-                    <DialogTitle className="text-center">Talk to a CFO Expert</DialogTitle>
-                    <DialogDescription className="text-center">
-                      Fill in the form below and we'll get back to you shortly.
-                    </DialogDescription>
-                  </DialogHeader>
-                  <ExpertForm onSuccess={() => setContactOpen(false)} />
-                </DialogContent>
-              </Dialog>
+              <Button
+                onClick={() => setContactOpen(true)}
+                className="bg-brand-orange hover:bg-brand-orange/90 text-white px-8 py-6 text-lg font-semibold rounded-xl shadow-lg hover:shadow-xl transform transition-all duration-300 hover:scale-105 group"
+              >
+                Speak To An Expert
+                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+              </Button>
+              <ContactModal open={contactOpen} onOpenChange={setContactOpen} />
             </CardContent>
           </Card>
         </motion.div>

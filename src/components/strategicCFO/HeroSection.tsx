@@ -2,14 +2,7 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, TrendingUp, Users, Target } from 'lucide-react';
-import {
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogTitle,
-  DialogDescription,
-} from '@/components/ui/dialog';
-import ExpertForm from '../partTimeCFO/ExpertForm';
+import { ContactModal } from '@/components/ui/contact-modal';
 
 export const HeroSection: React.FC = () => {
   const [contactOpen, setContactOpen] = useState(false);
@@ -65,24 +58,14 @@ export const HeroSection: React.FC = () => {
               transition={{ delay: 0.5, duration: 0.6 }}
               className="flex flex-col sm:flex-row gap-4 justify-center items-center"
             >
-              <Dialog open={contactOpen} onOpenChange={setContactOpen}>
-                <Button
-                  onClick={() => setContactOpen(true)}
-                  className="bg-brand-orange hover:bg-brand-orange/90 text-white px-8 py-7 text-lg font-semibold rounded-xl shadow-lg hover:shadow-xl transform transition-all duration-300 hover:scale-105 group"
-                >
-                  Book a Free CFO Consultation
-                  <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-                </Button>
-                <DialogContent className="sm:max-w-md">
-                  <DialogHeader>
-                    <DialogTitle className="text-center">Book a Free CFO Consultation</DialogTitle>
-                    <DialogDescription className="text-center">
-                      Fill in the form below and we'll get back to you shortly.
-                    </DialogDescription>
-                  </DialogHeader>
-                  <ExpertForm onSuccess={() => setContactOpen(false)} />
-                </DialogContent>
-              </Dialog>
+              <Button
+                onClick={() => setContactOpen(true)}
+                className="bg-brand-orange hover:bg-brand-orange/90 text-white px-8 py-7 text-lg font-semibold rounded-xl shadow-lg hover:shadow-xl transform transition-all duration-300 hover:scale-105 group"
+              >
+                Speak To An Expert
+                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+              </Button>
+              <ContactModal open={contactOpen} onOpenChange={setContactOpen} />
             </motion.div>
 
             {/* Stats */}

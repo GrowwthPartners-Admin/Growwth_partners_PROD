@@ -3,14 +3,7 @@ import { motion } from 'framer-motion';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { UserCheck, BookOpen, MapPin, DollarSign, ArrowRight } from 'lucide-react';
-import {
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogTitle,
-  DialogDescription,
-} from '@/components/ui/dialog';
-import ExpertForm from '../partTimeCFO/ExpertForm';
+import { ContactModal } from '@/components/ui/contact-modal';
 
 export const WhyGrowwthSection: React.FC = () => {
   const [contactOpen, setContactOpen] = useState(false);
@@ -93,24 +86,14 @@ export const WhyGrowwthSection: React.FC = () => {
               <h3 className="text-3xl font-bold text-gray-900 mb-6">
                 Ready to Transform Your Finance Function?
               </h3>
-              <Dialog open={contactOpen} onOpenChange={setContactOpen}>
-                <Button
-                  onClick={() => setContactOpen(true)}
-                  className="bg-brand-orange hover:bg-brand-orange/90 text-white px-10 py-7 text-lg font-semibold rounded-xl shadow-lg hover:shadow-xl transform transition-all duration-300 hover:scale-105 group"
-                >
-                  Book Your Free CFO Consultation
-                  <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-                </Button>
-                <DialogContent className="sm:max-w-md">
-                  <DialogHeader>
-                    <DialogTitle className="text-center">Book Your Free CFO Consultation</DialogTitle>
-                    <DialogDescription className="text-center">
-                      Fill in the form below and we'll get back to you shortly.
-                    </DialogDescription>
-                  </DialogHeader>
-                  <ExpertForm onSuccess={() => setContactOpen(false)} />
-                </DialogContent>
-              </Dialog>
+              <Button
+                onClick={() => setContactOpen(true)}
+                className="bg-brand-orange hover:bg-brand-orange/90 text-white px-10 py-7 text-lg font-semibold rounded-xl shadow-lg hover:shadow-xl transform transition-all duration-300 hover:scale-105 group"
+              >
+                Speak To An Expert
+                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+              </Button>
+              <ContactModal open={contactOpen} onOpenChange={setContactOpen} />
             </CardContent>
           </Card>
         </motion.div>
