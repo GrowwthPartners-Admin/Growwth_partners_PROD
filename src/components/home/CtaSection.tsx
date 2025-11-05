@@ -10,7 +10,7 @@ export const CtaSection = () => {
   const navigate = useNavigate();
 
   const handleJoinUs = () => {
-    navigate('/contact');
+    navigate('/contact-us');
     window.scrollTo(0, 0);
   };
 

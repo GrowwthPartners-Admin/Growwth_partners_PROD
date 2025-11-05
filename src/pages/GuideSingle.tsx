@@ -34,7 +34,7 @@ const GuideSinglePage = () => {
   }, []);
 
   const handleContactClick = () => {
-    window.location.href = "/contact";
+    window.location.href = "/contact-us";
   };
 
   if (loading) {

@@ -46,7 +46,7 @@ const FinancialReportingGuide = () => {
 
   const handleContactClick = () => {
     // Navigate to contact page and scroll to consultation form
-    navigate("/contact");
+    navigate("/contact-us");
 
     // Use setTimeout to ensure navigation completes before trying to scroll
     setTimeout(() => {
