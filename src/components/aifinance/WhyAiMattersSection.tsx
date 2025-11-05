@@ -10,7 +10,7 @@ export const WhyAiMattersSection = () => {
   ];
 
   return (
-    <section className="py-16 lg:py-24 bg-gradient-to-br from-gray-50 to-white">
+    <section className="py-16 lg:py-20 bg-gradient-to-br from-gray-50 to-white">
       <div className="container-custom">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -33,7 +33,7 @@ export const WhyAiMattersSection = () => {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
-            className="bg-white p-8 rounded-xl shadow-lg"
+            className="bg-red-100 p-8 rounded-xl shadow-lg"
           >
             <h3 className="text-2xl font-bold mb-6 text-red-600">The Problem</h3>
             <ul className="space-y-4">

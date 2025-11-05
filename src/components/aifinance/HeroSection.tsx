@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { Sparkles, TrendingUp, Zap } from "lucide-react";
+import { Shield, Sparkles, TrendingUp, Zap } from "lucide-react";
 
 export const HeroSection = () => {
   return (
@@ -65,10 +65,15 @@ export const HeroSection = () => {
                   <h3 className="font-bold mb-2 text-gray-900">Instant Insights</h3>
                   <p className="text-sm text-gray-700">AI-powered analysis</p>
                 </div>
-                <div className="bg-white p-6 rounded-lg shadow-lg col-span-2">
+                <div className="bg-white p-6 rounded-lg shadow-lg ">
                   <Sparkles className="w-8 h-8 text-brand-orange mb-3" />
                   <h3 className="font-bold mb-2 text-gray-900">Smart Anomaly Detection</h3>
                   <p className="text-sm text-gray-700">Catch issues before they become problems</p>
+                </div>
+                <div className="bg-white p-6 rounded-lg shadow-lg ">
+                  <Shield className="w-8 h-8 text-brand-orange mb-3" />
+                  <h3 className="font-bold mb-2 text-gray-900">Data Security</h3>
+                  <p className="text-sm text-gray-700">Your sensitive data is safe and secure</p>
                 </div>
               </div>
             </div>

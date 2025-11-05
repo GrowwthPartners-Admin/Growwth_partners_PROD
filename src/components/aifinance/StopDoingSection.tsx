@@ -22,14 +22,14 @@ export const StopDoingSection = () => {
   ];
 
   return (
-    <section className="py-16 lg:py-24 bg-white">
-      <div className="container-custom">
+    <section className="py-16 lg:py-20 ">
+      <div className="container-custom ">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-center mb-12"
+          className="text-center mb-12 "
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-4">What You Can Stop Doing</h2>
           <p className="text-xl text-gray-700 max-w-3xl mx-auto">
@@ -37,7 +37,7 @@ export const StopDoingSection = () => {
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto mb-12">
+        <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto mb-12 ">
           {stopItems.map((item, index) => (
             <motion.div
               key={index}
@@ -45,7 +45,7 @@ export const StopDoingSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="bg-white p-6 rounded-xl shadow-lg border-2 border-red-200"
+              className="bg-red-100/50 p-6 rounded-xl shadow-lg border-2 border-red-300"
             >
               <div className="flex items-start gap-4">
                 <div className="w-10 h-10 bg-red-100 rounded-full flex items-center justify-center flex-shrink-0">

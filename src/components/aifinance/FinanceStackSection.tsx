@@ -8,7 +8,7 @@ export const FinanceStackSection = () => {
     "BI dashboards",
     "Manual forecasting models",
     "Ad platform screenshots",
-    'Slack arguments about what is "the real number"',
+    'Data security',
   ];
 
   const aiFeatures = [
