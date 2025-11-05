@@ -186,23 +186,27 @@ export const routes: RouteRecord[] = [
       },
       // Australia Routes
       {
-        path: 'australia',
+        path: 'au',
         async lazy() { const { default: Component } = await import('./pages/HomeAustralia'); return { Component }; },
       },
       {
-        path: 'australia/about',
+        path: 'au/virtual-cfo',
+        async lazy() { const { default: Component } = await import('./pages/VirtualCFOAustralia'); return { Component }; },
+      },
+      {
+        path: 'au/about',
         async lazy() { const { default: Component } = await import('./pages/About'); return { Component }; },
       },
       {
-        path: 'australia/blog',
+        path: 'au/blog',
         async lazy() { const { default: Component } = await import('./pages/Blog'); return { Component }; },
       },
       {
-        path: 'australia/blog/:slug',
+        path: 'au/blog/:slug',
         async lazy() { const { default: Component } = await import('./pages/BlogPost'); return { Component }; },
       },
       {
-        path: 'australia/contact-us',
+        path: 'au/contact-us',
         async lazy() { const { default: Component } = await import('./pages/Contact'); return { Component }; },
       },
       {
@@ -306,6 +310,23 @@ export const routes: RouteRecord[] = [
         path: 'uae/part-time-cfo',
         element: <Navigate to="/part-time-cfo-uae/" replace />
       },
+      // Legacy Australia redirects
+      {
+        path: 'australia',
+        element: <Navigate to="/au/" replace />
+      },
+      {
+        path: 'australia/about',
+        element: <Navigate to="/au/about/" replace />
+      },
+      {
+        path: 'australia/blog',
+        element: <Navigate to="/au/blog/" replace />
+      },
+      {
+        path: 'australia/contact-us',
+        element: <Navigate to="/au/contact-us/" replace />
+      },
       {
         path: 'australia/accounting-services-in-singapore',
         element: <Navigate to="/accounting-services-in-australia/" replace />
@@ -332,7 +353,11 @@ export const routes: RouteRecord[] = [
       },
       {
         path: 'australia/part-time-cfo',
-        element: <Navigate to="/part-time-cfo-australia/" replace />
+        element: <Navigate to="/au/virtual-cfo/" replace />
+      },
+      {
+        path: 'part-time-cfo-australia',
+        element: <Navigate to="/au/virtual-cfo/" replace />
       },
 
       //  {

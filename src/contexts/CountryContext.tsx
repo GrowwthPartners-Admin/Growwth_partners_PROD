@@ -22,7 +22,7 @@ export const CountryProvider = ({ children }: { children: React.ReactNode }) => 
     const path = location.pathname;
     if (path.startsWith('/uae')) {
       setCountry('uae');
-    } else if (path.startsWith('/australia')) {
+    } else if (path.startsWith('/au')) {
       setCountry('australia');
     } else {
       setCountry('singapore');
@@ -34,7 +34,7 @@ export const CountryProvider = ({ children }: { children: React.ReactNode }) => 
       case 'uae':
         return '/uae';
       case 'australia':
-        return '/australia';
+        return '/au';
       default:
         return '';
     }
@@ -55,7 +55,7 @@ export const CountryProvider = ({ children }: { children: React.ReactNode }) => 
     if (path.startsWith("/corporate-secretary")) return `/${getCountryServiceSlug("corporate-secretary")}`;
     if (path.startsWith("/part-time-cfo")) {
       if (country === "uae") return `/part-time-cfo-uae/`;
-      if (country === "australia") return `/part-time-cfo-australia/`;
+      if (country === "australia") return `/au/virtual-cfo/`;
       return `/part-time-cfo/`;
     }
     if (["/about", "/blog", "/contact-us", "/success-stories", "/taxation", "/achievements", "/guide", "/news", "/privacy-policy", "/terms"].includes(path)) {
