@@ -128,6 +128,10 @@ export const routes: RouteRecord[] = [
         async lazy() { const { default: Component } = await import('./pages/AiInFinance'); return { Component }; },
       },
       {
+        path: 'strategic-finance-singapore',
+        async lazy() { const { default: Component } = await import('./pages/StrategicCFO'); return { Component }; },
+      },
+      {
         path: 'resources',
         element: <Navigate to="/achievements/" replace />
       },

@@ -44,7 +44,8 @@ const navItems = [
     path: "/use-of-ai-in-finance",
     dropdown: true,
     items: [
-      { title: "Use of AI in Finance", path: "/use-of-ai-in-finance" }
+      { title: "Use of AI in Finance", path: "/use-of-ai-in-finance" },
+      { title: "Strategic Finance Support", path: "/strategic-finance-singapore" }
     ]
   },
   {
