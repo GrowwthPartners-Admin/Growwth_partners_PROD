@@ -54,7 +54,7 @@ export const WhatRyzupDoesSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="bg-blue-50/50 p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow border border-gray-200 w-full"
+              className={`bg-blue-50/50 p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow border border-gray-200 w-full ${index === 3 ? 'lg:col-start-2' : ''}`}
             >
               <div className="w-12 h-12 bg-brand-orange/10 rounded-lg flex items-center justify-center mb-4">
                 <feature.icon className="w-6 h-6 text-brand-orange" />
