@@ -33,7 +33,6 @@ export const OurServicesSection: React.FC = () => {
     { icon: FileText, title: 'Tax Filing' },
     { icon: Building, title: 'Business Valuation' },
     { icon: Target, title: 'Funding Evaluation' },
-    { icon: Briefcase, title: 'Business Acquisition & Mergers' },
   ];
 
   const assurances = [

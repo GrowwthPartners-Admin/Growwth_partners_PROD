@@ -54,11 +54,11 @@ const VirtualCFOAustraliaPage = () => {
       },
     ],
     areaServed: "Australia",
-    serviceType: "Virtual CFO Services Australia",
+    serviceType: "Virtual CFO Services, Part Time CFO services",
     contactPoint: {
       "@type": "ContactPoint",
       email: "jd@growwthpartners.com",
-      telephone: "+61 2 8011 4780",
+      telephone: "+65 9861 5600",
       contactType: "Business Service",
     },
   };
@@ -69,7 +69,7 @@ const VirtualCFOAustraliaPage = () => {
         title="Virtual CFO Services Australia | Fractional CFO Support for Australian Businesses | Growwth Partners"
         description="Growwth Partners provides Virtual CFO services Australia businesses trust for cash flow optimization, strategic finance support, and expert CFO guidance without the full-time cost. Book a free consultation today."
         keywords="virtual cfo australia, fractional cfo australia, virtual cfo services australia, outsourced cfo australia"
-        canonicalUrl="https://growwthpartners.com/au/virtual-cfo/"
+        canonicalUrl="https://growwthpartners.com/au/virtual-cfo-services-australia/"
         structuredData={organizationSchema}
       />
       <motion.div
