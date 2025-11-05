@@ -48,7 +48,7 @@ export const HeroSection: React.FC = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.2, duration: 0.6 }}
-              className="inline-flex px-4 py-2 rounded-full bg-brand-orange/10 text-brand-orange font-medium shadow-sm"
+              className="inline-flex px-4 py-2 rounded-full bg-[#06C0A9]/10 text-[#06C0A9] font-medium shadow-sm"
             >
               <Award className="mr-2 h-4 w-4" />
               Australia's Leading Fractional CFO Services
@@ -61,7 +61,7 @@ export const HeroSection: React.FC = () => {
               className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-gray-900"
             >
               Fractional CFO{" "}
-              <span className="text-brand-orange">Services in Australia</span>{" "}
+              <span className="text-[#06C0A9]">Services in Australia</span>{" "}
               for Startups & SMEs
             </motion.h1>
 
@@ -83,7 +83,7 @@ export const HeroSection: React.FC = () => {
             >
               <Button
                 onClick={() => setContactModalOpen(true)}
-                className="bg-brand-orange hover:bg-brand-orange/90 text-white rounded-full px-8 py-6 text-lg font-medium group"
+                className="bg-[#06C0A9] hover:bg-[#06C0A9]/90 text-white rounded-full px-8 py-6 text-lg font-medium group"
               >
                 Speak To An Expert
                 <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
@@ -111,7 +111,7 @@ export const HeroSection: React.FC = () => {
               transition={{ delay: 1.0, duration: 0.6 }}
               className="flex items-center justify-center lg:justify-start space-x-2 text-gray-500"
             >
-              <ShieldCheck className="h-5 w-5 text-brand-orange" />
+              <ShieldCheck className="h-5 w-5 text-[#06C0A9]" />
               <span className="text-sm">
                 Trusted by 200+ Australia businesses
               </span>
@@ -133,8 +133,8 @@ export const HeroSection: React.FC = () => {
               className="absolute -bottom-8 -left-8 z-30 animate-float-slow"
             >
               <div className="flex items-center gap-2 bg-white rounded-xl p-3 shadow-lg backdrop-blur-sm border border-gray-100">
-                <div className="bg-brand-orange/10 p-2 rounded-lg">
-                  <TrendingUp className="h-5 w-5 text-brand-orange" />
+                <div className="bg-[#06C0A9]/10 p-2 rounded-lg">
+                  <TrendingUp className="h-5 w-5 text-[#06C0A9]" />
                 </div>
                 <div>
                   <p className="text-sm font-semibold text-gray-800">

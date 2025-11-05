@@ -51,7 +51,7 @@ export const OurServicesSection: React.FC = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            Our <span className="text-brand-orange">Services</span>
+            Our <span className="text-[#06C0A9]">Services</span>
           </h2>
           <p className="text-xl text-gray-700 max-w-4xl mx-auto">
             Designed to meet the specific needs of Australian businesses, we provide expert Virtual CFO and fractional CFO support in Australia with hands-on strategic guidance and seamless delivery
@@ -67,10 +67,10 @@ export const OurServicesSection: React.FC = () => {
               transition={{ duration: 0.5, delay: index * 0.05 }}
               viewport={{ once: true }}
             >
-              <Card className="h-full bg-gradient-to-br from-blue-50/30 to-white border-2 border-blue-100/50 hover:shadow-lg transition-all duration-300 hover:border-brand-orange/30">
+              <Card className="h-full bg-gradient-to-br from-blue-50/30 to-white border-2 border-blue-100/50 hover:shadow-lg transition-all duration-300 hover:border-[#06C0A9]/30">
                 <CardContent className="p-6 flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-xl bg-brand-orange/10 flex items-center justify-center flex-shrink-0">
-                    <service.icon className="w-6 h-6 text-brand-orange" />
+                  <div className="w-12 h-12 rounded-xl bg-[#06C0A9]/10 flex items-center justify-center flex-shrink-0">
+                    <service.icon className="w-6 h-6 text-[#06C0A9]" />
                   </div>
                   <h3 className="text-lg font-semibold text-gray-900 leading-tight">{service.title}</h3>
                 </CardContent>
@@ -102,7 +102,7 @@ export const OurServicesSection: React.FC = () => {
               <div className="text-center">
                 <Button
                   asChild
-                  className="bg-brand-orange hover:bg-brand-orange/90 text-white px-8 py-6 text-lg font-semibold rounded-xl shadow-lg hover:shadow-xl transform transition-all duration-300 hover:scale-105 group"
+                  className="bg-[#06C0A9] hover:bg-[#06C0A9]/90 text-white px-8 py-6 text-lg font-semibold rounded-xl shadow-lg hover:shadow-xl transform transition-all duration-300 hover:scale-105 group"
                 >
                   <a href="https://calendly.com/jd-growwthpartners/15min?month=2025-11" target="_blank" rel="noopener noreferrer">
                     Book Free 30 Mins Call

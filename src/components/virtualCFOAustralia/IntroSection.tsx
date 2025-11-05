@@ -22,7 +22,7 @@ export const IntroSection: React.FC = () => {
           className="max-w-5xl mx-auto"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-8 text-center">
-            We understand the unique challenges <span className="text-brand-orange">Australian businesses face</span>
+            We understand the unique challenges <span className="text-[#06C0A9]">Australian businesses face</span>
           </h2>
 
           <Card className="bg-gradient-to-br from-red-50/50 via-white to-orange-50/30 border-2 border-red-100/50 shadow-lg mb-10">
@@ -56,7 +56,7 @@ export const IntroSection: React.FC = () => {
                 </div>
                 
                 <p className="text-lg text-gray-700 leading-relaxed">
-                  Get the detailed financial insights you need to make informed decisions. Our <strong className="text-brand-orange">Virtual CFOs and fractional CFO specialists</strong> work closely with you to develop growth strategies, optimise cash flow, and drive profitability for Australian businesses.
+                  Get the detailed financial insights you need to make informed decisions. Our <strong className="text-[#06C0A9]">Virtual CFOs and fractional CFO specialists</strong> work closely with you to develop growth strategies, optimise cash flow, and drive profitability for Australian businesses.
                 </p>
 
                 <div className="flex items-start gap-3 pt-4">

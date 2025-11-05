@@ -23,7 +23,7 @@ export const ServicesHelpSection: React.FC = () => {
           className="text-center mb-12"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            Things Your <span className="text-brand-orange">Virtual CFO / Fractional CFO</span> Can Help With
+            Things Your <span className="text-[#06C0A9]">Virtual CFO / Fractional CFO</span> Can Help With
           </h2>
         </motion.div>
 

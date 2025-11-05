@@ -47,12 +47,12 @@ export const OffersSection: React.FC = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-brand-orange/10 text-brand-orange font-semibold text-sm border border-brand-orange/20 mb-6">
+          <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-[#06C0A9]/10 text-[#06C0A9] font-semibold text-sm border border-[#06C0A9]/20 mb-6">
             <Gift className="w-4 h-4" />
             Limited Time Offers
           </div>
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            Offers You <span className="text-brand-orange">Can't Refuse</span>
+            Offers You <span className="text-[#06C0A9]">Can't Refuse</span>
           </h2>
           <p className="text-xl text-gray-700 max-w-3xl mx-auto">
             For a limited time, we're offering exclusive deals to Australian businesses looking for Virtual CFO or fractional CFO support
