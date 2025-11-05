@@ -90,7 +90,7 @@ export const WhyGrowwthSection: React.FC = () => {
                 onClick={() => setContactOpen(true)}
                 className="bg-brand-orange hover:bg-brand-orange/90 text-white px-10 py-7 text-lg font-semibold rounded-xl shadow-lg hover:shadow-xl transform transition-all duration-300 hover:scale-105 group"
               >
-                Speak To An Expert
+                Book Your Free CFO Consultation
                 <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
               </Button>
               <ContactModal open={contactOpen} onOpenChange={setContactOpen} />

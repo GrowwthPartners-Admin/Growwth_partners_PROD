@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
+import { Plus, Minus } from "lucide-react";
+
 import {
   Accordion,
   AccordionContent,
@@ -46,51 +48,72 @@ export const FAQSection: React.FC = () => {
   ];
 
   return (
-    <section className="py-20 bg-white">
+    <section className="bg-white py-16 lg:py-20">
       <div className="container-custom">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-12"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            Frequently Asked <span className="text-brand-orange">Questions</span>
-          </h2>
+          <span className="inline-block px-4 py-1 bg-brand-orange/10 text-brand-orange rounded-full text-sm font-semibold mb-4">
+            Common Questions
+          </span>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">Frequently Asked Questions</h2>
+          <p className="text-lg text-gray-700 max-w-2xl mx-auto">
+            Find answers to common questions about Part-Time CFO & Strategic Finance Support For Singapore Businesses
+          </p>
         </motion.div>
 
-        <div className="max-w-4xl mx-auto mb-12">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-          >
-            <Accordion type="single" collapsible className="space-y-4">
-              {faqs.map((faq, index) => (
-                <AccordionItem
-                  key={index}
-                  value={`item-${index}`}
-                  className="bg-gray-50 border-2 border-gray-200 rounded-xl px-6 hover:border-brand-orange/50 transition-colors"
+        <div className="max-w-3xl mx-auto">
+          <Accordion type="single" collapsible className="w-full">
+            {faqs.map((faq, index) => (
+              <AccordionItem
+                key={index}
+                value={`item-${index}`}
+                className="mb-5 border-none"
+              >
+                <AccordionTrigger
+                  className="
+                    group flex items-center justify-between w-full
+                    bg-gray-100 px-6 py-6
+                    font-bold text-xl md:text-2xl
+                    rounded-none border border-gray-200 transition-all duration-200 
+                    shadow-none
+                    outline-none
+                    focus-visible:outline-none
+                    data-[state=open]:border-2 data-[state=open]:border-brand-orange
+                    data-[state=open]:rounded-md
+                  "
+                  style={{
+                    boxShadow: "none",
+                    borderRadius: "4px",
+                    borderWidth: "1.5px",
+                  }}
                 >
-                  <AccordionTrigger className="text-left text-lg font-semibold text-gray-900 hover:text-brand-orange py-6">
-                    {faq.question}
-                  </AccordionTrigger>
-                  <AccordionContent className="text-gray-700 leading-relaxed pb-6">
-                    {faq.answer}
-                  </AccordionContent>
-                </AccordionItem>
-              ))}
-            </Accordion>
-          </motion.div>
+                  <span className="text-left w-full select-none font-medium text-gray-900">{faq.question}</span>
+                  <span className="flex items-center justify-center transition-all duration-300">
+                    <span className="flex items-center justify-center w-8 h-8 md:w-9 md:h-9 bg-brand-orange rounded-full text-white transition-all duration-200">
+                      <Plus className="w-6 h-6 transition-all duration-200 group-data-[state=open]:hidden" strokeWidth={3} />
+                      <Minus className="w-6 h-6 transition-all duration-200 group-data-[state=closed]:hidden" strokeWidth={3} />
+                    </span>
+                  </span>
+                </AccordionTrigger>
+                <AccordionContent className="bg-white px-6 pb-6 pt-2 border border-gray-200 border-t-0 text-lg leading-relaxed rounded-b-md animate-slide-down text-gray-700">
+                  {faq.answer}
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
         </div>
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.6, delay: 0.3 }}
           viewport={{ once: true }}
+          className="mt-12 max-w-4xl mx-auto"
         >
           <Card className="max-w-4xl mx-auto bg-gradient-to-br from-brand-orange/10 via-blue-50/50 to-orange-50/30 border-2 border-brand-orange/30 shadow-xl">
             <CardContent className="p-10 text-center space-y-6">
@@ -105,7 +128,14 @@ export const FAQSection: React.FC = () => {
                   onClick={() => setContactOpen(true)}
                   className="bg-brand-orange hover:bg-brand-orange/90 text-white px-8 py-6 text-lg font-semibold rounded-xl shadow-lg hover:shadow-xl transform transition-all duration-300 hover:scale-105 group"
                 >
-                  Speak To An Expert
+                  Book a Free CFO Consultation
+                  {/* <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" /> */}
+                </Button>
+                <Button
+                  onClick={() => window.open('https://calendly.com/jd-growwthpartners/15min?month=2025-11', '_blank')}
+                  className="bg-white hover:bg-white text-orange-600 px-8 py-6 border-2 border-orange-600 text-lg font-semibold rounded-xl shadow-lg hover:shadow-xl transform transition-all duration-300 hover:scale-105 group"
+                >
+                  Speak With a Part-Time CFO Today
                   <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                 </Button>
               </div>
