@@ -1,98 +1,185 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { Button } from '@/components/ui/button';
-import { ArrowRight, TrendingUp, Users, Target } from 'lucide-react';
+import React, { useState } from "react";
+import { motion } from "framer-motion";
+import { Button } from "@/components/ui/button";
+import { ContactModal } from "@/components/ui/contact-modal";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogDescription,
+  DialogTrigger,
+} from "@/components/ui/dialog";
+import ExpertForm from "../../components/partTimeCFO/ExpertForm";
+import {
+  ChevronRight,
+  Award,
+  ShieldCheck,
+  TrendingUp,
+  BarChart3,
+  ArrowRight,
+} from "lucide-react";
+import heroImage from "/lovable-uploads/54b8e38f-0d15-438c-b9ac-a121ec19b560.png";
+import { OptimizedImage } from "../ui/optimized-image";
 
 export const HeroSection: React.FC = () => {
+  const [contactModalOpen, setContactModalOpen] = useState(false);
+
+
   return (
-    <section className="relative py-20 overflow-hidden bg-gradient-to-br from-blue-50 via-white to-orange-50/30">
-      {/* Decorative elements */}
+    <section className="relative py-20 md:py-20 overflow-hidden bg-gradient-to-b from-blue-100/80 via-white to-blue-100/40">
+      {/* Decorative blobs */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-20 right-1/4 w-96 h-96 bg-blue-400/10 rounded-full filter blur-3xl animate-pulse" />
-        <div className="absolute bottom-20 left-1/4 w-80 h-80 bg-brand-orange/10 rounded-full filter blur-3xl animate-pulse delay-300" />
+        <div className="absolute top-1/4 right-1/4 w-64 h-64 bg-blue-300/20 rounded-full filter blur-3xl animate-pulse opacity-70" />
+        <div className="absolute bottom-1/3 left-1/3 w-72 h-72 bg-brand-orange/20 rounded-full filter blur-3xl animate-pulse opacity-60 delay-500" />
+        <div className="absolute -top-10 -left-10 w-40 h-40 bg-purple-300/20 rounded-full filter blur-2xl animate-pulse opacity-50 delay-300" />
       </div>
 
       <div className="container-custom relative z-10">
-        <div className="max-w-6xl mx-auto text-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+          {/* Hero Text Content */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
-            className="space-y-8"
+            className="space-y-6 text-center lg:text-left"
           >
             <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.2, duration: 0.5 }}
-              className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-brand-orange/10 text-brand-orange font-semibold text-sm border border-brand-orange/20"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.2, duration: 0.6 }}
+              className="inline-flex px-4 py-2 rounded-full bg-brand-orange/10 text-brand-orange font-medium shadow-sm"
             >
-              <Target className="w-4 h-4" />
-              Strategic Finance Leadership
+              <Award className="mr-2 h-4 w-4" />
+              Australia's Leading Fractional CFO Services
             </motion.div>
 
             <motion.h1
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3, duration: 0.6 }}
-              className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight"
+              transition={{ delay: 0.4, duration: 0.6 }}
+              className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-gray-900"
             >
-              Part-Time CFO & Strategic Finance Support{' '}
-              <span className="text-brand-orange">For Australia Businesses</span>
+              Fractional CFO{" "}
+              <span className="text-brand-orange">Services in Australia</span>{" "}
+              for Startups & SMEs
             </motion.h1>
 
             <motion.p
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.4, duration: 0.6 }}
-              className="text-xl md:text-2xl text-gray-500 max-w-4xl mx-auto leading-relaxed"
+              transition={{ delay: 0.6, duration: 0.6 }}
+              className="text-xl text-gray-700"
             >
-              Get board-level financial clarity without hiring a full-time CFO. Growwth Partners helps you take control of cash flow, improve profitability, and scale with confidence through CFO services Australia.
+              Strategic financial leadership without the cost of a full-time
+              hire, saving 50-70% while accelerating your growth.
             </motion.p>
 
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.5, duration: 0.6 }}
-              className="flex flex-col sm:flex-row gap-4 justify-center items-center"
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.8, duration: 0.6 }}
+              className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
             >
               <Button
-                asChild
-                className="bg-brand-orange hover:bg-brand-orange/90 text-white px-8 py-7 text-lg font-semibold rounded-xl shadow-lg hover:shadow-xl transform transition-all duration-300 hover:scale-105 group"
+                onClick={() => setContactModalOpen(true)}
+                className="bg-brand-orange hover:bg-brand-orange/90 text-white rounded-full px-8 py-6 text-lg font-medium group"
               >
-                <a href="https://calendly.com/jd-growwthpartners/15min?month=2025-11" target="_blank" rel="noopener noreferrer">
-                  Book Free 30 Mins Call
-                  <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-                </a>
+                Speak To An Expert
+                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+              </Button>
+
+              <Button
+                onClick={() =>
+                  window.open(
+                    "https://calendly.com/jd-growwthpartners/15min?month=2025-07",
+                    "_blank",
+                    "noopener,noreferrer"
+                  )
+                }
+                variant="outline"
+                className="px-8 py-6 font-bold text-gray-700 border-2 border-orange-500 rounded-full"
+              >
+                BOOK FREE 30 MINS CALL
+                <ChevronRight className="ml-2 h-5 w-5" />
               </Button>
             </motion.div>
 
-            {/* Stats */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 1.0, duration: 0.6 }}
+              className="flex items-center justify-center lg:justify-start space-x-2 text-gray-500"
+            >
+              <ShieldCheck className="h-5 w-5 text-brand-orange" />
+              <span className="text-sm">
+                Trusted by 200+ Australia businesses
+              </span>
+            </motion.div>
+          </motion.div>
+
+          {/* Hero Image */}
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.6, duration: 0.6 }}
+            className="relative"
+          >
+            {/* Floating badges - positioned outside the image container for proper stacking */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.6, duration: 0.6 }}
-              className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-3xl mx-auto pt-8"
+              transition={{ duration: 0.6, delay: 0.8 }}
+              className="absolute -bottom-8 -left-8 z-30 animate-float-slow"
             >
-              {[
-                { icon: TrendingUp, label: 'Cost Savings', value: '50-70%' },
-                { icon: Users, label: 'Businesses Served', value: '200+' },
-                { icon: Target, label: 'Strategic Focus', value: '100%' }
-              ].map((stat, index) => (
-                <motion.div
-                  key={stat.label}
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ delay: 0.7 + index * 0.1, duration: 0.5 }}
-                  className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-md border border-gray-100"
-                >
-                  <stat.icon className="w-8 h-8 text-brand-orange mx-auto mb-3" />
-                  <p className="text-3xl font-bold text-gray-900 mb-1">{stat.value}</p>
-                  <p className="text-sm text-gray-600">{stat.label}</p>
-                </motion.div>
-              ))}
+              <div className="flex items-center gap-2 bg-white rounded-xl p-3 shadow-lg backdrop-blur-sm border border-gray-100">
+                <div className="bg-brand-orange/10 p-2 rounded-lg">
+                  <TrendingUp className="h-5 w-5 text-brand-orange" />
+                </div>
+                <div>
+                  <p className="text-sm font-semibold text-gray-800">
+                    50-70% Cost Savings
+                  </p>
+                  <p className="text-xs text-gray-600">vs Full-Time CFO</p>
+                </div>
+              </div>
             </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 1 }}
+              className="absolute -top-8 -right-8 z-30 animate-float"
+            >
+              <div className="flex items-center gap-2 bg-white rounded-xl p-3 shadow-lg backdrop-blur-sm border border-gray-100">
+                <div className="bg-purple-500/20 p-2 rounded-lg">
+                  <BarChart3 className="h-5 w-5 text-purple-600" />
+                </div>
+                <div>
+                  <p className="text-sm font-semibold text-gray-800">
+                    Data-Driven Insights
+                  </p>
+                  <p className="text-xs text-gray-600">
+                    Strategic Financial Planning
+                  </p>
+                </div>
+              </div>
+            </motion.div>
+
+            <div className="absolute inset-0 bg-gradient-to-r from-blue-100/30 to-purple-100/30 rounded-3xl rotate-3" />
+            <div className="relative overflow-hidden rounded-2xl shadow-2xl z-20">
+              <OptimizedImage
+                src={heroImage}
+                alt="Financial analysis with charts"
+                className="w-full h-auto max-h-[345px] object-cover"
+              />
+            </div>
           </motion.div>
         </div>
+        <ContactModal
+          open={contactModalOpen}
+          onOpenChange={setContactModalOpen}
+        />
       </div>
     </section>
   );

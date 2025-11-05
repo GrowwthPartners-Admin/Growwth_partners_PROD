@@ -1,270 +1,453 @@
-
-import React from 'react';
-import { ClientOnly } from 'vite-react-ssg'
-import type { RouteRecord } from 'vite-react-ssg';
+import React from "react";
+import { ClientOnly } from "vite-react-ssg";
+import type { RouteRecord } from "vite-react-ssg";
 import { Navigate } from "react-router-dom";
-import Layout from './Layout';
+import Layout from "./Layout";
 import { supabase } from "@/integrations/supabase/client";
 import { CountryProvider } from "./contexts/CountryContext";
 
 // We need to lazy-load the BlogAdminPage component to ensure it's not eagerly imported on the server
-const BlogAdminPage = React.lazy(() => import('./pages/admin/BlogAdmin'));
+const BlogAdminPage = React.lazy(() => import("./pages/admin/BlogAdmin"));
 
 async function getBlogSlugs() {
   try {
     const { data: posts, error } = await supabase
-      .from('blog_post')
-      .select('slug')
-      .not('slug', 'is', null);
-      
+      .from("blog_post")
+      .select("slug")
+      .not("slug", "is", null);
+
     if (error) {
-      console.error('SSG slug fetch error', error);
+      console.error("SSG slug fetch error", error);
       return [];
     }
 
-    return posts.map(post => `/blog/${post.slug}`);
+    return posts.map((post) => `/blog/${post.slug}`);
   } catch (error) {
-    console.error('Error fetching blog slugs:', error);
+    console.error("Error fetching blog slugs:", error);
     return [];
   }
 }
 
 // --- Static imports for non-lazy routes ---
-import NotFound from './pages/NotFound';
-import BlogPost from './pages/BlogPost';
-import Index from './pages/Index';
+import NotFound from "./pages/NotFound";
+import BlogPost from "./pages/BlogPost";
+import Index from "./pages/Index";
 
 export const routes: RouteRecord[] = [
   {
-    path: '/',
+    path: "/",
     element: <Layout />,
     children: [
-       {
-        index: true,         
-        element: <Index/>
-      },
-       { 
-        path: 'index', 
-        element: <Index /> 
+      {
+        index: true,
+        element: <Index />,
       },
       {
-        path: 'about',
-        async lazy() { const { default: Component } = await import('./pages/About'); return { Component }; },
+        path: "index",
+        element: <Index />,
       },
       {
-        path: 'contact-us',
-        async lazy() { const { default: Component } = await import('./pages/Contact'); return { Component }; },
+        path: "about",
+        async lazy() {
+          const { default: Component } = await import("./pages/About");
+          return { Component };
+        },
       },
       {
-        path: 'blog',
-        async lazy() { const { default: Component } = await import('./pages/Blog'); return { Component }; },
+        path: "contact-us",
+        async lazy() {
+          const { default: Component } = await import("./pages/Contact");
+          return { Component };
+        },
       },
       {
-        path: 'accounting-services-in-singapore',
-        async lazy() { const { default: Component } = await import('./pages/Accounting'); return { Component }; },
+        path: "blog",
+        async lazy() {
+          const { default: Component } = await import("./pages/Blog");
+          return { Component };
+        },
       },
       {
-        path: 'bookkeeping-services-in-singapore',
-        async lazy() { const { default: Component } = await import('./pages/Bookkeeping'); return { Component }; },
+        path: "accounting-services-in-singapore",
+        async lazy() {
+          const { default: Component } = await import("./pages/Accounting");
+          return { Component };
+        },
       },
       {
-        path: 'payroll-services-in-singapore',
-        async lazy() { const { default: Component } = await import('./pages/Payroll'); return { Component }; },
+        path: "bookkeeping-services-in-singapore",
+        async lazy() {
+          const { default: Component } = await import("./pages/Bookkeeping");
+          return { Component };
+        },
       },
       {
-        path: 'cash-flow-services-in-singapore',
-        async lazy() { const { default: Component } = await import('./pages/CashFlow'); return { Component }; },
+        path: "payroll-services-in-singapore",
+        async lazy() {
+          const { default: Component } = await import("./pages/Payroll");
+          return { Component };
+        },
       },
       {
-        path: 'company-incorporation-services-in-singapore',
-        async lazy() { const { default: Component } = await import('./pages/CompanyIncorporation'); return { Component }; },
+        path: "cash-flow-services-in-singapore",
+        async lazy() {
+          const { default: Component } = await import("./pages/CashFlow");
+          return { Component };
+        },
       },
       {
-        path: 'corporate-secretary-services-in-singapore',
-        async lazy() { const { default: Component } = await import('./pages/CorporateSecretary'); return { Component }; },
+        path: "company-incorporation-services-in-singapore",
+        async lazy() {
+          const { default: Component } = await import(
+            "./pages/CompanyIncorporation"
+          );
+          return { Component };
+        },
       },
       {
-        path: 'part-time-cfo',
-        async lazy() { const { default: Component } = await import('./pages/FractionalCFO'); return { Component }; },
+        path: "corporate-secretary-services-in-singapore",
+        async lazy() {
+          const { default: Component } = await import(
+            "./pages/CorporateSecretary"
+          );
+          return { Component };
+        },
       },
       {
-        path: 'privacy-policy',
-        async lazy() { const { default: Component } = await import('./pages/PrivacyPolicy'); return { Component }; },
+        path: "part-time-cfo",
+        async lazy() {
+          const { default: Component } = await import("./pages/FractionalCFO");
+          return { Component };
+        },
       },
       {
-        path: 'terms',
-        async lazy() { const { default: Component } = await import('./pages/Terms'); return { Component }; },
+        path: "privacy-policy",
+        async lazy() {
+          const { default: Component } = await import("./pages/PrivacyPolicy");
+          return { Component };
+        },
       },
       {
-        path: 'success-stories',
-        async lazy() { const { default: Component } = await import('./pages/SuccessStories'); return { Component }; },
+        path: "terms",
+        async lazy() {
+          const { default: Component } = await import("./pages/Terms");
+          return { Component };
+        },
       },
       {
-        path: 'taxation',
-        async lazy() { const { default: Component } = await import('./pages/Taxation'); return { Component }; },
+        path: "success-stories",
+        async lazy() {
+          const { default: Component } = await import("./pages/SuccessStories");
+          return { Component };
+        },
       },
       {
-        path: 'achievements',
-        async lazy() { const { default: Component } = await import('./pages/Achievements'); return { Component }; },
+        path: "taxation",
+        async lazy() {
+          const { default: Component } = await import("./pages/Taxation");
+          return { Component };
+        },
       },
       {
-        path: 'guide',
-        async lazy() { const { default: Component } = await import('./pages/Guide'); return { Component }; },
+        path: "achievements",
+        async lazy() {
+          const { default: Component } = await import("./pages/Achievements");
+          return { Component };
+        },
       },
       {
-        path: 'guide/:slug',
-        async lazy() { const { default: Component } = await import('./pages/GuideSingle'); return { Component }; },
+        path: "guide",
+        async lazy() {
+          const { default: Component } = await import("./pages/Guide");
+          return { Component };
+        },
       },
       {
-        path: 'guide/financial-reporting-standards-singapore',
-        async lazy() { const { default: Component } = await import('./pages/FinancialReportingGuide'); return { Component }; },
+        path: "guide/:slug",
+        async lazy() {
+          const { default: Component } = await import("./pages/GuideSingle");
+          return { Component };
+        },
       },
       {
-        path: 'news',
-        async lazy() { const { default: Component } = await import('./pages/News'); return { Component }; },
+        path: "guide/financial-reporting-standards-singapore",
+        async lazy() {
+          const { default: Component } = await import(
+            "./pages/FinancialReportingGuide"
+          );
+          return { Component };
+        },
       },
       {
-        path: 'use-of-ai-in-finance',
-        async lazy() { const { default: Component } = await import('./pages/AiInFinance'); return { Component }; },
+        path: "news",
+        async lazy() {
+          const { default: Component } = await import("./pages/News");
+          return { Component };
+        },
       },
       {
-        path: 'strategic-finance-singapore',
-        async lazy() { const { default: Component } = await import('./pages/StrategicCFO'); return { Component }; },
+        path: "use-of-ai-in-finance",
+        async lazy() {
+          const { default: Component } = await import("./pages/AiInFinance");
+          return { Component };
+        },
       },
       {
-        path: 'resources',
-        element: <Navigate to="/achievements/" replace />
+        path: "strategic-finance-singapore",
+        async lazy() {
+          const { default: Component } = await import("./pages/StrategicCFO");
+          return { Component };
+        },
+      },
+      {
+        path: "resources",
+        element: <Navigate to="/achievements/" replace />,
       },
       // UAE Routes
       {
-        path: 'uae',
-        async lazy() { const { default: Component } = await import('./pages/HomeUAE'); return { Component }; },
+        path: "uae",
+        async lazy() {
+          const { default: Component } = await import("./pages/HomeUAE");
+          return { Component };
+        },
       },
       {
-        path: 'uae/about',
-        async lazy() { const { default: Component } = await import('./pages/About'); return { Component }; },
+        path: "uae/about",
+        async lazy() {
+          const { default: Component } = await import("./pages/About");
+          return { Component };
+        },
       },
       {
-        path: 'uae/blog',
-        async lazy() { const { default: Component } = await import('./pages/Blog'); return { Component }; },
+        path: "uae/blog",
+        async lazy() {
+          const { default: Component } = await import("./pages/Blog");
+          return { Component };
+        },
       },
       {
-        path: 'uae/blog/:slug',
-        async lazy() { const { default: Component } = await import('./pages/BlogPost'); return { Component }; },
+        path: "uae/blog/:slug",
+        async lazy() {
+          const { default: Component } = await import("./pages/BlogPost");
+          return { Component };
+        },
       },
       {
-        path: 'uae/contact-us',
-        async lazy() { const { default: Component } = await import('./pages/Contact'); return { Component }; },
+        path: "uae/contact-us",
+        async lazy() {
+          const { default: Component } = await import("./pages/Contact");
+          return { Component };
+        },
       },
       {
-        path: 'accounting-services-in-uae',
-        async lazy() { const { default: Component } = await import('./pages/Accounting'); return { Component }; },
+        path: "accounting-services-in-uae",
+        async lazy() {
+          const { default: Component } = await import("./pages/Accounting");
+          return { Component };
+        },
       },
       {
-        path: 'bookkeeping-services-in-uae',
-        async lazy() { const { default: Component } = await import('./pages/Bookkeeping'); return { Component }; },
+        path: "bookkeeping-services-in-uae",
+        async lazy() {
+          const { default: Component } = await import("./pages/Bookkeeping");
+          return { Component };
+        },
       },
       {
-        path: 'payroll-services-in-uae',
-        async lazy() { const { default: Component } = await import('./pages/Payroll'); return { Component }; },
+        path: "payroll-services-in-uae",
+        async lazy() {
+          const { default: Component } = await import("./pages/Payroll");
+          return { Component };
+        },
       },
       {
-        path: 'cash-flow-services-in-uae',
-        async lazy() { const { default: Component } = await import('./pages/CashFlow'); return { Component }; },
+        path: "cash-flow-services-in-uae",
+        async lazy() {
+          const { default: Component } = await import("./pages/CashFlow");
+          return { Component };
+        },
       },
       {
-        path: 'company-incorporation-services-in-uae',
-        async lazy() { const { default: Component } = await import('./pages/CompanyIncorporation'); return { Component }; },
+        path: "company-incorporation-services-in-uae",
+        async lazy() {
+          const { default: Component } = await import(
+            "./pages/CompanyIncorporation"
+          );
+          return { Component };
+        },
       },
       {
-        path: 'corporate-secretary-services-in-uae',
-        async lazy() { const { default: Component } = await import('./pages/CorporateSecretary'); return { Component }; },
+        path: "corporate-secretary-services-in-uae",
+        async lazy() {
+          const { default: Component } = await import(
+            "./pages/CorporateSecretary"
+          );
+          return { Component };
+        },
       },
       {
-        path: 'part-time-cfo-uae',
-        async lazy() { const { default: Component } = await import('./pages/FractionalCFO'); return { Component }; },
+        path: "part-time-cfo-uae",
+        async lazy() {
+          const { default: Component } = await import("./pages/FractionalCFO");
+          return { Component };
+        },
       },
       // Australia Routes
       {
-        path: 'au',
-        async lazy() { const { default: Component } = await import('./pages/HomeAustralia'); return { Component }; },
+        path: "au",
+        async lazy() {
+          const { default: Component } = await import("./pages/HomeAustralia");
+          return { Component };
+        },
       },
       {
-        path: 'au/virtual-cfo',
-        async lazy() { const { default: Component } = await import('./pages/VirtualCFOAustralia'); return { Component }; },
+        path: "au/virtual-cfo-services-australia",
+        async lazy() {
+          const { default: Component } = await import(
+            "./pages/VirtualCFOAustralia"
+          );
+          return { Component };
+        },
       },
       {
-        path: 'au/about',
-        async lazy() { const { default: Component } = await import('./pages/About'); return { Component }; },
+        path: "au/about",
+        async lazy() {
+          const { default: Component } = await import("./pages/About");
+          return { Component };
+        },
       },
       {
-        path: 'au/blog',
-        async lazy() { const { default: Component } = await import('./pages/Blog'); return { Component }; },
+        path: "au/blog",
+        async lazy() {
+          const { default: Component } = await import("./pages/Blog");
+          return { Component };
+        },
       },
       {
-        path: 'au/blog/:slug',
-        async lazy() { const { default: Component } = await import('./pages/BlogPost'); return { Component }; },
+        path: "au/blog/:slug",
+        async lazy() {
+          const { default: Component } = await import("./pages/BlogPost");
+          return { Component };
+        },
       },
       {
-        path: 'au/contact-us',
-        async lazy() { const { default: Component } = await import('./pages/Contact'); return { Component }; },
+        path: "au/contact-us",
+        async lazy() {
+          const { default: Component } = await import("./pages/Contact");
+          return { Component };
+        },
       },
       {
-        path: 'accounting-services-in-australia',
-        async lazy() { const { default: Component } = await import('./pages/Accounting'); return { Component }; },
+        path: "accounting-services-in-australia",
+        async lazy() {
+          const { default: Component } = await import("./pages/Accounting");
+          return { Component };
+        },
       },
       {
-        path: 'bookkeeping-services-in-australia',
-        async lazy() { const { default: Component } = await import('./pages/Bookkeeping'); return { Component }; },
+        path: "bookkeeping-services-in-australia",
+        async lazy() {
+          const { default: Component } = await import("./pages/Bookkeeping");
+          return { Component };
+        },
       },
       {
-        path: 'payroll-services-in-australia',
-        async lazy() { const { default: Component } = await import('./pages/Payroll'); return { Component }; },
+        path: "payroll-services-in-australia",
+        async lazy() {
+          const { default: Component } = await import("./pages/Payroll");
+          return { Component };
+        },
       },
       {
-        path: 'cash-flow-services-in-australia',
-        async lazy() { const { default: Component } = await import('./pages/CashFlow'); return { Component }; },
+        path: "cash-flow-services-in-australia",
+        async lazy() {
+          const { default: Component } = await import("./pages/CashFlow");
+          return { Component };
+        },
       },
       {
-        path: 'company-incorporation-services-in-australia',
-        async lazy() { const { default: Component } = await import('./pages/CompanyIncorporation'); return { Component }; },
+        path: "company-incorporation-services-in-australia",
+        async lazy() {
+          const { default: Component } = await import(
+            "./pages/CompanyIncorporation"
+          );
+          return { Component };
+        },
       },
       {
-        path: 'corporate-secretary-services-in-australia',
-        async lazy() { const { default: Component } = await import('./pages/CorporateSecretary'); return { Component }; },
+        path: "corporate-secretary-services-in-australia",
+        async lazy() {
+          const { default: Component } = await import(
+            "./pages/CorporateSecretary"
+          );
+          return { Component };
+        },
       },
       {
-        path: 'part-time-cfo-australia',
-        async lazy() { const { default: Component } = await import('./pages/FractionalCFO'); return { Component }; },
+        path: "part-time-cfo-australia",
+        async lazy() {
+          const { default: Component } = await import("./pages/FractionalCFO");
+          return { Component };
+        },
       },
       // Case Studies
       {
-        path: 'case-studies/healthcare',
-        async lazy() { const { default: Component } = await import('./pages/case-studies/HealthcareCaseStudy'); return { Component }; },
+        path: "case-studies/healthcare",
+        async lazy() {
+          const { default: Component } = await import(
+            "./pages/case-studies/HealthcareCaseStudy"
+          );
+          return { Component };
+        },
       },
       {
-        path: 'case-studies/ecommerce',
-        async lazy() { const { default: Component } = await import('./pages/case-studies/EcommerceCaseStudy'); return { Component }; },
+        path: "case-studies/ecommerce",
+        async lazy() {
+          const { default: Component } = await import(
+            "./pages/case-studies/EcommerceCaseStudy"
+          );
+          return { Component };
+        },
       },
       {
-        path: 'case-studies/food-tech',
-        async lazy() { const { default: Component } = await import('./pages/case-studies/FoodTechCaseStudy'); return { Component }; },
+        path: "case-studies/food-tech",
+        async lazy() {
+          const { default: Component } = await import(
+            "./pages/case-studies/FoodTechCaseStudy"
+          );
+          return { Component };
+        },
       },
       {
-        path: 'case-studies/online-consumer-goods',
-        async lazy() { const { default: Component } = await import('./pages/case-studies/OnlineConsumerGoodsCaseStudy'); return { Component }; },
+        path: "case-studies/online-consumer-goods",
+        async lazy() {
+          const { default: Component } = await import(
+            "./pages/case-studies/OnlineConsumerGoodsCaseStudy"
+          );
+          return { Component };
+        },
       },
       {
-        path: 'case-studies/data-driven-success',
-        async lazy() { const { default: Component } = await import('./pages/case-studies/DataDrivenSuccessCaseStudy'); return { Component }; },
+        path: "case-studies/data-driven-success",
+        async lazy() {
+          const { default: Component } = await import(
+            "./pages/case-studies/DataDrivenSuccessCaseStudy"
+          );
+          return { Component };
+        },
       },
       {
-        path: 'case-studies/gaming-industry',
-        async lazy() { const { default: Component } = await import('./pages/case-studies/GamingIndustryCaseStudy'); return { Component }; },
+        path: "case-studies/gaming-industry",
+        async lazy() {
+          const { default: Component } = await import(
+            "./pages/case-studies/GamingIndustryCaseStudy"
+          );
+          return { Component };
+        },
       },
       // Admin Routes
-      { 
-        path: 'admin/blog', 
+      {
+        path: "admin/blog",
         element: (
           <ClientOnly>
             {() => (
@@ -277,87 +460,103 @@ export const routes: RouteRecord[] = [
         getStaticPaths: () => [],
       },
       {
-        path: 'admin/login',
-        async lazy() { const { default: Component } = await import('./pages/admin/BlogAdminLogin'); return { Component }; },
+        path: "admin/login",
+        async lazy() {
+          const { default: Component } = await import(
+            "./pages/admin/BlogAdminLogin"
+          );
+          return { Component };
+        },
         getStaticPaths: () => [],
       },
       // Legacy redirects
       {
-        path: 'uae/accounting-services-in-singapore',
-        element: <Navigate to="/accounting-services-in-uae/" replace />
+        path: "uae/accounting-services-in-singapore",
+        element: <Navigate to="/accounting-services-in-uae/" replace />,
       },
       {
-        path: 'uae/bookkeeping-services-in-singapore',
-        element: <Navigate to="/bookkeeping-services-in-uae/" replace />
+        path: "uae/bookkeeping-services-in-singapore",
+        element: <Navigate to="/bookkeeping-services-in-uae/" replace />,
       },
       {
-        path: 'uae/payroll-services-in-singapore',
-        element: <Navigate to="/payroll-services-in-uae/" replace />
+        path: "uae/payroll-services-in-singapore",
+        element: <Navigate to="/payroll-services-in-uae/" replace />,
       },
       {
-        path: 'uae/cash-flow-services-in-singapore',
-        element: <Navigate to="/cash-flow-services-in-uae/" replace />
+        path: "uae/cash-flow-services-in-singapore",
+        element: <Navigate to="/cash-flow-services-in-uae/" replace />,
       },
       {
-        path: 'uae/company-incorporation-services-in-singapore',
-        element: <Navigate to="/company-incorporation-services-in-uae/" replace />
+        path: "uae/company-incorporation-services-in-singapore",
+        element: (
+          <Navigate to="/company-incorporation-services-in-uae/" replace />
+        ),
       },
       {
-        path: 'uae/corporate-secretary-services-in-singapore',
-        element: <Navigate to="/corporate-secretary-services-in-uae/" replace />
+        path: "uae/corporate-secretary-services-in-singapore",
+        element: (
+          <Navigate to="/corporate-secretary-services-in-uae/" replace />
+        ),
       },
       {
-        path: 'uae/part-time-cfo',
-        element: <Navigate to="/part-time-cfo-uae/" replace />
+        path: "uae/part-time-cfo",
+        element: <Navigate to="/part-time-cfo-uae/" replace />,
       },
       // Legacy Australia redirects
       {
-        path: 'australia',
-        element: <Navigate to="/au/" replace />
+        path: "australia",
+        element: <Navigate to="/au/" replace />,
       },
       {
-        path: 'australia/about',
-        element: <Navigate to="/au/about/" replace />
+        path: "australia/about",
+        element: <Navigate to="/au/about/" replace />,
       },
       {
-        path: 'australia/blog',
-        element: <Navigate to="/au/blog/" replace />
+        path: "australia/blog",
+        element: <Navigate to="/au/blog/" replace />,
       },
       {
-        path: 'australia/contact-us',
-        element: <Navigate to="/au/contact-us/" replace />
+        path: "australia/contact-us",
+        element: <Navigate to="/au/contact-us/" replace />,
       },
       {
-        path: 'australia/accounting-services-in-singapore',
-        element: <Navigate to="/accounting-services-in-australia/" replace />
+        path: "australia/accounting-services-in-singapore",
+        element: <Navigate to="/accounting-services-in-australia/" replace />,
       },
       {
-        path: 'australia/bookkeeping-services-in-singapore',
-        element: <Navigate to="/bookkeeping-services-in-australia/" replace />
+        path: "australia/bookkeeping-services-in-singapore",
+        element: <Navigate to="/bookkeeping-services-in-australia/" replace />,
       },
       {
-        path: 'australia/payroll-services-in-singapore',
-        element: <Navigate to="/payroll-services-in-australia/" replace />
+        path: "australia/payroll-services-in-singapore",
+        element: <Navigate to="/payroll-services-in-australia/" replace />,
       },
       {
-        path: 'australia/cash-flow-services-in-singapore',
-        element: <Navigate to="/cash-flow-services-in-australia/" replace />
+        path: "australia/cash-flow-services-in-singapore",
+        element: <Navigate to="/cash-flow-services-in-australia/" replace />,
       },
       {
-        path: 'australia/company-incorporation-services-in-singapore',
-        element: <Navigate to="/company-incorporation-services-in-australia/" replace />
+        path: "australia/company-incorporation-services-in-singapore",
+        element: (
+          <Navigate
+            to="/company-incorporation-services-in-australia/"
+            replace
+          />
+        ),
       },
       {
-        path: 'australia/corporate-secretary-services-in-singapore',
-        element: <Navigate to="/corporate-secretary-services-in-australia/" replace />
+        path: "australia/corporate-secretary-services-in-singapore",
+        element: (
+          <Navigate to="/corporate-secretary-services-in-australia/" replace />
+        ),
       },
       {
-        path: 'australia/part-time-cfo',
-        element: <Navigate to="/au/virtual-cfo/" replace />
+        path: "australia/part-time-cfo",
+        element: <Navigate to="/au/virtual-cfo-services-australia/" replace />,
       },
       {
-        path: 'part-time-cfo-australia',
-        element: <Navigate to="/au/virtual-cfo/" replace />
+        path: "part-time-cfo-australia",
+        element: <Navigate to="/au/virtual-cfo-services-australia/" replace />,
       },
 
       //  {
@@ -368,29 +567,28 @@ export const routes: RouteRecord[] = [
 
       // Dynamic blog post route
       {
-        path: 'blog/:slug',
+        path: "blog/:slug",
         lazy: async () => {
-          const { default: Component } = await import('./pages/BlogPost')
-          return { Component }
+          const { default: Component } = await import("./pages/BlogPost");
+          return { Component };
         },
-        entry: 'src/pages/BlogPost.tsx',
+        entry: "src/pages/BlogPost.tsx",
         getStaticPaths: async () => {
           const { data: posts, error } = await supabase
-            .from('blog_post')
-            .select('slug');
-            
+            .from("blog_post")
+            .select("slug");
 
           if (error) {
-            console.error('SSG slug fetch error', error)
-            return []
+            console.error("SSG slug fetch error", error);
+            return [];
           }
 
-          return posts!.map((p) => `blog/${p.slug}`)
-        }
+          return posts!.map((p) => `blog/${p.slug}`);
+        },
       },
-      { 
-        path: '*', 
-        element: <NotFound /> 
+      {
+        path: "*",
+        element: <NotFound />,
       },
     ],
   },
