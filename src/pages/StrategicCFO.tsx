@@ -74,9 +74,9 @@ const StrategicCFOPage = () => {
   return (
     <Layout>
       <SEOhelper
-        title="Part-Time CFO & Strategic Finance Support For Singapore Businesses | Growwth Partners"
-        description="Get board-level financial clarity without hiring a full-time CFO. Expert CFO services in Singapore for startups, SMEs, and growing businesses. Control cash flow and scale with confidence."
-        keywords="part-time cfo singapore, strategic finance singapore, cfo services singapore, fractional cfo, outsourced cfo singapore"
+        title="CFO Services Singapore | Part-Time CFO & Strategic Finance Support | Growwth Partners"
+        description="Growwth Partners provides CFO services Singapore founders and SMEs rely on for cash flow control, investor-ready reporting, and strategic finance leadership without hiring a full-time CFO. Book a free consultation today."
+        keywords="part-time cfo singapore, Strategic Finance Support For Singapore Businesses, cfo services singapore, fractional cfo, outsourced cfo singapore"
         canonicalUrl="https://growwthpartners.com/strategic-finance-singapore/"
         structuredData={organizationSchema}
       />

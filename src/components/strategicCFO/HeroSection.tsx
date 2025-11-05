@@ -8,7 +8,7 @@ export const HeroSection: React.FC = () => {
   const [contactOpen, setContactOpen] = useState(false);
 
   return (
-    <section className="relative py-20 md:py-28 overflow-hidden bg-gradient-to-br from-blue-50 via-white to-orange-50/30">
+    <section className="relative py-20 overflow-hidden bg-gradient-to-br from-blue-50 via-white to-orange-50/30">
       {/* Decorative elements */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-20 right-1/4 w-96 h-96 bg-blue-400/10 rounded-full filter blur-3xl animate-pulse" />
@@ -16,7 +16,7 @@ export const HeroSection: React.FC = () => {
       </div>
 
       <div className="container-custom relative z-10">
-        <div className="max-w-5xl mx-auto text-center">
+        <div className="max-w-6xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -47,7 +47,7 @@ export const HeroSection: React.FC = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4, duration: 0.6 }}
-              className="text-xl md:text-2xl text-gray-700 max-w-4xl mx-auto leading-relaxed"
+              className="text-xl md:text-2xl text-gray-500 max-w-4xl mx-auto leading-relaxed"
             >
               Get board-level financial clarity without hiring a full-time CFO. Growwth Partners helps you take control of cash flow, improve profitability, and scale with confidence through CFO services Singapore.
             </motion.p>
@@ -62,7 +62,7 @@ export const HeroSection: React.FC = () => {
                 onClick={() => setContactOpen(true)}
                 className="bg-brand-orange hover:bg-brand-orange/90 text-white px-8 py-7 text-lg font-semibold rounded-xl shadow-lg hover:shadow-xl transform transition-all duration-300 hover:scale-105 group"
               >
-                Speak To An Expert
+                Book a Free CFO Consultation
                 <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
               </Button>
               <ContactModal open={contactOpen} onOpenChange={setContactOpen} />

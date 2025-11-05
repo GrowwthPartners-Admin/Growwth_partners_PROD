@@ -103,7 +103,7 @@ export const FaqSection = () => {
           viewport={{ once: true }}
           className="mt-12 max-w-4xl mx-auto"
         >
-          <div className="bg-gradient-to-br from-blue-50/50 to-orange-50/30 p-8 md:p-12 rounded-xl shadow-lg border border-gray-200">
+          <div className="bg-gradient-to-br from-brand-orange/10 via-blue-50/50 to-orange-50/30 border-brand-orange/30 p-8 md:p-12 rounded-xl shadow-lg border border-gray-200">
             <p className="text-xl font-semibold mb-8 text-gray-900 text-center">
               RyzUp puts AI in finance where it belongs. Inside your workflow. Inside your models. Inside your decisions.
             </p>

@@ -30,8 +30,8 @@ export const LeadershipSection: React.FC = () => {
               <CardContent className="p-10 md:p-12">
                 <div className="flex flex-col md:flex-row gap-8 items-start">
                   <div className="flex-shrink-0">
-                    <div className="w-32 h-32 rounded-2xl bg-gradient-to-br from-brand-orange to-orange-600 flex items-center justify-center shadow-lg">
-                      <Award className="w-16 h-16 text-white" />
+                    <div className="w-32 h-32 rounded-full  flex items-center justify-center shadow-lg">
+                      <img src='/public/lovable-uploads/jatin-detwani-ceo.jpeg' className=" text-white rounded-full" />
                     </div>
                   </div>
                   
