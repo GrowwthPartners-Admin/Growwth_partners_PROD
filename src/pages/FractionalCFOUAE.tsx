@@ -24,6 +24,14 @@ const FractionalCFOUAEPage = () => {
 
   const organizationSchema = {
     "@context": "https://schema.org",
+    areaServed: "UAE",
+    serviceType: "Fractional CFO Services, Outsourced CFO Services",
+    description: "Discover how AI in finance is changing financial operations. RyzUp provides finance automation tools for forecasting, cash flow visibility, and real time decision support so teams can move faster with confidence",
+    provider: {
+    "@type": "Organization",
+    name: "Growwth Partners",
+    url: "https://growwthpartners.com",
+    },
     "@type": "FAQPage",
     mainEntity: [
       {
@@ -43,8 +51,7 @@ const FractionalCFOUAEPage = () => {
         },
       },
     ],
-    areaServed: "UAE",
-    serviceType: "Fractional CFO Services, Outsourced CFO Services",
+  
     contactPoint: {
       "@type": "ContactPoint",
       email: "jd@growwthpartners.com",
