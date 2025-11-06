@@ -13,17 +13,6 @@ import { useCountry } from "@/contexts/CountryContext";
 import SEOhelper from "@/components/SEOhelper";
 
 const VirtualCFOAustraliaPage = () => {
-  const { country } = useCountry();
-
-  // Redirect non-Australia users to their respective home pages
-  if (country === "singapore") {
-    return <Navigate to="/" replace />;
-  }
-
-  if (country === "uae") {
-    return <Navigate to="/uae" replace />;
-  }
-
   const organizationSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",

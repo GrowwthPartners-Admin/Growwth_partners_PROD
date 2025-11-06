@@ -11,17 +11,6 @@ import { useCountry } from "@/contexts/CountryContext";
 import SEOhelper from "@/components/SEOhelper";
 
 const FractionalCFOUAEPage = () => {
-  const { country } = useCountry();
-
-  // Redirect non-UAE users to their respective home pages
-  if (country === "singapore") {
-    return <Navigate to="/" replace />;
-  }
-
-  if (country === "australia") {
-    return <Navigate to="/au" replace />;
-  }
-
   const organizationSchema = {
     "@context": "https://schema.org",
     areaServed: "UAE",
