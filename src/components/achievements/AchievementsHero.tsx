@@ -4,7 +4,7 @@ import { Award } from "lucide-react";
 
 export const AchievementsHero = () => {
   return (
-    <section className="relative bg-gradient-to-br from-brand-dark via-brand-dark/95 to-brand-dark/90 text-white py-24 overflow-hidden">
+    <section className="relative bg-gradient-to-br from-brand-dark via-brand-dark/95 to-brand-dark/90 text-white py-20 overflow-hidden">
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-brand-orange/10 via-transparent to-transparent"></div>
       
       <div className="container-custom relative z-10">
@@ -24,7 +24,7 @@ export const AchievementsHero = () => {
           </motion.div>
 
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-            Independent recognition for fractional CFO excellence, innovation, and leadership across APAC
+            Independent recognition for fractional CFO <span className="font-bold text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-yellow-500">excellence</span> , <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-yellow-500">innovation</span>, and leadership across <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-orange-500">APAC</span>
           </h1>
 
           <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto">
