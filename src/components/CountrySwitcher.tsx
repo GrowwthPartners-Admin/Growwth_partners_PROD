@@ -43,7 +43,7 @@ export const CountrySwitcher = ({
       onOpenChange={setOpen}
     >
       <SelectTrigger 
-        className={`w-[70px] border-none bg-transparent focus:ring-0 ${textColor} ${className}`}
+        className={`${showLabel ? 'w-[160px]' : 'w-[70px]'} border-none bg-transparent focus:ring-0 ${textColor} ${className}`}
       >
         <SelectValue>
           <div className="flex items-center">

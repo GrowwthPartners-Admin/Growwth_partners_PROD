@@ -142,7 +142,7 @@ export const Navbar = () => {
           </nav>
 
           {/* Country Switcher & Contact Button */}
-          <div className="hidden lg:flex items-center gap-2">
+          <div className="hidden lg:flex items-center gap-4">
             <CountrySwitcher variant="dark" showLabel={true} />
             <Button 
               onClick={() => setContactModalOpen(true)} 
