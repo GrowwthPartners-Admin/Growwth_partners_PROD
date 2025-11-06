@@ -1,11 +1,10 @@
 
 import { Navigate } from "react-router-dom";
 import { Layout } from "@/components/Layout";
-import { PlaceholderContent } from "@/components/PlaceholderContent";
 import { useCountry } from "@/contexts/CountryContext";
-import { Alert, AlertDescription } from "@/components/ui/alert";
-import { Construction } from "lucide-react";
 import SEOhelper from "@/components/SEOhelper";
+import { AchievementsHero } from "@/components/achievements/AchievementsHero";
+import { AwardHighlights } from "@/components/achievements/AwardHighlights";
 
 const AchievementsPage = () => {
   const { country } = useCountry();
@@ -23,62 +22,42 @@ const AchievementsPage = () => {
     "@context": "https://schema.org",
     "@type": "AboutPage",
     name: "Achievements & Awards | Growwth Partners",
-    description: "Explore Growwth Partners' industry awards, recognitions, and our ongoing commitment to excellence in CFO, accounting, and financial innovation.",
-    url: `https://growwthpartners.com/achievements`,
+    description: "Independent recognition for fractional CFO excellence, innovation, and leadership across APAC. Explore Growwth Partners' industry awards and recognitions.",
+    url: "https://growwthpartners.com/achievements",
     publisher: {
       "@type": "Organization",
       name: "Growwth Partners",
       url: "https://growwthpartners.com",
       award: [
-        "Best Fractional CFO Services Award 2024",
-        "Xero Silver Champion Partner",
-        "Ryzup.ai Innovation Launch"
+        "Acquisition International M&A Awards 2024 Winner",
+        "Best Fractional CFO Services Award 2024 - Golden Globe Tigers",
+        "CMO Asia Innovation Leadership Award 2022",
+        "Most Admired Global Indians 2021"
       ]
     },
     mainEntity: {
       "@type": "Organization",
       name: "Growwth Partners",
-      award: "Best Fractional CFO Services Award 2024"
+      award: [
+        "Best Fractional CFO Services Award 2024",
+        "M&A Awards 2024 Winner",
+        "Innovation Leadership Award 2022"
+      ]
     }
   };
 
   return (
     <Layout>
       <SEOhelper 
-        title="Achievements & Awards | Growwth Partners"
-        description="Explore Growwth Partners' industry awards, recognitions, and our ongoing commitment to excellence in CFO, accounting, and financial innovation."
-        keywords="growwth partners awards, financial services recognition, best cfo services, singapore awards, accounting excellence"
+        title="Achievements & Awards | Growwth Partners - Fractional CFO Excellence"
+        description="Independent recognition for fractional CFO excellence, innovation, and leadership across APAC. Our work is measured by outcomes for clients first."
+        keywords="growwth partners awards, fractional cfo excellence, m&a awards, golden globe tigers, cmo asia, financial services recognition, apac awards"
         canonicalUrl="https://growwthpartners.com/achievements"
         structuredData={achievementsSchema}
       />
-      <PlaceholderContent 
-        title="Achievements & Awards" 
-        description="Discover our track record of excellence and recognition in financial services, highlighting our commitment to delivering outstanding solutions and maintaining the highest standards of service quality."
-        imageBg="bg-gradient-to-r from-amber-500 to-brand-orange"
-        features={[
-          {
-            title: "Industry Recognition",
-            description: "Winner of the Best Fractional CFO Services Award 2024 at the Golden Globe Tigers Awards for Excellence in Banking, Financial Services and Insurance (BFSI)"
-          },
-          {
-            title: "Technology Excellence",
-            description: "Achieved Xero Silver Champion Partner status, demonstrating our expertise in cloud accounting and financial technology solutions"
-          },
-          {
-            title: "Innovation Leadership",
-            description: "Successfully launched Ryzup.ai, our innovative AI-powered financial advisory platform, revolutionizing access to strategic financial guidance"
-          }
-        ]}
-      />
-
-      <div className="container-custom mb-16">
-        <Alert className="bg-amber-50 border-amber-200">
-          <Construction className="h-5 w-5 text-amber-500" />
-          <AlertDescription className="text-amber-800">
-            We're currently expanding our achievements showcase. Check back soon for a more detailed view of our awards and recognition.
-          </AlertDescription>
-        </Alert>
-      </div>
+      
+      <AchievementsHero />
+      <AwardHighlights />
     </Layout>
   );
 };
