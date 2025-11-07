@@ -16,7 +16,14 @@ import { useCountry } from "@/contexts/CountryContext";
 import { useBlogPostsListing } from "@/hooks/useBlogPostsListing";
 import { Calendar, ArrowRight } from "lucide-react";
 import SEOhelper from "@/components/SEOhelper";
-import { ContactModal } from "@/components/ui/contact-modal";
+import { SubscribeForm } from "@/components/SubscribeForm";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
 
 const BlogPage = () => {
   const navigate = useNavigate();
@@ -25,7 +32,7 @@ const BlogPage = () => {
   const { posts, loading, error, refetch } = useBlogPostsListing();
   const [currentPage, setCurrentPage] = useState(1);
   const [activeCategory, setActiveCategory] = useState("");
-  const [contactModalOpen, setContactModalOpen] = useState(false);
+  const [subscribeModalOpen, setSubscribeModalOpen] = useState(false);
   const postsPerPage = 6;
 
   useEffect(() => {
@@ -205,7 +212,7 @@ const BlogPage = () => {
           {/* Overlapping Subscribe Button */}
           <div className="absolute left-1/2 -translate-x-1/2 -bottom-6 z-10">
             <Button
-              onClick={() => setContactModalOpen(true)}
+              onClick={() => setSubscribeModalOpen(true)}
               className="px-8 py-6 text-base font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all"
               style={{ background: "#FB8136" }}
             >
@@ -330,10 +337,19 @@ const BlogPage = () => {
         )}
       </div>
 
-      <ContactModal
-        open={contactModalOpen}
-        onOpenChange={setContactModalOpen}
-      />
+      <Dialog open={subscribeModalOpen} onOpenChange={setSubscribeModalOpen}>
+        <DialogContent className="sm:max-w-md">
+          <DialogHeader>
+            <DialogTitle className="text-2xl font-bold">Subscribe to Our Newsletter</DialogTitle>
+            <DialogDescription>
+              Get weekly insights on financial management, accounting best practices, and business growth strategies delivered to your inbox.
+            </DialogDescription>
+          </DialogHeader>
+          <SubscribeForm onSuccess={() => {
+            setTimeout(() => setSubscribeModalOpen(false), 3000);
+          }} />
+        </DialogContent>
+      </Dialog>
     </Layout>
   );
 };
