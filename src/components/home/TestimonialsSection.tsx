@@ -86,9 +86,9 @@ export const TestimonialsSection = () => {
 
       <div className="bg-gray-50 py-[40px]">
         <div className="container-custom">
-          <h1 className="heading-lg text-center mb-16">
+          <h2 className="heading-lg text-center mb-16">
             Our Clients Love Us Because..
-          </h1>
+          </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {values.map((value, index) => (
@@ -132,9 +132,9 @@ export const TestimonialsSection = () => {
       <div className="bg-brand-orange text-white py-20">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-8">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-8">
               Did You Know Your Business Can Now Afford a CFO?
-            </h1>
+            </h2>
             <p className="text-xl opacity-90 mb-10">
               Our clients benefit from our CFO advisory services, which include
               10-20 hours of dedicated financial support each month. This unique

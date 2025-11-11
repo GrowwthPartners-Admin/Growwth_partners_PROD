@@ -92,7 +92,7 @@ export const SubscribeForm = ({ onSuccess }: SubscribeFormProps) => {
 
             <Button
               type="submit"
-              className="w-full"
+              className="w-full bg-orange-500 font-bold hover:bg-orange-600"
               disabled={isSubmitting}
             >
               {isSubmitting ? "Subscribing..." : "Subscribe"}

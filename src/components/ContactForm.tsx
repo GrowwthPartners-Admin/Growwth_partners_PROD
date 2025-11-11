@@ -214,7 +214,6 @@ export function ContactForm({ onSuccess }: ContactFormProps) {
         <Select
           value={formData.service}
           onValueChange={(value) => handleSelectChange("service", value)}
-          required
         >
           <SelectTrigger>
             <SelectValue placeholder="Select a service" />

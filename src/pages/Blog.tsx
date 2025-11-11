@@ -340,7 +340,7 @@ const BlogPage = () => {
       <Dialog open={subscribeModalOpen} onOpenChange={setSubscribeModalOpen}>
         <DialogContent className="sm:max-w-md">
           <DialogHeader>
-            <DialogTitle className="text-2xl font-bold">Subscribe to Our Newsletter</DialogTitle>
+            <DialogTitle className="text-2xl font-bold text-orange-500">Subscribe to Our Newsletter</DialogTitle>
             <DialogDescription>
               Get weekly insights on financial management, accounting best practices, and business growth strategies delivered to your inbox.
             </DialogDescription>
