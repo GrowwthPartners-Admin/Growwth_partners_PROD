@@ -3,3 +3,26 @@ Allow: /
 
 Sitemap: https://growwthpartners.com/sitemap.xml
 
+
+# Block admin areas
+User-agent: *
+Disallow: /admin/blog
+Disallow: /404
+Disallow: /search
+Disallow: blog/portfolio/
+Disallow: /blog/guide/
+Disallow: /blog/news/
+Disallow: /australia/
+Disallow: /author
+Disallow: /general 
+Disallow: /category/
+Disallow: /portfolio/
+Disallow: /expansion/
+Disallow: /startup/
+Disallow: /blog/growth/
+Disallow: /blog/general/
+Disallow: /blog/author/
+Disallow: /news/contact/
+Disallow: /blog/category
+Disallow: /?s=
+
