@@ -22,83 +22,76 @@ const TaxationPage = () => {
   }
 
   if (country === "australia") {
-    return <Navigate to="/australia" replace />;
+    return <Navigate to="/au" replace />;
   }
 
   const structuredData = {
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "FAQPage",
-      "@id": "https://growwthpartners.com/tax-compliance-services/#faq",
-      "name": "Tax Compliance Services - FAQ | Growwth Partners",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "What is tax compliance?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Tax compliance involves ensuring that a company adheres to all relevant tax laws and regulations, including accurate reporting and timely payment of taxes."
-          }
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "FAQPage",
+        "@id": "https://growwthpartners.com/tax-compliance-services/#faq",
+        name: "Tax Compliance Services - FAQ | Growwth Partners",
+        mainEntity: [
+          {
+            "@type": "Question",
+            name: "What is tax compliance?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "Tax compliance involves ensuring that a company adheres to all relevant tax laws and regulations, including accurate reporting and timely payment of taxes.",
+            },
+          },
+          {
+            "@type": "Question",
+            name: "Why is thorough financial review important for tax compliance?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "A thorough financial review ensures your financial statements are accurate, and helps identify discrepancies or errors that could impact tax calculations and compliance.",
+            },
+          },
+          {
+            "@type": "Question",
+            name: "How does Growwth Partners ensure transparency in tax calculations?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "We link financials with detailed tax workings, providing a clear audit trail from income and expenses to tax payable so you fully understand how each figure is derived.",
+            },
+          },
+        ],
+      },
+      {
+        "@type": "Service",
+        "@id": "https://growwthpartners.com/tax-compliance-services/#service",
+        name: "Tax & Compliance Services",
+        serviceType: ["Tax Compliance Services", "Corporate Tax Advisory"],
+        areaServed: ["Singapore", "United Arab Emirates", "Australia"],
+        provider: {
+          "@id": "https://growwthpartners.com/#organization",
         },
-        {
-          "@type": "Question",
-          "name": "Why is thorough financial review important for tax compliance?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "A thorough financial review ensures your financial statements are accurate, and helps identify discrepancies or errors that could impact tax calculations and compliance."
-          }
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://growwthpartners.com/#organization",
+        name: "Growwth Partners",
+        url: "https://growwthpartners.com",
+        contactPoint: [
+          {
+            "@type": "ContactPoint",
+            email: "jd@growwthpartners.com",
+            telephone: "+65 9861 5600",
+            contactType: "business",
+          },
+        ],
+        address: {
+          "@type": "PostalAddress",
+          streetAddress: "65 Chulia Street",
+          addressLocality: "Singapore",
+          postalCode: "049513",
+          addressCountry: "SG",
         },
-        {
-          "@type": "Question",
-          "name": "How does Growwth Partners ensure transparency in tax calculations?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "We link financials with detailed tax workings, providing a clear audit trail from income and expenses to tax payable so you fully understand how each figure is derived."
-          }
-        }
-      ]
-    },
-    {
-      "@type": "Service",
-      "@id": "https://growwthpartners.com/tax-compliance-services/#service",
-      "name": "Tax & Compliance Services",
-      "serviceType": [
-        "Tax Compliance Services",
-        "Corporate Tax Advisory"
-      ],
-      "areaServed": [
-        "Singapore",
-        "United Arab Emirates",
-        "Australia"
-      ],
-      "provider": {
-        "@id": "https://growwthpartners.com/#organization"
-      }
-    },
-    {
-      "@type": "Organization",
-      "@id": "https://growwthpartners.com/#organization",
-      "name": "Growwth Partners",
-      "url": "https://growwthpartners.com",
-      "contactPoint": [
-        {
-          "@type": "ContactPoint",
-          "email": "jd@growwthpartners.com",
-          "telephone": "+65 9861 5600",
-          "contactType": "business"
-        }
-      ],
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "65 Chulia Street",
-        "addressLocality": "Singapore",
-        "postalCode": "049513",
-        "addressCountry": "SG"
-      }
-    }
-  ]
-};
+      },
+    ],
+  };
 
   return (
     <Layout>

@@ -12,56 +12,57 @@ const ContactPage = () => {
   const { country } = useCountry();
 
   const structuredData = {
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "ContactPage",
-      "@id": "https://growwthpartners.com/contact/#contact",
-      "name": "Contact Growwth Partners",
-      "url": "https://growwthpartners.com/contact/",
-      "mainEntity": {
-        "@id": "https://growwthpartners.com/#organization"
-      }
-    },
-    {
-      "@type": "Organization",
-      "@id": "https://growwthpartners.com/#organization",
-      "name": "Growwth Partners",
-      "url": "https://growwthpartners.com",
-      "contactPoint": [
-        {
-          "@type": "ContactPoint",
-          "email": "jd@growwthpartners.com",
-          "telephone": "+65 9861 5600",
-          "contactType": "business",
-          "areaServed": "SG"
-        }
-      ],
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "65 Chulia Street",
-        "addressLocality": "Singapore",
-        "postalCode": "049513",
-        "addressCountry": "SG"
-      }
-    },
-    {
-      "@type": "LocalBusiness",
-      "@id": "https://growwthpartners.com/#localbusiness",
-      "name": "Growwth Partners",
-      "url": "https://growwthpartners.com",
-      "description": "Professional accounting, bookkeeping, payroll, taxation, compliance, cash flow modelling, and CFO services in Singapore.",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "65 Chulia Street",
-        "addressLocality": "Singapore",
-        "postalCode": "049513",
-        "addressCountry": "SG"
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "ContactPage",
+        "@id": "https://growwthpartners.com/contact/#contact",
+        name: "Contact Growwth Partners",
+        url: "https://growwthpartners.com/contact/",
+        mainEntity: {
+          "@id": "https://growwthpartners.com/#organization",
+        },
       },
-      "telephone": "+65 9861 5600"
-    }
-  ]
-};
+      {
+        "@type": "Organization",
+        "@id": "https://growwthpartners.com/#organization",
+        name: "Growwth Partners",
+        url: "https://growwthpartners.com",
+        contactPoint: [
+          {
+            "@type": "ContactPoint",
+            email: "jd@growwthpartners.com",
+            telephone: "+65 9861 5600",
+            contactType: "business",
+            areaServed: "SG",
+          },
+        ],
+        address: {
+          "@type": "PostalAddress",
+          streetAddress: "65 Chulia Street",
+          addressLocality: "Singapore",
+          postalCode: "049513",
+          addressCountry: "SG",
+        },
+      },
+      {
+        "@type": "LocalBusiness",
+        "@id": "https://growwthpartners.com/#localbusiness",
+        name: "Growwth Partners",
+        url: "https://growwthpartners.com",
+        description:
+          "Professional accounting, bookkeeping, payroll, taxation, compliance, cash flow modelling, and CFO services in Singapore.",
+        address: {
+          "@type": "PostalAddress",
+          streetAddress: "65 Chulia Street",
+          addressLocality: "Singapore",
+          postalCode: "049513",
+          addressCountry: "SG",
+        },
+        telephone: "+65 9861 5600",
+      },
+    ],
+  };
 
   // Redirect non-Singapore users to their respective home pages
   if (country === "uae") {
@@ -84,10 +85,10 @@ const ContactPage = () => {
         <SEOhelper
           title="Australia Enquiry | Growwth Partners"
           description="Connecting Australian businesses with the right financial, compliance, and startup support. Use our local Australia experts for compliant and growth-oriented business solutions."
-          canonicalUrl={`https://growwthpartners.com/australia/contact-us`}
+          canonicalUrl={`https://growwthpartners.com/au/contact-us`}
           keywords="contact australia, australian financial experts, sydney consultants, melbourne accounting"
         />
-        <Navigate to="/australia" replace />
+        <Navigate to="/au" replace />
       </>
     );
   }

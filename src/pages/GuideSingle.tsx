@@ -13,22 +13,22 @@ const GuideSinglePage = () => {
   const { country } = useCountry();
 
   // Redirect non-Singapore users to their respective home pages
-  if (country === 'uae') {
+  if (country === "uae") {
     return (
       <>
         <Navigate to="/uae" replace />
       </>
     );
   }
-  
-  if (country === 'australia') {
+
+  if (country === "australia") {
     return (
       <>
-        <Navigate to="/australia" replace />
+        <Navigate to="/au" replace />
       </>
     );
   }
-  
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -64,7 +64,10 @@ const GuideSinglePage = () => {
         <Head>
           <title>404 - Guide Not Found | Growwth Partners</title>
           <meta name="robots" content="noindex, nofollow" />
-          <meta name="description" content="The guide you're looking for doesn't exist." />
+          <meta
+            name="description"
+            content="The guide you're looking for doesn't exist."
+          />
         </Head>
         <div className="text-center py-20">
           <h2 className="text-2xl font-bold">Guide Not Found</h2>

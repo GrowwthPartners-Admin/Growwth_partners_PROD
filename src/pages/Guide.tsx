@@ -26,47 +26,44 @@ const GuidePage = () => {
   const { country } = useCountry();
 
   const structuredData = {
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "Guide",
-      "@id": "https://growwthpartners.com/guide/#guide",
-      "name": "Growwth Partners Guides",
-      "description": "Expert guides on payroll, finance, compliance, fundraising, and SME growth in Singapore and across APAC.",
-      "url": "https://growwthpartners.com/guide/",
-      "publisher": {
-        "@id": "https://growwthpartners.com/#organization"
-      }
-    },
-    {
-      "@type": "Organization",
-      "@id": "https://growwthpartners.com/#organization",
-      "name": "Growwth Partners",
-      "url": "https://growwthpartners.com",
-      "areaServed": [
-        "Singapore",
-        "United Arab Emirates",
-        "Australia"
-      ],
-      "contactPoint": [
-        {
-          "@type": "ContactPoint",
-          "email": "jd@growwthpartners.com",
-          "telephone": "+65 9861 5600",
-          "contactType": "business",
-          "areaServed": "SG"
-        }
-      ],
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "65 Chulia Street",
-        "addressLocality": "Singapore",
-        "postalCode": "049513",
-        "addressCountry": "SG"
-      }
-    }
-  ]
-};
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Guide",
+        "@id": "https://growwthpartners.com/guide/#guide",
+        name: "Growwth Partners Guides",
+        description:
+          "Expert guides on payroll, finance, compliance, fundraising, and SME growth in Singapore and across APAC.",
+        url: "https://growwthpartners.com/guide/",
+        publisher: {
+          "@id": "https://growwthpartners.com/#organization",
+        },
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://growwthpartners.com/#organization",
+        name: "Growwth Partners",
+        url: "https://growwthpartners.com",
+        areaServed: ["Singapore", "United Arab Emirates", "Australia"],
+        contactPoint: [
+          {
+            "@type": "ContactPoint",
+            email: "jd@growwthpartners.com",
+            telephone: "+65 9861 5600",
+            contactType: "business",
+            areaServed: "SG",
+          },
+        ],
+        address: {
+          "@type": "PostalAddress",
+          streetAddress: "65 Chulia Street",
+          addressLocality: "Singapore",
+          postalCode: "049513",
+          addressCountry: "SG",
+        },
+      },
+    ],
+  };
 
   // Redirect non-Singapore users to their respective home pages
   if (country === "uae") {
@@ -74,7 +71,7 @@ const GuidePage = () => {
   }
 
   if (country === "australia") {
-    return <Navigate to="/australia" replace />;
+    return <Navigate to="/au" replace />;
   }
 
   const { guides, categories, loading, error } = useGuides(selectedCategory);

@@ -13,46 +13,44 @@ const PayrollPage = () => {
   const { country } = useCountry();
 
   const structuredData = {
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "Service",
-      "@id": "https://growwthpartners.com/payroll-services-in-singapore/#service",
-      "name": "Payroll Services in Singapore",
-      "description": "Affordable and easy payroll services designed for small businesses.",
-      "serviceType": "Payroll Services",
-      "areaServed": [
-        "Singapore",
-        "United Arab Emirates",
-        "Australia"
-      ],
-      "provider": {
-        "@id": "https://growwthpartners.com/#organization"
-      }
-    },
-    {
-      "@type": "Organization",
-      "@id": "https://growwthpartners.com/#organization",
-      "name": "Growwth Partners",
-      "url": "https://growwthpartners.com",
-      "contactPoint": [
-        {
-          "@type": "ContactPoint",
-          "email": "jd@growwthpartners.com",
-          "telephone": "+65 9861 5600",
-          "contactType": "business"
-        }
-      ],
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "65 Chulia Street",
-        "addressLocality": "Singapore",
-        "postalCode": "049513",
-        "addressCountry": "SG"
-      }
-    }
-  ]
-};
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Service",
+        "@id":
+          "https://growwthpartners.com/payroll-services-in-singapore/#service",
+        name: "Payroll Services in Singapore",
+        description:
+          "Affordable and easy payroll services designed for small businesses.",
+        serviceType: "Payroll Services",
+        areaServed: ["Singapore", "United Arab Emirates", "Australia"],
+        provider: {
+          "@id": "https://growwthpartners.com/#organization",
+        },
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://growwthpartners.com/#organization",
+        name: "Growwth Partners",
+        url: "https://growwthpartners.com",
+        contactPoint: [
+          {
+            "@type": "ContactPoint",
+            email: "jd@growwthpartners.com",
+            telephone: "+65 9861 5600",
+            contactType: "business",
+          },
+        ],
+        address: {
+          "@type": "PostalAddress",
+          streetAddress: "65 Chulia Street",
+          addressLocality: "Singapore",
+          postalCode: "049513",
+          addressCountry: "SG",
+        },
+      },
+    ],
+  };
 
   // Redirect non-Singapore users to their respective home pages
   if (country === "uae") {
@@ -60,7 +58,7 @@ const PayrollPage = () => {
   }
 
   if (country === "australia") {
-    return <Navigate to="/australia" replace />;
+    return <Navigate to="/au" replace />;
   }
 
   return (

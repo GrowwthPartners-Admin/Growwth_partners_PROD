@@ -22,68 +22,66 @@ const AboutPage = () => {
   }
 
   if (country === "australia") {
-    return <Navigate to="/australia/" replace />;
+    return <Navigate to="/au/" replace />;
   }
 
   const structuredData = {
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "AboutPage",
-      "@id": "https://growwthpartners.com/about-us/#about",
-      "name": "About Growwth Partners",
-      "url": "https://growwthpartners.com/about-us/",
-      "description": "Learn about Growwth Partners - expert CFO, accounting, bookkeeping, payroll, tax and financial advisory services helping businesses scale efficiently.",
-      "mainEntity": {
-        "@id": "https://growwthpartners.com/#organization"
-      }
-    },
-    {
-      "@type": "Organization",
-      "@id": "https://growwthpartners.com/#organization",
-      "name": "Growwth Partners",
-      "url": "https://growwthpartners.com",
-      "description": "Expert financial, accounting, and bookkeeping services. CFO, finance and accounting solutions to manage and grow your business efficiently.",
-      "areaServed": [
-        "Singapore",
-        "United Arab Emirates",
-        "Australia"
-      ],
-      "contactPoint": [
-        {
-          "@type": "ContactPoint",
-          "email": "jd@growwthpartners.com",
-          "telephone": "+65 9861 5600",
-          "contactType": "business",
-          "areaServed": "SG"
-        }
-      ],
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "65 Chulia Street",
-        "addressLocality": "Singapore",
-        "postalCode": "049513",
-        "addressCountry": "SG"
-      }
-    },
-    {
-      "@type": "LocalBusiness",
-      "@id": "https://growwthpartners.com/#localbusiness",
-      "name": "Growwth Partners",
-      "url": "https://growwthpartners.com",
-      "description": "Professional accounting, bookkeeping, payroll, taxation, compliance, cash flow modelling, and CFO services in Singapore.",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "65 Chulia Street",
-        "addressLocality": "Singapore",
-        "postalCode": "049513",
-        "addressCountry": "SG"
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "AboutPage",
+        "@id": "https://growwthpartners.com/about-us/#about",
+        name: "About Growwth Partners",
+        url: "https://growwthpartners.com/about-us/",
+        description:
+          "Learn about Growwth Partners - expert CFO, accounting, bookkeeping, payroll, tax and financial advisory services helping businesses scale efficiently.",
+        mainEntity: {
+          "@id": "https://growwthpartners.com/#organization",
+        },
       },
-      "telephone": "+65 9861 5600"
-    }
-  ]
-};
-
+      {
+        "@type": "Organization",
+        "@id": "https://growwthpartners.com/#organization",
+        name: "Growwth Partners",
+        url: "https://growwthpartners.com",
+        description:
+          "Expert financial, accounting, and bookkeeping services. CFO, finance and accounting solutions to manage and grow your business efficiently.",
+        areaServed: ["Singapore", "United Arab Emirates", "Australia"],
+        contactPoint: [
+          {
+            "@type": "ContactPoint",
+            email: "jd@growwthpartners.com",
+            telephone: "+65 9861 5600",
+            contactType: "business",
+            areaServed: "SG",
+          },
+        ],
+        address: {
+          "@type": "PostalAddress",
+          streetAddress: "65 Chulia Street",
+          addressLocality: "Singapore",
+          postalCode: "049513",
+          addressCountry: "SG",
+        },
+      },
+      {
+        "@type": "LocalBusiness",
+        "@id": "https://growwthpartners.com/#localbusiness",
+        name: "Growwth Partners",
+        url: "https://growwthpartners.com",
+        description:
+          "Professional accounting, bookkeeping, payroll, taxation, compliance, cash flow modelling, and CFO services in Singapore.",
+        address: {
+          "@type": "PostalAddress",
+          streetAddress: "65 Chulia Street",
+          addressLocality: "Singapore",
+          postalCode: "049513",
+          addressCountry: "SG",
+        },
+        telephone: "+65 9861 5600",
+      },
+    ],
+  };
 
   return (
     <Layout>

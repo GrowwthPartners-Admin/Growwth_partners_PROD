@@ -22,81 +22,79 @@ const CorporateSecretaryPage = () => {
   }
 
   if (country === "australia") {
-    return <Navigate to="/australia" replace />;
+    return <Navigate to="/au" replace />;
   }
 
   const structuredData = {
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "FAQPage",
-      "@id": "https://growwthpartners.com/corporate-secretarial-services-singapore/#faq",
-      "name": "Corporate Secretarial Services in Singapore - FAQ",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "What is the scope of services of the company secretary?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "A company secretary typically manages board and shareholder meetings, maintains statutory records, ensures regulatory and filing compliance, supports governance and risk management, and advises on corporate procedures."
-          }
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "FAQPage",
+        "@id":
+          "https://growwthpartners.com/corporate-secretarial-services-singapore/#faq",
+        name: "Corporate Secretarial Services in Singapore - FAQ",
+        mainEntity: [
+          {
+            "@type": "Question",
+            name: "What is the scope of services of the company secretary?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "A company secretary typically manages board and shareholder meetings, maintains statutory records, ensures regulatory and filing compliance, supports governance and risk management, and advises on corporate procedures.",
+            },
+          },
+          {
+            "@type": "Question",
+            name: "How much does a Company Secretary cost in Singapore?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "An in-house company secretary can cost between SGD 60,000 to SGD 100,000 annually. Outsourced company secretarial service packages generally range from around SGD 300 to SGD 1,500, depending on scope and complexity.",
+            },
+          },
+          {
+            "@type": "Question",
+            name: "How do I change my company secretary in Singapore?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "To change your company secretary in Singapore, the new secretary must consent to act (typically via the prescribed form), and the appointment and cessation must be properly lodged with ACRA within the required timelines.",
+            },
+          },
+        ],
+      },
+      {
+        "@type": "Service",
+        "@id":
+          "https://growwthpartners.com/corporate-secretarial-services-singapore/#service",
+        name: "Corporate Secretarial Services in Singapore",
+        serviceType: "Corporate Secretary Services",
+        areaServed: ["Singapore", "United Arab Emirates", "Australia"],
+        provider: {
+          "@id": "https://growwthpartners.com/#organization",
         },
-        {
-          "@type": "Question",
-          "name": "How much does a Company Secretary cost in Singapore?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "An in-house company secretary can cost between SGD 60,000 to SGD 100,000 annually. Outsourced company secretarial service packages generally range from around SGD 300 to SGD 1,500, depending on scope and complexity."
-          }
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://growwthpartners.com/#organization",
+        name: "Growwth Partners",
+        url: "https://growwthpartners.com",
+        contactPoint: [
+          {
+            "@type": "ContactPoint",
+            email: "jd@growwthpartners.com",
+            telephone: "+65 9861 5600",
+            contactType: "business",
+            areaServed: "SG",
+          },
+        ],
+        address: {
+          "@type": "PostalAddress",
+          streetAddress: "65 Chulia Street",
+          addressLocality: "Singapore",
+          postalCode: "049513",
+          addressCountry: "SG",
         },
-        {
-          "@type": "Question",
-          "name": "How do I change my company secretary in Singapore?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "To change your company secretary in Singapore, the new secretary must consent to act (typically via the prescribed form), and the appointment and cessation must be properly lodged with ACRA within the required timelines."
-          }
-        }
-      ]
-    },
-    {
-      "@type": "Service",
-      "@id": "https://growwthpartners.com/corporate-secretarial-services-singapore/#service",
-      "name": "Corporate Secretarial Services in Singapore",
-      "serviceType": "Corporate Secretary Services",
-      "areaServed": [
-        "Singapore",
-        "United Arab Emirates",
-        "Australia"
-      ],
-      "provider": {
-        "@id": "https://growwthpartners.com/#organization"
-      }
-    },
-    {
-      "@type": "Organization",
-      "@id": "https://growwthpartners.com/#organization",
-      "name": "Growwth Partners",
-      "url": "https://growwthpartners.com",
-      "contactPoint": [
-        {
-          "@type": "ContactPoint",
-          "email": "jd@growwthpartners.com",
-          "telephone": "+65 9861 5600",
-          "contactType": "business",
-          "areaServed": "SG"
-        }
-      ],
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "65 Chulia Street",
-        "addressLocality": "Singapore",
-        "postalCode": "049513",
-        "addressCountry": "SG"
-      }
-    }
-  ]
-};
+      },
+    ],
+  };
 
   return (
     <Layout>
