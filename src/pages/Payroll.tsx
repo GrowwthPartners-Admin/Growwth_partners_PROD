@@ -67,7 +67,7 @@ const PayrollPage = () => {
         title="Payroll Management & Compliance Services | Growwth Partners"
         description="Comprehensive payroll outsourcing in Singapore. Ensure timely salary processing, CPF compliance, and smooth HR operations with expert support."
         keywords="small business payroll, payroll for small business, affordable payroll, small business tax, easy payroll"
-        canonicalUrl="https://growwthpartners.com/payroll-services-in-singapore/"
+        canonicalUrl="https://growwthpartners.com/payroll-services-in-singapore"
         structuredData={structuredData}
       />
       <motion.div

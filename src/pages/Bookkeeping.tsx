@@ -61,7 +61,7 @@ const BookkeepingPage = () => {
         title="Bookkeeping & Record Management Services | Growwth Partners"
         description="Reliable bookkeeping services in Singapore for growing businesses. Maintain accurate records, streamline finances, and ensure smooth audits"
         keywords="bookkeeping services, financial records, transaction management, small business accounting, financial reporting, accounts payable, accounts receivable, bank reconciliation"
-        canonicalUrl="https://growwthpartners.com/bookkeeping-services-in-singapore/"
+        canonicalUrl="https://growwthpartners.com/bookkeeping-services-in-singapore"
         structuredData={structuredData}
       />
 

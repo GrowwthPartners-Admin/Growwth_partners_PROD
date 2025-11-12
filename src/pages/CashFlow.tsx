@@ -106,7 +106,7 @@ const CashFlowPage = () => {
         title="Cash Flow Forecasting & Modelling Services | Growwth Partners"
         description="Data-driven cash flow modelling in Singapore. Plan liquidity, analyse scenarios, and make informed financial decisions with expert guidance"
         keywords="singapore cash flow modelling, financial modeling, business forecasting, cash flow management"
-        canonicalUrl="https://growwthpartners.com/cash-flow-services-in-singapore/"
+        canonicalUrl="https://growwthpartners.com/cash-flow-services-in-singapore"
         structuredData={structuredData}
       />
 

@@ -103,7 +103,7 @@ const CompanyIncorporationPage = () => {
         title="Company Incorporation in Singapore | Growwth Partners"
         description="Launch your Singapore company with hassle-free incorporation services from industry leaders. Full compliance, smooth process, effective results."
         keywords="singapore company incorporation, business registration, company setup, acra registration"
-        canonicalUrl="https://growwthpartners.com/company-incorporation-services-in-singapore/"
+        canonicalUrl="https://growwthpartners.com/company-incorporation-services-in-singapore"
         structuredData={structuredData}
       />
 

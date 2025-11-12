@@ -102,7 +102,7 @@ const CorporateSecretaryPage = () => {
         title="Corporate Secretary Services in Singapore | Growwth Partners"
         description="Outsource your company secretarial functions to Singapore's trusted experts. Growwth Partners offers full compliance, filing, and advisory services."
         keywords="singapore corporate secretary, company compliance, statutory filing, acra filing"
-        canonicalUrl="https://growwthpartners.com/corporate-secretary-services-in-singapore/"
+        canonicalUrl="https://growwthpartners.com/corporate-secretary-services-in-singapore"
         structuredData={structuredData}
       />
 

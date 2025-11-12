@@ -76,7 +76,7 @@ const FractionalCFOUAEPage = () => {
         title="Fractional CFO Services UAE | Outsourced CFO Dubai | Growwth Partners"
         description="Growwth Partners provides Fractional CFO services UAE businesses trust for cash flow optimization, strategic finance support, and expert CFO guidance without the full-time cost. Book a free consultation today."
         keywords="fractional cfo uae, outsourced cfo dubai, fractional cfo services uae, part time cfo uae"
-        canonicalUrl="https://growwthpartners.com/uae/virtual-cfo-services-uae/"
+        canonicalUrl="https://growwthpartners.com/uae/virtual-cfo-services-uae"
         structuredData={structuredData}
       />
       <motion.div

@@ -32,7 +32,7 @@ const AboutPage = () => {
         "@type": "AboutPage",
         "@id": "https://growwthpartners.com/about-us/#about",
         name: "About Growwth Partners",
-        url: "https://growwthpartners.com/about-us/",
+        url: "https://growwthpartners.com/about-us",
         description:
           "Learn about Growwth Partners - expert CFO, accounting, bookkeeping, payroll, tax and financial advisory services helping businesses scale efficiently.",
         mainEntity: {

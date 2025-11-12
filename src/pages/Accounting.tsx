@@ -77,7 +77,7 @@ const AccountingPage = () => {
         title="Accounting & Financial Reporting Services | Growwth Partners"
         description="Professional accounting services in Singapore for SMEs and startups.Ensure compliance, accuracy, and clear financial insights with Growwth Partners"
         keywords="accounting services, financial reporting, tax compliance, bookkeeping, growwth partners"
-        canonicalUrl="https://growwthpartners.com/accounting-services-in-singapore/"
+        canonicalUrl="https://growwthpartners.com/accounting-services-in-singapore"
         structuredData={structuredData}
       />
 

@@ -52,7 +52,7 @@ const AchievementsPage = () => {
   return (
     <Layout>
       <SEOhelper
-        title="Achievements & Awards | Growwth Partners - Fractional CFO Excellence"
+        title="Achievements & Awards | Growwth Partners"
         description="Independent recognition for fractional CFO excellence, innovation, and leadership across APAC. Our work is measured by outcomes for clients first."
         keywords="growwth partners awards, fractional cfo excellence, m&a awards, golden globe tigers, cmo asia, financial services recognition, apac awards"
         canonicalUrl="https://growwthpartners.com/achievements"

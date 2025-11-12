@@ -16,7 +16,7 @@ const HomeAustralia = () => {
     "@context": "https://schema.org",
     "@type": "Organization",
     name: "Growwth Partners",
-    url: "https://growwthpartners.com",
+    url: "https://growwthpartners.com/",
     logo: "https://growwthpartners.com/lovable-uploads/5f2bc1cf-2bab-424d-8245-eb52af504603.png",
     description:
       "Expert financial, accounting, and bookkeeping services for businesses in Singapore, UAE, and Australia.",
@@ -39,7 +39,7 @@ const HomeAustralia = () => {
         title="Growwth Partners Australia | Accounting & Financial Experts"
         description="We enable Australian SMEs, startups, and local founders to scale nationwide—our on-the-ground Sydney/Melbourne-based team brings the best in bookkeeping, compliance, and strategic advisory for the Australian business ecosystem."
         keywords="australia accounting, sydney financial services, melbourne business solutions, australian tax compliance, company incorporation australia"
-        canonicalUrl="https://growwthpartners.com//au"
+        canonicalUrl="https://growwthpartners.com/au"
         structuredData={organizationSchema}
       />
       <motion.div

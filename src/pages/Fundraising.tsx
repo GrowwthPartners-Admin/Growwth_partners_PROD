@@ -106,7 +106,7 @@ const Fundraising = () => {
         title="Expert Fundraising Services for Startups | Growwth Partners"
         description="Secure the capital your business needs to scale with our expert-led fundraising solutions. From seed to Series A and beyond - start your fundraising journey today."
         keywords="fundraising services, startup funding, venture capital, angel investors, pitch deck, Series A funding, investment strategy"
-        canonicalUrl='https://growwthpartners.com/fundraising-services/'
+        canonicalUrl='https://growwthpartners.com/fundraising-services'
         structuredData={structuredData}
       />
 

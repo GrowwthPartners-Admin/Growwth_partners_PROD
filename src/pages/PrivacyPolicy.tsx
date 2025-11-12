@@ -30,7 +30,7 @@ const PrivacyPolicyPage = () => {
         title="Privacy Policy | Growwth Partners"
         description="Read the privacy policy for Growwth Partners to see how we collect, use, and protect your data when you visit our website."
         keywords="privacy policy, data protection, user privacy, growwth partners"
-        canonicalUrl="https://growwthpartners.com//privacy-policy"
+        canonicalUrl="https://growwthpartners.com/privacy-policy"
         structuredData={privacySchema}
       />
       <div className="py-16 container-custom">

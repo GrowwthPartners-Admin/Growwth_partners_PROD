@@ -100,7 +100,7 @@ const FractionalCFOPage = () => {
         title="Fractional & Part-Time CFO Services in Singapore | Growwth Partners"
         description="Explore fractional, part-time, and virtual CFO services in Singapore. Strengthen financial strategy, optimise cash flow, and drive data-driven growth."
         keywords="virtual cfo, singapore cfo, financial strategy, fractional leadership"
-        canonicalUrl="https://growwthpartners.com/part-time-cfo/"
+        canonicalUrl="https://growwthpartners.com/part-time-cfo"
         structuredData={structuredData}
       />
       <motion.div

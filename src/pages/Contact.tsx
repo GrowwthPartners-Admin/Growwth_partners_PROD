@@ -18,7 +18,7 @@ const ContactPage = () => {
         "@type": "ContactPage",
         "@id": "https://growwthpartners.com/contact/#contact",
         name: "Contact Growwth Partners",
-        url: "https://growwthpartners.com/contact/",
+        url: "https://growwthpartners.com/contact-us",
         mainEntity: {
           "@id": "https://growwthpartners.com/#organization",
         },

@@ -26,7 +26,7 @@ function Layout() {
       <HelmetProvider>
         <TooltipProvider>
           <div className="App">
-            <CanonicalUpdater />
+            {/* <CanonicalUpdater /> */}
             <ScrollToTop/>
             <Toaster />
             <CustomToaster />
