@@ -1,7 +1,6 @@
-import React, { lazy, Suspense, useEffect } from "react";
+import React, { lazy, Suspense } from "react";
 import { Layout } from "@/components/Layout";
 import { HeroSection } from "@/components/home/HeroSection";
-import { AnimatedElement } from "@/components/ui/animated-element";
 import { TrustedSection } from "@/components/accounting/TrustedSection";
 import SEOhelper from "@/components/SEOhelper";
 
@@ -38,17 +37,6 @@ const SectionLoader = () => (
 );
 
 const Index = () => {
-  // Aggressive preloading for mobile performance
-  useEffect(() => {
-    // Start preloading immediately on mobile
-    const preloadComponents = () => {
-      import("@/components/home/ServicesSection");
-      import("@/components/home/AchievementsSection");
-    };
-
-    // Immediate preload for better mobile experience
-    preloadComponents();
-  }, []);
 
   const structuredData = {
   "@context": "https://schema.org",
@@ -106,32 +94,26 @@ const Index = () => {
         structuredData={structuredData}
       />
 
-      <AnimatedElement
-        animation="fade-in"
-        duration={0.2}
-        className="overflow-hidden"
-      >
-        {/* Critical content - loads immediately */}
-        <HeroSection />
-        <TrustedSection />
+      {/* Critical content - loads immediately */}
+      <HeroSection />
+      <TrustedSection />
 
-        {/* Lazy loaded sections with minimal loading indicators */}
-        <Suspense fallback={<SectionLoader />}>
-          <ServicesSection />
-        </Suspense>
+      {/* Lazy loaded sections with minimal loading indicators */}
+      <Suspense fallback={<SectionLoader />}>
+        <ServicesSection />
+      </Suspense>
 
-        <Suspense fallback={<SectionLoader />}>
-          <AchievementsSection />
-        </Suspense>
+      <Suspense fallback={<SectionLoader />}>
+        <AchievementsSection />
+      </Suspense>
 
-        <Suspense fallback={<SectionLoader />}>
-          <TestimonialsSection />
-        </Suspense>
+      <Suspense fallback={<SectionLoader />}>
+        <TestimonialsSection />
+      </Suspense>
 
-        <Suspense fallback={<SectionLoader />}>
-          <CtaSection />
-        </Suspense>
-      </AnimatedElement>
+      <Suspense fallback={<SectionLoader />}>
+        <CtaSection />
+      </Suspense>
     </Layout>
   );
 };
