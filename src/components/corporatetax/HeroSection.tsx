@@ -46,7 +46,7 @@ export const HeroSection = () => {
                 <Button
                   size="lg"
                   variant="outline"
-                  onClick={() => setContactModalOpen(true)}
+                  onClick={() => window.open('https://calendly.com/jd-growwthpartners/15min?month=2025-11', '_blank')}
                   className="border-2 border-brand-blue text-brand-blue hover:bg-brand-blue hover:text-white px-8 py-6 text-lg font-semibold rounded-lg transition-all"
                 >
                   <Users className="mr-2 h-5 w-5" />

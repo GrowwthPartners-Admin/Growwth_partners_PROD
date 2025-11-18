@@ -56,7 +56,7 @@ export const CtaSection = ({
                 <Button
                   size="lg"
                   variant="outline"
-                  onClick={() => setContactModalOpen(true)}
+                  onClick={() => window.open('https://calendly.com/jd-growwthpartners/15min?month=2025-11', '_blank')}
                   className="bg-white hover:bg-gray-100 text-brand-blue border-2 border-white px-8 py-6 text-lg font-semibold rounded-lg transition-all"
                 >
                   <Phone className="mr-2 h-5 w-5" />
