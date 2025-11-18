@@ -45,6 +45,10 @@ const navItems = [
         title: "Strategic Finance Support",
         path: "/strategic-finance-singapore",
       },
+      {
+        title: "Corporate Tax Filing",
+        path: "/corporate-tax-filing-singapore",
+      },
     ],
   },
   {
