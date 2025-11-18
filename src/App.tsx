@@ -121,6 +121,13 @@ export const routes: RouteRecord[] = [
         },
       },
       {
+        path: "corporate-tax-filing-singapore",
+        async lazy() {
+          const { default: Component } = await import("./pages/CorporateTaxFiling");
+          return { Component };
+        },
+      },
+      {
         path: "privacy-policy",
         async lazy() {
           const { default: Component } = await import("./pages/PrivacyPolicy");
