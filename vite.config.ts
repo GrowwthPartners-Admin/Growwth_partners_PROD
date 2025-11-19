@@ -57,7 +57,7 @@ export default defineConfig(({ mode }) => ({
         );
       }
     },
-    strictPort: false,
+    strictPort: true,
     hmr: { port: 8080 },
     headers: { "Access-Control-Allow-Origin": "*" },
   },
