@@ -36,7 +36,7 @@ const navItems = [
     dropdown: false,
   },
   {
-    title: "Pages",
+    title: "AI in Finance",
     path: "/use-of-ai-in-finance",
     dropdown: true,
     items: [
