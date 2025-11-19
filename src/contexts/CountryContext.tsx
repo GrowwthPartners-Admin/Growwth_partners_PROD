@@ -44,9 +44,9 @@ export const CountryProvider = ({
   };
 
   const getCountryServiceSlug = (base: string) => {
-    if (country === "uae") return `${base}-services-in-uae/`;
-    if (country === "australia") return `${base}-services-in-australia/`;
-    return `${base}-services-in-singapore/`;
+    if (country === "uae") return `${base}-services-in-uae`;
+    if (country === "australia") return `${base}-services-in-australia`;
+    return `${base}-services-in-singapore`;
   };
 
   const getCountryUrl = (path: string): string => {
@@ -63,9 +63,9 @@ export const CountryProvider = ({
     if (path.startsWith("/corporate-secretary"))
       return `/${getCountryServiceSlug("corporate-secretary")}`;
     if (path.startsWith("/part-time-cfo")) {
-      if (country === "uae") return `/uae/virtual-cfo-services-uae/`;
-      if (country === "australia") return `/au/virtual-cfo-services-australia/`;
-      return `/part-time-cfo/`;
+      if (country === "uae") return `/uae/virtual-cfo-services-uae`;
+      if (country === "australia") return `/au/virtual-cfo-services-australia`;
+      return `/part-time-cfo`;
     }
     if (
       [
@@ -81,10 +81,10 @@ export const CountryProvider = ({
         "/terms",
       ].includes(path)
     ) {
-      if (country === "singapore") return `${path}/`;
-      return `/${country}${path}/`;
+      if (country === "singapore") return `${path}`;
+      return `/${country}${path}`;
     }
-    return path.endsWith("/") ? path : `${path}/`;
+    return path.endsWith("/") ? path : `${path}`;
   };
 
   const handleSetCountry = (newCountry: Country) => {
@@ -92,9 +92,9 @@ export const CountryProvider = ({
 
     let newPath: string;
     if (newCountry === "singapore") {
-      newPath = "/";
+      newPath = "";
     } else {
-      newPath = `/${newCountry}/`;
+      newPath = `/${newCountry}`;
     }
     setCountry(newCountry);
     console.log(
