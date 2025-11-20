@@ -49,6 +49,10 @@ const navItems = [
         title: "Corporate Tax Filing",
         path: "/corporate-tax-filing-singapore",
       },
+      {
+        title: "Business Valuation Services",
+        path: "/valuation-services-singapore",
+      },
     ],
   },
   {
