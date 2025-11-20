@@ -55,6 +55,34 @@ export const ServicesSection = () => {
     }
   ];
 
+  const ServiceCard = ({ service, index }) => (
+  <motion.div
+    initial={{ opacity: 0, y: 30 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.5, delay: index * 0.1 }}
+    viewport={{ once: true }}
+    className="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow"
+  >
+    <div className="w-14 h-14 bg-blue-100 rounded-lg flex items-center justify-center mb-6">
+      <service.icon className="h-7 w-7 text-brand-blue" />
+    </div>
+
+    <h3 className="text-xl font-bold text-gray-900 mb-4">
+      {service.title}
+    </h3>
+
+    <ul className="space-y-3">
+      {service.points.map((point, pointIndex) => (
+        <li key={pointIndex} className="flex items-start gap-2 text-gray-600">
+          <span className="w-1.5 h-1.5 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
+          <span className="text-sm">{point}</span>
+        </li>
+      ))}
+    </ul>
+  </motion.div>
+);
+
+
   return (
     <>
       <section className="py-20 bg-gray-50">
@@ -73,37 +101,30 @@ export const ServicesSection = () => {
               What Our Corporate Tax Filing Services Include
             </h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Growwth Partners covers the full cycle of corporate tax filing in Singapore so nothing is missed.
+              Growwth Partners covers the full cycle of corporate tax filing in
+              Singapore so nothing is missed.
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-            {services.map((service, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow"
-              >
-                <div className="w-14 h-14 bg-blue-100 rounded-lg flex items-center justify-center mb-6">
-                  <service.icon className="h-7 w-7 text-brand-blue" />
-                </div>
-                
-                <h3 className="text-xl font-bold text-gray-900 mb-4">
-                  {service.title}
-                </h3>
-                
-                <ul className="space-y-3">
-                  {service.points.map((point, pointIndex) => (
-                    <li key={pointIndex} className="flex items-start gap-2 text-gray-600">
-                      <span className="w-1.5 h-1.5 bg-brand-orange rounded-full mt-2 flex-shrink-0"></span>
-                      <span className="text-sm">{point}</span>
-                    </li>
-                  ))}
-                </ul>
-              </motion.div>
+          {/* First row: 3 items in grid */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
+            {services.slice(0, 3).map((service, index) => (
+              <ServiceCard
+                key={service.title}
+                service={service}
+                index={index} // 0,1,2
+              />
+            ))}
+          </div>
+
+          {/* Second row: 2 items centered */}
+          <div className="flex justify-center gap-8 mb-12 flex-wrap">
+            {services.slice(3).map((service, index) => (
+              <ServiceCard
+                key={service.title}
+                service={service}
+                index={index + 3} // 3,4 – keeps animation delay consistent
+              />
             ))}
           </div>
 

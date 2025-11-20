@@ -55,9 +55,7 @@ export const SimplifiedSection = () => {
             </p>
             
             <p className="text-base text-gray-600 mb-8 leading-relaxed">
-              Growwth Partners offers specialist corporate tax services in Singapore that businesses 
-              can rely on for accurate computation, error free submission, and proactive planning. 
-              You get a trusted tax partner who handles the details so you can stay focused on growth.
+              Growwth Partners: Accurate computation, error-free submission, and proactive planning for Singapore corporate tax, letting you focus on growth.
             </p>
 
             <div className="space-y-4">

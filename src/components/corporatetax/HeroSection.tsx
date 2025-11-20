@@ -13,7 +13,7 @@ export const HeroSection = () => {
         <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
         
         <div className="container-custom relative z-10">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
             {/* Left Content */}
             <motion.div
               initial={{ opacity: 0, x: -30 }}
@@ -66,7 +66,7 @@ export const HeroSection = () => {
                 <img
                   src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=800&q=80"
                   alt="Corporate tax filing professionals working"
-                  className="w-full h-[400px] md:h-[500px] object-cover"
+                  className="w-full h-[400px] md:h-[450px] object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-blue-900/30 to-transparent"></div>
               </div>
