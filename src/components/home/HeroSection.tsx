@@ -81,22 +81,22 @@ export const HeroSection = () => {
                 <span className="bg-gradient-to-r from-brand-orange to-yellow-500 p-1.5 rounded-full flex items-center justify-center">
                   <Award className="h-5 w-5 text-white" />
                 </span>
-                <span className="font-medium">Asia's Leading Finance Services Provider</span>
+                <span className="font-medium">See how you can save 30% on accounting costs this year</span>
               </Badge>
             </div>
 
             <h1 className="heading-xl text-brand-dark mb-5">
-              Fueling Business Growth With 
-              <span className="text-brand-orange"> Expert Accounting</span> & Financial Services!
+              Scale Faster with Stress Free   
+              <span className="text-brand-orange"> Startup </span> Finance
             </h1>
             
-            <p className="text-lg text-gray-700 mb-8">
-              At Growwth Partners, we provide more than just accounting and bookkeeping services. Our customized financial solutions ensure that each client receives personalized attention and expert advice tailored to their unique business needs.
+            <p className="text-lg text-gray-700 mb-8 font-bold">
+              We handle your books, compliance & reporting so you can focus on your product
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4">
               <Button onClick={() => setContactModalOpen(true)} className="bg-brand-orange hover:bg-brand-orange/90 text-white rounded-full px-8 py-6 text-lg font-medium group">
-                Speak To An Expert
+                Book My Free 30-Min Finance Clarity Call
                 <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
               </Button>
               

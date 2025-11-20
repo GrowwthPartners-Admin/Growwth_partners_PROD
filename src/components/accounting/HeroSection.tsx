@@ -23,23 +23,30 @@ export const HeroSection = () => {
             className="order-2 lg:order-1"
           >
             <h1 className="heading-lg mb-5 text-brand-dark leading-tight">
-              Most Trusted <span className="text-brand-orange relative">5-Star</span> Accounting Services In Singapore
+              Accounting Services Designed for  <span className="text-brand-orange relative">Startups</span> In Singapore
             </h1>
+            <h3 className="text-lg text-gray-700 mb-6 font-bold">
+              Transparent, investor-ready books without the full-time cost
+            </h3>
             <p className="text-lg text-gray-700 mb-6">
               Are you tired of navigating the complexities of accounting and financial management for your business?
             </p>
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3, duration: 0.5 }}
-            >
+            <div className="flex flex-col sm:flex-row gap-4">
               <Button 
                 onClick={() => setContactModalOpen(true)}
                 className="bg-brand-orange hover:bg-brand-orange/90 text-white px-7 py-5 text-lg font-medium rounded-full"
               >
-                Book Free Call
+                Schedule My Free Accounting Health Check
               </Button>
-            </motion.div>
+              <Button
+                onClick={() => window.open('https://calendly.com/jd-growwthpartners/15min?month=2025-11', '_blank')}
+                size="lg"
+                variant="outline"
+                className="border-2 border-brand-blue text-brand-blue hover:bg-brand-blue hover:text-white font-bold px-8"
+              >
+                Connect For Free
+              </Button>
+            </div>
           </motion.div>
           
           <motion.div
