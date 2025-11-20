@@ -21,7 +21,7 @@ const services = [
   {
     icon: Building2,
     title: "Business Valuation",
-    description: "Determine the overall worth of the company based on financial performance, assets, market conditions, and growth prospects. Ideal for companies seeking transparent private company valuation or preparing for fundraising."
+    description: "Determine the company's worth based on financials, assets, market conditions, and growth prospects; ideal for valuation or fundraising"
   },
   {
     icon: FileText,
@@ -41,7 +41,7 @@ const services = [
   {
     icon: TrendingUp,
     title: "Equity Valuation",
-    description: "Accurate assessment of equity shares to support investors, shareholders, cap table management, and equity valuation analysis."
+    description: "Accurate assessment of equity shares to support investors, shareholders, cap table, and equity analysis"
   },
   {
     icon: Receipt,
@@ -51,7 +51,7 @@ const services = [
   {
     icon: LineChart,
     title: "Financial Modeling",
-    description: "Develop comprehensive financial models to analyse past performance and forecast future growth. Supports financial valuation services across multiple scenarios."
+    description: "Build financial models to analyze past performance, forecast growth, and valuation across scenarios"
   },
   {
     icon: Search,
@@ -109,7 +109,7 @@ export const ServicesSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.05 }}
               viewport={{ once: true }}
-              className="bg-white rounded-xl p-6 border border-gray-200 hover:border-brand-blue/50 transition-all hover:shadow-lg group"
+              className="bg-blue-100/30 rounded-xl p-6 border border-gray-200 hover:border-brand-blue/80 transition-all hover:shadow-lg group"
             >
               <div className="w-14 h-14 bg-blue-100 rounded-full flex items-center justify-center mb-4 group-hover:bg-blue-200 transition-colors">
                 <service.icon className="w-7 h-7 text-brand-blue" />

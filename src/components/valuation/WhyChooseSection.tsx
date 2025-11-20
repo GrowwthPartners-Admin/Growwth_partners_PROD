@@ -35,7 +35,7 @@ export const WhyChooseSection = () => {
           </h2>
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-8 mb-12">
+        <div className="grid md:grid-cols-3 gap-8">
           {features.map((feature, index) => (
             <motion.div
               key={index}
@@ -54,7 +54,7 @@ export const WhyChooseSection = () => {
           ))}
         </div>
 
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3 }}
@@ -75,7 +75,7 @@ export const WhyChooseSection = () => {
               </div>
             </div>
           </div>
-        </motion.div>
+        </motion.div> */}
       </div>
     </section>
   );

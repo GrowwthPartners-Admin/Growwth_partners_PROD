@@ -35,10 +35,9 @@ export const TestimonialSection = () => {
                     navigate('/contact-us');
                     window.scrollTo(0, 0);
                   }}
-                  className="inline-flex items-center gap-2 text-brand-blue hover:text-brand-blue/80 font-semibold transition-colors group"
+                  className="inline-flex items-center gap-2 text-brand-blue hover:text-brand-blue/80 font-bold transition-colors group"
                 >
                   Contact us today for a consultation and take the first step toward a simplified, compliant future.
-                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </button>
               </div>
 

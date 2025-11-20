@@ -31,7 +31,7 @@ const reasons = [
 
 export const WhyMattersSection = () => {
   return (
-    <section className="py-20 bg-white">
+    <section className="py-20 bg-brand-blue/10">
       <div className="container-custom">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -53,13 +53,10 @@ export const WhyMattersSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="bg-white rounded-xl p-6 border border-gray-200 hover:border-brand-blue/50 transition-all hover:shadow-lg text-center group"
+              className="bg-gray-50 rounded-xl p-6 border border-gray-200 hover:border-brand-blue/50 transition-all hover:shadow-lg text-center group"
             >
               <div className="w-14 h-14 bg-blue-100 rounded-full flex items-center justify-center mb-4 mx-auto group-hover:bg-blue-200 transition-colors">
                 <reason.icon className="w-7 h-7 text-brand-blue" />
-              </div>
-              <div className="w-6 h-6 bg-brand-orange rounded-full flex items-center justify-center mx-auto mb-3">
-                <span className="text-white font-bold text-sm">✓</span>
               </div>
               <h3 className="text-lg font-bold mb-2 text-gray-900">{reason.title}</h3>
               <p className="text-sm text-gray-600 leading-relaxed">{reason.description}</p>

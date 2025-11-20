@@ -22,7 +22,7 @@ export const HeroSection = () => {
               Business Valuation Services in Singapore
             </span>
             
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-gray-900">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-gray-800">
               Do you truly know your company's value?
             </h1>
             
@@ -31,22 +31,22 @@ export const HeroSection = () => {
             </p>
             
             <p className="text-lg text-gray-700 mb-8 leading-relaxed">
-              At Growwth Partners, we turn your valuation challenges into triumphs. As founders ourselves, we understand the fear of dilution and the constant need for wealth maximisation that drives accurate business valuation Singapore and startup valuation Singapore decisions.
+            At Growwth Partners, we turn valuation challenges into triumphs. As founders, we understand dilution fears and the need for wealth maximization driving accurate business and startup valuations.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4">
               <Button
                 onClick={() => setContactModalOpen(true)}
                 size="lg"
-                className="bg-brand-orange hover:bg-brand-orange/90 text-white font-semibold px-8"
+                className="bg-brand-orange hover:bg-brand-orange/90 text-white font-bold px-8"
               >
                 Connect With Our Experts
               </Button>
               <Button
-                onClick={() => setContactModalOpen(true)}
+                onClick={() => window.open('https://calendly.com/jd-growwthpartners/15min?month=2025-11', '_blank')}
                 size="lg"
                 variant="outline"
-                className="border-2 border-brand-blue text-brand-blue hover:bg-brand-blue hover:text-white font-semibold px-8"
+                className="border-2 border-brand-blue text-brand-blue hover:bg-brand-blue hover:text-white font-bold px-8"
               >
                 Connect For Free
               </Button>
@@ -59,7 +59,7 @@ export const HeroSection = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="relative"
           >
-            <div className="relative bg-gradient-to-br from-blue-100 to-orange-50 rounded-2xl p-8 border border-blue-200">
+            <div className="relative bg-gradient-to-br from-blue-100 to-orange-50 rounded-2xl p-8 border border-blue-200 shadow-lg">
               <div className="grid grid-cols-2 gap-6">
                 <div className="bg-white rounded-xl p-6 shadow-lg">
                   <TrendingUp className="w-12 h-12 text-brand-blue mb-4" />
