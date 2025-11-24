@@ -72,9 +72,9 @@ export const CountryProvider = ({
         "/about",
         "/blog",
         "/contact-us",
-        "/taxation",
-        "/privacy-policy",
-        "/terms",
+        // "/taxation",
+        // "/privacy-policy",
+        // "/terms",
       ].includes(path)
     ) {
       if (country === "singapore") return `${path}`;

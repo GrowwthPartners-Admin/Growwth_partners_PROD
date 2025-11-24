@@ -274,6 +274,15 @@ export const routes: RouteRecord[] = [
           return { Component };
         },
       },
+
+      {
+        path: "taxation-Services-in-uae",
+        async lazy() {
+          const { default: Component } = await import("./pages/Taxation");
+          return { Component };
+        },
+      },
+
       {
         path: "cash-flow-services-in-uae",
         async lazy() {
@@ -381,6 +390,15 @@ export const routes: RouteRecord[] = [
           return { Component };
         },
       },
+
+      {
+        path: "taxation-Services-in-australia",
+        async lazy() {
+          const { default: Component } = await import("./pages/Taxation");
+          return { Component };
+        },
+      },
+
       {
         path: "cash-flow-services-in-australia",
         async lazy() {
