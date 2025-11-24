@@ -7,17 +7,6 @@ import { Construction } from "lucide-react";
 import SEOhelper from "@/components/SEOhelper";
 
 const SuccessStoriesPage = () => {
-  const { country } = useCountry();
-
-  // Redirect non-Singapore users to their respective home pages
-  if (country === "uae") {
-    return <Navigate to="/uae" replace />;
-  }
-
-  if (country === "australia") {
-    return <Navigate to="/au" replace />;
-  }
-
   const successStoriesSchema = {
     "@context": "https://schema.org",
     "@type": "WebPage",

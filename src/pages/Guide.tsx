@@ -65,15 +65,6 @@ const GuidePage = () => {
     ],
   };
 
-  // Redirect non-Singapore users to their respective home pages
-  if (country === "uae") {
-    return <Navigate to="/uae" replace />;
-  }
-
-  if (country === "australia") {
-    return <Navigate to="/au" replace />;
-  }
-
   const { guides, categories, loading, error } = useGuides(selectedCategory);
 
   // Reset pagination when category changes

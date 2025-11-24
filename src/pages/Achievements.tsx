@@ -6,17 +6,6 @@ import { AchievementsHero } from "@/components/achievements/AchievementsHero";
 import { AwardHighlights } from "@/components/achievements/AwardHighlights";
 
 const AchievementsPage = () => {
-  const { country } = useCountry();
-
-  // Redirect non-Singapore users to their respective home pages
-  if (country === "uae") {
-    return <Navigate to="/uae" replace />;
-  }
-
-  if (country === "australia") {
-    return <Navigate to="/au" replace />;
-  }
-
   const structuredData = {
     "@context": "https://schema.org",
     "@graph": [
