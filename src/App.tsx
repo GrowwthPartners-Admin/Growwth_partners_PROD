@@ -11,10 +11,7 @@ const BlogAdminPage = React.lazy(() => import("./pages/admin/BlogAdmin"));
 
 async function getBlogSlugs() {
   try {
-    const { data: posts, error } = await supabase
-      .from("blog_post")
-      .select("slug")
-      .not("slug", "is", null);
+    const { data: posts, error } = await supabase.from("blog_post").select("slug").not("slug", "is", null);
 
     if (error) {
       console.error("SSG slug fetch error", error);
@@ -98,18 +95,14 @@ export const routes: RouteRecord[] = [
       {
         path: "company-incorporation-services-in-singapore",
         async lazy() {
-          const { default: Component } = await import(
-            "./pages/CompanyIncorporation"
-          );
+          const { default: Component } = await import("./pages/CompanyIncorporation");
           return { Component };
         },
       },
       {
         path: "corporate-secretary-services-in-singapore",
         async lazy() {
-          const { default: Component } = await import(
-            "./pages/CorporateSecretary"
-          );
+          const { default: Component } = await import("./pages/CorporateSecretary");
           return { Component };
         },
       },
@@ -186,9 +179,7 @@ export const routes: RouteRecord[] = [
       {
         path: "guide/financial-reporting-standards-singapore",
         async lazy() {
-          const { default: Component } = await import(
-            "./pages/FinancialReportingGuide"
-          );
+          const { default: Component } = await import("./pages/FinancialReportingGuide");
           return { Component };
         },
       },
@@ -293,18 +284,14 @@ export const routes: RouteRecord[] = [
       {
         path: "company-incorporation-services-in-uae",
         async lazy() {
-          const { default: Component } = await import(
-            "./pages/CompanyIncorporation"
-          );
+          const { default: Component } = await import("./pages/CompanyIncorporation");
           return { Component };
         },
       },
       {
         path: "corporate-secretary-services-in-uae",
         async lazy() {
-          const { default: Component } = await import(
-            "./pages/CorporateSecretary"
-          );
+          const { default: Component } = await import("./pages/CorporateSecretary");
           return { Component };
         },
       },
@@ -318,9 +305,7 @@ export const routes: RouteRecord[] = [
       {
         path: "uae/virtual-cfo-services-uae",
         async lazy() {
-          const { default: Component } = await import(
-            "./pages/FractionalCFOUAE"
-          );
+          const { default: Component } = await import("./pages/FractionalCFOUAE");
           return { Component };
         },
       },
@@ -335,9 +320,7 @@ export const routes: RouteRecord[] = [
       {
         path: "au/virtual-cfo-services-australia",
         async lazy() {
-          const { default: Component } = await import(
-            "./pages/VirtualCFOAustralia"
-          );
+          const { default: Component } = await import("./pages/VirtualCFOAustralia");
           return { Component };
         },
       },
@@ -409,18 +392,14 @@ export const routes: RouteRecord[] = [
       {
         path: "company-incorporation-services-in-australia",
         async lazy() {
-          const { default: Component } = await import(
-            "./pages/CompanyIncorporation"
-          );
+          const { default: Component } = await import("./pages/CompanyIncorporation");
           return { Component };
         },
       },
       {
         path: "corporate-secretary-services-in-australia",
         async lazy() {
-          const { default: Component } = await import(
-            "./pages/CorporateSecretary"
-          );
+          const { default: Component } = await import("./pages/CorporateSecretary");
           return { Component };
         },
       },
@@ -435,54 +414,42 @@ export const routes: RouteRecord[] = [
       {
         path: "case-studies/healthcare",
         async lazy() {
-          const { default: Component } = await import(
-            "./pages/case-studies/HealthcareCaseStudy"
-          );
+          const { default: Component } = await import("./pages/case-studies/HealthcareCaseStudy");
           return { Component };
         },
       },
       {
         path: "case-studies/ecommerce",
         async lazy() {
-          const { default: Component } = await import(
-            "./pages/case-studies/EcommerceCaseStudy"
-          );
+          const { default: Component } = await import("./pages/case-studies/EcommerceCaseStudy");
           return { Component };
         },
       },
       {
         path: "case-studies/food-tech",
         async lazy() {
-          const { default: Component } = await import(
-            "./pages/case-studies/FoodTechCaseStudy"
-          );
+          const { default: Component } = await import("./pages/case-studies/FoodTechCaseStudy");
           return { Component };
         },
       },
       {
         path: "case-studies/online-consumer-goods",
         async lazy() {
-          const { default: Component } = await import(
-            "./pages/case-studies/OnlineConsumerGoodsCaseStudy"
-          );
+          const { default: Component } = await import("./pages/case-studies/OnlineConsumerGoodsCaseStudy");
           return { Component };
         },
       },
       {
         path: "case-studies/data-driven-success",
         async lazy() {
-          const { default: Component } = await import(
-            "./pages/case-studies/DataDrivenSuccessCaseStudy"
-          );
+          const { default: Component } = await import("./pages/case-studies/DataDrivenSuccessCaseStudy");
           return { Component };
         },
       },
       {
         path: "case-studies/gaming-industry",
         async lazy() {
-          const { default: Component } = await import(
-            "./pages/case-studies/GamingIndustryCaseStudy"
-          );
+          const { default: Component } = await import("./pages/case-studies/GamingIndustryCaseStudy");
           return { Component };
         },
       },
@@ -503,9 +470,7 @@ export const routes: RouteRecord[] = [
       {
         path: "admin/login",
         async lazy() {
-          const { default: Component } = await import(
-            "./pages/admin/BlogAdminLogin"
-          );
+          const { default: Component } = await import("./pages/admin/BlogAdminLogin");
           return { Component };
         },
         getStaticPaths: () => [],
@@ -529,15 +494,11 @@ export const routes: RouteRecord[] = [
       },
       {
         path: "uae/company-incorporation-services-in-singapore",
-        element: (
-          <Navigate to="/company-incorporation-services-in-uae/" replace />
-        ),
+        element: <Navigate to="/company-incorporation-services-in-uae/" replace />,
       },
       {
         path: "uae/corporate-secretary-services-in-singapore",
-        element: (
-          <Navigate to="/corporate-secretary-services-in-uae/" replace />
-        ),
+        element: <Navigate to="/corporate-secretary-services-in-uae/" replace />,
       },
       {
         path: "uae/part-time-cfo",
@@ -550,7 +511,7 @@ export const routes: RouteRecord[] = [
       // Legacy Australia redirects
       {
         path: "australia",
-        element: <Navigate to="/au/" replace />,
+        element: <Navigate to="/au" replace />,
       },
       {
         path: "australia/about",
@@ -582,18 +543,11 @@ export const routes: RouteRecord[] = [
       },
       {
         path: "australia/company-incorporation-services-in-singapore",
-        element: (
-          <Navigate
-            to="/company-incorporation-services-in-australia/"
-            replace
-          />
-        ),
+        element: <Navigate to="/company-incorporation-services-in-australia/" replace />,
       },
       {
         path: "australia/corporate-secretary-services-in-singapore",
-        element: (
-          <Navigate to="/corporate-secretary-services-in-australia/" replace />
-        ),
+        element: <Navigate to="/corporate-secretary-services-in-australia/" replace />,
       },
       {
         path: "australia/part-time-cfo",
@@ -619,9 +573,7 @@ export const routes: RouteRecord[] = [
         },
         entry: "src/pages/BlogPost.tsx",
         getStaticPaths: async () => {
-          const { data: posts, error } = await supabase
-            .from("blog_post")
-            .select("slug");
+          const { data: posts, error } = await supabase.from("blog_post").select("slug");
 
           if (error) {
             console.error("SSG slug fetch error", error);
