@@ -50,6 +50,38 @@ export const CountryProvider = ({
   };
 
   const getCountryUrl = (path: string): string => {
+    // Pages that exist ONLY for Singapore - always return Singapore URL
+    const singaporeOnlyPages = [
+      "/corporate-tax-filing-singapore",
+      "/valuation-services-singapore",
+      "/use-of-ai-in-finance",
+      "/strategic-finance-singapore",
+      "/success-stories",
+      "/achievements",
+      "/guide",
+      "/news",
+      "/privacy-policy",
+      "/terms",
+    ];
+
+    // Check if the path matches any Singapore-only page
+    const isSingaporeOnlyPage = singaporeOnlyPages.some(
+      (pagePath) => path === pagePath || path.startsWith(pagePath)
+    );
+
+    // If it's a Singapore-only page, always return the Singapore version
+    if (isSingaporeOnlyPage) {
+      return path;
+    }
+
+    // Handle Home page navigation
+    if (path === "/") {
+      if (country === "uae") return "/uae";
+      if (country === "australia") return "/au";
+      return "/";
+    }
+
+    // Existing logic for country-specific service pages
     if (path.startsWith("/accounting"))
       return `/${getCountryServiceSlug("accounting")}`;
     if (path.startsWith("/bookkeeping"))
@@ -62,25 +94,29 @@ export const CountryProvider = ({
       return `/${getCountryServiceSlug("company-incorporation")}`;
     if (path.startsWith("/corporate-secretary"))
       return `/${getCountryServiceSlug("corporate-secretary")}`;
+
+    // Part Time CFO has unique country-specific paths
     if (path.startsWith("/part-time-cfo")) {
       if (country === "uae") return `/uae/virtual-cfo-services-uae`;
       if (country === "australia") return `/au/virtual-cfo-services-australia`;
       return `/part-time-cfo`;
     }
-    if (
-      [
-        "/about",
-        "/blog",
-        "/contact-us",
-        // "/taxation",
-        // "/privacy-policy",
-        // "/terms",
-      ].includes(path)
-    ) {
-      if (country === "singapore") return `${path}`;
+
+    // Taxation has country-specific versions
+    if (path === "/taxation" || path.startsWith("/taxation")) {
+      if (country === "uae") return `/taxation-Services-in-uae`;
+      if (country === "australia") return `/taxation-Services-in-australia`;
+      return `/taxation`;
+    }
+
+    // Pages that have country-prefixed versions (about, blog, contact-us)
+    if (["/about", "/blog", "/contact-us"].includes(path)) {
+      if (country === "singapore") return path;
       return `/${country}${path}`;
     }
-    return path.endsWith("/") ? path : `${path}`;
+
+    // Default: return the path as-is
+    return path;
   };
 
   const handleSetCountry = (newCountry: Country) => {
