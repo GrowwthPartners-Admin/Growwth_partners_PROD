@@ -56,7 +56,7 @@ export const HowWeWorkSection = () => {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="relative mb-8 last:mb-0 "
+              className="relative mb-10 last:mb-0 "
             >
               <div className="flex items-start gap-6">
                 <div className="flex-shrink-0">

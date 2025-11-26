@@ -4,31 +4,26 @@ import { Search, Settings, Zap, TrendingUp, Rocket } from "lucide-react";
 const steps = [
   {
     icon: Search,
-    number: "01",
     title: "Assess",
     description: "Map your finance stack, entities, reporting cadence, VAT and Corporate Tax posture, and objectives. Define a 90-day plan."
   },
   {
     icon: Settings,
-    number: "02",
     title: "Stabilise and Standardise",
     description: "Tighten books, payroll, VAT, and Corporate Tax processes. Align management reports and compliance calendars."
   },
   {
     icon: Zap,
-    number: "03",
     title: "Automate and Instrument",
     description: "Activate Ryzup.ai inside Sheets and your accounting platform for refreshes, checks, reconciliations, dashboards."
   },
   {
     icon: TrendingUp,
-    number: "04",
     title: "Forecast and Decide",
     description: "Build scenarios for hiring, pricing, ad spend, collection cycles, and expansion. Prepare investor-ready narratives."
   },
   {
     icon: Rocket,
-    number: "05",
     title: "Scale Confidently",
     description: "Add entities, metrics, and automations as you grow across UAE and GCC, with stronger controls and visibility."
   }
@@ -73,7 +68,6 @@ export const HowWeWorkSection = () => {
                   </div>
                   <div className="flex-grow">
                     <div className="flex items-center gap-3 mb-3">
-                      <span className="text-orange-600 font-bold text-sm">{step.number}</span>
                       <h3 className="text-2xl font-semibold text-gray-900">{step.title}</h3>
                     </div>
                     <p className="text-gray-600 leading-relaxed">{step.description}</p>

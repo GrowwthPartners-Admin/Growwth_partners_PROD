@@ -1,13 +1,59 @@
+import { useState,useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
-import { ArrowRight, Sparkles } from "lucide-react";
+import { } from "lucide-react";
 import { OptimizedImage } from "@/components/ui/optimized-image";
-import heroImage from "@/assets/uae-business.webp";
 import { ContactModal } from "@/components/ui/contact-modal";
-import { useState } from "react";
+import {
+  ArrowDown,
+  DollarSign,
+  Trophy,
+  Users,
+  Clock,
+  Phone,
+  ArrowRight, Sparkles 
+} from "lucide-react";
+import heroImage from "@/assets/uae-business.webp";
 
 export const HeroSection = () => {
   const [contactModalOpen, setContactModalOpen] = useState(false);
+  const [imageLoaded, setImageLoaded] = useState(false);
+  const [showContent, setShowContent] = useState(false);
+
+    useEffect(() => {
+      setShowContent(true);
+    }, []);
+
+  const factBadges = [
+    {
+      icon: <DollarSign className="h-5 w-5 text-white" />,
+      text: "$50M+ managed annually",
+      position: "bottom-10 left-10",
+      delay: 0.5,
+      variant: "gradient",
+    },
+    {
+      icon: <Trophy className="h-5 w-5 text-white" />,
+      text: "95% client retention",
+      position: "top-10 right-10",
+      delay: 0.8,
+      variant: "success",
+    },
+    {
+      icon: <Users className="h-5 w-5 text-white" />,
+      text: "500+ clients served",
+      position: "bottom-20 right-5 lg:bottom-0 lg:right-20",
+      delay: 1.1,
+      variant: "info",
+    },
+    {
+      icon: <Clock className="h-5 w-5 text-white" />,
+      text: "15+ years experience",
+      position: "top-10 left-5 lg:top-20 lg:left-10",
+      delay: 1.4,
+      variant: "gradient",
+    },
+  ];
 
   const handlePrimaryCTA = () => {
     setContactModalOpen(true);
@@ -42,18 +88,18 @@ export const HeroSection = () => {
             </motion.div>
 
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-gray-900 leading-tight">
-              Finance experts with AI that your team will actually use
+              Finance <span className="text-brand-orange"> experts </span>  with <span className="text-brand-orange"> AI </span> that your <span className="text-brand-orange"> team </span> will  actually  use
             </h1>
             
             <p className="text-lg md:text-xl text-gray-700 mb-8 leading-relaxed">
-              Work with a senior finance team that blends real-world CFO know-how with practical AI. Growwth Partners helps UAE businesses get cleaner numbers, faster reporting, and confident decisions across accounting, tax, payroll, and strategic finance. Powered by Ryzup.ai for forecasting, reconciliations, error checks, and dashboards.
+              Growwth Partners provides UAE businesses with CFO expertise and practical AI (Ryzup.ai) for faster, cleaner numbers across accounting, tax, payroll, and strategy
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
               <Button
                 onClick={handlePrimaryCTA}
                 size="lg"
-                className="bg-orange-600 hover:bg-orange-700 text-white font-semibold px-8"
+                className="bg-orange-600 hover:bg-orange-700 text-white px-8 py-6 text-lg font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all"
               >
                 Book a Free Strategy Call
                 <ArrowRight className="ml-2 h-5 w-5" />
@@ -62,63 +108,77 @@ export const HeroSection = () => {
                 onClick={handleSecondaryCTA}
                 size="lg"
                 variant="outline"
-                className="border-orange-600 text-orange-600 hover:bg-orange-50 font-semibold px-8"
+                className="border-orange-600 text-orange-600 hover:bg-orange-50 px-8 py-6 text-lg font-semibold rounded-lg transition-all"
               >
                 Speak to a CFO Expert
               </Button>
             </div>
           </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="relative"
+        <motion.div
+            className="order-1 lg:order-2 relative"
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{
+              opacity: showContent ? 1 : 0,
+              scale: showContent ? 1 : 0.95,
+            }}
+            transition={{ duration: 0.5, delay: 0.1 }}
           >
-            <div className="relative rounded-2xl overflow-hidden shadow-2xl">
-              <OptimizedImage
-                src={heroImage}
-                alt="UAE Business Finance Excellence"
-                className="w-full h-auto"
-              />
-              <div className="absolute top-4 right-4 bg-orange-600 text-white px-4 py-2 rounded-full text-sm font-semibold shadow-lg">
-                AI-Powered Finance
+            <div className="relative z-10 w-full max-w-[600px] mx-auto aspect-[3/2]">
+              {/* Skeleton loader - only show briefly while image loads */}
+              {!imageLoaded && (
+                <div className="absolute inset-0 bg-gradient-to-br from-gray-100 to-gray-200 rounded-lg animate-pulse"></div>
+              )}
+
+              <div className="relative rounded-lg overflow-hidden shadow-2xl w-full h-full">
+                <OptimizedImage
+                  src={heroImage}
+                  alt="Financial Growth"
+                  className="rounded-lg object-cover w-full h-full"
+                  priority={true}
+                  width={600}
+                  height={400}
+                  onLoad={() => setImageLoaded(true)}
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 600px"
+                />
+
+                {/* Floating badges - show after image loads */}
+                {factBadges.map((badge, index) => (
+                  <motion.div
+                    key={index}
+                    className={`absolute ${badge.position} hidden sm:block`}
+                    initial={{
+                      opacity: 0,
+                      scale: 0.8,
+                    }}
+                    animate={{
+                      opacity: 1,
+                      scale: 1,
+                    }}
+                    transition={{
+                      duration: 0.5,
+                      delay: badge.delay,
+                    }}
+                  >
+                    <div className="rounded-2xl overflow-hidden p-0.5 bg-white shadow-lg">
+                      <div className="flex items-center gap-3 px-4 py-3 rounded-xl bg-white">
+                        <div className="bg-[#1c7c6e] p-1.5 rounded-full flex items-center justify-center">
+                          {badge.icon}
+                        </div>
+                        <span className="font-medium text-gray-800 whitespace-nowrap">
+                          {badge.text}
+                        </span>
+                      </div>
+                    </div>
+                  </motion.div>
+                ))}
               </div>
+
+              {/* Shadow background - show after image loads */}
+              {imageLoaded && (
+                <div className="absolute inset-0 bg-[#21C55D]/10 rounded-lg filter blur-xl -z-10 transform translate-x-4 translate-y-4 w-full h-full"></div>
+              )}
             </div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.8, duration: 0.5 }}
-              className="absolute -bottom-6 -left-6 bg-white rounded-xl shadow-xl p-4 border border-orange-100"
-            >
-              <div className="flex items-center gap-3">
-                <div className="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center">
-                  <Sparkles className="w-6 h-6 text-orange-600" />
-                </div>
-                <div>
-                  <div className="text-sm text-gray-600">Near-Zero Errors</div>
-                  <div className="text-lg font-bold text-gray-900">AI-Verified</div>
-                </div>
-              </div>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 1, duration: 0.5 }}
-              className="absolute -top-6 -right-6 bg-white rounded-xl shadow-xl p-4 border border-orange-100"
-            >
-              <div className="flex items-center gap-3">
-                <div className="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center">
-                  <ArrowRight className="w-6 h-6 text-orange-600" />
-                </div>
-                <div>
-                  <div className="text-sm text-gray-600">Decision Speed</div>
-                  <div className="text-lg font-bold text-gray-900">3x Faster</div>
-                </div>
-              </div>
-            </motion.div>
           </motion.div>
         </div>
       </div>

@@ -26,7 +26,7 @@ const benefits = [
 
 export const WhyChooseSection = () => {
   return (
-    <section className="py-20 bg-white">
+    <section className="py-16 bg-white">
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -53,7 +53,7 @@ export const WhyChooseSection = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="bg-gradient-to-br from-orange-50 to-amber-50 p-6 rounded-xl hover:shadow-lg transition-shadow border border-orange-100"
+                className="bg-gradient-to-br from-orange-50 to-amber-50 p-6 rounded-xl shadow hover:shadow-lg transition-shadow border border-orange-100"
               >
                 <div className="w-12 h-12 bg-orange-600 rounded-lg flex items-center justify-center mb-4">
                   <Icon className="w-6 h-6 text-white" />

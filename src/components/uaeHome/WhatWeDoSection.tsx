@@ -1,5 +1,14 @@
 import { motion } from "framer-motion";
-import { Briefcase, TrendingUp, Calculator, Users, FileText, Shield, Building, DollarSign } from "lucide-react";
+import { 
+  Briefcase, 
+  TrendingUp, 
+  Calculator, 
+  Users, 
+  FileText, 
+  Shield, 
+  Building, 
+  DollarSign 
+} from "lucide-react";
 
 const services = [
   {
@@ -14,7 +23,7 @@ const services = [
   },
   {
     icon: Calculator,
-    title: "Accounting and Bookkeeping (UAE)",
+    title: "Accounting and Bookkeeping",
     description: "Monthly closes, management reports, and ledgers aligned to FTA expectations. Multi-entity and multi-currency ready."
   },
   {
@@ -44,6 +53,29 @@ const services = [
   }
 ];
 
+const ServiceCard = ({ service, index }: { service: (typeof services)[number]; index: number }) => {
+  const Icon = service.icon;
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.6, delay: index * 0.05 }}
+      className="bg-white p-6 rounded-xl hover:shadow-lg transition-all border shadow border-gray-200 hover:border-orange-300"
+    >
+      <div className="w-12 h-12 bg-gradient-to-br from-orange-500 to-amber-500 rounded-lg flex items-center justify-center mb-4">
+        <Icon className="w-6 h-6 text-white" />
+      </div>
+      <h3 className="text-lg font-semibold mb-3 text-gray-900">
+        {service.title}
+      </h3>
+      <p className="text-gray-600 text-sm leading-relaxed">
+        {service.description}
+      </p>
+    </motion.div>
+  );
+};
+
 export const WhatWeDoSection = () => {
   return (
     <section className="py-20 bg-gradient-to-br from-gray-50 to-orange-50">
@@ -63,26 +95,22 @@ export const WhatWeDoSection = () => {
           </p>
         </motion.div>
 
-        <div className="max-w-6xl mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {services.map((service, index) => {
-            const Icon = service.icon;
-            return (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.05 }}
-                className="bg-white p-6 rounded-xl hover:shadow-lg transition-all border border-gray-200 hover:border-orange-300"
-              >
-                <div className="w-12 h-12 bg-gradient-to-br from-orange-500 to-amber-500 rounded-lg flex items-center justify-center mb-4">
-                  <Icon className="w-6 h-6 text-white" />
-                </div>
-                <h3 className="text-lg font-semibold mb-3 text-gray-900">{service.title}</h3>
-                <p className="text-gray-600 text-sm leading-relaxed">{service.description}</p>
-              </motion.div>
-            );
-          })}
+        {/* First 6 in a 3x2 grid */}
+        <div className="max-w-6xl mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+          {services.slice(0, 6).map((service, index) => (
+            <div key={service.title} className="w-full max-w-md mx-auto">
+              <ServiceCard service={service} index={index} />
+            </div>
+          ))}
+        </div>
+
+        {/* Last 2 centered as a pair */}
+        <div className="max-w-6xl mx-auto flex flex-col sm:flex-row justify-center">
+          {services.slice(6).map((service, index) => (
+            <div key={service.title} className="w-full max-w-md mx-auto">
+              <ServiceCard service={service} index={index + 6} />
+            </div>
+          ))}
         </div>
       </div>
     </section>

@@ -10,33 +10,6 @@ import { SectorsSection } from "@/components/uaeHome/SectorsSection";
 import { FaqSection } from "@/components/accounting/FaqSection";
 import { CtaSection } from "@/components/shared/CtaSection";
 
-const HomeUAE = () => {
-  const organizationSchema = {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    name: "Growwth Partners UAE",
-    url: "https://growwthpartners.com/uae",
-    logo: "https://growwthpartners.com/lovable-uploads/5f2bc1cf-2bab-424d-8245-eb52af504603.png",
-    sameAs: [
-      "https://www.linkedin.com/company/growwth-partners/",
-      "https://www.youtube.com/@GrowwthPartners",
-    ],
-    description:
-      "Expert finance team combining CFO expertise with AI. Growwth Partners delivers accounting, tax, payroll, and strategic finance services for UAE businesses, powered by Ryzup.ai.",
-    address: {
-      "@type": "PostalAddress",
-      addressCountry: "UAE",
-    },
-    areaServed: "UAE, GCC",
-    serviceType: "Financial Services, Accounting, Corporate Tax, VAT",
-    contactPoint: {
-      "@type": "ContactPoint",
-      email: "jd@growwthpartners.com",
-      telephone: "+65 9861 5600",
-      contactType: "Business Service",
-    },
-  };
-
   const faqItems = [
     {
       question: "What does Growwth Partners deliver for UAE businesses?",
@@ -64,6 +37,56 @@ const HomeUAE = () => {
     }
   ];
 
+const HomeUAE = () => {
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "FAQPage",
+        "@id": "https://growwthpartners.com/uae/#faq",
+        "name": "Finance & CFO Services UAE - FAQ | Growwth Partners",
+        "mainEntity": faqItems.map(faq => ({
+          "@type": "Question",
+          "name": faq.question,
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": faq.answer
+          }
+        }))
+      },
+    {
+      "@type": "LocalBusiness",
+      "@id": "https://growwthpartners.com/#localbusiness",
+      "name": "Growwth Partners",
+      "url": "https://growwthpartners.com/uae",
+      "description": "Professional accounting, bookkeeping, payroll, taxation, compliance, cash flow modeling, and CFO services in UAE.",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "32 Marasi Drive Street",
+        "addressLocality": "Business Bay - Dubai",
+        "addressRegion": "The Binary by OMNIYAT,UAE",
+        "postalCode": "",
+        "addressCountry": "AE"
+      },
+      "telephone": "+65 9861 5600"
+    },
+      {
+        "@type": "Organization",
+        "@id": "https://growwthpartners.com/#organization",
+        "name": "Growwth Partners",
+        "url": "https://growwthpartners.com",
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "email": "jd@growwthpartners.com",
+          "telephone": "+65 9861 5600",
+          "contactType": "business"
+        }
+      }
+    ]
+  };
+
+
+
   return (
     <Layout>
       <SEOhelper
@@ -71,7 +94,7 @@ const HomeUAE = () => {
         description="Work with senior finance experts who blend CFO expertise with practical AI. Get cleaner numbers, faster reporting, and confident decisions across accounting, VAT, Corporate Tax, and strategic finance in the UAE. Powered by Ryzup.ai."
         keywords="uae accounting, dubai cfo services, vat compliance uae, corporate tax uae, payroll uae, fractional cfo dubai, business finance uae, ai accounting"
         canonicalUrl="https://growwthpartners.com/uae"
-        structuredData={organizationSchema}
+        structuredData={structuredData}
       />
       <motion.div
         initial={{ opacity: 0 }}
@@ -91,7 +114,7 @@ const HomeUAE = () => {
           description="If your goals are cleaner numbers, faster closes, and confident decisions, Growwth Partners UAE is ready."
           primaryButtonText="Book a Free Strategy Call"
           secondaryButtonText="Speak to a CFO Expert"
-          backgroundColor="from-orange-50 to-amber-50"
+          backgroundColor="from-brand-blue to-blue-700"
         />
       </motion.div>
     </Layout>
