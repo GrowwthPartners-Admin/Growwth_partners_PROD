@@ -40,7 +40,7 @@ export const HowWeWorkSection = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <span className="inline-block px-4 py-1 bg-brand-orange/10 text-brand-orange rounded-full text-sm font-semibold mb-4">
+          <span className="inline-block px-4 py-2 bg-[#e9faf7] text-[#06C0A9] rounded-full text-sm font-semibold mb-4">
             Our Process
           </span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
@@ -61,7 +61,7 @@ export const HowWeWorkSection = () => {
               <div className="flex items-start gap-6">
                 <div className="flex-shrink-0">
                   <div className="relative">
-                    <div className="w-16 h-16 bg-gradient-to-br from-brand-blue to-blue-600 rounded-full flex items-center justify-center shadow-lg">
+                    <div className="w-16 h-16 bg-gradient-to-br from-brand-blue to-[#6bdecd] rounded-full flex items-center justify-center shadow-lg">
                       <step.icon className="h-8 w-8 text-white" />
                     </div>
                     {index < steps.length - 1 && (
