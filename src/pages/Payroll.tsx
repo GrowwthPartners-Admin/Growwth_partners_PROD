@@ -1,4 +1,3 @@
-import { Navigate } from "react-router-dom";
 import { Layout } from "@/components/Layout";
 import { HeroSection } from "@/components/payroll/HeroSection";
 import { IntroSection } from "@/components/payroll/IntroSection";
@@ -6,12 +5,9 @@ import { ServicesSection } from "@/components/payroll/ServicesSection";
 import { TrustedSection } from "@/components/accounting/TrustedSection";
 import { AboutTestimonials } from "@/components/about/AboutTestimonials";
 import { motion } from "framer-motion";
-import { useCountry } from "@/contexts/CountryContext";
 import SEOhelper from "@/components/SEOhelper";
 
 const PayrollPage = () => {
-  const { country } = useCountry();
-
   const structuredData = {
     "@context": "https://schema.org",
     "@graph": [
@@ -51,15 +47,6 @@ const PayrollPage = () => {
       },
     ],
   };
-
-  // Redirect non-Singapore users to their respective home pages
-  if (country === "uae") {
-    return <Navigate to="/uae" replace />;
-  }
-
-  if (country === "australia") {
-    return <Navigate to="/au" replace />;
-  }
 
   return (
     <Layout>

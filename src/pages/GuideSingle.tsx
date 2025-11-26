@@ -1,8 +1,7 @@
 import { useEffect } from "react";
-import { useParams, Navigate } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { Layout } from "@/components/Layout";
 import { useGuides } from "@/hooks/useGuides";
-import { useCountry } from "@/contexts/CountryContext";
 import GuideDetail from "./GuideDetail";
 import { Head } from "vite-react-ssg";
 
@@ -10,24 +9,6 @@ const GuideSinglePage = () => {
   const { slug } = useParams<{ slug: string }>();
   const { guides, loading, error } = useGuides();
   const guide = guides.find((g) => g.slug === slug);
-  const { country } = useCountry();
-
-  // Redirect non-Singapore users to their respective home pages
-  if (country === "uae") {
-    return (
-      <>
-        <Navigate to="/uae" replace />
-      </>
-    );
-  }
-
-  if (country === "australia") {
-    return (
-      <>
-        <Navigate to="/au" replace />
-      </>
-    );
-  }
 
   useEffect(() => {
     window.scrollTo(0, 0);

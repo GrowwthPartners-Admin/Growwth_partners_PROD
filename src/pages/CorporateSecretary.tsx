@@ -1,4 +1,3 @@
-import { Navigate } from "react-router-dom";
 import { Layout } from "@/components/Layout";
 import { motion } from "framer-motion";
 import { HeroSection } from "@/components/corporatesecretary/HeroSection";
@@ -10,21 +9,9 @@ import { AboutTestimonials } from "@/components/about/AboutTestimonials";
 import { FaqSection } from "@/components/corporatesecretary/FaqSection";
 import { CaseStudySection } from "@/components/corporatesecretary/CaseStudySection";
 import { ExpertBlogSection } from "@/components/corporatesecretary/ExpertBlogSection";
-import { useCountry } from "@/contexts/CountryContext";
 import SEOhelper from "@/components/SEOhelper";
 
 const CorporateSecretaryPage = () => {
-  const { country } = useCountry();
-
-  // Redirect non-Singapore users to their respective home pages
-  if (country === "uae") {
-    return <Navigate to="/uae" replace />;
-  }
-
-  if (country === "australia") {
-    return <Navigate to="/au" replace />;
-  }
-
   const structuredData = {
     "@context": "https://schema.org",
     "@graph": [

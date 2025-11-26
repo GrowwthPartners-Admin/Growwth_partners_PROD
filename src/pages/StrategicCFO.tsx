@@ -1,4 +1,3 @@
-import { Navigate } from "react-router-dom";
 import { Layout } from "@/components/Layout";
 import { motion } from "framer-motion";
 import { HeroSection } from "@/components/strategicCFO/HeroSection";
@@ -9,21 +8,9 @@ import { ProcessSection } from "@/components/strategicCFO/ProcessSection";
 import { WhyGrowwthSection } from "@/components/strategicCFO/WhyGrowwthSection";
 import { LeadershipSection } from "@/components/strategicCFO/LeadershipSection";
 import { FAQSection } from "@/components/strategicCFO/FAQSection";
-import { useCountry } from "@/contexts/CountryContext";
 import SEOhelper from "@/components/SEOhelper";
 
 const StrategicCFOPage = () => {
-  const { country } = useCountry();
-
-  // Redirect non-Singapore users to their respective home pages
-  if (country === "uae") {
-    return <Navigate to="/uae" replace />;
-  }
-
-  if (country === "australia") {
-    return <Navigate to="/au" replace />;
-  }
-
   const structuredData = {
     "@context": "https://schema.org",
     "@graph": [
