@@ -90,11 +90,7 @@ export const HeroSection = () => {
               transition={{ delay: 0.3 }}
               className="text-lg md:text-xl text-gray-700 mb-8 leading-relaxed"
             >
-              Get a senior finance team that blends deep CFO expertise with
-              production-grade AI. Growwth Partners delivers strategic finance,
-              accounting, and tax services enhanced by our own finance AI stack,
-              Ryzup.ai — so you make faster decisions, reduce errors, and stay
-              fully compliant across Australia.
+              Get strategic finance, accounting, and tax services enhanced by Ryzup.ai for faster decisions and full compliance across<span className=" font-bold"> Australia </span>  
             </motion.p>
 
             <motion.div

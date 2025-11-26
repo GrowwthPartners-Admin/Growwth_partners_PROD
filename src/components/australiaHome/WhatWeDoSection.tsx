@@ -63,7 +63,7 @@ export const WhatWeDoSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-16 "
         >
           <span className="inline-block px-4 py-1 bg-[#06C0A9] text-white rounded-full text-sm font-semibold mb-4">
             Our Services
@@ -85,7 +85,7 @@ export const WhatWeDoSection = () => {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
               className={`
-        bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100
+        bg-gradient-to-br from-blue-50 to-[#d5f5ef]/90 p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100
         ${index === services.length - 1 ? "lg:col-start-2" : ""}
       `}
             >
