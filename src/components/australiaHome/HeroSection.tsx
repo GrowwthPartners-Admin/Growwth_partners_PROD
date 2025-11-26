@@ -13,10 +13,12 @@ import {
 import heroImage from "@/assets/business-in-australia.webp";
 import { OptimizedImage } from "@/components/ui/optimized-image";
 import { Badge } from "@/components/ui/badge";
+import { ContactModal } from "@/components/ui/contact-modal";
 
 export const HeroSection = () => {
   const [imageLoaded, setImageLoaded] = useState(false);
   const [showContent, setShowContent] = useState(false);
+  const [contactModalOpen, setContactModalOpen] = useState(false);
 
   // Show content immediately, don't wait for image
   useEffect(() => {
@@ -101,12 +103,7 @@ export const HeroSection = () => {
             >
               <Button
                 size="lg"
-                onClick={() =>
-                  window.open(
-                    "https://calendly.com/jd-growwthpartners/15min?month=2025-11",
-                    "_blank"
-                  )
-                }
+                onClick={() => setContactModalOpen(true)}
                 className="bg-[#06C0A9] hover:bg-[#06C0A9] text-white px-8 py-6 text-lg font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all"
               >
                 Book a Free Strategy Call
@@ -198,6 +195,7 @@ export const HeroSection = () => {
           </motion.div>
         </div>
       </div>
+      <ContactModal open={contactModalOpen} onOpenChange={setContactModalOpen} />
     </section>
   );
 };
