@@ -50,6 +50,9 @@ export const CountryProvider = ({
   };
 
   const getCountryUrl = (path: string): string => {
+    // Normalize path - remove trailing slashes
+    const normalizedPath = path.endsWith("/") && path !== "/" ? path.slice(0, -1) : path;
+    
     // Pages that exist ONLY for Singapore - always return Singapore URL
     const singaporeOnlyPages = [
       "/corporate-tax-filing-singapore",
@@ -64,59 +67,66 @@ export const CountryProvider = ({
       "/terms",
     ];
 
-    // Check if the path matches any Singapore-only page
+    // Check if the path matches any Singapore-only page (exact match only)
     const isSingaporeOnlyPage = singaporeOnlyPages.some(
-      (pagePath) => path === pagePath || path.startsWith(pagePath)
+      (pagePath) => normalizedPath === pagePath || normalizedPath.startsWith(`${pagePath}/`)
     );
 
     // If it's a Singapore-only page, always return the Singapore version
     if (isSingaporeOnlyPage) {
-      return path;
+      return normalizedPath;
     }
 
     // Handle Home page navigation
-    if (path === "/") {
+    if (normalizedPath === "" || normalizedPath === "/") {
       if (country === "uae") return "/uae";
       if (country === "australia") return "/au";
       return "/";
     }
 
-    // Existing logic for country-specific service pages
-    if (path.startsWith("/accounting"))
-      return `/${getCountryServiceSlug("accounting")}`;
-    if (path.startsWith("/bookkeeping"))
-      return `/${getCountryServiceSlug("bookkeeping")}`;
-    if (path.startsWith("/payroll"))
-      return `/${getCountryServiceSlug("payroll")}`;
-    if (path.startsWith("/cash-flow"))
-      return `/${getCountryServiceSlug("cash-flow")}`;
-    if (path.startsWith("/company-incorporation"))
-      return `/${getCountryServiceSlug("company-incorporation")}`;
-    if (path.startsWith("/corporate-secretary"))
-      return `/${getCountryServiceSlug("corporate-secretary")}`;
-
     // Part Time CFO has unique country-specific paths
-    if (path.startsWith("/part-time-cfo")) {
-      if (country === "uae") return `/uae/virtual-cfo-services-uae`;
-      if (country === "australia") return `/au/virtual-cfo-services-australia`;
-      return `/part-time-cfo`;
+    if (normalizedPath === "/part-time-cfo" || normalizedPath.startsWith("/part-time-cfo/")) {
+      if (country === "uae") return "/uae/virtual-cfo-services-uae";
+      if (country === "australia") return "/au/virtual-cfo-services-australia";
+      return "/part-time-cfo";
     }
 
     // Taxation has country-specific versions
-    if (path === "/taxation" || path.startsWith("/taxation")) {
-      if (country === "uae") return `/taxation-Services-in-uae`;
-      if (country === "australia") return `/taxation-Services-in-australia`;
-      return `/taxation`;
+    if (normalizedPath === "/taxation" || normalizedPath.startsWith("/taxation/")) {
+      if (country === "uae") return "/taxation-Services-in-uae";
+      if (country === "australia") return "/taxation-Services-in-australia";
+      return "/taxation";
+    }
+
+    // Service pages with country-specific slugs
+    if (normalizedPath === "/accounting" || normalizedPath.startsWith("/accounting/")) {
+      return `/${getCountryServiceSlug("accounting")}`;
+    }
+    if (normalizedPath === "/bookkeeping" || normalizedPath.startsWith("/bookkeeping/")) {
+      return `/${getCountryServiceSlug("bookkeeping")}`;
+    }
+    if (normalizedPath === "/payroll" || normalizedPath.startsWith("/payroll/")) {
+      return `/${getCountryServiceSlug("payroll")}`;
+    }
+    if (normalizedPath === "/cash-flow" || normalizedPath.startsWith("/cash-flow/")) {
+      return `/${getCountryServiceSlug("cash-flow")}`;
+    }
+    if (normalizedPath === "/company-incorporation" || normalizedPath.startsWith("/company-incorporation/")) {
+      return `/${getCountryServiceSlug("company-incorporation")}`;
+    }
+    if (normalizedPath === "/corporate-secretary" || normalizedPath.startsWith("/corporate-secretary/")) {
+      return `/${getCountryServiceSlug("corporate-secretary")}`;
     }
 
     // Pages that have country-prefixed versions (about, blog, contact-us)
-    if (["/about", "/blog", "/contact-us"].includes(path)) {
-      if (country === "singapore") return path;
-      return `/${country}${path}`;
+    if (["/about", "/blog", "/contact-us"].includes(normalizedPath)) {
+      if (country === "singapore") return normalizedPath;
+      if (country === "uae") return `/uae${normalizedPath}`;
+      if (country === "australia") return `/au${normalizedPath}`;
     }
 
     // Default: return the path as-is
-    return path;
+    return normalizedPath;
   };
 
   const handleSetCountry = (newCountry: Country) => {
