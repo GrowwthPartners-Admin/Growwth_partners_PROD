@@ -26,7 +26,7 @@ const features = [
 
 export const WhyChooseSection = () => {
   return (
-    <section className="py-20 bg-white">
+    <section className="py-16 bg-white">
       <div className="container-custom">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -35,11 +35,11 @@ export const WhyChooseSection = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <span className="inline-block px-4 py-1 bg-blue-100 text-brand-blue rounded-full text-sm font-semibold mb-4">
+          <span className="inline-block px-4 py-1 bg-blue-100 text-[#06C0A9] rounded-full text-sm font-semibold mb-4">
             Why Choose Us
           </span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-            Why Choose Growwth Partners (AU)
+            Why Choose Growwth Partners (Australia)
           </h2>
         </motion.div>
 
@@ -51,9 +51,9 @@ export const WhyChooseSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="group p-6 bg-gray-50 rounded-xl hover:bg-blue-50 hover:shadow-lg transition-all duration-300"
+              className="group p-6 bg-blue-50 rounded-xl hover:bg-blue-100 hover:shadow-lg transition-all duration-300"
             >
-              <div className="mb-4 inline-flex items-center justify-center w-14 h-14 bg-brand-blue/10 rounded-lg group-hover:bg-brand-blue group-hover:scale-110 transition-all duration-300">
+              <div className="mb-4 inline-flex items-center justify-center w-14 h-14 bg-blue-100 rounded-lg group-hover:bg-brand-blue group-hover:scale-110 transition-all duration-300">
                 <feature.icon className="h-7 w-7 text-brand-blue group-hover:text-white transition-colors" />
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-3">

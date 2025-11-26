@@ -29,6 +29,29 @@ const features = [
   }
 ];
 
+const FeatureCard = ({ feature, index }) => (
+  <motion.div
+    initial={{ opacity: 0, y: 20 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.5, delay: index * 0.1 }}
+    viewport={{ once: true }}
+    className="bg-white/60 backdrop-blur-sm p-6 rounded-xl border border-gray-200 hover:bg-white/80 transition-all duration-300 shadow-sm"
+  >
+    <div className="mb-4 inline-flex items-center justify-center w-12 h-12 bg-[#6bdecd] rounded-lg">
+      <feature.icon className="h-6 w-6 text-white" />
+    </div>
+
+    <h3 className="text-xl font-bold mb-3">
+      {feature.title}
+    </h3>
+
+    <p className="text-gray-600 leading-relaxed">
+      {feature.description}
+    </p>
+  </motion.div>
+);
+
+
 export const AIAdvantageSection = () => {
   return (
     <section className="py-20 bg-gradient-to-br from-blue-50 to-purple-50 text-gray-900 relative overflow-hidden">
@@ -54,35 +77,31 @@ export const AIAdvantageSection = () => {
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12 max-w-6xl mx-auto">
-          {features.map((feature, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              viewport={{ once: true }}
-              className="bg-white/60 backdrop-blur-sm p-6 rounded-xl border border-gray-200 hover:bg-white/80 transition-all duration-300 shadow-sm"
-            >
-              <div className="mb-4 inline-flex items-center justify-center w-12 h-12 bg-brand-orange rounded-lg">
-                <feature.icon className="h-6 w-6 text-white" />
-              </div>
-              <h3 className="text-xl font-bold mb-3">
-                {feature.title}
-              </h3>
-              <p className="text-gray-600 leading-relaxed">
-                {feature.description}
-              </p>
-            </motion.div>
-          ))}
-        </div>
+       {/* First row: 3 items */}
+<div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-10">
+  {features.slice(0, 3).map((feature, index) => (
+    <div key={feature.title} className="w-full max-w-sm mx-auto">
+      <FeatureCard feature={feature} index={index} />
+    </div>
+  ))}
+</div>
+
+{/* Second row: 2 items centered */}
+<div className="flex flex-col sm:flex-row justify-center mb-12">
+  {features.slice(3).map((feature, index) => (
+    <div key={feature.title} className="w-full max-w-sm mx-auto">
+      <FeatureCard feature={feature} index={index + 3} />
+    </div>
+  ))}
+</div>
+
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3 }}
           viewport={{ once: true }}
-          className="bg-white/60 backdrop-blur-sm border border-gray-200 rounded-2xl p-8 text-center max-w-4xl mx-auto shadow-sm"
+          className="bg-[#aaece2] backdrop-blur-sm border border-gray-200 rounded-2xl p-8 text-center max-w-4xl mx-auto shadow-sm"
         >
           <p className="text-xl font-semibold">
             Result: fewer manual errors, faster closes, decision-ready numbers — with humans in control and AI doing the heavy lifting.

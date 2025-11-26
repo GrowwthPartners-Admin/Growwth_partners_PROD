@@ -26,7 +26,7 @@ const sectors = [
 
 export const SectorsSection = () => {
   return (
-    <section className="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
+    <section className="py-16 bg-gradient-to-br from-gray-50 to-blue-50">
       <div className="container-custom">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -51,7 +51,7 @@ export const SectorsSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="group relative overflow-hidden bg-white rounded-xl p-8 shadow-md hover:shadow-xl transition-all duration-300"
+              className="group relative overflow-hidden bg-white/90 rounded-xl p-8 shadow-md hover:shadow-xl transition-all duration-300"
             >
               <div className={`absolute top-0 left-0 w-full h-1 bg-gradient-to-r ${sector.gradient}`}></div>
               
