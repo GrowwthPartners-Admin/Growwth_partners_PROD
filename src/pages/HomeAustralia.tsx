@@ -51,22 +51,22 @@ const HomeAustraliaPage = () => {
           }
         }))
       },
-      {
-        "@type": "Service",
-        "@id": "https://growwthpartners.com/au/#service",
-        "name": "AI-Powered Finance & CFO Services in Australia",
-        "serviceType": [
-          "Fractional CFO Services",
-          "Strategic Finance",
-          "Accounting & Bookkeeping",
-          "Corporate Tax (ATO)",
-          "Payroll & Compliance"
-        ],
-        "areaServed": "Australia",
-        "provider": {
-          "@id": "https://growwthpartners.com/#organization"
-        }
+    {
+      "@type": "LocalBusiness",
+      "@id": "https://growwthpartners.com/#localbusiness",
+      "name": "Growwth Partners",
+      "url": "https://growwthpartners.com/au",
+      "description": "Professional accounting, bookkeeping, payroll, taxation, compliance, cash flow modeling, and CFO services in Australia.",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "50 Clarence St",
+        "addressLocality": "Sydney NSW 2000",
+        "addressRegion": "Australia",
+        "postalCode": "2000",
+        "addressCountry": "NSW"
       },
+      "telephone": "+65 9861 5600"
+    },
       {
         "@type": "Organization",
         "@id": "https://growwthpartners.com/#organization",

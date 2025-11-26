@@ -82,7 +82,7 @@ export const HeroSection = () => {
               </span>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
                 Expert-Led. AI-Powered <span className="text-[#06C0A9]"> Finance </span>  That Moves Your <span className="text-[#06C0A9]"> Business </span> 
-                Forward.
+                Forward
               </h1>
             </motion.div>
 
