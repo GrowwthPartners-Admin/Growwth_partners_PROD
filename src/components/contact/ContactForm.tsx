@@ -66,6 +66,8 @@ const countryCodes = [
   { code: "+966", country: "Saudi Arabia", flag: "🇸🇦" },
 ];
 
+const isBrowser = typeof window !== "undefined";
+
 export const ContactForm = () => {
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -78,8 +80,8 @@ export const ContactForm = () => {
     service: "",
     message: ""
   });
-  const recaptcha = useRef(null);
-  // const key = import.meta.env.VITE_SITE_KEY;
+  const recaptcha = useRef<any>(null);
+  const key = import.meta.env.VITE_SITE_KEY;
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -93,14 +95,14 @@ export const ContactForm = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    const captchaValue = recaptcha.current?.getValue();
+    const captchaValue = recaptcha.current?.getValue?.();
     if (!captchaValue) {
       toast({
         title: "Submission Error",
         description: "Please complete the captcha and try again.",
         variant: "destructive",
       });
-      return; // stop submission
+      return;
     }
 
     setIsSubmitting(true);
@@ -170,7 +172,7 @@ export const ContactForm = () => {
           />
         </div>
       </div>
-      
+
       <div className="space-y-2">
         <Label htmlFor="email">Email Address</Label>
         <div className="relative">
@@ -187,7 +189,7 @@ export const ContactForm = () => {
           />
         </div>
       </div>
-      
+
       <div className="space-y-2">
         <Label htmlFor="phone">Phone Number</Label>
         <div className="flex space-x-2">
@@ -201,7 +203,11 @@ export const ContactForm = () => {
             <SelectContent className="max-h-[250px]">
               <ScrollArea className="h-[200px]">
                 {countryCodes.map((country) => (
-                  <SelectItem key={country.code} value={country.code} className="text-base py-2">
+                  <SelectItem
+                    key={country.code}
+                    value={country.code}
+                    className="text-base py-2"
+                  >
                     <span className="flex items-center">
                       <span className="mr-2 text-lg">{country.flag}</span>
                       <span>{country.code}</span>
@@ -226,7 +232,7 @@ export const ContactForm = () => {
           </div>
         </div>
       </div>
-      
+
       <div className="space-y-2">
         <Label htmlFor="service">Service Looking For</Label>
         <Select
@@ -248,7 +254,7 @@ export const ContactForm = () => {
           </SelectContent>
         </Select>
       </div>
-      
+
       <div className="space-y-2">
         <Label htmlFor="message">Message for us</Label>
         <div className="relative">
@@ -264,19 +270,24 @@ export const ContactForm = () => {
         </div>
       </div>
 
-      
-      <Button 
-        type="submit" 
-        className="w-full bg-brand-orange hover:bg-brand-orange/90 text-white py-6 text-lg font-medium transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5" 
+      <Button
+        type="submit"
+        className="w-full bg-brand-orange hover:bg-brand-orange/90 text-white py-6 text-lg font-medium transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5"
         disabled={isSubmitting}
       >
         {isSubmitting ? "Submitting..." : "Submit Request"}
       </Button>
-      <div className="w-full flex justify-center">
-       <div className="w-full flex justify-center">
-    <ReCAPTCHA sitekey={import.meta.env.VITE_SITE_KEY} ref={recaptcha} />
-  </div>
-  </div>
+
+      {isBrowser && (
+        <div className="w-full flex justify-center">
+          <div className="w-full flex justify-center">
+            <ReCAPTCHA
+              sitekey={key}
+              ref={recaptcha}
+            />
+          </div>
+        </div>
+      )}
     </form>
   );
 };
