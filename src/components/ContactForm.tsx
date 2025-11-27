@@ -63,7 +63,6 @@ const countryCodes = [
   { code: "+966", country: "Saudi Arabia", flag: "🇸🇦" },
 ];
 
-const isBrowser = typeof window !== "undefined";
 
 export function ContactForm({ onSuccess }: ContactFormProps) {
   const { toast } = useToast();
@@ -77,8 +76,7 @@ export function ContactForm({ onSuccess }: ContactFormProps) {
     service: "",
   });
 
-  // const recaptcha = useRef<any>(null);
-  // const key = import.meta.env.VITE_SITE_KEY;
+
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -91,16 +89,7 @@ export function ContactForm({ onSuccess }: ContactFormProps) {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-
-    // const captchaValue = recaptcha.current?.getValue?.();
-    // if (!captchaValue) {
-    //   toast({
-    //     title: "Submission Error",
-    //     description: "Please complete the captcha and try again.",
-    //     variant: "destructive",
-    //   });
-    //   return;
-    // }
+    
 
     setIsSubmitting(true);
 
@@ -260,13 +249,6 @@ export function ContactForm({ onSuccess }: ContactFormProps) {
         {isSubmitting ? "Submitting..." : "Submit Request"}
       </Button>
 
-      {/* {isBrowser && (
-        <div className="w-full flex justify-center">
-          <div className="w-full flex justify-center">
-            <ReCAPTCHA sitekey={key} ref={recaptcha} />
-          </div>
-        </div>
-      )} */}
     </form>
   );
 }
