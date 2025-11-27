@@ -245,6 +245,34 @@ export const routes: RouteRecord[] = [
         },
       },
       {
+        path: "uae/success-stories",
+        async lazy() {
+          const { default: Component } = await import("./pages/SuccessStories");
+          return { Component };
+        },
+      },
+      {
+        path: "uae/guide",
+        async lazy() {
+          const { default: Component } = await import("./pages/Guide");
+          return { Component };
+        },
+      },
+      {
+        path: "uae/news",
+        async lazy() {
+          const { default: Component } = await import("./pages/News");
+          return { Component };
+        },
+      },
+      {
+        path: "uae/achievements",
+        async lazy() {
+          const { default: Component } = await import("./pages/Achievements");
+          return { Component };
+        },
+      },
+      {
         path: "accounting-services-in-uae",
         async lazy() {
           const { default: Component } = await import("./pages/Accounting");
@@ -349,6 +377,34 @@ export const routes: RouteRecord[] = [
         path: "au/contact-us",
         async lazy() {
           const { default: Component } = await import("./pages/Contact");
+          return { Component };
+        },
+      },
+      {
+        path: "au/success-stories",
+        async lazy() {
+          const { default: Component } = await import("./pages/SuccessStories");
+          return { Component };
+        },
+      },
+      {
+        path: "au/guide",
+        async lazy() {
+          const { default: Component } = await import("./pages/Guide");
+          return { Component };
+        },
+      },
+      {
+        path: "au/news",
+        async lazy() {
+          const { default: Component } = await import("./pages/News");
+          return { Component };
+        },
+      },
+      {
+        path: "au/achievements",
+        async lazy() {
+          const { default: Component } = await import("./pages/Achievements");
           return { Component };
         },
       },
