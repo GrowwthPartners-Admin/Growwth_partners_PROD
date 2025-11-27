@@ -59,10 +59,6 @@ export const CountryProvider = ({
       "/valuation-services-singapore",
       "/use-of-ai-in-finance",
       "/strategic-finance-singapore",
-      "/success-stories",
-      "/achievements",
-      "/guide",
-      "/news",
       "/privacy-policy",
       "/terms",
     ];
@@ -118,8 +114,8 @@ export const CountryProvider = ({
       return `/${getCountryServiceSlug("corporate-secretary")}`;
     }
 
-    // Pages that have country-prefixed versions (about, blog, contact-us)
-    if (["/about", "/blog", "/contact-us"].includes(normalizedPath)) {
+    // Pages that have country-prefixed versions (about, blog, contact-us, success-stories, guide, news, achievements)
+    if (["/about", "/blog", "/contact-us", "/success-stories", "/guide", "/news", "/achievements"].includes(normalizedPath)) {
       if (country === "singapore") return normalizedPath;
       if (country === "uae") return `/uae${normalizedPath}`;
       if (country === "australia") return `/au${normalizedPath}`;
