@@ -20,7 +20,7 @@ import {
   MessageSquare 
 } from "lucide-react";
 import { sendToContactApi, mapContactPagePayload } from "@/lib/contactApi";
-import ReCAPTCHA from "react-google-recaptcha";
+import  ReCAPTCHA  from "react-google-recaptcha";
 
 const services = [
   "Accounting Services",
@@ -79,7 +79,7 @@ export const ContactForm = () => {
     message: ""
   });
   const recaptcha = useRef(null);
-  const key = import.meta.env.VITE_SITE_KEY;
+  // const key = import.meta.env.VITE_SITE_KEY;
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -274,7 +274,7 @@ export const ContactForm = () => {
       </Button>
       <div className="w-full flex justify-center">
        <div className="w-full flex justify-center">
-    <ReCAPTCHA sitekey={key} ref={recaptcha} />
+    <ReCAPTCHA sitekey={import.meta.env.VITE_SITE_KEY} ref={recaptcha} />
   </div>
   </div>
     </form>
