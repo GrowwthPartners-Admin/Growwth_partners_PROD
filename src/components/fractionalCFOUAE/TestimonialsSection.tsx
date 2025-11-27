@@ -26,6 +26,24 @@ const testimonialVideos = [
     name: "Migara Tennakoon",
     role: "Founder & CEO, Peace Lily",
   },
+  {
+      id: "70p2vilm80",
+      title: "Customer Testimonial 3",
+      name: "Sejkin Cavan",
+      role: "Founder & CEO, Seneva",
+    },
+    {
+      id: "kos5z2qvc2",
+      title: "Customer Testimonial 4",
+      name: "Sheena Chein",
+      role: "Founder & CEO, Tiger Hall",
+    },
+    {
+      id: "u5hhsmcpqb",
+      title: "Customer Testimonial 5",
+      name: "Marcos",
+      role: "Founder & CEO, Pengea",
+    },
 ];
 
 export const TestimonialsSection: React.FC = () => {
