@@ -40,13 +40,7 @@ const SuccessStoriesPage = () => {
         imageBg="bg-gradient-to-r from-green-500 to-brand-green"
       />
       <div className="container-custom mb-16">
-        <Alert className="bg-amber-50 border-amber-200">
-          <Construction className="h-5 w-5 text-amber-500" />
-          <AlertDescription className="text-amber-800">
-            This page is currently under construction. Our success stories are
-            being compiled and will be available soon.
-          </AlertDescription>
-        </Alert>
+       
       </div>
     </Layout>
   );

@@ -57,14 +57,7 @@ const NewsPage = () => {
         ]}
       />
       <div className="container-custom mb-16">
-        <Alert className="bg-amber-50 border-amber-200">
-          <Construction className="h-5 w-5 text-amber-500" />
-          <AlertDescription className="text-amber-800">
-            Our news and media section is being updated with our latest press
-            coverage. Please check back soon for the latest news about Growwth
-            Partners.
-          </AlertDescription>
-        </Alert>
+
       </div>
     </Layout>
   );
