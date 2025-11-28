@@ -27,7 +27,7 @@ export const D2COverview = () => {
           >
             <div className="absolute -top-6 -right-6 w-64 h-64 bg-brand-orange/10 rounded-full filter blur-3xl"></div>
             <img
-              src="/images/d2c-overview.jpg"
+              src="/images/d2c-business-overview.jpg"
               alt="D2C Business Overview"
               className="rounded-2xl shadow-2xl relative z-10 w-full"
             />

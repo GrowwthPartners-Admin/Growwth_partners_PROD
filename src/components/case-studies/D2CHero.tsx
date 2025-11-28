@@ -3,8 +3,9 @@ import { motion } from "framer-motion";
 
 export const D2CHero = () => {
   return (
-    <section className="relative py-20 bg-gradient-to-br from-brand-dark via-gray-900 to-brand-dark overflow-hidden">
-      <div className="absolute inset-0 bg-grid-white/[0.02] bg-[size:60px_60px]" />
+    <section className="relative py-20 overflow-hidden">
+      <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{ backgroundImage: 'url(/images/d2c-hero-bg.png)' }} />
+      <div className="absolute inset-0 bg-brand-dark/80" />
       <div className="container-custom relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
