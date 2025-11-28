@@ -1,4 +1,4 @@
-import { Navigate } from "react-router-dom";
+import { Navigate, Link } from "react-router-dom";
 import { Layout } from "@/components/Layout";
 import { PlaceholderContent } from "@/components/PlaceholderContent";
 import { useCountry } from "@/contexts/CountryContext";
@@ -7,6 +7,7 @@ import { Construction } from "lucide-react";
 import SEOhelper from "@/components/SEOhelper";
 
 const SuccessStoriesPage = () => {
+  const { getCountryUrl } = useCountry();
   const successStoriesSchema = {
     "@context": "https://schema.org",
     "@type": "WebPage",
@@ -108,9 +109,9 @@ const SuccessStoriesPage = () => {
                 category: "Financial Forecasting"
               }
             ].map((study, index) => (
-              <a
+              <Link
                 key={index}
-                href={study.url}
+                to={getCountryUrl(study.url)}
                 className="group bg-white rounded-xl shadow-md hover:shadow-2xl transition-all duration-300 overflow-hidden hover:-translate-y-2"
               >
                 <div className="p-8">
@@ -128,7 +129,7 @@ const SuccessStoriesPage = () => {
                     </svg>
                   </div>
                 </div>
-              </a>
+              </Link>
             ))}
           </div>
         </div>
