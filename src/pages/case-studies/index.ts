@@ -7,3 +7,4 @@ export { default as DataDrivenSuccessCaseStudy } from './DataDrivenSuccessCaseSt
 export { default as GamingIndustryCaseStudy } from './GamingIndustryCaseStudy';
 export { default as TechBusinessCaseStudy } from './TechBusinessCaseStudy';
 export { default as D2CCaseStudy } from './D2CCaseStudy';
+export { default as FinanceCaseStudy } from './FinanceCaseStudy';

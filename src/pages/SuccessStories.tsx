@@ -100,6 +100,12 @@ const SuccessStoriesPage = () => {
                 description: "Strategic compliance navigation enabling 25% valuation growth for D2C business.",
                 url: "/case-studies/d2c-expansion",
                 category: "D2C Expansion"
+              },
+              {
+                title: "Transforming Financial Forecasting in Retail Fuel Industry",
+                description: "Data-driven financial modeling and automated dashboards for strategic growth and business valuation.",
+                url: "/case-studies/finance-forecasting",
+                category: "Financial Forecasting"
               }
             ].map((study, index) => (
               <a

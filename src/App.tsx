@@ -523,6 +523,13 @@ export const routes: RouteRecord[] = [
           return { Component };
         },
       },
+      {
+        path: "case-studies/finance-forecasting",
+        async lazy() {
+          const { default: Component } = await import("./pages/case-studies/FinanceCaseStudy");
+          return { Component };
+        },
+      },
       // UAE Case Studies
       {
         path: "uae/case-studies/healthcare",
@@ -580,6 +587,13 @@ export const routes: RouteRecord[] = [
           return { Component };
         },
       },
+      {
+        path: "uae/case-studies/finance-forecasting",
+        async lazy() {
+          const { default: Component } = await import("./pages/case-studies/FinanceCaseStudy");
+          return { Component };
+        },
+      },
       // Australia Case Studies
       {
         path: "au/case-studies/healthcare",
@@ -634,6 +648,13 @@ export const routes: RouteRecord[] = [
         path: "au/case-studies/d2c-expansion",
         async lazy() {
           const { default: Component } = await import("./pages/case-studies/D2CCaseStudy");
+          return { Component };
+        },
+      },
+      {
+        path: "au/case-studies/finance-forecasting",
+        async lazy() {
+          const { default: Component } = await import("./pages/case-studies/FinanceCaseStudy");
           return { Component };
         },
       },
