@@ -88,6 +88,12 @@ const SuccessStoriesPage = () => {
                 description: "Strategic financial guidance for exponential growth in gaming.",
                 url: "/case-studies/gaming-industry",
                 category: "Gaming"
+              },
+              {
+                title: "Transforming Financial Reporting for Multi-Country Tech Business",
+                description: "From legacy Excel to efficient reporting across 15 tech businesses in 12+ countries.",
+                url: "/case-studies/tech-business",
+                category: "Tech Business"
               }
             ].map((study, index) => (
               <a

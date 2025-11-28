@@ -509,6 +509,13 @@ export const routes: RouteRecord[] = [
           return { Component };
         },
       },
+      {
+        path: "case-studies/tech-business",
+        async lazy() {
+          const { default: Component } = await import("./pages/case-studies/TechBusinessCaseStudy");
+          return { Component };
+        },
+      },
       // UAE Case Studies
       {
         path: "uae/case-studies/healthcare",
@@ -552,6 +559,13 @@ export const routes: RouteRecord[] = [
           return { Component };
         },
       },
+      {
+        path: "uae/case-studies/tech-business",
+        async lazy() {
+          const { default: Component } = await import("./pages/case-studies/TechBusinessCaseStudy");
+          return { Component };
+        },
+      },
       // Australia Case Studies
       {
         path: "au/case-studies/healthcare",
@@ -592,6 +606,13 @@ export const routes: RouteRecord[] = [
         path: "au/case-studies/gaming-industry",
         async lazy() {
           const { default: Component } = await import("./pages/case-studies/GamingIndustryCaseStudy");
+          return { Component };
+        },
+      },
+      {
+        path: "au/case-studies/tech-business",
+        async lazy() {
+          const { default: Component } = await import("./pages/case-studies/TechBusinessCaseStudy");
           return { Component };
         },
       },
