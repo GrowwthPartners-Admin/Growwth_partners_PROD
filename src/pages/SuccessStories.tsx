@@ -94,6 +94,12 @@ const SuccessStoriesPage = () => {
                 description: "From legacy Excel to efficient reporting across 15 tech businesses in 12+ countries.",
                 url: "/case-studies/tech-business",
                 category: "Tech Business"
+              },
+              {
+                title: "Rapid Expansion into Thailand and Indonesia",
+                description: "Strategic compliance navigation enabling 25% valuation growth for D2C business.",
+                url: "/case-studies/d2c-expansion",
+                category: "D2C Expansion"
               }
             ].map((study, index) => (
               <a
