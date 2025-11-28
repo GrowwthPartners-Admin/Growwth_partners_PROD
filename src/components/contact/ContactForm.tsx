@@ -1,4 +1,5 @@
-import React, { useState,useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
+import { useCountry } from "@/contexts/CountryContext";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -70,16 +71,37 @@ const isBrowser = typeof window !== "undefined";
 
 export const ContactForm = () => {
   const { toast } = useToast();
+  const { country } = useCountry();
   const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const getDefaultCountryCode = () => {
+    switch (country) {
+      case "uae":
+        return "+971";
+      case "australia":
+        return "+61";
+      default:
+        return "+65"; // Singapore
+    }
+  };
+
   const [formData, setFormData] = useState({
     name: "",
     company: "",
     email: "",
-    countryCode: "+65",
+    countryCode: getDefaultCountryCode(),
     phone: "",
     service: "",
     message: ""
   });
+
+  useEffect(() => {
+    setFormData((prev) => ({
+      ...prev,
+      countryCode: getDefaultCountryCode(),
+    }));
+  }, [country]);
+
   const recaptcha = useRef<any>(null);
   const key = import.meta.env.VITE_SITE_KEY;
 
@@ -121,7 +143,7 @@ export const ContactForm = () => {
         name: "",
         company: "",
         email: "",
-        countryCode: "+65",
+        countryCode: getDefaultCountryCode(),
         phone: "",
         service: "",
         message: ""

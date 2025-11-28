@@ -1,4 +1,5 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
+import { useCountry } from "@/contexts/CountryContext";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -66,15 +67,35 @@ const countryCodes = [
 
 export function ContactForm({ onSuccess }: ContactFormProps) {
   const { toast } = useToast();
+  const { country } = useCountry();
   const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const getDefaultCountryCode = () => {
+    switch (country) {
+      case "uae":
+        return "+971";
+      case "australia":
+        return "+61";
+      default:
+        return "+65"; // Singapore
+    }
+  };
+
   const [formData, setFormData] = useState({
     name: "",
     company: "",
     email: "",
-    countryCode: "+65",
+    countryCode: getDefaultCountryCode(),
     phone: "",
     service: "",
   });
+
+  useEffect(() => {
+    setFormData((prev) => ({
+      ...prev,
+      countryCode: getDefaultCountryCode(),
+    }));
+  }, [country]);
 
 
 
@@ -107,7 +128,7 @@ export function ContactForm({ onSuccess }: ContactFormProps) {
         name: "",
         company: "",
         email: "",
-        countryCode: "+65",
+        countryCode: getDefaultCountryCode(),
         phone: "",
         service: "",
       });
