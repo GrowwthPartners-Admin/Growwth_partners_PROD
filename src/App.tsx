@@ -509,6 +509,92 @@ export const routes: RouteRecord[] = [
           return { Component };
         },
       },
+      // UAE Case Studies
+      {
+        path: "uae/case-studies/healthcare",
+        async lazy() {
+          const { default: Component } = await import("./pages/case-studies/HealthcareCaseStudy");
+          return { Component };
+        },
+      },
+      {
+        path: "uae/case-studies/ecommerce",
+        async lazy() {
+          const { default: Component } = await import("./pages/case-studies/EcommerceCaseStudy");
+          return { Component };
+        },
+      },
+      {
+        path: "uae/case-studies/food-tech",
+        async lazy() {
+          const { default: Component } = await import("./pages/case-studies/FoodTechCaseStudy");
+          return { Component };
+        },
+      },
+      {
+        path: "uae/case-studies/online-consumer-goods",
+        async lazy() {
+          const { default: Component } = await import("./pages/case-studies/OnlineConsumerGoodsCaseStudy");
+          return { Component };
+        },
+      },
+      {
+        path: "uae/case-studies/data-driven-success",
+        async lazy() {
+          const { default: Component } = await import("./pages/case-studies/DataDrivenSuccessCaseStudy");
+          return { Component };
+        },
+      },
+      {
+        path: "uae/case-studies/gaming-industry",
+        async lazy() {
+          const { default: Component } = await import("./pages/case-studies/GamingIndustryCaseStudy");
+          return { Component };
+        },
+      },
+      // Australia Case Studies
+      {
+        path: "au/case-studies/healthcare",
+        async lazy() {
+          const { default: Component } = await import("./pages/case-studies/HealthcareCaseStudy");
+          return { Component };
+        },
+      },
+      {
+        path: "au/case-studies/ecommerce",
+        async lazy() {
+          const { default: Component } = await import("./pages/case-studies/EcommerceCaseStudy");
+          return { Component };
+        },
+      },
+      {
+        path: "au/case-studies/food-tech",
+        async lazy() {
+          const { default: Component } = await import("./pages/case-studies/FoodTechCaseStudy");
+          return { Component };
+        },
+      },
+      {
+        path: "au/case-studies/online-consumer-goods",
+        async lazy() {
+          const { default: Component } = await import("./pages/case-studies/OnlineConsumerGoodsCaseStudy");
+          return { Component };
+        },
+      },
+      {
+        path: "au/case-studies/data-driven-success",
+        async lazy() {
+          const { default: Component } = await import("./pages/case-studies/DataDrivenSuccessCaseStudy");
+          return { Component };
+        },
+      },
+      {
+        path: "au/case-studies/gaming-industry",
+        async lazy() {
+          const { default: Component } = await import("./pages/case-studies/GamingIndustryCaseStudy");
+          return { Component };
+        },
+      },
       // Admin Routes
       {
         path: "admin/blog",

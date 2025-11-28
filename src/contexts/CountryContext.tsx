@@ -121,6 +121,13 @@ export const CountryProvider = ({
       if (country === "australia") return `/au${normalizedPath}`;
     }
 
+    // Case study pages - preserve location
+    if (normalizedPath.startsWith("/case-studies/")) {
+      if (country === "singapore") return normalizedPath;
+      if (country === "uae") return `/uae${normalizedPath}`;
+      if (country === "australia") return `/au${normalizedPath}`;
+    }
+
     // Default: return the path as-is
     return normalizedPath;
   };
