@@ -46,7 +46,7 @@ export const FaqSection = () => {
                 {/* Custom AccordionTrigger with icon */}
                 <AccordionTrigger className={`
                     group flex items-center justify-between w-full
-                    bg-[#ededed] px-6 py-6
+                    bg-[#ededed] px-6 py-4
                     font-bold text-xl md:text-2xl text-black
                     rounded-none border border-[#e2e2e2] transition-all duration-200 
                     shadow-none
@@ -59,7 +59,7 @@ export const FaqSection = () => {
               borderRadius: "4px",
               borderWidth: "1.5px"
             }}>
-                  <span className="text-left w-full select-none font-medium">{faq.question}</span>
+                  <span className="text-left w-full select-none font-medium text-xl">{faq.question}</span>
                   <span className={`
                       flex items-center justify-center
                       transition-all duration-300

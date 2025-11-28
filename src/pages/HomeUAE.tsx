@@ -111,7 +111,7 @@ const HomeUAE = () => {
         <FaqSection faqs={faqItems} />
         <CtaSection
           title="Expert finance, powered by practical AI for the UAE"
-          description="If your goals are cleaner numbers, faster closes, and confident decisions, Growwth Partners UAE is ready."
+          description="If your goals are cleaner numbers, faster closes, and confident decisions, Growwth Partners UAE is ready"
           primaryButtonText="Book a Free Strategy Call"
           secondaryButtonText="Speak to a CFO Expert"
           backgroundColor="from-brand-blue to-blue-700"

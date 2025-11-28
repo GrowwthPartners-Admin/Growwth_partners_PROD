@@ -106,8 +106,8 @@ const HomeAustraliaPage = () => {
         <TestimonialSection />
         <FaqSection faqs={faqs} />
         <CtaSection
-          title="Expert finance, supercharged with AI."
-          description="If defensible numbers, faster closes, and confident decisions matter, Growwth Partners Australia is ready."
+          title="Expert finance, supercharged with AI"
+          description="If defensible numbers, faster closes, and confident decisions matter, Growwth Partners Australia is ready"
           primaryButtonText="Book a Free Strategy Call"
           secondaryButtonText="Speak to a CFO Expert"
           backgroundColor="from-brand-blue to-blue-700"
