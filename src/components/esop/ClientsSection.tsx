@@ -1,55 +1,111 @@
 import { motion } from "framer-motion";
-import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Award, ArrowRight } from "lucide-react";
-import { Link } from "react-router-dom";
-import { useCountry } from "@/contexts/CountryContext";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselPrevious,
+  CarouselNext,
+} from "@/components/ui/carousel";
+import { Star } from "lucide-react";
+import { LazyIframe } from "@/components/ui/lazy-iframe";
 
 export const ClientsSection = () => {
-  const { getCountryUrl } = useCountry();
+  const testimonialVideos = [
+    {
+      id: "uylxy3pjgl",
+      title: "Client Testimonial 1",
+      name: "Ellie Curran",
+      role: "Ex Co-Founder & CEO, CoLab",
+    },
+    {
+      id: "7lotud5v4w",
+      title: "Client Testimonial 2",
+      name: "Migara Tennakoon",
+      role: "Founder & CEO, Peace Lily",
+    },
+    {
+      id: "70p2vilm80",
+      title: "Client Testimonial 3",
+      name: "Sejkin Cavan",
+      role: "Founder & CEO, Seneva",
+    },
+    {
+      id: "kos5z2qvc2",
+      title: "Client Testimonial 4",
+      name: "Sheena Chein",
+      role: "Founder & CEO, Tiger Hall",
+    },
+  ];
 
   return (
-    <section className="py-20 bg-background">
+    <section className="bg-gray-50 py-[60px]">
       <div className="container-custom">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-center mb-12"
         >
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-foreground">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-6 text-foreground">
             Our Happy Clients
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
-            Not trusting our words? Hear what our clients are saying about us and our services. We support clients across Singapore, Southeast Asia, India, and global markets.
+          <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto font-semibold">
+            Finance made simple with our services. Not trusting our words? Hear
+            what our clients are saying about us and our services.
           </p>
         </motion.div>
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
           viewport={{ once: true }}
-          className="text-center"
+          className="max-w-4xl mx-auto"
         >
-          <Card className="max-w-3xl mx-auto bg-gradient-to-br from-brand-orange/5 to-brand-blue/5 border-2 border-brand-orange/20">
-            <CardContent className="p-12">
-              <Award className="h-16 w-16 text-brand-orange mx-auto mb-6" />
-              <h3 className="text-2xl font-bold mb-4 text-foreground">
-                Trusted by Leading Companies Across APAC
-              </h3>
-              <p className="text-lg text-muted-foreground mb-6">
-                Our ESOP advisory services have helped numerous startups and established companies successfully implement employee stock incentive plans, driving growth and retention.
-              </p>
-              <Link to={getCountryUrl("/success-stories")}>
-                <Button variant="outline" size="lg" className="font-semibold border-2 border-brand-orange text-brand-orange hover:bg-brand-orange hover:text-white">
-                  Read Success Stories
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </Button>
-              </Link>
-            </CardContent>
-          </Card>
+          <Carousel
+            opts={{
+              align: "start",
+              loop: true,
+            }}
+            className="relative"
+          >
+            <CarouselContent>
+              {testimonialVideos.map((video) => (
+                <CarouselItem key={video.id} className="md:basis-full">
+                  <div className="bg-white rounded-lg p-8 shadow-lg">
+                    <div className="flex flex-col items-center mb-4">
+                      <div className="flex gap-1 mb-2">
+                        {[...Array(5)].map((_, i) => (
+                          <Star
+                            key={i}
+                            className="w-5 h-5 fill-brand-orange text-brand-orange"
+                          />
+                        ))}
+                      </div>
+                      <h4 className="text-xl font-semibold mb-1">
+                        {video.name}
+                      </h4>
+                      <p className="text-gray-600 mb-4">{video.role}</p>
+                    </div>
+                    <div className="aspect-video w-[85%] mx-auto overflow-hidden rounded-lg">
+                      <LazyIframe
+                        src={`https://fast.wistia.net/embed/iframe/${video.id}`}
+                        title={video.title}
+                        autoplay={true}
+                        muted={true}
+                      />
+                    </div>
+                  </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-12" />
+            <CarouselNext className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-12" />
+          </Carousel>
+          <p className="text-lg text-gray-600 text-center mt-8">
+            Hear directly from our satisfied clients about their experience
+            working with Growwth Partners.
+          </p>
         </motion.div>
       </div>
     </section>

@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Users, TrendingUp } from "lucide-react";
 import esopHeroImage from "@/assets/esop-hero.jpg";
 
 interface HeroSectionProps {
@@ -26,7 +26,7 @@ export const HeroSection = ({ onEnquireClick }: HeroSectionProps) => {
               Retain talent, motivate teams, and instill ownership with expert ESOP advisory for enhanced performance and competitiveness in your company.
             </p>
             <p className="text-lg text-gray-700 mb-8">
-              Our expert team empowers businesses in Singapore and globally to optimise compensation structures, implement ESOPs with confidence, and navigate compliance seamlessly. We support both established companies and fast-growing startups with end-to-end ESOP advisory services Singapore.
+              We empower businesses in Singapore and globally with end-to-end ESOP advisory services for startups and established companies.
             </p>
             <Button
               onClick={onEnquireClick}
@@ -43,14 +43,49 @@ export const HeroSection = ({ onEnquireClick }: HeroSectionProps) => {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="relative"
           >
-            <div className="rounded-2xl overflow-hidden shadow-2xl relative">
-              <div className="absolute inset-0 bg-gradient-to-tr from-brand-orange/20 to-brand-blue/20 mix-blend-overlay rounded-2xl z-10"></div>
+            <div className="rounded-2xl overflow-hidden shadow-2xl relative z-10">
+              <div className="absolute inset-0 bg-gradient-to-tr from-brand-orange/20 to-brand-blue/20 mix-blend-overlay rounded-2xl"></div>
               <img
                 src={esopHeroImage}
                 alt="ESOP Advisory Services Singapore"
                 className="w-full h-auto object-cover"
               />
             </div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.8 }}
+              className="absolute -bottom-8 -left-8 z-20"
+            >
+              <div className="flex items-center gap-2 bg-white rounded-xl p-3 shadow-lg animate-float-slow backdrop-blur-sm border border-gray-100">
+                <div className="bg-brand-orange/10 p-2 rounded-lg">
+                  <Users className="h-5 w-5 text-brand-orange" />
+                </div>
+                <div>
+                  <p className="text-sm font-semibold text-gray-800">500+</p>
+                  <p className="text-xs text-gray-600">Companies Served</p>
+                </div>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 1 }}
+              className="absolute -top-8 -right-8 z-20"
+            >
+              <div className="flex items-center gap-2 bg-white rounded-xl p-3 shadow-lg animate-float backdrop-blur-sm border border-gray-100">
+                <div className="bg-brand-orange/10 p-2 rounded-lg">
+                  <TrendingUp className="h-5 w-5 text-brand-orange" />
+                </div>
+                <div>
+                  <p className="text-sm font-semibold text-gray-800">Expert</p>
+                  <p className="text-xs text-gray-600">ESOP Advisory</p>
+                </div>
+              </div>
+            </motion.div>
+
             <div className="absolute -bottom-10 -right-10 w-48 h-48 bg-brand-orange/20 rounded-full filter blur-3xl"></div>
             <div className="absolute -top-10 -left-10 w-48 h-48 bg-brand-blue/20 rounded-full filter blur-3xl"></div>
           </motion.div>
