@@ -8,14 +8,14 @@ interface WhatIsSectionProps {
 
 export const WhatIsSection = ({ onEnquireClick }: WhatIsSectionProps) => {
   return (
-    <section className="py-20 bg-background">
+    <section className="py-20 bg-blue-50">
       <div className="container-custom">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="max-w-4xl mx-auto"
+          className="max-w-4xl mx-auto font-medium"
         >
           <div className="flex items-center justify-center mb-6">
             <div className="bg-brand-blue/10 p-4 rounded-full">

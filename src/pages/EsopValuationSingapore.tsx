@@ -115,7 +115,7 @@ const EsopValuationSingapore = () => {
         <WhyMattersSection />
         <ServicesIncludeSection />
         <MethodologySection />
-        <WhyChooseSection onScheduleClick={() => setContactModalOpen(true)} />
+        <WhyChooseSection />
         <ClientsSection />
         <section className="py-20 bg-secondary/5">
           <div className="container-custom">
