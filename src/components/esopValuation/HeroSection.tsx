@@ -22,7 +22,7 @@ export const HeroSection = ({ onEnquireClick }: HeroSectionProps) => {
               ESOP <span className="text-brand-orange">Valuation</span> Services in <span className="text-brand-orange">Singapore</span>
             </h1>
             <p className="text-xl text-gray-700 mb-8">
-              An accurate ESOP valuation Singapore report ensures fairness, transparency, and compliance for both founders and employees. Our independent experts deliver data-driven FMV assessments designed for Singapore's fast-growing business ecosystem. Whether you are granting ESOPs for the first time or updating your annual FMV, our team provides valuation clarity that supports growth and protects your cap table.
+              Our independent experts deliver data-driven FMV assessments for Singapore's fast-growing business ecosystem. Get valuation clarity that supports growth and protects your cap table.
             </p>
             <Button
               onClick={onEnquireClick}

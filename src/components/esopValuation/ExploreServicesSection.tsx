@@ -47,26 +47,31 @@ export const ExploreServicesSection = () => {
           </h2>
         </motion.div>
 
-        <div className="grid md:grid-cols-3 lg:grid-cols-5 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {services.map((service, index) => {
             const Icon = service.icon;
             return (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
               >
                 <Link to={service.link}>
-                  <Card className="h-full border-none shadow-lg hover:shadow-xl transition-all duration-300 bg-gradient-to-br from-white to-gray-50 group">
-                    <CardContent className="p-6 text-center">
-                      <div className="bg-brand-orange/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
-                        <Icon className="h-8 w-8 text-brand-orange" />
+                  <Card className="h-full border-none shadow-lg hover:shadow-xl transition-all duration-300 bg-gradient-to-r from-white to-gray-50 group overflow-hidden">
+                    <CardContent className="p-0">
+                      <div className="flex items-center gap-4 p-5">
+                        <div className="bg-gradient-to-br from-brand-orange to-brand-orange/70 w-14 h-14 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 flex-shrink-0">
+                          <Icon className="h-7 w-7 text-white" />
+                        </div>
+                        <div className="flex-1">
+                          <h3 className="text-lg font-bold text-foreground group-hover:text-brand-orange transition-colors duration-300">
+                            {service.title}
+                          </h3>
+                          <p className="text-sm text-muted-foreground">Learn more →</p>
+                        </div>
                       </div>
-                      <h3 className="text-lg font-bold text-foreground group-hover:text-brand-orange transition-colors duration-300">
-                        {service.title}
-                      </h3>
                     </CardContent>
                   </Card>
                 </Link>
