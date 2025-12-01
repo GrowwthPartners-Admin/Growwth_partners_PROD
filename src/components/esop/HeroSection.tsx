@@ -18,11 +18,11 @@ export const HeroSection = ({ onEnquireClick }: HeroSectionProps) => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-foreground">
-              Crafting, executing, and managing{" "}
-              <span className="text-brand-orange">Employee Stock Incentive Plans</span>
+            <h1 className="text-5xl md:text-6xl font-bold mb-6 text-foreground" style={{lineHeight: 1.1}}>
+              <span className="text-brand-orange"> Crafting, </span> executing and managing
+           <span className="text-brand-orange"> Employee </span>  Stock Incentive <span className="text-brand-orange"> Plans </span>
             </h1>
-            <p className="text-xl text-gray-700 mb-6">
+            <p className="text-xl text-gray-700 mb-4">
               Retain talent, motivate teams, and instill ownership with expert ESOP advisory for enhanced performance and competitiveness in your company.
             </p>
             <p className="text-lg text-gray-700 mb-8">

@@ -10,17 +10,17 @@ export const BlogSection = () => {
   const blogPosts = [
     {
       title: "AI in Finance for CFOs in Singapore",
-      slug: "/ai-in-finance-for-cfos-singapore",
+      slug: "/blog/ai-in-finance-for-cfos-singapore",
       description: "Discover how AI is transforming financial operations and decision-making for CFOs across Singapore."
     },
     {
       title: "Taxation in Singapore: A Complete Guide for Small Business Owners",
-      slug: "/taxation-in-singapore-a-complete-guide-for-small-business-owners",
+      slug: "/blog/taxation-in-singapore-a-complete-guide-for-small-business-owners",
       description: "Navigate Singapore's tax landscape with our comprehensive guide designed specifically for small business owners."
     },
     {
       title: "Various Funding Options Available for Startups",
-      slug: "/various-funding-options-available-for-startups",
+      slug: "/blog/various-funding-options-available-for-startups",
       description: "Explore diverse funding opportunities to fuel your startup's growth journey in Singapore and beyond."
     }
   ];

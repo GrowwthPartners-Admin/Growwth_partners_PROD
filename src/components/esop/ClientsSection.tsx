@@ -35,6 +35,12 @@ export const ClientsSection = () => {
       name: "Sheena Chein",
       role: "Founder & CEO, Tiger Hall",
     },
+    {
+      id: "u5hhsmcpqb",
+      title: "Customer Testimonial 5",
+      name: "Marcos",
+      role: "Founder & CEO, Pengea",
+    },
   ];
 
   return (
