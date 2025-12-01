@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Users, TrendingUp } from "lucide-react";
-import esopHeroImage from "@/assets/esop-hero.jpg";
+import esopHeroImage from "@/assets/esop-advisory.jpg";
 
 interface HeroSectionProps {
   onEnquireClick: () => void;
