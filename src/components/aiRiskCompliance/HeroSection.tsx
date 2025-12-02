@@ -54,7 +54,7 @@ export const HeroSection = () => {
               <Button
                 size="lg"
                 variant="outline"
-                className="border-slate-500 text-slate-200 hover:bg-slate-800/50 px-8 py-6 text-lg"
+                className="border-slate-500 text-brand-orange hover:bg-slate-800/50 hover:text-white px-8 py-6 text-lg"
                 onClick={() => setIsContactModalOpen(true)}
               >
                 Talk to a Risk & Compliance Expert
