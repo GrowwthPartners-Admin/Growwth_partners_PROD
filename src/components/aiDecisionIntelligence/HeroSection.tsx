@@ -1,15 +1,10 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Play, Brain, TrendingUp, DollarSign, BarChart3 } from "lucide-react";
-import { useState } from "react";
-import { ContactModal } from "@/components/ui/contact-modal";
 
 export const HeroSection = () => {
-  const [contactModalOpen, setContactModalOpen] = useState(false);
-
   return (
-    <>
-      <section className="relative min-h-[90vh] flex items-center overflow-hidden bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900">
+    <section className="relative min-h-[90vh] flex items-center overflow-hidden bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900">
         {/* Animated background elements */}
         <div className="absolute inset-0">
           <div className="absolute top-20 left-10 w-72 h-72 bg-blue-500/20 rounded-full blur-3xl animate-pulse" />
@@ -47,7 +42,7 @@ export const HeroSection = () => {
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button
                   size="lg"
-                  onClick={() => setContactModalOpen(true)}
+                  onClick={() => window.open('https://calendly.com/jd-growwthpartners/15min?month=2025-11', '_blank')}
                   className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white px-8 py-6 text-lg font-semibold rounded-xl shadow-lg shadow-cyan-500/25 hover:shadow-xl hover:shadow-cyan-500/30 transition-all"
                 >
                   Schedule a Demo
@@ -56,7 +51,7 @@ export const HeroSection = () => {
                 <Button
                   size="lg"
                   variant="outline"
-                  onClick={() => window.open('https://ryzup.ai/', '_blank')}
+                  onClick={() => window.open('https://app.ryzup.ai/login', '_blank')}
                   className="bg-white/10 backdrop-blur-sm border-white/20 text-white hover:bg-white/20 px-8 py-6 text-lg font-semibold rounded-xl transition-all"
                 >
                   <Play className="mr-2 h-5 w-5" />
@@ -151,9 +146,6 @@ export const HeroSection = () => {
             </motion.div>
           </div>
         </div>
-      </section>
-
-      <ContactModal open={contactModalOpen} onOpenChange={setContactModalOpen} />
-    </>
+    </section>
   );
 };

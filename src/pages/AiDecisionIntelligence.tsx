@@ -7,7 +7,7 @@ import { WhatRyzupGivesSection } from "@/components/aiDecisionIntelligence/WhatR
 import { BuiltForCFOsSection } from "@/components/aiDecisionIntelligence/BuiltForCFOsSection";
 import { HowItWorksSection } from "@/components/aiDecisionIntelligence/HowItWorksSection";
 import { FaqSection } from "@/components/accounting/FaqSection";
-import { CtaSection } from "@/components/shared/CtaSection";
+import { CtaSection } from "@/components/aiDecisionIntelligence/CtaSection";
 
 const AiDecisionIntelligence = () => {
   const structuredData = {
@@ -105,12 +105,7 @@ const AiDecisionIntelligence = () => {
         <BuiltForCFOsSection />
         <HowItWorksSection />
         <FaqSection faqs={faqs} subtitle="Find answers to common questions about AI Decision Intelligence for CFOs" />
-        <CtaSection
-          title="Give Your Finance Team An AI Decision Partner"
-          description="Ryzup.ai brings AI decision intelligence for CFOs in Singapore into a simple, powerful product. Faster answers. Better forecasts. Clearer decisions."
-          primaryButtonText="Schedule a Demo"
-          secondaryButtonText="Get Started With Ryzup AI CFO"
-        />
+        <CtaSection />
       </motion.div>
     </Layout>
   );
