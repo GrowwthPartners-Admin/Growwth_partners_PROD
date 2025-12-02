@@ -11,9 +11,11 @@ interface FaqItem {
 }
 interface FaqSectionProps {
   faqs?: FaqItem[];
+  subtitle?: string;
 }
 export const FaqSection = ({
-  faqs
+  faqs,
+  subtitle = "Find answers to common questions about our accounting services"
 }: FaqSectionProps) => {
   const defaultFaqs = [{
     question: "What services do you offer as an accounting firm?",
@@ -53,7 +55,7 @@ export const FaqSection = ({
           <span className="inline-block px-4 py-1 bg-[#D3E4FD] text-brand-blue rounded-full text-sm font-semibold mb-4">Common Questions</span>
           <h3 className="heading-md mb-4">Frequently Asked Questions</h3>
           <p className="text-lg text-gray-700 max-w-2xl mx-auto">
-            Find answers to common questions about our accounting services
+            {subtitle}
           </p>
         </motion.div>
 

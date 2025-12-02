@@ -78,7 +78,7 @@ const AiFinanceWorkflowPage = () => {
         <HowRyzupIntegratesSection />
         <WhoBenefitsSection />
         <HowItFitsSection />
-        <FaqSection faqs={faqs} />
+        <FaqSection faqs={faqs} subtitle="Find answers to common questions about Finance Workflow With Ryzup.ai" />
       </motion.div>
     </Layout>
   );

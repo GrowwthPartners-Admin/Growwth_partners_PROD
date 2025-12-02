@@ -37,12 +37,12 @@ export const HeroSection = () => {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
-              <Link to="/contact-us">
+              <a href="https://calendly.com/jd-growwthpartners/15min?month=2025-11" target="_blank" rel="noopener noreferrer">
                 <Button size="lg" className="bg-brand-orange hover:bg-brand-orange/90 text-white gap-2 w-full sm:w-auto">
                   Start with a Free Strategy Call
                   <ArrowRight className="w-4 h-4" />
                 </Button>
-              </Link>
+              </a>
               <a href="https://ryzup.ai" target="_blank" rel="noopener noreferrer">
                 <Button size="lg" variant="outline" className="gap-2 w-full sm:w-auto border-brand-blue text-brand-blue hover:bg-brand-blue/5">
                   <Play className="w-4 h-4" />
