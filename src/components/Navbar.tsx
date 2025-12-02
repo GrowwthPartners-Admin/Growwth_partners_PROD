@@ -67,6 +67,10 @@ const navItems = [
         title: "AI Risk & Compliance",
         path: "/ai-risk-compliance-singapore",
       },
+      {
+        title: "AI Decision Intelligence",
+        path: "/ai-decision-intelligence-singapore",
+      },
     ],
   },
   {

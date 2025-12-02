@@ -163,6 +163,13 @@ export const routes: RouteRecord[] = [
         },
       },
       {
+        path: "ai-decision-intelligence-singapore",
+        async lazy() {
+          const { default: Component } = await import("./pages/AiDecisionIntelligence");
+          return { Component };
+        },
+      },
+      {
         path: "privacy-policy",
         async lazy() {
           const { default: Component } = await import("./pages/PrivacyPolicy");
