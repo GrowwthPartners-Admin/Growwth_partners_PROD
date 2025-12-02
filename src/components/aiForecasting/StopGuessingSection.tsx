@@ -58,7 +58,7 @@ export const StopGuessingSection = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="bg-red-50 dark:bg-red-950/20 rounded-2xl p-8"
+            className="bg-red-50 dark:bg-red-950/20 rounded-2xl p-8 border-2 border-red-300"
           >
             <h3 className="text-xl font-semibold mb-6 text-red-700 dark:text-red-400">
               Most teams still rely on...
@@ -79,7 +79,7 @@ export const StopGuessingSection = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="bg-brand-green/5 rounded-2xl p-8"
+            className="bg-brand-green/5 rounded-2xl p-8 border-2 border-green-300"
           >
             <h3 className="text-xl font-semibold mb-6 text-brand-green">
               With RyzUp, you can...
