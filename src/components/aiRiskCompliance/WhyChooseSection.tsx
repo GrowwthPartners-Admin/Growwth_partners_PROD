@@ -100,7 +100,7 @@ export const WhyChooseSection = () => {
           >
             <Button
               size="lg"
-              className="bg-gradient-to-r from-red-500 to-orange-500 hover:from-red-600 hover:to-orange-600 text-white font-semibold px-8 shadow-lg shadow-red-500/25 group"
+              className="bg-gradient-to-r from-red-500 to-orange-500 hover:from-red-600 hover:to-orange-600 text-white font-semibold px-8 shadow-lg shadow-red-500/25 group rounded-lg"
               onClick={() => window.open("https://ryzup.ai/", "_blank")}
             >
               See How Ryzup.ai Handles Risk & Fraud
