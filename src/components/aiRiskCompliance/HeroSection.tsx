@@ -1,8 +1,12 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Shield, AlertTriangle, Eye } from "lucide-react";
+import { ContactModal } from "@/components/ui/contact-modal";
 
 export const HeroSection = () => {
+  const [isContactModalOpen, setIsContactModalOpen] = useState(false);
+
   return (
     <section className="relative min-h-[85vh] flex items-center overflow-hidden bg-gradient-to-br from-slate-950 via-slate-900 to-red-950">
       {/* Background effects */}
@@ -51,11 +55,13 @@ export const HeroSection = () => {
                 size="lg"
                 variant="outline"
                 className="border-slate-500 text-slate-200 hover:bg-slate-800/50 px-8 py-6 text-lg"
-                onClick={() => window.open("https://calendly.com/jd-growwthpartners/15min?month=2025-11", "_blank")}
+                onClick={() => setIsContactModalOpen(true)}
               >
                 Talk to a Risk & Compliance Expert
               </Button>
             </div>
+
+            <ContactModal open={isContactModalOpen} onOpenChange={setIsContactModalOpen} />
           </motion.div>
 
           {/* Right Visual */}
