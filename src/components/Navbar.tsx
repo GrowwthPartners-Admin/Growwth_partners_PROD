@@ -59,6 +59,10 @@ const navItems = [
         title: "AI Finance Workflow",
         path: "/ai-finance-workflow-singapore",
       },
+      {
+        title: "AI Financial Forecasting",
+        path: "/ai-financial-forecasting-singapore",
+      },
     ],
   },
   {
