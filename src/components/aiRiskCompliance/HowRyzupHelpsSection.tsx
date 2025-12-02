@@ -19,7 +19,13 @@ const features = [
       "Costly mistakes that can look like (or hide) fraud"
     ],
     highlight: "This is where AI fraud detection for Singapore businesses starts: clean, trustworthy data.",
-    gradient: "from-red-500 to-orange-500"
+    gradient: "from-red-500 to-orange-500",
+    visualStats: [
+      { value: "Real-time", label: "Monitoring" },
+      { value: "99.5%", label: "Error Detection" },
+      { value: "< 2s", label: "Alert Speed" }
+    ],
+    statusText: "Error Detection Active"
   },
   {
     icon: FileSearch,
@@ -31,7 +37,13 @@ const features = [
       "Support audit readiness with documented, automated checks"
     ],
     highlight: "Together, they operate like AI compliance tools for finance teams: always-on helpers that reduce manual work and tighten your control environment.",
-    gradient: "from-orange-500 to-amber-500"
+    gradient: "from-orange-500 to-amber-500",
+    visualStats: [
+      { value: "4 Agents", label: "Working" },
+      { value: "100%", label: "Reconciled" },
+      { value: "0", label: "Mismatches" }
+    ],
+    statusText: "All Agents Running"
   },
   {
     icon: ShieldCheck,
@@ -43,7 +55,13 @@ const features = [
       "Support compliance with privacy regulations like GDPR and similar frameworks"
     ],
     highlight: "In other words, you get AI compliance tools that are built with privacy by design.",
-    gradient: "from-sky-500 to-blue-500"
+    gradient: "from-sky-500 to-blue-500",
+    visualStats: [
+      { value: "100%", label: "Data Masked" },
+      { value: "GDPR", label: "Compliant" },
+      { value: "Zero", label: "Exposure" }
+    ],
+    statusText: "Privacy Mode Active"
   },
   {
     icon: Brain,
@@ -55,7 +73,13 @@ const features = [
       '"Which customers or suppliers look out of pattern?"'
     ],
     highlight: "That combination of monitoring + explanation is what makes AI fraud detection for Singapore finance teams practical day-to-day.",
-    gradient: "from-violet-500 to-purple-500"
+    gradient: "from-violet-500 to-purple-500",
+    visualStats: [
+      { value: "NLP", label: "Queries" },
+      { value: "Instant", label: "Insights" },
+      { value: "AI CFO", label: "Assistant" }
+    ],
+    statusText: "AI Assistant Ready"
   }
 ];
 
@@ -145,13 +169,13 @@ export const HowRyzupHelpsSection = () => {
                       </div>
                       
                       <div className="grid grid-cols-3 gap-3">
-                        {[1, 2, 3].map((i) => (
+                        {feature.visualStats.map((stat, i) => (
                           <div key={i} className="bg-white/5 rounded-lg p-4 text-center">
                             <div className={`text-2xl font-bold bg-gradient-to-r ${feature.gradient} bg-clip-text text-transparent`}>
-                              {i === 1 ? "24/7" : i === 2 ? "99%" : "<1s"}
+                              {stat.value}
                             </div>
                             <div className="text-xs text-white/50 mt-1">
-                              {i === 1 ? "Monitoring" : i === 2 ? "Accuracy" : "Response"}
+                              {stat.label}
                             </div>
                           </div>
                         ))}
@@ -160,10 +184,10 @@ export const HowRyzupHelpsSection = () => {
                       <div className="bg-white/5 rounded-lg p-4">
                         <div className="flex items-center gap-2 text-green-400 text-sm mb-2">
                           <CheckCircle2 className="w-4 h-4" />
-                          <span>AI Analysis Complete</span>
+                          <span>{feature.statusText}</span>
                         </div>
                         <div className="text-white/60 text-xs">
-                          All checks passed. No critical issues detected.
+                          All checks passed. System operating normally.
                         </div>
                       </div>
                     </div>
