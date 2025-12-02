@@ -72,7 +72,6 @@ export const TurnDataIntoDecisionsSection = () => {
               className="mt-8 text-lg font-semibold text-brand-blue flex items-center gap-2"
             >
               This is AI decision intelligence for CFOs built directly into your daily workflow.
-              <ArrowRight className="w-5 h-5" />
             </motion.p>
           </motion.div>
 

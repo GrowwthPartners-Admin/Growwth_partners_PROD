@@ -52,6 +52,17 @@ const AiDecisionIntelligence = () => {
         ],
       },
       {
+        "@type": "Service",
+        "@id": "https://growwthpartners.com/ai-decision-intelligence-singapore/#service",
+        "name": "ai-decision-intelligence-singapore",
+        "provider": {
+          "@type": "Organization",
+          "name": "Growwth Partners"
+        },
+        "description": "Ryzup.ai gives CFOs in Singapore a live financial cockpit. Get real-time dashboards, automated analysis, and AI-powered forecasting for smarter decisions.",
+        "areaServed": "Singapore"
+      },
+      {
         "@type": "Organization",
         "@id": "https://growwthpartners.com/#organization",
         name: "Growwth Partners",
