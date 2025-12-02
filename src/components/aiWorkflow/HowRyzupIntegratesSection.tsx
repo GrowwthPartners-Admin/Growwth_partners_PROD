@@ -1,12 +1,12 @@
 import { motion } from "framer-motion";
-import { 
-  Table2, 
-  RefreshCw, 
-  ShieldAlert, 
-  Bot, 
-  Lock, 
+import {
+  Table2,
+  RefreshCw,
+  ShieldAlert,
+  Bot,
+  Lock,
   BarChart3,
-  CheckCircle
+  CheckCircle,
 } from "lucide-react";
 
 export const HowRyzupIntegratesSection = () => {
@@ -14,72 +14,78 @@ export const HowRyzupIntegratesSection = () => {
     {
       icon: Table2,
       title: "AI Co-Worker Inside Google Sheets",
-      description: "RyzUp Sheets installs as an extension and becomes your in-sheet AI co-worker.",
+      description:
+        "RyzUp Sheets installs as an extension and becomes your in-sheet AI co-worker.",
       benefits: [
         "Ask questions about your data",
         "Generate analysis and summaries",
         "Build reports and dashboards faster",
-        "Use AI-powered formulas instead of complex manual logic"
+        "Use AI-powered formulas instead of complex manual logic",
       ],
-      color: "brand-blue"
+      color: "brand-blue",
     },
     {
       icon: RefreshCw,
       title: "Automate Data Pulls From Xero",
-      description: "Ryzup.ai connects to Xero so you can refresh accounting data directly into Sheets.",
+      description:
+        "Ryzup.ai connects to Xero so you can refresh accounting data directly into Sheets.",
       benefits: [
         "Download reports into live models",
         "Refresh data with a click instead of exports",
-        "Build automated P&L, cash flow and performance dashboards"
+        "Build automated P&L, cash flow and performance dashboards",
       ],
-      color: "brand-orange"
+      color: "brand-orange",
     },
     {
       icon: ShieldAlert,
       title: "Smart Error Detection",
-      description: "The Smart Error Detection Agent scans your spreadsheets for broken formulas and suspicious values.",
+      description:
+        "The Smart Error Detection Agent scans your spreadsheets for broken formulas and suspicious values.",
       benefits: [
         "Fewer silent errors in your models",
         "Less time hunting for why a number looks wrong",
-        "Stronger trust in reports you send to leadership"
+        "Stronger trust in reports you send to leadership",
       ],
-      color: "brand-green"
+      color: "brand-green",
     },
     {
       icon: Bot,
       title: "AI Agents For GL & Reconciliation",
-      description: "Specialised agents for core finance workflows: GL analyser, Reconciliation, Bookkeeping, Auditor, and Xero agents.",
+      description:
+        "Specialised agents for core finance workflows: GL analyser, Reconciliation, Bookkeeping, Auditor, and Xero agents.",
       benefits: [
         "Speed up reconciliations",
         "Compare data across systems",
         "Highlight unusual patterns or mis-posted entries",
-        "Prepare cleaner, audit-ready schedules"
+        "Prepare cleaner, audit-ready schedules",
       ],
-      color: "brand-blue"
+      color: "brand-blue",
     },
     {
       icon: Lock,
       title: "Anonymiser For Safe Data",
-      description: "The Anonymiser feature protects sensitive information while you use AI.",
+      description:
+        "The Anonymiser feature protects sensitive information while you use AI.",
       benefits: [
         "Mask client and company identifiers",
         "Preserve structure and relationships in data",
-        "Run AI analysis without exposing real identities"
+        "Run AI analysis without exposing real identities",
       ],
-      color: "brand-orange"
+      color: "brand-orange",
     },
     {
       icon: BarChart3,
       title: "AI CFO Views For Real-Time Insights",
-      description: "AI CFO-style dashboards and insights for decision-ready visibility.",
+      description:
+        "AI CFO-style dashboards and insights for decision-ready visibility.",
       benefits: [
         "Cash flow summaries",
         "P&L forecasts",
         "Multi-currency views",
-        "Auto-generated reports and dashboards"
+        "Auto-generated reports and dashboards",
       ],
-      color: "brand-green"
-    }
+      color: "brand-green",
+    },
   ];
 
   const getColorClasses = (color: string) => {
@@ -88,25 +94,25 @@ export const HowRyzupIntegratesSection = () => {
         return {
           bg: "bg-brand-blue/10",
           text: "text-brand-blue",
-          border: "border-brand-blue/20"
+          border: "border-brand-blue/20",
         };
       case "brand-orange":
         return {
           bg: "bg-brand-orange/10",
           text: "text-brand-orange",
-          border: "border-brand-orange/20"
+          border: "border-brand-orange/20",
         };
       case "brand-green":
         return {
           bg: "bg-brand-green/10",
           text: "text-brand-green",
-          border: "border-brand-green/20"
+          border: "border-brand-green/20",
         };
       default:
         return {
           bg: "bg-primary/10",
           text: "text-primary",
-          border: "border-primary/20"
+          border: "border-primary/20",
         };
     }
   };
@@ -140,17 +146,23 @@ export const HowRyzupIntegratesSection = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className={`bg-card rounded-2xl p-6 border ${colors.border} hover:shadow-lg transition-all duration-300`}
+                className={`${colors.bg} rounded-2xl p-6 border ${colors.border} hover:shadow-lg transition-all duration-300`}
               >
-                <div className={`w-12 h-12 ${colors.bg} rounded-xl flex items-center justify-center mb-4`}>
+                <div
+                  className={`w-12 h-12 ${colors.bg} rounded-xl flex items-center justify-center mb-4`}
+                >
                   <feature.icon className={`w-6 h-6 ${colors.text}`} />
                 </div>
                 <h3 className="text-lg font-bold mb-2">{feature.title}</h3>
-                <p className="text-sm text-muted-foreground mb-4">{feature.description}</p>
+                <p className="text-sm text-muted-foreground mb-4">
+                  {feature.description}
+                </p>
                 <ul className="space-y-2">
                   {feature.benefits.map((benefit, i) => (
                     <li key={i} className="flex items-start gap-2 text-sm">
-                      <CheckCircle className={`w-4 h-4 ${colors.text} flex-shrink-0 mt-0.5`} />
+                      <CheckCircle
+                        className={`w-4 h-4 ${colors.text} flex-shrink-0 mt-0.5`}
+                      />
                       <span className="text-foreground/80">{benefit}</span>
                     </li>
                   ))}

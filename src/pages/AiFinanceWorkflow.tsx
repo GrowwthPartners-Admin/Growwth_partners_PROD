@@ -54,7 +54,17 @@ const AiFinanceWorkflowPage = () => {
         },
         "description": "Integrate AI into your finance workflow with Ryzup.ai. Automate reporting, error checks, reconciliations and forecasting in Google Sheets and Xero.",
         "areaServed": "Singapore"
+      },
+      {
+      "@type": "Organization",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "65 Chulia Street",
+        "addressLocality": "Singapore",
+        "postalCode": "049513",
+        "addressCountry": "SG"
       }
+    }
     ]
   };
 
