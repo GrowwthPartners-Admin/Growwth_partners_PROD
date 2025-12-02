@@ -63,6 +63,10 @@ const navItems = [
         title: "AI Financial Forecasting",
         path: "/ai-financial-forecasting-singapore",
       },
+      {
+        title: "AI Risk & Compliance",
+        path: "/ai-risk-compliance-singapore",
+      },
     ],
   },
   {
