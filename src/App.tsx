@@ -142,6 +142,13 @@ export const routes: RouteRecord[] = [
         },
       },
       {
+        path: "ai-finance-workflow-singapore",
+        async lazy() {
+          const { default: Component } = await import("./pages/AiFinanceWorkflow");
+          return { Component };
+        },
+      },
+      {
         path: "privacy-policy",
         async lazy() {
           const { default: Component } = await import("./pages/PrivacyPolicy");

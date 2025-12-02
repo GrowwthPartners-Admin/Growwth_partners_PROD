@@ -55,6 +55,10 @@ const navItems = [
         title: "Business Valuation Services",
         path: "/valuation-services-singapore",
       },
+      {
+        title: "AI Finance Workflow",
+        path: "/ai-finance-workflow-singapore",
+      },
     ],
   },
   {
