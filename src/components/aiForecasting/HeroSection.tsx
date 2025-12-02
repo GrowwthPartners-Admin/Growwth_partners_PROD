@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Play, TrendingUp, Target } from "lucide-react";
+import financeForcasting from "@/assets/finance-forcasting.webp";
 
 export const HeroSection = () => {
   return (
@@ -59,7 +60,7 @@ export const HeroSection = () => {
           >
             <div className="relative rounded-2xl overflow-hidden shadow-2xl">
               <img
-                src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop"
+                src={financeForcasting}
                 alt="AI Financial Forecasting Dashboard"
                 className="w-full h-auto object-cover"
               />
