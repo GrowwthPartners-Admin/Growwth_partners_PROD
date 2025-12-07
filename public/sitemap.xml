@@ -91,24 +91,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-  <url>
-    <loc>https://growwthpartners.com/au/virtual-cfo-services-australia</loc>
-    <lastmod>2025-11-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://growwthpartners.com/uae/virtual-cfo-services-uae</loc>
-    <lastmod>2025-11-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://growwthpartners.com/uae/strategic-finance-singapore</loc>
-    <lastmod>2025-11-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
+
   <url>
     <loc>https://growwthpartners.com/guide</loc>
     <lastmod>2025-11-12</lastmod>
@@ -298,6 +281,19 @@
     <priority>0.8</priority>
   </url>
 
+    <url>
+    <loc>https://growwthpartners.com/uae/virtual-cfo-services-uae</loc>
+    <lastmod>2025-11-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://growwthpartners.com/uae/strategic-finance-singapore</loc>
+    <lastmod>2025-11-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
   <!-- Australia pages -->
   <url>
     <loc>https://growwthpartners.com/au</loc>
@@ -393,6 +389,12 @@
     <loc>https://growwthpartners.com/au/news</loc>
     <lastmod>2025-11-12</lastmod>
     <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+    <url>
+    <loc>https://growwthpartners.com/au/virtual-cfo-services-australia</loc>
+    <lastmod>2025-11-12</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 </urlset>
