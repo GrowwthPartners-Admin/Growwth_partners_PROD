@@ -240,6 +240,13 @@ export const routes: RouteRecord[] = [
         },
       },
       {
+        path: "guide/business-accounting-guide",
+        async lazy() {
+          const { default: Component } = await import("./pages/BusinessAccountingGuide");
+          return { Component };
+        },
+      },
+      {
         path: "news",
         async lazy() {
           const { default: Component } = await import("./pages/News");

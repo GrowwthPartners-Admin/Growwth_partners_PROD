@@ -53,6 +53,28 @@ export const getGuidesByCategory = (category?: string): Guide[] => {
 export const guides: Guide[] = [
   {
     id: 0,
+    Title: "A Comprehensive Guide on Accounting for Businesses",
+    slug: "business-accounting-guide",
+    Image: "/lovable-uploads/f2073f22-e161-45c6-9d26-1c99e770e553.png",
+    Category: "Accounting",
+    Excerpt: "Master business accounting fundamentals. Learn about financial statements, accounting methods, the accounting cycle, financial ratios, budgeting, forecasting, and leveraging accounting software.",
+    Content: "Full guide content for business accounting",
+    publishedAt: "2024-12-08",
+    keyTakeaways: [
+      { title: "Understanding Basic Accounting Principles", description: "Success in business depends on having a solid understanding of basic accounting principles." },
+      { title: "Informed Business Decisions", description: "An accurate analysis and financial statements support well-informed business decisions." },
+      { title: "Importance of Timely Accounting", description: "Timely and accurate accounting is necessary for both financial stability and compliance." },
+      { title: "Leveraging Technology for Efficiency", description: "Accounting efficiency can be greatly increased by utilising technology." }
+    ],
+    faqs: [
+      { question: "Why is the balance sheet important for investors?", answer: "When deciding whether or not to invest in a company, potential shareholders need insight into its financial status which can be obtained through studying its balance sheet." },
+      { question: "Can you have positive net income but still go bankrupt?", answer: "Yes! A company may show positive net income for several periods consecutively but still fail due to lack of liquidity, that is, inability to convert current assets into cash fast enough to cover short-term obligations." },
+      { question: "Is accrual basis accounting more beneficial than cash basis accounting?", answer: "Accrual accounting matches revenues with the costs incurred to produce them, providing a more complete picture of financial health." },
+      { question: "How can financial ratios help make smarter business decisions?", answer: "By reflecting different areas of performance such as liquidity, profitability, and solvency, financial ratios provide useful insights." }
+    ]
+  },
+  {
+    id: 1,
     Title: "The Most Comprehensive Guide to Incorporating a Business in Singapore",
     slug: "incorporating-business-singapore",
     Image: "/images/guides/incorporating-business-singapore.jpeg",
