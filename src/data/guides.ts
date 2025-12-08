@@ -52,6 +52,29 @@ export const getGuidesByCategory = (category?: string): Guide[] => {
 // Define guide content
 export const guides: Guide[] = [
   {
+    id: 1,
+    Title: "A Comprehensive Guide to Part-Time CFO Services in 2024",
+    slug: "part-time-cfo-services-guide",
+    Image: "/lovable-uploads/f2073f22-e161-45c6-9d26-1c99e770e553.png",
+    Category: "Fractional CFO",
+    Excerpt: "Explore the benefits of hiring a Part-Time CFO in 2024. Understand their roles, cost savings, and implementation for strategic financial leadership in your business.",
+    Content: "Full guide content for part-time CFO services",
+    publishedAt: "2024-12-08",
+    keyTakeaways: [
+      { title: "Cost Savings", description: "Hiring a part-time CFO saves businesses 50-70% compared to a full-time CFO, freeing up resources for other needs." },
+      { title: "Flexible Expertise", description: "Part-time CFOs offer high-level financial guidance on a flexible, part-time basis tailored to small and growing businesses." },
+      { title: "Comprehensive Services", description: "They handle financial analysis, cash flow projections, hiring plans, marketing expense management, and ad hoc financial requests." },
+      { title: "Indicators for Need", description: "Businesses struggling with financial management, growth projections, investor reporting, or rapid expansion should consider part-time CFO services." },
+      { title: "Implementation and Success", description: "Effective onboarding involves an initial assessment, goal setting, and regular updates, with success measured by improved profitability and business stability." }
+    ],
+    faqs: [
+      { question: "What is Ryzup.ai AI CFO for Singapore CFOs?", answer: "Ryzup.ai AI CFO is an AI powered financial assistant that gives CFOs and finance leaders in Singapore instant answers to questions about cash flow, hiring, budgets and outlook. It uses your real financial data to generate insights, recommendations and clear explanations in seconds." },
+      { question: "How does Ryzup.ai support smarter decisions for CFOs?", answer: "Ryzup.ai combines AI dashboards, automated analysis and forecasting. Instead of manually building models, you ask questions such as 'What is our outlook for the next quarter' and the AI CFO breaks down projected growth, expenses and cash, then suggests next steps." },
+      { question: "Is Ryzup.ai safe for sensitive financial data?", answer: "Yes. Ryzup.ai is built for finance teams with secure integration to modern accounting platforms and controls around access and collaboration. Your data stays within a structured, enterprise grade environment while you use AI for analysis." },
+      { question: "Do I need to be a data expert to use Ryzup.ai?", answer: "No. Ryzup.ai is designed for CFOs, founders and finance teams who want insights, not dashboards to design. You ask questions and review the answers, models and suggestions in a clean, guided interface." }
+    ]
+  },
+  {
     id: 2,
     Title: "Guide to Financial Reporting Standards in Singapore for Small Entities",
     slug: "financial-reporting-standards-singapore",
