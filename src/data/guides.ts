@@ -52,6 +52,29 @@ export const getGuidesByCategory = (category?: string): Guide[] => {
 // Define guide content
 export const guides: Guide[] = [
   {
+    id: 0,
+    Title: "The Most Comprehensive Guide to Incorporating a Business in Singapore",
+    slug: "incorporating-business-singapore",
+    Image: "/images/guides/incorporating-business-singapore.jpeg",
+    Category: "Incorporation",
+    Excerpt: "Complete guide to incorporating a business in Singapore. Learn about company structures, legal requirements, and step-by-step registration process.",
+    Content: "Full guide content for incorporating a business in Singapore",
+    publishedAt: "2024-12-08",
+    keyTakeaways: [
+      { title: "Effective Incorporation", description: "Singapore attracts entrepreneurs from around the world with its simplified business incorporation process." },
+      { title: "Flexible Structures", description: "A Private Limited Company (PTE LTD) provides ease of investment and legal protection. A variety of other structures are available." },
+      { title: "Resident Director Requirement", description: "The appointment of a minimum of one resident director who is a Singaporean national, a permanent resident, or the holder of a work permit is required." },
+      { title: "Important Legal Documents", description: "The company's incorporation certificate, bylaws, and director and shareholder identification are among the most important documents." },
+      { title: "Compliance and Licencing", description: "In order to maintain good standing after incorporation, designate a company secretary, obtain the required licences, and submit the required yearly reports." }
+    ],
+    faqs: [
+      { question: "Can Non-residents incorporate a company in Singapore?", answer: "Yes, non-residents can incorporate a company in Singapore." },
+      { question: "How many days will it take to incorporate a company in Singapore?", answer: "It usually takes 1-3 days to incorporate a company in Singapore." },
+      { question: "How to get a Director for my company?", answer: "You can appoint a local resident director or use a nominee director service." },
+      { question: "Can I register my company online?", answer: "Yes, you can register your company online through ACRA's BizFile+ portal." }
+    ]
+  },
+  {
     id: 1,
     Title: "A Comprehensive Guide to Part-Time CFO Services in 2024",
     slug: "part-time-cfo-services-guide",
