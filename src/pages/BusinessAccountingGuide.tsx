@@ -364,6 +364,15 @@ const BusinessAccountingGuide = () => {
               They are a bird's eye view into the financial status of a company and can be used as an important tool in evaluating the health of the business. They help in assessing the performance of the business and making informed decisions based on such data.
             </p>
 
+            {/* Financial Statements Image */}
+            <div className="flex justify-center mb-10">
+              <img 
+                src="/images/guides/financial-statements.jpeg" 
+                alt="Basic Financial Statements - Balance Sheet, Income Statement, P&L Statement" 
+                className="w-full max-w-3xl rounded-xl shadow-lg"
+              />
+            </div>
+
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
               {financialStatements.map((statement, index) => (
                 <motion.div
@@ -602,6 +611,15 @@ const BusinessAccountingGuide = () => {
               To make sure that financial reporting is accurate and consistent throughout the year, a series of steps is followed called the accounting cycle. These steps help businesses to ensure that their earlier financial statements are accurate and reliable, which in turn supports better decision-making for financial analysis.
             </p>
 
+            {/* Accounting Cycle Image */}
+            <div className="flex justify-center mb-10">
+              <img 
+                src="/images/guides/accounting-cycle.jpeg" 
+                alt="Steps of Accounting Cycle - Recording Transactions, Adjusting Entries, Closing the Books" 
+                className="w-full max-w-3xl rounded-xl shadow-lg"
+              />
+            </div>
+
             <div className="relative">
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                 {accountingCycleSteps.map((step, index) => (
@@ -767,6 +785,15 @@ const BusinessAccountingGuide = () => {
             <p className="text-lg text-gray-700 mb-8 leading-relaxed">
               A budget is a financial blueprint that estimates incoming receipts and outgoing disbursements over a specified period. It enables organisations to manage assets, anticipate future needs and control costs. Financial planning and control require effective budgeting and forecasting which allows businesses to set targets and predict future financial performances.
             </p>
+
+            {/* Budgeting and Forecasting Image */}
+            <div className="flex justify-center mb-10">
+              <img 
+                src="/images/guides/budgeting-forecasting.jpeg" 
+                alt="How to Create a Budget for Business - Define Objectives, Estimate Revenues, Project Expenses, Review and Adjust" 
+                className="w-full max-w-3xl rounded-xl shadow-lg"
+              />
+            </div>
 
             <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
               {budgetingSteps.map((step, index) => (
@@ -1024,6 +1051,15 @@ const BusinessAccountingGuide = () => {
             <h3 className="text-2xl font-bold mb-8 text-center text-gray-900">
               Tips for Effective Business Accounting
             </h3>
+
+            {/* Accounting Tips Image */}
+            <div className="flex justify-center mb-10">
+              <img 
+                src="/images/guides/accounting-tools.jpeg" 
+                alt="Tips for Effective Business Accounting - Stay Organised, Reconcile Often, Separate A/C, Check Cash Flow, Employ Experts" 
+                className="w-full max-w-3xl rounded-xl shadow-lg"
+              />
+            </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
               {accountingTips.slice(0, 3).map((tip, index) => (

@@ -55,7 +55,7 @@ export const guides: Guide[] = [
     id: 0,
     Title: "A Comprehensive Guide on Accounting for Businesses",
     slug: "business-accounting-guide",
-    Image: "/lovable-uploads/f2073f22-e161-45c6-9d26-1c99e770e553.png",
+    Image: "/images/guides/accounting-for-businesses.jpeg",
     Category: "Accounting",
     Excerpt: "Master business accounting fundamentals. Learn about financial statements, accounting methods, the accounting cycle, financial ratios, budgeting, forecasting, and leveraging accounting software.",
     Content: "Full guide content for business accounting",
