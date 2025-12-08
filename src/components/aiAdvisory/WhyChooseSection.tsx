@@ -2,34 +2,35 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { UserCheck, Layers, Globe, Target, ArrowRight } from "lucide-react";
-import { ContactModal } from "@/components/ui/contact-modal";
 
 const reasons = [
   {
     icon: UserCheck,
     title: "Built around real CFO problems",
-    description: "Founder is an ex-APAC CFO, and the platform is designed around the questions CFOs actually ask.",
+    description:
+      "Founder is an ex-APAC CFO, and the platform is designed around the questions CFOs actually ask.",
   },
   {
     icon: Layers,
     title: "All-in-one AI finance stack",
-    description: "AI CFO, Sheets agents, Error Detector, Anonymiser, Insights and Xero integration in one ecosystem.",
+    description:
+      "AI CFO, Sheets agents, Error Detector, Anonymiser, Insights and Xero integration in one ecosystem.",
   },
   {
     icon: Globe,
     title: "Singapore rooted, global ready",
-    description: "HQ and leadership in Singapore with clients across regions, so the advisory and product fit local realities and regional growth plans.",
+    description:
+      "HQ and leadership in Singapore with clients across regions, so the advisory and product fit local realities and regional growth plans.",
   },
   {
     icon: Target,
     title: "Outcome focused",
-    description: "The platform is explicitly positioned to save time, reduce errors, and improve decision-making, not just to showcase AI features.",
+    description:
+      "The platform is explicitly positioned to save time, reduce errors, and improve decision-making, not just to showcase AI features.",
   },
 ];
 
 export const WhyChooseSection = () => {
-  const [contactModalOpen, setContactModalOpen] = useState(false);
-
   return (
     <section className="py-20 bg-gradient-to-br from-indigo-900 via-purple-900 to-slate-900">
       <div className="container-custom">
@@ -66,8 +67,12 @@ export const WhyChooseSection = () => {
               <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-purple-500 to-indigo-600 flex items-center justify-center mb-6">
                 <reason.icon className="w-7 h-7 text-white" />
               </div>
-              <h3 className="text-xl font-bold text-white mb-3">{reason.title}</h3>
-              <p className="text-gray-300 leading-relaxed">{reason.description}</p>
+              <h3 className="text-xl font-bold text-white mb-3">
+                {reason.title}
+              </h3>
+              <p className="text-gray-300 leading-relaxed">
+                {reason.description}
+              </p>
             </motion.div>
           ))}
         </div>
@@ -81,7 +86,12 @@ export const WhyChooseSection = () => {
         >
           <Button
             size="lg"
-            onClick={() => setContactModalOpen(true)}
+            onClick={() =>
+              window.open(
+                "https://calendly.com/jd-growwthpartners/15min?month=2025-11",
+                "_blank"
+              )
+            }
             className="bg-gradient-to-r from-purple-500 to-indigo-600 hover:from-purple-600 hover:to-indigo-700 text-white px-8 py-6 text-lg font-semibold rounded-xl shadow-lg shadow-purple-500/25 hover:shadow-xl hover:shadow-purple-500/30 transition-all"
           >
             Book a Strategy Call With Ryzup.ai
@@ -89,8 +99,6 @@ export const WhyChooseSection = () => {
           </Button>
         </motion.div>
       </div>
-
-      <ContactModal open={contactModalOpen} onOpenChange={setContactModalOpen} />
     </section>
   );
 };
