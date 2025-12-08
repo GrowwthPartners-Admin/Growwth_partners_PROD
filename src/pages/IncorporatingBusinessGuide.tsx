@@ -1,4 +1,3 @@
-import { useNavigate } from "react-router-dom";
 import { Layout } from "@/components/Layout";
 import { motion } from "framer-motion";
 import {
@@ -39,7 +38,6 @@ import incorporateCompanyStepsImage from "@/assets/guides/incorporate-company-st
 import incorporationStructureImage from "@/assets/guides/incorporation-structure.jpeg";
 
 const IncorporatingBusinessGuide = () => {
-  const navigate = useNavigate();
   
   const structuredData = {
     "@context": "https://schema.org",
@@ -149,74 +147,6 @@ const IncorporatingBusinessGuide = () => {
       title: "Get a Registered Address",
       description: "Must have a local Singapore physical address. Can be residential or commercial, but not a PO Box."
     }
-  ];
-
-  const companyStructures = [
-    {
-      number: "1",
-      title: "Private Limited Company (Pte Ltd)",
-      features: [
-        "Offers limited liability protection to shareholders",
-        "Maximum of 50 shareholders",
-        "Qualifies for tax benefits & incentives"
-      ]
-    },
-    {
-      number: "2",
-      title: "Sole Proprietorship",
-      features: [
-        "Owned & operated by an individual",
-        "Straight-forward & cost-effective",
-        "Owner has unlimited liability for business debts"
-      ]
-    },
-    {
-      number: "3",
-      title: "Partnership",
-      features: [
-        "Two or more individuals or entities",
-        "Share ownership & management responsibilities",
-        "Can be general or limited liability"
-      ]
-    },
-    {
-      number: "4",
-      title: "Public Limited Company (PLC)",
-      features: [
-        "Offers shares to the public",
-        "Suitable for larger businesses seeking capital",
-        "Shares traded on stock exchanges"
-      ]
-    },
-    {
-      number: "5",
-      title: "Limited Liability Partnership (LLP)",
-      features: [
-        "Combines partnerships & PTE LTDs",
-        "Partners get limited liability protection",
-        "Allows active participation in management"
-      ]
-    }
-  ];
-
-  const legalDocuments = [
-    "ACRA BizFile Documents",
-    "Certificate of Incorporation (BizFile)",
-    "Constitution Documents",
-    "Director's Identification Number",
-    "Particulars of Shareholders & Directors",
-    "Consent to Act as Director / Shareholder",
-    "Address Proof",
-    "Share Certificates",
-    "Register of Members",
-    "Financial Statements",
-    "Tax Identification Number (TIN)",
-    "GST Registration Certificate",
-    "Minutes of First Board Meeting",
-    "Common Seal (if applicable)",
-    "Intellectual Property Assignment Agreement",
-    "Employment Contracts",
-    "Bank Account Opening Resolution"
   ];
 
   return (
@@ -382,30 +312,6 @@ const IncorporatingBusinessGuide = () => {
                 alt="Basic Steps to Incorporate a Company in Singapore" 
                 className="w-full max-w-4xl mx-auto rounded-xl shadow-lg"
               />
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
-              {incorporationSteps.map((step, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: 0.2 + index * 0.1 }}
-                  className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-all border-l-4 border-brand-orange"
-                >
-                  <div className="flex items-start gap-4">
-                    <div className="flex-shrink-0">
-                      <div className="w-12 h-12 bg-brand-orange text-white rounded-full flex items-center justify-center text-xl font-bold">
-                        {step.number}
-                      </div>
-                    </div>
-                    <div>
-                      <h4 className="text-lg font-semibold mb-2 text-gray-900">{step.title}</h4>
-                      <p className="text-gray-700">{step.description}</p>
-                    </div>
-                  </div>
-                </motion.div>
-              ))}
             </div>
 
             {/* Step Details */}
@@ -611,60 +517,6 @@ const IncorporatingBusinessGuide = () => {
               />
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
-              {companyStructures.slice(0, 3).map((structure, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: 0.2 + index * 0.1 }}
-                  className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-all"
-                >
-                  <div className="bg-brand-orange text-white p-4 text-center">
-                    <span className="text-3xl font-bold">{structure.number}</span>
-                    <h4 className="text-lg font-semibold mt-2">{structure.title}</h4>
-                  </div>
-                  <div className="p-6">
-                    <ul className="space-y-3">
-                      {structure.features.map((feature, idx) => (
-                        <li key={idx} className="flex items-start gap-2">
-                          <CheckCircle2 className="h-5 w-5 text-green-500 flex-shrink-0 mt-0.5" />
-                          <span className="text-gray-700 text-sm">{feature}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto mb-10">
-              {companyStructures.slice(3).map((structure, index) => (
-                <motion.div
-                  key={index + 3}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: 0.5 + index * 0.1 }}
-                  className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-all"
-                >
-                  <div className="bg-brand-orange text-white p-4 text-center">
-                    <span className="text-3xl font-bold">{structure.number}</span>
-                    <h4 className="text-lg font-semibold mt-2">{structure.title}</h4>
-                  </div>
-                  <div className="p-6">
-                    <ul className="space-y-3">
-                      {structure.features.map((feature, idx) => (
-                        <li key={idx} className="flex items-start gap-2">
-                          <CheckCircle2 className="h-5 w-5 text-green-500 flex-shrink-0 mt-0.5" />
-                          <span className="text-gray-700 text-sm">{feature}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-
             {/* Best Structure */}
             <div className="bg-white p-8 rounded-xl shadow-md">
               <h4 className="text-xl font-semibold mb-4 text-gray-900">
@@ -865,21 +717,6 @@ const IncorporatingBusinessGuide = () => {
               />
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
-              {legalDocuments.map((doc, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, x: -10 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.3, delay: 0.05 * index }}
-                  className="flex items-center gap-3 bg-orange-50 p-4 rounded-lg"
-                >
-                  <CheckCircle2 className="h-5 w-5 text-brand-orange flex-shrink-0" />
-                  <span className="text-gray-700">{doc}</span>
-                </motion.div>
-              ))}
-            </div>
-
             <p className="text-gray-700 mb-6">
               The requirements and paperwork can differ greatly and you may need some professional help with filing these documents, so it's recommended that you engage a company incorporation service in Singapore to help you with these complexities.
             </p>
@@ -900,67 +737,59 @@ const IncorporatingBusinessGuide = () => {
         </div>
       </section>
 
-      {/* Summary Section */}
-      <section id="summary" className="py-12 bg-gray-50 scroll-mt-20">
-        <div className="container mx-auto px-4">
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.6 }}
-            className="max-w-4xl mx-auto"
-          >
-            <h3 className="text-2xl font-bold mb-6 text-gray-900">Summary</h3>
-            <p className="text-lg text-gray-700 mb-6 leading-relaxed">
-              As a startup founder, you should be more concerned with expanding your company than getting bogged down in legalese and paperwork. Growwth Partners is aware of the difficulties involved in incorporating a business and maintaining compliance in Singapore. With our completely paperless services, you can launch your business from anywhere in the globe with ease and without worry.
-            </p>
-            <p className="text-lg text-gray-700 mb-8 leading-relaxed">
-              We manage the complexities of compliance with our committed corporate secretary services, making sure you adhere to Singaporean laws. Avoid letting non-compliance cause penalties or interfere with your business's operations. Let us handle the specifics so you can focus on growing your business.
-            </p>
+   {/* Summary Section */}
+<section id="summary" className="py-16 bg-white scroll-mt-20">
+  <div className="container mx-auto px-4">
+    <motion.div
+      initial={{ opacity: 0, y: 12 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+      className="max-w-5xl mx-auto"
+    >
 
-            <div className="text-center">
-              <Button 
-                onClick={() => navigate("/contact-us")}
-                className="bg-brand-orange hover:bg-brand-orange/90 text-white px-8 py-6 text-lg rounded-lg shadow-lg hover:shadow-xl transition-all"
-              >
-                Book a Free Call with Growwth Partners
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Button>
-            </div>
-          </motion.div>
+      <div className="rounded-2xl border border-gray-100 bg-gray-50/60 p-8 md:p-10 shadow-sm">
+        <div className="flex items-start gap-4 mb-6">
+          
+          <div>
+            <h3 className="text-2xl md:text-3xl font-bold text-gray-900">
+              Summary
+            </h3>
+            <p className="mt-1 text-sm text-gray-500">
+              Launch and run your Singapore company without getting buried in paperwork.
+            </p>
+          </div>
         </div>
-      </section>
 
-      {/* Related Guides */}
-      <section className="py-12 bg-white">
-        <div className="container mx-auto px-4">
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.6 }}
-            className="max-w-4xl mx-auto text-center"
-          >
-            <h3 className="text-2xl font-bold mb-6 text-gray-900">Explore More Guides</h3>
-            <div className="flex flex-wrap justify-center gap-4">
-              <Button 
-                variant="outline" 
-                onClick={() => navigate("/guide")}
-                className="border-brand-orange text-brand-orange hover:bg-brand-orange/10"
-              >
-                View All Guides
-                <ChevronRight className="ml-2 h-4 w-4" />
-              </Button>
-              <Button 
-                variant="outline" 
-                onClick={() => navigate("/company-incorporation-services-in-singapore")}
-                className="border-blue-600 text-blue-600 hover:bg-blue-50"
-              >
-                Our Incorporation Services
-                <ChevronRight className="ml-2 h-4 w-4" />
-              </Button>
-            </div>
-          </motion.div>
+        <div className="space-y-4 text-gray-700 text-base md:text-lg leading-relaxed">
+          <p>
+            As a startup founder, you should be more concerned with expanding your company than getting bogged down in legalese and paperwork. Growwth Partners is aware of the difficulties involved in incorporating a business and maintaining compliance in Singapore. With our completely paperless services, you can launch your business from anywhere in the globe with ease and without worry.
+          </p>
+          <p>
+            We manage the complexities of compliance with our committed corporate secretary services, making sure you adhere to Singaporean laws. Avoid letting non-compliance cause penalties or interfere with your business's operations. Let us handle the specifics so you can focus on growing your business.
+          </p>
         </div>
-      </section>
+
+        <div className="mt-8 flex flex-col items-center justify-center md:flex-row">
+ 
+          <Button
+            onClick={() =>
+              window.open(
+                'https://calendly.com/jd-growwthpartners/15min?month=2025-11',
+                '_blank'
+              )
+            }
+            className="inline-flex items-center justify-center bg-brand-orange hover:bg-brand-orange/90 text-white px-8 py-3 text-base md:text-lg rounded-xl shadow-lg hover:shadow-xl transition-all"
+          >
+            Book a Free Call with Growwth Partners
+            <ArrowRight className="ml-2 h-5 w-5" />
+          </Button>
+        </div>
+      </div>
+    </motion.div>
+  </div>
+</section>
+
+
     </Layout>
   );
 };
