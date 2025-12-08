@@ -55,7 +55,7 @@ export const guides: Guide[] = [
     id: 1,
     Title: "A Comprehensive Guide to Part-Time CFO Services in 2024",
     slug: "part-time-cfo-services-guide",
-    Image: "/lovable-uploads/f2073f22-e161-45c6-9d26-1c99e770e553.png",
+    Image: "/images/guides/part-time-cfo-service.jpeg",
     Category: "Fractional CFO",
     Excerpt: "Explore the benefits of hiring a Part-Time CFO in 2024. Understand their roles, cost savings, and implementation for strategic financial leadership in your business.",
     Content: "Full guide content for part-time CFO services",

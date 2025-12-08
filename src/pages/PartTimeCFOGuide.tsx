@@ -29,6 +29,12 @@ import {
 } from "lucide-react";
 import SEOhelper from "@/components/SEOhelper";
 
+// Import images
+import partTimeCfoImage from "@/assets/guides/part-time-cfo-service.jpeg";
+import gpInsightsImage from "@/assets/guides/gp-insights.png";
+import marketingExpensesImage from "@/assets/guides/marketing-expenses.png";
+import investorReportingImage from "@/assets/guides/investor-reporting.png";
+
 const PartTimeCFOGuide = () => {
   const navigate = useNavigate();
   
@@ -110,17 +116,24 @@ const PartTimeCFOGuide = () => {
   ];
 
   const tableOfContents = [
-    "Introduction",
-    "Understanding Part-Time CFO services",
-    "Roles and responsibilities of a Part-time CFO",
-    "Cost benefits of hiring a Part-time CFO",
-    "Indicators for needing a Part-time CFO",
-    "Business size and stage",
-    "Skills and qualifications of CFOs at Growwth Partners",
-    "Case studies",
-    "Implementing Part-time CFO services",
-    "Summary"
+    { label: "Introduction", id: "introduction" },
+    { label: "Understanding Part-Time CFO services", id: "understanding" },
+    { label: "Roles and responsibilities of a Part-time CFO", id: "roles-responsibilities" },
+    { label: "Cost benefits of hiring a Part-time CFO", id: "cost-benefits" },
+    { label: "Indicators for needing a Part-time CFO", id: "indicators" },
+    { label: "Business size and stage", id: "business-size-stage" },
+    { label: "Skills and qualifications of CFOs at Growwth Partners", id: "skills-qualifications" },
+    { label: "Case studies", id: "case-studies" },
+    { label: "Implementing Part-time CFO services", id: "implementing" },
+    { label: "Summary", id: "summary" }
   ];
+
+  const scrollToSection = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
 
   return (
     <Layout>
@@ -227,9 +240,13 @@ const PartTimeCFOGuide = () => {
             <div className="bg-gray-50 p-6 rounded-xl">
               <ul className="space-y-2">
                 {tableOfContents.map((item, index) => (
-                  <li key={index} className="flex items-center gap-2 text-gray-700 hover:text-blue-600 cursor-pointer transition-colors">
+                  <li 
+                    key={index} 
+                    onClick={() => scrollToSection(item.id)}
+                    className="flex items-center gap-2 text-gray-700 hover:text-blue-600 cursor-pointer transition-colors"
+                  >
                     <ChevronRight className="h-4 w-4" />
-                    <span>{item}</span>
+                    <span>{item.label}</span>
                   </li>
                 ))}
               </ul>
@@ -239,7 +256,7 @@ const PartTimeCFOGuide = () => {
       </section>
 
       {/* Introduction Section */}
-      <section className="py-12 bg-white">
+      <section id="introduction" className="py-12 bg-white scroll-mt-20">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0 }}
@@ -262,7 +279,7 @@ const PartTimeCFOGuide = () => {
       </section>
 
       {/* Understanding Part-Time CFO Services */}
-      <section className="py-12 bg-gray-50">
+      <section id="understanding" className="py-12 bg-gray-50 scroll-mt-20">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0 }}
@@ -376,7 +393,7 @@ const PartTimeCFOGuide = () => {
       </section>
 
       {/* Roles and Responsibilities */}
-      <section className="py-12 bg-gray-50">
+      <section id="roles-responsibilities" className="py-12 bg-gray-50 scroll-mt-20">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0 }}
@@ -387,6 +404,15 @@ const PartTimeCFOGuide = () => {
             <h3 className="text-2xl font-bold mb-8 text-gray-900">
               Roles and Responsibilities of a Part-time CFO
             </h3>
+
+            {/* Roles & Responsibilities Image */}
+            <div className="mb-8 rounded-xl overflow-hidden shadow-lg">
+              <img 
+                src={marketingExpensesImage} 
+                alt="Roles and Responsibilities of a Part-time CFO" 
+                className="w-full h-auto"
+              />
+            </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="bg-white p-6 rounded-xl shadow-md">
@@ -509,7 +535,7 @@ const PartTimeCFOGuide = () => {
       </section>
 
       {/* Cost Benefits Section */}
-      <section className="py-12 bg-gradient-to-r from-green-50/50 via-blue-50/50 to-green-50/50">
+      <section id="cost-benefits" className="py-12 bg-gradient-to-r from-green-50/50 via-blue-50/50 to-green-50/50 scroll-mt-20">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0 }}
@@ -565,7 +591,7 @@ const PartTimeCFOGuide = () => {
       </section>
 
       {/* Indicators for Needing a Part-time CFO */}
-      <section className="py-12 bg-white">
+      <section id="indicators" className="py-12 bg-white scroll-mt-20">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0 }}
@@ -576,6 +602,15 @@ const PartTimeCFOGuide = () => {
             <h3 className="text-2xl font-bold mb-8 text-gray-900">
               Indicators for Needing a Part-time CFO
             </h3>
+
+            {/* Indicators Image */}
+            <div className="mb-8 rounded-xl overflow-hidden shadow-lg">
+              <img 
+                src={investorReportingImage} 
+                alt="Indicators for Needing a Part-time CFO" 
+                className="w-full h-auto"
+              />
+            </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="bg-gradient-to-br from-blue-50 to-indigo-50 p-6 rounded-xl border-l-4 border-blue-500">
@@ -630,7 +665,7 @@ const PartTimeCFOGuide = () => {
       </section>
 
       {/* Business Size and Stage */}
-      <section className="py-12 bg-gray-50">
+      <section id="business-size-stage" className="py-12 bg-gray-50 scroll-mt-20">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0 }}
@@ -753,7 +788,7 @@ const PartTimeCFOGuide = () => {
       </section>
 
       {/* Skills and Qualifications */}
-      <section className="py-12 bg-gray-50">
+      <section id="skills-qualifications" className="py-12 bg-gray-50 scroll-mt-20">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0 }}
@@ -796,7 +831,7 @@ const PartTimeCFOGuide = () => {
       </section>
 
       {/* Case Studies */}
-      <section className="py-12 bg-white">
+      <section id="case-studies" className="py-12 bg-white scroll-mt-20">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0 }}
@@ -805,6 +840,15 @@ const PartTimeCFOGuide = () => {
             className="max-w-5xl mx-auto"
           >
             <h3 className="text-2xl font-bold mb-8 text-gray-900">Case Studies</h3>
+
+            {/* GP Insights Image */}
+            <div className="mb-8 rounded-xl overflow-hidden shadow-lg">
+              <img 
+                src={gpInsightsImage} 
+                alt="Growwth Partners Insights - Customized approach for client needs" 
+                className="w-full h-auto"
+              />
+            </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="bg-gradient-to-br from-blue-50 to-indigo-100 p-8 rounded-xl shadow-md">
@@ -836,7 +880,7 @@ const PartTimeCFOGuide = () => {
       </section>
 
       {/* Implementing Part-Time CFO Services */}
-      <section className="py-12 bg-gray-50">
+      <section id="implementing" className="py-12 bg-gray-50 scroll-mt-20">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0 }}
@@ -948,7 +992,7 @@ const PartTimeCFOGuide = () => {
       </section>
 
       {/* Summary */}
-      <section className="py-12 bg-white">
+      <section id="summary" className="py-12 bg-white scroll-mt-20">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0 }}
