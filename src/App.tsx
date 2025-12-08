@@ -226,6 +226,13 @@ export const routes: RouteRecord[] = [
         },
       },
       {
+        path: "guide/incorporating-business-singapore",
+        async lazy() {
+          const { default: Component } = await import("./pages/IncorporatingBusinessGuide");
+          return { Component };
+        },
+      },
+      {
         path: "guide/part-time-cfo-services-guide",
         async lazy() {
           const { default: Component } = await import("./pages/PartTimeCFOGuide");
