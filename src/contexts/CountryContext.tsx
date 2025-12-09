@@ -128,6 +128,20 @@ export const CountryProvider = ({
       if (country === "australia") return `/au${normalizedPath}`;
     }
 
+    // Individual guide pages - preserve location
+    if (normalizedPath.startsWith("/guide/") && normalizedPath !== "/guide") {
+      if (country === "singapore") return normalizedPath;
+      if (country === "uae") return `/uae${normalizedPath}`;
+      if (country === "australia") return `/au${normalizedPath}`;
+    }
+
+    // Individual blog pages - preserve location
+    if (normalizedPath.startsWith("/blog/") && normalizedPath !== "/blog") {
+      if (country === "singapore") return normalizedPath;
+      if (country === "uae") return `/uae${normalizedPath}`;
+      if (country === "australia") return `/au${normalizedPath}`;
+    }
+
     // Default: return the path as-is
     return normalizedPath;
   };

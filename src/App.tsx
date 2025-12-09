@@ -336,6 +336,13 @@ export const routes: RouteRecord[] = [
         },
       },
       {
+        path: "uae/guide/:slug",
+        async lazy() {
+          const { default: Component } = await import("./pages/GuideSingle");
+          return { Component };
+        },
+      },
+      {
         path: "uae/news",
         async lazy() {
           const { default: Component } = await import("./pages/News");
@@ -468,6 +475,13 @@ export const routes: RouteRecord[] = [
         path: "au/guide",
         async lazy() {
           const { default: Component } = await import("./pages/Guide");
+          return { Component };
+        },
+      },
+      {
+        path: "au/guide/:slug",
+        async lazy() {
+          const { default: Component } = await import("./pages/GuideSingle");
           return { Component };
         },
       },
