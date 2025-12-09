@@ -36,11 +36,11 @@ const staticPosts: Omit<BlogPost, "id">[] = (postsData as any[]).map((p) => ({
   title: p.title,
   excerpt: p.excerpt,
   content: p.content || "", // Add content property with default empty string
-  heroImage: p.heroImage,
-  publishDate: p.publishDate,
-  author: p.author,
+  heroImage: p.Hero_image,
+  publishDate: p.publishdate,
+  author: p.Author,
   authorBio: p.authorBio,
-  categories: p.categories,
+  categories: p.Categories,
   faqs: p.faqs || [],
 }));
 
@@ -178,7 +178,9 @@ const BlogPostPage: React.FC = () => {
     };
 
     fetchPost();
+    console.log({seoPost});
   }, [slug]);
+    console.log({seoPost});
 
   return (
     <Layout>
