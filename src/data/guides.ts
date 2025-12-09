@@ -96,7 +96,7 @@ export const guides: Guide[] = [
     ]
   },
   {
-    id: 1,
+    id: 2,
     Title: "The Most Comprehensive Guide to Incorporating a Business in Singapore",
     slug: "incorporating-business-singapore",
     Image: "/images/guides/incorporating-business-singapore.jpeg",
@@ -119,7 +119,7 @@ export const guides: Guide[] = [
     ]
   },
   {
-    id: 1,
+    id: 3,
     Title: "A Comprehensive Guide to Part-Time CFO Services in 2024",
     slug: "part-time-cfo-services-guide",
     Image: "/images/guides/part-time-cfo-service.jpeg",
@@ -142,7 +142,7 @@ export const guides: Guide[] = [
     ]
   },
   {
-    id: 2,
+    id: 4,
     Title: "Guide to Financial Reporting Standards in Singapore for Small Entities",
     slug: "financial-reporting-standards-singapore",
     Image: "/lovable-uploads/f2073f22-e161-45c6-9d26-1c99e770e553.png",
@@ -209,7 +209,7 @@ export const guides: Guide[] = [
     ]
   },
   {
-    id: 3,
+    id: 5,
     Title: "A Comprehensive Guide to Bookkeeping Practices",
     slug: "bookkeeping-practices-guide",
     Image: "/lovable-uploads/a1793127-4e29-402b-b80a-6163df4177cb.png",
@@ -392,7 +392,7 @@ export const guides: Guide[] = [
     ]
   },
   {
-    id: 4,
+    id: 6,
     Title: "Comprehensive Guide to the Market Readiness Assistance (MRA) Grant in Singapore",
     slug: "mra-grant-singapore",
     Image: "/lovable-uploads/bb637a74-6152-4665-943f-66054058edf0.png",
