@@ -662,6 +662,15 @@ export const routes: RouteRecord[] = [
         },
       },
       {
+        path: "au/corporate-tax-filing-australia",
+        async lazy() {
+          const { default: Component } = await import(
+            "./pages/CorporateTaxFilingAustralia"
+          );
+          return { Component };
+        },
+      },
+      {
         path: "au/news",
         async lazy() {
           const { default: Component } = await import("./pages/News");

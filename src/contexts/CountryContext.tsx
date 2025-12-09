@@ -55,13 +55,19 @@ export const CountryProvider = ({
     
     // Pages that exist ONLY for Singapore - always return Singapore URL
     const singaporeOnlyPages = [
-      "/corporate-tax-filing-singapore",
       "/valuation-services-singapore",
       "/use-of-ai-in-finance",
       "/strategic-finance-singapore",
       "/privacy-policy",
       "/terms",
     ];
+
+    // Handle Corporate Tax Filing - has country-specific versions
+    if (normalizedPath === "/corporate-tax-filing-singapore" || normalizedPath.startsWith("/corporate-tax-filing")) {
+      if (country === "australia") return "/au/corporate-tax-filing-australia";
+      // UAE and Singapore use Singapore version
+      return "/corporate-tax-filing-singapore";
+    }
 
     // Check if the path matches any Singapore-only page (exact match only)
     const isSingaporeOnlyPage = singaporeOnlyPages.some(
