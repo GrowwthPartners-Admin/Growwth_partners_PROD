@@ -158,7 +158,6 @@ const HeroSection = () => {
         </div>
       </div>
 
-      {/* Bottom gradient fade - z-20 (between background and content) */}
       {/* Reduced height and removed the opaque middle stop */}
       <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-background to-transparent z-20 pointer-events-none" />
     </section>

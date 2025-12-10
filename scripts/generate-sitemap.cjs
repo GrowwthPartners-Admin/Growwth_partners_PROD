@@ -213,6 +213,11 @@ const staticRoutes = [
     priority: "0.8",
     changefreq: "monthly",
   },
+  {
+    path: "/au/ai-financial-forecasting-australia",
+    priority: "0.8",
+    changefreq: "monthly",
+  },
 ];
 
 async function generateSitemap() {
