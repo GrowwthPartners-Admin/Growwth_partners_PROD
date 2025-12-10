@@ -5,66 +5,75 @@ import HeroSection from "@/components/aiFinanceWorkflowAustralia/HeroSection";
 import WhyAINowSection from "@/components/aiFinanceWorkflowAustralia/WhyAINowSection";
 import IntegrationSection from "@/components/aiFinanceWorkflowAustralia/IntegrationSection";
 import WhoBenefitsSection from "@/components/aiFinanceWorkflowAustralia/WhoBenefitsSection";
-import FAQSection from "@/components/aiFinanceWorkflowAustralia/FAQSection";
+import { FaqSection } from "@/components/accounting/FaqSection";
+
 import CTASection from "@/components/aiFinanceWorkflowAustralia/CTASection";
+
+const faqs = [
+  {
+    question:
+      "How does Ryzup.ai deliver AI automation for finance in Australia?",
+    answer:
+      "Ryzup.ai embeds an AI assistant, forecasting tools, error detection and workflow agents directly inside Google Sheets, integrated with Xero, to automate analysis, reporting, reconciliations and quality checks.",
+  },
+  {
+    question: "Does Ryzup.ai suit SMEs and startups in Australia?",
+    answer:
+      "Ryzup.ai supports startups, SMEs and growing finance teams with a modular setup so organisations can start small and expand automation as needs evolve.",
+  },
+  {
+    question: "Will teams need to learn a new system?",
+    answer:
+      "Ryzup.ai runs inside Google Sheets and alongside existing accounting platforms, so teams keep familiar workflows that are enhanced by AI.",
+  },
+  {
+    question: "How does Ryzup.ai improve data accuracy and compliance?",
+    answer:
+      "Smart error detection, reconciliation and GL agents, plus anonymisation, help reduce spreadsheet errors, highlight inconsistencies and protect sensitive information while using AI.",
+  },
+];
 
 const AIFinanceWorkflowAustralia = () => {
   const structuredData = {
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": "Service",
-        "name": "AI Finance Workflow Integration Australia",
-        "description": "Ryzup.ai turns Google Sheets and Xero into an AI-powered finance hub. Automate reporting, error checks, reconciliations and forecasting for Australian businesses.",
-        "provider": {
-          "@type": "Organization",
-          "name": "Growwth Partners",
-          "url": "https://growwthpartners.com"
-        },
-        "areaServed": {
-          "@type": "Country",
-          "name": "Australia"
-        },
-        "serviceType": "AI Finance Automation"
+        "@type": "FAQPage",
+        "@id": "https://growwthpartners.com/ai-finance-workflow-Australia/#faq",
+        name: "AI Finance Workflow Australia - FAQ | Growwth Partners",
+        mainEntity: faqs.map((faq) => ({
+          "@type": "Question",
+          name: faq.question,
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: faq.answer,
+          },
+        })),
       },
       {
-        "@type": "FAQPage",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "How does Ryzup.ai deliver AI automation for finance in Australia?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Ryzup.ai embeds an AI assistant, forecasting tools, error detection and workflow agents directly inside Google Sheets, integrated with Xero, to automate analysis, reporting, reconciliations and quality checks."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Does Ryzup.ai suit SMEs and startups in Australia?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Ryzup.ai supports startups, SMEs and growing finance teams with a modular setup so organisations can start small and expand automation as needs evolve."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Will teams need to learn a new system?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Ryzup.ai runs inside Google Sheets and alongside existing accounting platforms, so teams keep familiar workflows that are enhanced by AI."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "How does Ryzup.ai improve data accuracy and compliance?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Smart error detection, reconciliation and GL agents, plus anonymisation, help reduce spreadsheet errors, highlight inconsistencies and protect sensitive information while using AI."
-            }
-          }
-        ]
-      }
-    ]
+        "@type": "Service",
+        "@id":
+          "https://growwthpartners.com/ai-finance-workflow-Australia/#service",
+        name: "AI Finance Workflow Integration Australia",
+        provider: {
+          "@type": "Organization",
+          name: "Growwth Partners",
+        },
+        description:
+          "Integrate AI into your finance workflow with Ryzup.ai. Automate reporting, error checks, reconciliations and forecasting in Google Sheets and Xero.",
+        areaServed: "Australia",
+      },
+      {
+        "@type": "Organization",
+        address: {
+          "@type": "PostalAddress",
+          streetAddress: "65 Chulia Street",
+          addressLocality: "Singapore",
+          postalCode: "049513",
+          addressCountry: "SG",
+        },
+      },
+    ],
   };
 
   return (
@@ -85,7 +94,10 @@ const AIFinanceWorkflowAustralia = () => {
         <WhyAINowSection />
         <IntegrationSection />
         <WhoBenefitsSection />
-        <FAQSection />
+        <FaqSection
+          faqs={faqs}
+          subtitle="Find answers to common questions about AI Finance Workflow Integration in Australia"
+        />
         <CTASection />
       </motion.div>
     </Layout>

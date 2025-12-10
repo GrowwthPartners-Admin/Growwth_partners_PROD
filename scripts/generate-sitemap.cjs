@@ -208,6 +208,11 @@ const staticRoutes = [
     priority: "0.8",
     changefreq: "monthly",
   },
+   {
+    path: "/au/ai-finance-workflow-australia",
+    priority: "0.8",
+    changefreq: "monthly",
+  },
 ];
 
 async function generateSitemap() {

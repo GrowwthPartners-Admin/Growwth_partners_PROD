@@ -14,29 +14,8 @@ const CTASection = () => {
       
       {/* Decorative elements */}
       <div className="absolute top-10 left-10 w-64 h-64 bg-teal-500/20 rounded-full blur-3xl" />
-      <div className="absolute bottom-10 right-10 w-80 h-80 bg-cyan-500/20 rounded-full blur-3xl" />
-      
-      {/* Floating icons */}
-      <motion.div
-        className="absolute top-20 right-20 hidden lg:block"
-        animate={{ y: [0, -15, 0], rotate: [0, 5, 0] }}
-        transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-      >
-        <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-teal-400 to-cyan-500 flex items-center justify-center shadow-lg">
-          <Bot className="w-7 h-7 text-white" />
-        </div>
-      </motion.div>
-      
-      <motion.div
-        className="absolute bottom-20 left-20 hidden lg:block"
-        animate={{ y: [0, 12, 0], rotate: [0, -5, 0] }}
-        transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-      >
-        <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-emerald-400 to-teal-500 flex items-center justify-center shadow-lg">
-          <Zap className="w-6 h-6 text-white" />
-        </div>
-      </motion.div>
-
+      <div className="absolute bottom-10 right-10 w-80 h-80 bg-cyan-500/20 rounded-full blur-3xl" />      
+ 
       <div className="container mx-auto px-4 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -60,7 +39,11 @@ const CTASection = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button
               size="lg"
-              onClick={() => setContactModalOpen(true)}
+              onClick={() =>
+                window.open(
+                  "https://calendly.com/jd-growwthpartners/15min?month=2025-11",
+                  "_blank"
+                )}
               className="bg-white text-teal-700 hover:bg-teal-50 px-8 py-6 text-lg rounded-xl shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-1 font-semibold"
             >
               Talk to Ryzup.ai About Your Finance Workflow
@@ -70,7 +53,7 @@ const CTASection = () => {
               size="lg"
               variant="outline"
               onClick={() => setContactModalOpen(true)}
-              className="border-2 border-white/30 text-white hover:bg-white/10 px-8 py-6 text-lg rounded-xl backdrop-blur-sm transition-all duration-300"
+              className="border-2 border-white/30 text-white bg-transparent px-8 py-6 text-lg rounded-xl backdrop-blur-sm transition-all duration-300"
             >
               Get Your AI Automation Plan
             </Button>

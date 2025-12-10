@@ -81,7 +81,7 @@ const WhoBenefitsSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="group text-center p-6 rounded-2xl bg-white border border-slate-200 hover:border-teal-300 hover:shadow-xl transition-all duration-300"
+              className="group text-center p-6 rounded-2xl bg-white border hover:border-slate-200 border-teal-300 hover:shadow-xl transition-all duration-300 shadow"
             >
               <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-teal-500 to-cyan-500 flex items-center justify-center mx-auto mb-5 shadow-lg group-hover:scale-110 transition-transform duration-300">
                 <item.icon className="w-8 h-8 text-white" />
@@ -117,7 +117,7 @@ const WhoBenefitsSection = () => {
             {/* Connection line */}
             <div className="hidden md:block absolute top-1/2 left-0 right-0 h-1 bg-gradient-to-r from-teal-300 via-cyan-300 to-emerald-300 transform -translate-y-1/2 rounded-full" />
             
-            <div className="grid md:grid-cols-3 gap-8 relative">
+            <div className="grid md:grid-cols-3 gap-16 relative">
               {implementationSteps.map((step, index) => (
                 <motion.div
                   key={index}
@@ -125,13 +125,13 @@ const WhoBenefitsSection = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: index * 0.15 }}
-                  className="relative"
+                  className="relative "
                 >
                   <div className="flex flex-col items-center text-center">
                     <div className="w-20 h-20 rounded-full bg-gradient-to-br from-teal-500 to-cyan-500 flex items-center justify-center mb-5 shadow-xl relative z-10 border-4 border-white">
                       <step.icon className="w-9 h-9 text-white" />
                     </div>
-                    <div className="bg-white rounded-2xl p-6 border border-slate-200 shadow-lg hover:shadow-xl transition-shadow w-full">
+                    <div className="bg-cyan-100 rounded-2xl p-6 border border-slate-200 shadow-lg hover:shadow-xl transition-shadow w-full">
                       <h3 className="text-xl font-bold text-foreground mb-2">
                         {step.step}
                       </h3>
