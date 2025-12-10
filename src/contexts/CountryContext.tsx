@@ -69,6 +69,13 @@ export const CountryProvider = ({
       return "/corporate-tax-filing-singapore";
     }
 
+    // Handle AI Finance Workflow - has country-specific versions
+    if (normalizedPath === "/ai-finance-workflow-singapore" || normalizedPath.startsWith("/ai-finance-workflow")) {
+      if (country === "australia") return "/au/ai-finance-workflow-australia";
+      // UAE and Singapore use Singapore version
+      return "/ai-finance-workflow-singapore";
+    }
+
     // Check if the path matches any Singapore-only page (exact match only)
     const isSingaporeOnlyPage = singaporeOnlyPages.some(
       (pagePath) => normalizedPath === pagePath || normalizedPath.startsWith(`${pagePath}/`)
