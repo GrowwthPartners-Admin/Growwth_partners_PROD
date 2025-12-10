@@ -2,24 +2,21 @@
   publish = "dist"
   command = "npm run build"
 
-# SPA routing - preserve 404s for missing files
+# 1) (Optional but safe) – explicitly 404 the bad manifest URL so it never loops
 [[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
-  force = false
-
-# Serve custom 404 page for missing static files
-[[redirects]]
-  from = "/*"
-  to = "/404.html"
+  from = "/static-loader-data-manifest-undefined.json"
+  to = "/static-loader-data-manifest-undefined.json"
   status = 404
 
+# 2) Normalize trailing slash -> no slash
 [[redirects]]
-  from = "/*/"
+  from = "/:splat/"
   to = "/:splat"
   status = 301
   force = true
 
-
-
+# 3) SPA fallback – everything else goes to index.html
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
