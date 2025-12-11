@@ -83,6 +83,13 @@ export const CountryProvider = ({
       return "/ai-financial-forecasting-singapore";
     }
 
+    // Handle AI Risk Compliance - has country-specific versions
+    if (normalizedPath === "/ai-risk-compliance-singapore" || normalizedPath.startsWith("/ai-risk-compliance")) {
+      if (country === "australia") return "/au/ai-risk-compliance-australia";
+      // UAE and Singapore use Singapore version
+      return "/ai-risk-compliance-singapore";
+    }
+
     // Check if the path matches any Singapore-only page (exact match only)
     const isSingaporeOnlyPage = singaporeOnlyPages.some(
       (pagePath) => normalizedPath === pagePath || normalizedPath.startsWith(`${pagePath}/`)
