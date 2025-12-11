@@ -1,0 +1,144 @@
+import { motion } from "framer-motion";
+import { Button } from "@/components/ui/button";
+import { Shield, ArrowRight } from "lucide-react";
+import { useState } from "react";
+import { ContactModal } from "@/components/ui/contact-modal";
+
+export const HeroSection = () => {
+  const [contactModalOpen, setContactModalOpen] = useState(false);
+
+  return (
+    <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-slate-900 via-red-950/20 to-slate-900">
+      {/* Background Elements */}
+      <div className="absolute inset-0">
+        <div className="absolute top-20 left-10 w-72 h-72 bg-red-500/10 rounded-full blur-3xl" />
+        <div className="absolute bottom-20 right-10 w-96 h-96 bg-orange-500/10 rounded-full blur-3xl" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-amber-500/5 rounded-full blur-3xl" />
+      </div>
+
+      {/* Grid Pattern */}
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:50px_50px]" />
+
+      <div className="container mx-auto px-4 py-20 relative z-10">
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
+          {/* Left Content */}
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6 }}
+            className="text-center lg:text-left"
+          >
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2 }}
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-red-500/10 border border-red-500/20 text-red-300 text-sm mb-6"
+            >
+              <Shield className="w-4 h-4" />
+              AI Risk & Compliance for Australia
+            </motion.div>
+
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+              Prevent Risk{" "}
+              <span className="bg-gradient-to-r from-red-400 via-orange-400 to-amber-400 bg-clip-text text-transparent">
+                Before It Happens
+              </span>
+            </h1>
+
+            <p className="text-lg md:text-xl text-slate-300 mb-8 max-w-xl mx-auto lg:mx-0">
+              Ryzup.ai gives Australian finance teams AI-powered monitoring across spreadsheets and accounting data. Improve AI compliance in Australia, strengthen controls, and use AI risk detection to catch anomalies, suspicious entries, and privacy issues before they become problems.
+            </p>
+
+            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+              <Button
+                size="lg"
+                onClick={() => setContactModalOpen(true)}
+                className="bg-gradient-to-r from-red-500 to-orange-500 hover:from-red-600 hover:to-orange-600 text-white px-8 py-6 text-lg rounded-xl shadow-lg shadow-red-500/25"
+              >
+                Book a Risk & Compliance Demo
+                <ArrowRight className="ml-2 w-5 h-5" />
+              </Button>
+              <Button
+                size="lg"
+                variant="outline"
+                onClick={() => setContactModalOpen(true)}
+                className="border-slate-600 text-slate-300 hover:bg-slate-800/50 px-8 py-6 text-lg rounded-xl"
+              >
+                Talk to a Ryzup.ai Specialist
+              </Button>
+            </div>
+          </motion.div>
+
+          {/* Right Visual */}
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="relative"
+          >
+            <div className="relative bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-xl rounded-2xl border border-slate-700/50 p-6 shadow-2xl">
+              {/* Dashboard Header */}
+              <div className="flex items-center justify-between mb-6">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-red-500 to-orange-500 flex items-center justify-center">
+                    <Shield className="w-5 h-5 text-white" />
+                  </div>
+                  <div>
+                    <h3 className="text-white font-semibold">Risk Monitor</h3>
+                    <p className="text-slate-400 text-sm">Real-time detection</p>
+                  </div>
+                </div>
+                <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-green-500/10 border border-green-500/20">
+                  <div className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
+                  <span className="text-green-400 text-sm">Active</span>
+                </div>
+              </div>
+
+              {/* Metrics Grid */}
+              <div className="grid grid-cols-3 gap-4 mb-6">
+                {[
+                  { label: "Anomalies Flagged", value: "12", trend: "This week" },
+                  { label: "Compliance Score", value: "94%", trend: "+3%" },
+                  { label: "Data Protected", value: "2.4K", trend: "Records" },
+                ].map((metric, idx) => (
+                  <motion.div
+                    key={idx}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.5 + idx * 0.1 }}
+                    className="bg-slate-800/50 rounded-xl p-4 border border-slate-700/30"
+                  >
+                    <p className="text-2xl font-bold text-white">{metric.value}</p>
+                    <p className="text-slate-400 text-xs">{metric.label}</p>
+                    <p className="text-orange-400 text-xs mt-1">{metric.trend}</p>
+                  </motion.div>
+                ))}
+              </div>
+
+              {/* Alert Item */}
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.8 }}
+                className="bg-red-500/10 border border-red-500/20 rounded-xl p-4"
+              >
+                <div className="flex items-start gap-3">
+                  <div className="w-8 h-8 rounded-lg bg-red-500/20 flex items-center justify-center flex-shrink-0">
+                    <Shield className="w-4 h-4 text-red-400" />
+                  </div>
+                  <div>
+                    <p className="text-white font-medium text-sm">Anomaly Detected</p>
+                    <p className="text-slate-400 text-xs mt-1">Unusual vendor payment pattern flagged in Q4 expenses</p>
+                    <p className="text-red-400 text-xs mt-2">Flagged 2 hours ago</p>
+                  </div>
+                </div>
+              </motion.div>
+            </div>
+          </motion.div>
+        </div>
+      </div>
+
+      <ContactModal open={contactModalOpen} onOpenChange={setContactModalOpen} />
+    </section>
+  );
+};
