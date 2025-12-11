@@ -11,35 +11,35 @@ import { LazyIframe } from "@/components/ui/lazy-iframe";
 
 export const ClientsSection = () => {
   const testimonialVideos = [
-    {
+   {
       id: "uylxy3pjgl",
-      title: "Client Testimonial 1",
+      title: "Customer Testimonial 1",
       name: "Ellie Curran",
       role: "Ex Co-Founder & CEO, CoLab",
     },
     {
       id: "7lotud5v4w",
-      title: "Client Testimonial 2",
+      title: "Customer Testimonial 2",
       name: "Migara Tennakoon",
       role: "Founder & CEO, Peace Lily",
     },
     {
       id: "70p2vilm80",
-      title: "Client Testimonial 3",
-      name: "Sejkin Cavan",
-      role: "Founder & CEO, Seneva",
+      title: "Customer Testimonial 3",
+      name: "Seçkin Çağlın,",
+      role: "Co-Founder & Co-CEO Cenoa",
     },
     {
       id: "kos5z2qvc2",
-      title: "Client Testimonial 4",
-      name: "Sheena Chein",
-      role: "Founder & CEO, Tiger Hall",
+      title: "Customer Testimonial 4",
+      name: "Neha Jain",
+      role: "FP&A Manager, Tigerhall",
     },
     {
       id: "u5hhsmcpqb",
       title: "Customer Testimonial 5",
-      name: "Marcos",
-      role: "Founder & CEO, Pengea",
+      name: "Marcos Bulacio",
+      role: "Founder & CEO, Pangea | Regenesis Labs",
     },
   ];
 
