@@ -93,10 +93,45 @@
     <link rel="growwth-partners-icon" sizes="180x180" href="https://growwthpartners.com/lovable-uploads/5f2bc1cf-2bab-424d-8245-eb52af504603.png" />
     
     <!-- Canonical tag for SEO -->
-  <link id="canonical-link" rel="canonical" href="https://growwthpartners.com/" />
+  <!-- <link id="canonical-link" rel="canonical" href="https://growwthpartners.com/" /> -->
     
     <!-- Preload main script for faster execution -->
     <!-- <link rel="modulepreload" href="/src/main.tsx" /> -->
+
+    <script>
+      function setCanonical(url) {
+        let link = document.querySelector("link[rel='canonical']");
+        if (!link) {
+          link = document.createElement("link");
+          link.rel = "canonical";
+          document.head.appendChild(link);
+        }
+        link.href = url;
+      }
+
+      // Helper to update based on current URL
+      function updateCanonical() {
+        const canonicalUrl = `https://growwthpartners.com${window.location.pathname}`;
+        setCanonical(canonicalUrl);
+      }
+
+      // Override pushState to detect route changes
+      (function (history) {
+        const pushState = history.pushState;
+        history.pushState = function () {
+          const result = pushState.apply(history, arguments);
+          updateCanonical();
+          return result;
+        };
+      })(window.history);
+
+      // Listen to back/forward navigation
+      window.addEventListener("popstate", updateCanonical);
+
+      // Initial call on page load
+      updateCanonical();
+
+    </script>
 
     <!-- Defer Faitracker script until after load -->
     <script defer>

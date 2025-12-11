@@ -22,24 +22,24 @@ const queryClient = new QueryClient({
 });
 
 const Layout = () => {
-  const location = useLocation();
+  // const location = useLocation();
 
-  function setCanonical(url) {
-    let link = document.querySelector("link[rel='canonical']");
-    if (!link) {
-      link = document.createElement("link");
-      link.setAttribute("rel", "canonical");
-      document.head.appendChild(link);
-    }
-    console.log({url});
+  // function setCanonical(url) {
+  //   let link = document.querySelector("link[rel='canonical']");
+  //   if (!link) {
+  //     link = document.createElement("link");
+  //     link.setAttribute("rel", "canonical");
+  //     document.head.appendChild(link);
+  //   }
+  //   console.log({url});
     
-    link.setAttribute("href", url);
-  }
+  //   link.setAttribute("href", url);
+  // }
 
-  useEffect(() => {
-    const canonicalUrl = `https://growwthpartners.com${location.pathname}`;
-    setCanonical(canonicalUrl);
-  }, [location.pathname]);
+  // useEffect(() => {
+  //   const canonicalUrl = `https://growwthpartners.com${location.pathname}`;
+  //   setCanonical(canonicalUrl);
+  // }, [location.pathname]);
 
   return (
     <CountryProvider>
