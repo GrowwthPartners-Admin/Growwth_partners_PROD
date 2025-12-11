@@ -13,7 +13,7 @@ import { ClientsSection } from "@/components/esop/ClientsSection";
 import { FaqSection } from "@/components/accounting/FaqSection";
 import { BusinessSolutionsSection } from "@/components/esopValuation/BusinessSolutionsSection";
 import { ExploreServicesSection } from "@/components/esopValuation/ExploreServicesSection";
-// import { setCanonical } from "@/components/setCanonical.js";
+
 const EsopValuationSingapore = () => {
   const [contactModalOpen, setContactModalOpen] = useState(false);
 
