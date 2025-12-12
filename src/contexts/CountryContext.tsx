@@ -97,6 +97,13 @@ export const CountryProvider = ({
       return "/ai-decision-intelligence-singapore";
     }
 
+    // Handle ESOP Advisory - has country-specific versions
+    if (normalizedPath === "/esop-advisory-singapore" || normalizedPath.startsWith("/esop-advisory")) {
+      if (country === "australia") return "/au/esop-advisory-australia";
+      // UAE and Singapore use Singapore version
+      return "/esop-advisory-singapore";
+    }
+
     // Check if the path matches any Singapore-only page (exact match only)
     const isSingaporeOnlyPage = singaporeOnlyPages.some(
       (pagePath) => normalizedPath === pagePath || normalizedPath.startsWith(`${pagePath}/`)

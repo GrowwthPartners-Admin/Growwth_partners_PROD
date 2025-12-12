@@ -707,6 +707,15 @@ export const routes: RouteRecord[] = [
         },
       },
       {
+        path: "au/esop-advisory-australia",
+        async lazy() {
+          const { default: Component } = await import(
+            "./pages/EsopAdvisoryAustralia"
+          );
+          return { Component };
+        },
+      },
+      {
         path: "au/news",
         async lazy() {
           const { default: Component } = await import("./pages/News");
