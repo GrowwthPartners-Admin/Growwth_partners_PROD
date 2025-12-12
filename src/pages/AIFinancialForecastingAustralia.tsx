@@ -5,7 +5,6 @@ import { WhyChooseSection } from "@/components/aiFinancialForecastingAustralia/W
 import { WhatYouGetSection } from "@/components/aiFinancialForecastingAustralia/WhatYouGetSection";
 import { UseCasesSection } from "@/components/aiFinancialForecastingAustralia/UseCasesSection";
 import { BuiltForSection } from "@/components/aiFinancialForecastingAustralia/BuiltForSection";
-import { FAQSection } from "@/components/aiFinancialForecastingAustralia/FAQSection";
 import { CTASection } from "@/components/aiFinancialForecastingAustralia/CTASection";
 import { FaqSection } from "@/components/accounting/FaqSection";
 

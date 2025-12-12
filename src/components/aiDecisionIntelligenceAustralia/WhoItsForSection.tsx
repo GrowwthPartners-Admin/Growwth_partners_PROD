@@ -73,7 +73,7 @@ const WhoItsForSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              className="bg-white rounded-2xl p-6 border border-gray-100 hover:border-teal-200 hover:shadow-xl transition-all duration-300 text-center group"
+              className="bg-white rounded-2xl p-6 border border-gray-100 hover:border-teal-200 hover:shadow-xl transition-all duration-300 text-center group shadow"
             >
               <div className={`w-16 h-16 bg-gradient-to-br ${audience.color} rounded-2xl flex items-center justify-center mx-auto mb-5 shadow-lg group-hover:scale-110 transition-transform`}>
                 <audience.icon className="w-8 h-8 text-white" />
@@ -118,7 +118,7 @@ const WhoItsForSection = () => {
                 className="relative"
               >
                 {/* Step card */}
-                <div className="bg-white rounded-2xl p-6 border border-gray-100 hover:border-teal-200 hover:shadow-xl transition-all duration-300 group">
+                <div className="bg-gradient-to-br from-teal-100 to-blue-50 rounded-2xl p-6 border border-gray-100 hover:border-teal-200 hover:shadow-xl transition-all duration-300 group">
                   {/* Number badge */}
                   <div className="relative z-10 mb-6">
                     <div className="w-16 h-16 bg-gradient-to-br from-teal-500 to-blue-600 rounded-2xl flex items-center justify-center shadow-lg mx-auto group-hover:scale-110 transition-transform">
