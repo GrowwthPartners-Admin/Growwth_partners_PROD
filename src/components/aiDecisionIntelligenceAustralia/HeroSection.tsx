@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
-import { Brain, BarChart3, Sparkles } from 'lucide-react';
+import { Brain, BarChart3, Sparkles, ArrowRight, Play } from 'lucide-react';
 import { ContactModal } from '@/components/ui/contact-modal';
 
 const HeroSection = () => {
@@ -41,24 +41,30 @@ const HeroSection = () => {
               Ryzup.ai gives CFOs in Australia a live financial cockpit with AI dashboards, automated analysis, and predictive insights. Ask questions in plain English, see what changed, and understand what to do next with decision-ready analytics and forward views.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4">
+              {/* Buttons */}
+            <div className="flex flex-col sm:flex-row gap-4 pt-2 justify-center lg:justify-start">
               <Button 
                 size="lg" 
-                className="bg-gradient-to-r from-teal-600 to-teal-700 hover:from-teal-700 hover:to-teal-800 text-white shadow-lg shadow-teal-500/25"
-                onClick={() => setContactModalOpen(true)}
+                className="h-14 px-8 text-lg bg-brand-green hover:bg-brand-green/90 text-white rounded-xl shadow-lg shadow-brand-green/25 hover:shadow-brand-green/40 hover:-translate-y-0.5 transition-all"
+                onClick={() =>
+                window.open(
+                  "https://calendly.com/jd-growwthpartners/15min?month=2025-11",
+                  "_blank"
+                )}
               >
-                <Sparkles className="w-5 h-5 mr-2" />
                 Schedule a Demo
+                <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
-              <Button 
-                size="lg" 
-                variant="outline" 
-                className="border-teal-300 text-teal-700 hover:bg-teal-50"
-                onClick={() => window.open('https://app.ryzup.ai/login', '_blank')}
-              >
-                <BarChart3 className="w-5 h-5 mr-2" />
-                See the Dashboards
-              </Button>
+              <a href="https://workspace.google.com/u/0/marketplace/app/ryzup_sheets/1047771589087?flow_type=2" target="_blank" rel="noopener noreferrer">
+                <Button 
+                  size="lg" 
+                  variant="outline" 
+                  className="h-14 px-8 text-lg border-2 border-slate-200 dark:border-slate-800 hover:bg-slate-50 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-200 rounded-xl hover:-translate-y-0.5 transition-all"
+                >
+                  <Play className="mr-2 w-5 h-5 text-brand-blue" />
+                  See the Dashboards
+                </Button>
+              </a>
             </div>
           </motion.div>
 

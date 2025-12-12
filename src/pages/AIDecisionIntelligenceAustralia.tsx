@@ -1,12 +1,41 @@
-import { Layout } from '@/components/Layout';
-import SEOhelper from '@/components/SEOhelper';
-import HeroSection from '@/components/aiDecisionIntelligenceAustralia/HeroSection';
-import WhyChooseSection from '@/components/aiDecisionIntelligenceAustralia/WhyChooseSection';
-import WhatYouGetSection from '@/components/aiDecisionIntelligenceAustralia/WhatYouGetSection';
-import UseCasesSection from '@/components/aiDecisionIntelligenceAustralia/UseCasesSection';
-import WhoItsForSection from '@/components/aiDecisionIntelligenceAustralia/WhoItsForSection';
-import FAQSection from '@/components/aiDecisionIntelligenceAustralia/FAQSection';
-import CTASection from '@/components/aiDecisionIntelligenceAustralia/CTASection';
+import { Layout } from "@/components/Layout";
+import SEOhelper from "@/components/SEOhelper";
+import HeroSection from "@/components/aiDecisionIntelligenceAustralia/HeroSection";
+import WhyChooseSection from "@/components/aiDecisionIntelligenceAustralia/WhyChooseSection";
+import WhatYouGetSection from "@/components/aiDecisionIntelligenceAustralia/WhatYouGetSection";
+import UseCasesSection from "@/components/aiDecisionIntelligenceAustralia/UseCasesSection";
+import WhoItsForSection from "@/components/aiDecisionIntelligenceAustralia/WhoItsForSection";
+import CTASection from "@/components/aiDecisionIntelligenceAustralia/CTASection";
+import { FaqSection } from "@/components/accounting/FaqSection";
+
+const faqs = [
+  {
+    question:
+      "What does Ryzup.ai provide for AI dashboards for CFOs in Australia?",
+    answer:
+      "Ryzup.ai delivers real-time executive dashboards, automated analysis, and predictive insights so CFOs can see performance, understand drivers, and act quickly.",
+  },
+  {
+    question: "How do Ryzup.ai dashboards help with decision-making?",
+    answer:
+      "Ryzup.ai combines live metrics, narrative explanations, and scenario modelling to show what changed, why it changed, and the likely impact on cash and profit.",
+  },
+  {
+    question: "Can Ryzup.ai support multi-entity Australian groups?",
+    answer:
+      "Yes. Ryzup.ai supports consolidated views, consistent KPIs, and multi-currency reporting so groups can review a single source of truth.",
+  },
+  {
+    question: "Does Ryzup.ai replace spreadsheets?",
+    answer:
+      "No. Teams keep familiar Sheets where useful. Ryzup.ai automates data refresh, analysis, and forecasting so spreadsheets are lighter and more reliable.",
+  },
+  {
+    question: "How quickly can an Australian CFO get value?",
+    answer:
+      "Most teams connect data and see first dashboards and forecasts within days, then refine KPIs and scenarios for leadership reviews.",
+  },
+];
 
 const AIDecisionIntelligenceAustralia = () => {
   return (
@@ -22,7 +51,10 @@ const AIDecisionIntelligenceAustralia = () => {
       <WhatYouGetSection />
       <UseCasesSection />
       <WhoItsForSection />
-      <FAQSection />
+      <FaqSection
+        faqs={faqs}
+        subtitle="Everything you need to know about AI Decision Intelligence"
+      />
       <CTASection />
     </Layout>
   );
