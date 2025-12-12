@@ -26,7 +26,7 @@ export const HeroSection = ({ onEnquireClick }: HeroSectionProps) => {
               Retain talent, motivate teams, and build an ownership culture with expert ESOP advisory tailored for Australian businesses.
             </p>
             <p className="text-lg text-gray-700 mb-8">
-              Growwth Partners supports companies in Australia and globally to optimise compensation structures, implement ESOPs with confidence, and navigate compliance with clarity. Services cover both fast-growing startups and established companies seeking end-to-end ESOP advisory in Australia.
+              We help startups and established firms in Australia and beyond optimize compensation and navigate ESOP compliance with confidence.
             </p>
             <Button
               onClick={onEnquireClick}

@@ -8,7 +8,7 @@ import { WhatSetsUsApartSection } from "@/components/esopAdvisoryAustralia/WhatS
 import { TailoredServicesSection } from "@/components/esopAdvisoryAustralia/TailoredServicesSection";
 import { PricingTableSection } from "@/components/esopAdvisoryAustralia/PricingTableSection";
 import { ClientsSection } from "@/components/esopAdvisoryAustralia/ClientsSection";
-import { FAQSection } from "@/components/esopAdvisoryAustralia/FAQSection";
+import { FaqSection } from "@/components/accounting/FaqSection";
 import { BroaderSupportSection } from "@/components/esopAdvisoryAustralia/BroaderSupportSection";
 import { CTASection } from "@/components/esopAdvisoryAustralia/CTASection";
 
@@ -18,32 +18,40 @@ const EsopAdvisoryAustralia = () => {
   const faqs = [
     {
       question: "How do ESOPs support growth for Australian companies?",
-      answer: "ESOPs align employee incentives with company outcomes, strengthening motivation, retention, and performance during scaling and fundraising."
+      answer:
+        "ESOPs align employee incentives with company outcomes, strengthening motivation, retention, and performance during scaling and fundraising.",
     },
     {
       question: "Which industries in Australia benefit most from ESOPs?",
-      answer: "Technology, professional services, and high-growth ventures benefit strongly, though well-designed plans work across many sectors."
+      answer:
+        "Technology, professional services, and high-growth ventures benefit strongly, though well-designed plans work across many sectors.",
     },
     {
       question: "How does ESOP participation influence culture?",
-      answer: "Employee ownership encourages accountability, collaboration, and long-term thinking, improving engagement and satisfaction."
+      answer:
+        "Employee ownership encourages accountability, collaboration, and long-term thinking, improving engagement and satisfaction.",
     },
     {
       question: "Are there tax considerations for ESOPs in Australia?",
-      answer: "Tax outcomes depend on structure and participant circumstances. Growwth Partners advises on frameworks and coordinates with legal and tax specialists where needed."
+      answer:
+        "Tax outcomes depend on structure and participant circumstances. Growwth Partners advises on frameworks and coordinates with legal and tax specialists where needed.",
     },
     {
       question: "What is a typical ESOP implementation timeline in Australia?",
-      answer: "Most implementations complete within weeks once documentation and approvals are aligned. Growwth Partners manages a clear, step-by-step process."
+      answer:
+        "Most implementations complete within weeks once documentation and approvals are aligned. Growwth Partners manages a clear, step-by-step process.",
     },
     {
-      question: "How does Growwth Partners' ESOP advisory stand out in Australia?",
-      answer: "Growwth Partners combines local insight with international experience, tailored plan design, clear communications, and end-to-end administration support."
+      question:
+        "How does Growwth Partners' ESOP advisory stand out in Australia?",
+      answer:
+        "Growwth Partners combines local insight with international experience, tailored plan design, clear communications, and end-to-end administration support.",
     },
     {
       question: "What ongoing ESOP support does Growwth Partners provide?",
-      answer: "Administration, reporting, participant education, performance reviews, and periodic plan refreshes to keep alignment with business goals."
-    }
+      answer:
+        "Administration, reporting, participant education, performance reviews, and periodic plan refreshes to keep alignment with business goals.",
+    },
   ];
 
   const structuredData = {
@@ -52,14 +60,14 @@ const EsopAdvisoryAustralia = () => {
       {
         "@type": "FAQPage",
         "@id": "https://growwthpartners.com/au/esop-advisory-australia/#faq",
-        mainEntity: faqs.map(faq => ({
+        mainEntity: faqs.map((faq) => ({
           "@type": "Question",
           name: faq.question,
           acceptedAnswer: {
             "@type": "Answer",
-            text: faq.answer
-          }
-        }))
+            text: faq.answer,
+          },
+        })),
       },
       {
         "@type": "Organization",
@@ -113,14 +121,17 @@ const EsopAdvisoryAustralia = () => {
         <TailoredServicesSection />
         <PricingTableSection />
         <ClientsSection />
-        <FAQSection faqs={faqs} />
+        <FaqSection
+          faqs={faqs}
+          subtitle="Everything you need to know about ESOP Advisory Services in Australia"
+        />
         <BroaderSupportSection />
         <CTASection />
       </motion.div>
 
-      <ContactModal 
-        open={contactModalOpen} 
-        onOpenChange={setContactModalOpen} 
+      <ContactModal
+        open={contactModalOpen}
+        onOpenChange={setContactModalOpen}
       />
     </Layout>
   );

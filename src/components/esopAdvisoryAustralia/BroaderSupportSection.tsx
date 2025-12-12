@@ -52,7 +52,7 @@ export const BroaderSupportSection = () => {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
               onClick={() => navigate(getCountryUrl(service.path))}
-              className="group bg-white rounded-2xl p-8 shadow-md hover:shadow-xl transition-all duration-300 border border-teal-100/50 cursor-pointer hover:border-teal-300"
+              className="group bg-white rounded-2xl p-8 shadow-md hover:shadow-xl transition-all duration-300 border border-teal-100/50 cursor-pointer border-teal-300"
             >
               <div className="w-14 h-14 bg-gradient-to-br from-teal-500 to-teal-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                 <service.icon className="w-7 h-7 text-white" />

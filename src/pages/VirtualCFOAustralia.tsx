@@ -73,8 +73,16 @@ const VirtualCFOAustraliaPage = () => {
           "email": "jd@growwthpartners.com",
           "telephone": "+65 9861 5600",
           "contactType": "business"
-        }
-      ]
+        },
+        
+      ],
+      address: {
+          "@type": "PostalAddress",
+          streetAddress: "50 Clarence St",
+          addressLocality: "Sydney",
+          postalCode: "2000",
+          addressCountry: "AU",
+        },
     }
   ]
 };

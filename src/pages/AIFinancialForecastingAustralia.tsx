@@ -68,13 +68,13 @@ const AIFinancialForecastingAustralia = () => {
       },
       {
         "@type": "Organization",
-        "address": {
+        address: {
           "@type": "PostalAddress",
-          "streetAddress": "65 Chulia Street",
-          "addressLocality": "Singapore",
-          "postalCode": "049513",
-          "addressCountry": "SG"
-        }
+          streetAddress: "50 Clarence St",
+          addressLocality: "Sydney",
+          postalCode: "2000",
+          addressCountry: "AU",
+        },
       }
     ]
   };

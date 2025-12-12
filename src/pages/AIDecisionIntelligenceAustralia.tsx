@@ -38,6 +38,49 @@ const faqs = [
 ];
 
 const AIDecisionIntelligenceAustralia = () => {
+
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "FAQPage",
+        "@id": "https://growwthpartners.com/au/ai-decision-intelligence-australia/#faq",
+        name: "AI Decision Intelligence for CFOs in Australia | Ryzup.ai",
+        mainEntity: faqs.map((faq) => ({
+          "@type": "Question",
+          name: faq.question,
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: faq.answer,
+          },
+        })),
+      },
+      {
+        "@type": "Service",
+        "@id":
+          "https://growwthpartners.com/au/ai-decision-intelligence-australia/#service",
+        name: "AI Decision Intelligence for CFOs in Australia | Ryzup.ai",
+        provider: {
+          "@type": "Organization",
+          name: "Growwth Partners",
+        },
+        description:
+          "Integrate AI into your finance workflow with Ryzup.ai. Automate reporting, error checks, reconciliations and forecasting in Google Sheets and Xero.",
+        areaServed: "Australia",
+      },
+      {
+        "@type": "Organization",
+        address: {
+          "@type": "PostalAddress",
+          streetAddress: "50 Clarence St",
+          addressLocality: "Sydney",
+          postalCode: "2000",
+          addressCountry: "AU",
+        },
+      },
+    ],
+  };
+
   return (
     <Layout>
       <SEOhelper
@@ -45,6 +88,7 @@ const AIDecisionIntelligenceAustralia = () => {
         description="Get AI-powered financial dashboards, automated analysis, and predictive insights for CFOs in Australia. Ask questions in plain English and make faster decisions."
         keywords="AI decision intelligence, CFO dashboards Australia, AI financial analysis, predictive insights, finance automation Australia"
         canonicalUrl="https://growwthpartners.com/au/ai-decision-intelligence-australia"
+        structuredData={structuredData}
       />
       <HeroSection />
       <WhyChooseSection />
