@@ -15,7 +15,7 @@ const WhyChooseSection = () => {
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-b from-slate-50 to-white">
+    <section className="py-20 bg-gradient-to-b from-amber-50/50 to-white">
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -25,7 +25,7 @@ const WhyChooseSection = () => {
         >
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
             Why UAE Teams Choose{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-teal-600">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-600 to-orange-600">
               AI Financial Forecasting
             </span>
           </h2>
@@ -67,9 +67,9 @@ const WhyChooseSection = () => {
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="bg-emerald-50 rounded-3xl p-8 border border-emerald-100"
+            className="bg-amber-50 rounded-3xl p-8 border border-amber-100"
           >
-            <h3 className="text-xl font-semibold text-emerald-800 mb-6 flex items-center gap-2">
+            <h3 className="text-xl font-semibold text-amber-800 mb-6 flex items-center gap-2">
               <Zap className="w-5 h-5" />
               Ryzup.ai Delivers
             </h3>
@@ -83,8 +83,8 @@ const WhyChooseSection = () => {
                   transition={{ delay: index * 0.1 }}
                   className="flex items-start gap-4 bg-white rounded-xl p-4 shadow-sm"
                 >
-                  <div className="w-10 h-10 rounded-full bg-emerald-100 flex items-center justify-center flex-shrink-0">
-                    <item.icon className="w-5 h-5 text-emerald-600" />
+                  <div className="w-10 h-10 rounded-full bg-amber-100 flex items-center justify-center flex-shrink-0">
+                    <item.icon className="w-5 h-5 text-amber-600" />
                   </div>
                   <p className="text-gray-700 pt-2">{item.text}</p>
                 </motion.div>
@@ -99,7 +99,7 @@ const WhyChooseSection = () => {
           viewport={{ once: true }}
           className="text-center text-lg text-gray-600 mt-12 max-w-3xl mx-auto"
         >
-          This is practical <span className="font-semibold text-emerald-600">AI financial forecasting in the UAE</span> for 
+          This is practical <span className="font-semibold text-amber-600">AI financial forecasting in the UAE</span> for 
           CFOs, founders and finance teams.
         </motion.p>
       </div>
