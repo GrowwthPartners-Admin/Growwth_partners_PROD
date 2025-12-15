@@ -563,6 +563,15 @@ export const routes: RouteRecord[] = [
           return { Component };
         },
       },
+      {
+        path: "uae/ai-risk-compliance-fraud-uae",
+        async lazy() {
+          const { default: Component } = await import(
+            "./pages/AiRiskComplianceUAE"
+          );
+          return { Component };
+        },
+      },
       // Australia Routes
       {
         path: "au",

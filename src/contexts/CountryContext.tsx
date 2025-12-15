@@ -86,7 +86,7 @@ export const CountryProvider = ({
     // Handle AI Risk Compliance - has country-specific versions
     if (normalizedPath === "/ai-risk-compliance-singapore" || normalizedPath.startsWith("/ai-risk-compliance")) {
       if (country === "australia") return "/au/ai-risk-compliance-australia";
-      // UAE and Singapore use Singapore version
+      if (country === "uae") return "/uae/ai-risk-compliance-fraud-uae";
       return "/ai-risk-compliance-singapore";
     }
 
