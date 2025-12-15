@@ -8,7 +8,7 @@ const CTASection = () => {
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
 
   return (
-    <section className="py-20 bg-gradient-to-br from-brand-orange via-amber-500 to-yellow-500 relative overflow-hidden">
+    <section className="py-20 bg-gradient-to-br from-brand-blue to-blue-700 relative overflow-hidden">
       {/* Background decorations */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-0 left-0 w-96 h-96 bg-white/10 rounded-full blur-3xl" />
@@ -45,7 +45,7 @@ const CTASection = () => {
               size="lg"
               variant="outline"
               onClick={() => window.open('https://calendly.com/jd-growwthpartners/15min?month=2025-11', '_blank')}
-              className="border-2 border-white text-black backdrop-blur-sm hover:bg-transparent"
+              className="bg-white hover:bg-gray-100 text-brand-blue border-2 border-white px-8 py-6 text-lg font-semibold rounded-lg transition-all"
             >
               <MessageSquare className="w-5 h-5 mr-2" />
               Speak to a Corporate Tax Specialist
