@@ -55,7 +55,7 @@ const WhoBenefitsSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className={`bg-white rounded-2xl p-6 border ${benefit.color === "amber" ? "border-amber-100" : "border-orange-100"} hover:shadow-lg transition-shadow duration-300`}
+              className={`bg-white rounded-2xl p-6 border ${benefit.color === "amber" ? "border-amber-100" : "border-orange-100"} hover:shadow-lg transition-shadow duration-300 shadow`}
             >
               <div className={`w-14 h-14 ${benefit.color === "amber" ? "bg-amber-100" : "bg-orange-100"} rounded-xl flex items-center justify-center mb-5`}>
                 <benefit.icon className={`w-7 h-7 ${benefit.color === "amber" ? "text-amber-600" : "text-orange-600"}`} />

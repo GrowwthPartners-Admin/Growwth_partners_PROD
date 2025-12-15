@@ -148,6 +148,11 @@ const staticRoutes = [
   },
   { path: "/uae/virtual-cfo-services-uae", priority: "0.8", changefreq: "monthly" },
 
+  { path: "/uae/corporate-tax-filing-uae", priority: "0.8", changefreq: "monthly" },
+  { path: "/uae/esop-advisory-uae", priority: "0.8", changefreq: "monthly" },
+  { path: "/uae/ai-finance-workflow-uae", priority: "0.8", changefreq: "monthly" },
+
+
   // Australia pages
   { path: "/au", priority: "1.0", changefreq: "daily" },
   { path: "/au/about", priority: "0.8", changefreq: "weekly" },
