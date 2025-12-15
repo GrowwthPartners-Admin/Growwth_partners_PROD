@@ -72,7 +72,7 @@ export const CountryProvider = ({
     // Handle AI Finance Workflow - has country-specific versions
     if (normalizedPath === "/ai-finance-workflow-singapore" || normalizedPath.startsWith("/ai-finance-workflow")) {
       if (country === "australia") return "/au/ai-finance-workflow-australia";
-      // UAE and Singapore use Singapore version
+      if (country === "uae") return "/uae/ai-finance-workflow-uae";
       return "/ai-finance-workflow-singapore";
     }
 

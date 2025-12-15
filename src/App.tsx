@@ -545,6 +545,15 @@ export const routes: RouteRecord[] = [
           return { Component };
         },
       },
+      {
+        path: "uae/ai-finance-workflow-uae",
+        async lazy() {
+          const { default: Component } = await import(
+            "./pages/AiFinanceWorkflowUAE"
+          );
+          return { Component };
+        },
+      },
       // Australia Routes
       {
         path: "au",
