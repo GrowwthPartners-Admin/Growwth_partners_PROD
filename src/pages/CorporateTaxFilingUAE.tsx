@@ -5,10 +5,8 @@ import WhyChooseSection from '@/components/corporateTaxUAE/WhyChooseSection';
 import WhatIncludesSection from '@/components/corporateTaxUAE/WhatIncludesSection';
 import WhoWeHelpSection from '@/components/corporateTaxUAE/WhoWeHelpSection';
 import WhyGrowwthSection from '@/components/corporateTaxUAE/WhyGrowwthSection';
-import FAQSection from '@/components/corporateTaxUAE/FAQSection';
-import CTASection from '@/components/corporateTaxUAE/CTASection';
 import { FaqSection } from "@/components/accounting/FaqSection";
-
+import { CtaSection } from "@/components/shared/CtaSection";
 
 const faqs = [
   {
@@ -105,10 +103,16 @@ const CorporateTaxFilingUAE = () => {
       <WhoWeHelpSection />
       <WhyGrowwthSection />
       <FaqSection
-                faqs={faqs}
-                subtitle="Find answers to Common questions about  Corporate Tax Filing in UAE"
-              />
-      <CTASection />
+        faqs={faqs}
+        subtitle="Find answers to Common questions about  Corporate Tax Filing in UAE"
+      />
+      <CtaSection
+        title="Make corporate tax one less thing to worry about"
+        description="Choose accurate, on-time corporate tax filing in the UAE with proactive planning and clear year-end reporting"
+        primaryButtonText="Speak to a Corporate Tax Specialist"
+        secondaryButtonText="Book a Free Tax Consultation"
+        backgroundColor="from-brand-blue to-blue-700"
+      />
     </Layout>
   );
 };

@@ -3,6 +3,8 @@ import { Button } from '@/components/ui/button';
 import { ArrowRight, Calendar, FileText } from 'lucide-react';
 import { useState } from 'react';
 import { ContactModal } from '@/components/ui/contact-modal';
+import img from "../../../public/images/UAEImage/corporate-tax-UAE.jpg"
+
 
 const HeroSection = () => {
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
@@ -92,7 +94,7 @@ const HeroSection = () => {
             <div className="relative">
               <div className="absolute inset-0 bg-gradient-to-br from-brand-orange/20 to-amber-300/20 rounded-3xl transform rotate-3" />
               <img
-                src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=800&q=80"
+                src={img}
                 alt="Corporate Tax Filing UAE"
                 className="relative rounded-3xl shadow-2xl w-full object-cover"
               />
@@ -102,7 +104,7 @@ const HeroSection = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.6, duration: 0.5 }}
-                className="absolute -bottom-6 -left-6 bg-white rounded-2xl shadow-xl p-4 border border-gray-100"
+                className="absolute -top-6 -right-6 bg-white rounded-2xl shadow-xl p-4 border border-gray-100"
               >
                 <div className="flex items-center gap-3">
                   <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-brand-orange to-amber-500 flex items-center justify-center">
