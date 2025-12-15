@@ -35,7 +35,7 @@ const BroaderSupportSection = () => {
           {services.map((service, index) => (
             <div
               key={index}
-              className="bg-white rounded-2xl p-8 border border-amber-100/50 shadow-sm hover:shadow-xl hover:border-amber-200 transition-all duration-300 group"
+              className="bg-white rounded-2xl p-8 border border-amber-100/50 hover:shadow-xl hover:border-amber-200 transition-all duration-300 group shadow"
             >
               <div className="w-14 h-14 bg-gradient-to-br from-amber-100 to-orange-100 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                 <service.icon className="w-7 h-7 text-amber-600" />

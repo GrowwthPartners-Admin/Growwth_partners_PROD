@@ -32,11 +32,11 @@ const TailoredServicesSection = () => {
         </div>
 
         <div className="max-w-5xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             {services.map((service, index) => (
               <div
                 key={index}
-                className="flex items-center gap-4 bg-white rounded-xl p-6 border border-amber-100/50 shadow-sm hover:shadow-lg hover:border-amber-200 transition-all duration-300"
+                className="flex items-center gap-4 bg-white rounded-xl p-6 border border-amber-100/50 hover:shadow-lg hover:border-amber-200 transition-all duration-300 shadow-md"
               >
                 <div className="w-12 h-12 bg-gradient-to-br from-amber-100 to-orange-100 rounded-lg flex items-center justify-center flex-shrink-0">
                   <service.icon className="w-6 h-6 text-amber-600" />

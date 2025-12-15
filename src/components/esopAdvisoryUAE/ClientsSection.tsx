@@ -1,51 +1,53 @@
 import { useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight, Quote } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { motion } from "framer-motion";
+import { Star } from "lucide-react";
+import { LazyIframe } from "@/components/ui/lazy-iframe";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselPrevious,
+  CarouselNext,
+} from "@/components/ui/carousel";
 
-const testimonials = [
-  {
-    quote: "Growwth Partners made our ESOP implementation seamless. Their understanding of UAE regulations and free zone requirements was invaluable.",
-    author: "Mohammed Al-Hassan",
-    role: "CEO, Tech Startup Dubai",
-    company: "Dubai, UAE"
-  },
-  {
-    quote: "The team's expertise in designing employee stock plans helped us attract top talent in a competitive market. Highly recommended.",
-    author: "Sarah Chen",
-    role: "CFO, FinTech Scale-up",
-    company: "DIFC, UAE"
-  },
-  {
-    quote: "Professional, thorough, and always available. Growwth Partners transformed our equity compensation strategy completely.",
-    author: "Rajesh Patel",
-    role: "Founder, E-commerce Platform",
-    company: "Abu Dhabi, UAE"
-  },
-  {
-    quote: "Their end-to-end ESOP advisory covered everything from design to ongoing administration. A true partner for growth.",
-    author: "Emma Williams",
-    role: "HR Director, SaaS Company",
-    company: "ADGM, UAE"
-  },
-];
+ const testimonialVideos = [
+    {
+      id: "uylxy3pjgl",
+      title: "Customer Testimonial 1",
+      name: "Ellie Curran",
+      role: "Ex Co-Founder & CEO, CoLab",
+    },
+    {
+      id: "7lotud5v4w",
+      title: "Customer Testimonial 2",
+      name: "Migara Tennakoon",
+      role: "Founder & CEO, Peace Lily",
+    },
+    {
+      id: "70p2vilm80",
+      title: "Customer Testimonial 3",
+      name: "Seçkin Çağlın",
+      role: "Co-Founder & Co-CEO Cenoa",
+    },
+    {
+      id: "kos5z2qvc2",
+      title: "Customer Testimonial 4",
+      name: "Neha Jain",
+      role: "FP&A Manager, Tigerhall",
+    },
+    {
+      id: "u5hhsmcpqb",
+      title: "Customer Testimonial 5",
+      name: "Marcos Bulacio",
+      role: "Founder & CEO, Pangea | Regenesis Labs",
+    },
+  ];
 
 const ClientsSection = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentIndex((prev) => (prev + 1) % testimonials.length);
-    }, 5000);
-    return () => clearInterval(timer);
-  }, []);
-
-  const goToPrevious = () => {
-    setCurrentIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
-  };
-
-  const goToNext = () => {
-    setCurrentIndex((prev) => (prev + 1) % testimonials.length);
-  };
 
   return (
     <section className="py-20 bg-gradient-to-br from-amber-50 via-orange-50/30 to-yellow-50/20">
@@ -62,65 +64,54 @@ const ClientsSection = () => {
           </p>
         </div>
 
-        <div className="max-w-4xl mx-auto">
-          <div className="relative bg-white rounded-3xl p-8 md:p-12 shadow-xl shadow-amber-500/10 border border-amber-100">
-            <Quote className="absolute top-6 left-6 w-12 h-12 text-amber-200" />
-            
-            <div className="relative z-10">
-              <p className="text-xl md:text-2xl text-gray-700 leading-relaxed mb-8 italic">
-                "{testimonials[currentIndex].quote}"
-              </p>
-              
-              <div className="flex items-center justify-between">
-                <div>
-                  <p className="font-semibold text-gray-900 text-lg">
-                    {testimonials[currentIndex].author}
-                  </p>
-                  <p className="text-amber-600">
-                    {testimonials[currentIndex].role}
-                  </p>
-                  <p className="text-gray-500 text-sm">
-                    {testimonials[currentIndex].company}
-                  </p>
-                </div>
-
-                <div className="flex items-center gap-2">
-                  <Button
-                    variant="outline"
-                    size="icon"
-                    onClick={goToPrevious}
-                    className="rounded-full border-amber-200 hover:bg-amber-50"
-                  >
-                    <ChevronLeft className="w-5 h-5 text-amber-600" />
-                  </Button>
-                  <Button
-                    variant="outline"
-                    size="icon"
-                    onClick={goToNext}
-                    className="rounded-full border-amber-200 hover:bg-amber-50"
-                  >
-                    <ChevronRight className="w-5 h-5 text-amber-600" />
-                  </Button>
-                </div>
-              </div>
-            </div>
-
-            {/* Dots */}
-            <div className="flex justify-center gap-2 mt-8">
-              {testimonials.map((_, index) => (
-                <button
-                  key={index}
-                  onClick={() => setCurrentIndex(index)}
-                  className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                    index === currentIndex
-                      ? "bg-amber-500 w-6"
-                      : "bg-amber-200 hover:bg-amber-300"
-                  }`}
-                />
+       <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          viewport={{ once: true }}
+          className="max-w-4xl mx-auto"
+        >
+          <Carousel
+            opts={{
+              align: "start",
+              loop: true,
+            }}
+            className="relative"
+          >
+            <CarouselContent>
+              {testimonialVideos.map((video) => (
+                <CarouselItem key={video.id} className="md:basis-full">
+                  <div className=" rounded-2xl p-8 shadow-lg">
+                    <div className="flex flex-col items-center mb-4">
+                      <div className="flex gap-1 mb-2">
+                        {[...Array(5)].map((_, i) => (
+                          <Star
+                            key={i}
+                            className="w-5 h-5 fill-orange-500 text-orange-500"
+                          />
+                        ))}
+                      </div>
+                      <h4 className="text-xl font-semibold mb-1">
+                        {video.name}
+                      </h4>
+                      <p className="text-gray-600 mb-4">{video.role}</p>
+                    </div>
+                    <div className="aspect-video w-[85%] mx-auto overflow-hidden rounded-lg">
+                      <LazyIframe
+                        src={`https://fast.wistia.net/embed/iframe/${video.id}`}
+                        title={video.title}
+                        autoplay={true}
+                        muted={true}
+                      />
+                    </div>
+                  </div>
+                </CarouselItem>
               ))}
-            </div>
-          </div>
-        </div>
+            </CarouselContent>
+            <CarouselPrevious className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-12 border-orange-200 hover:bg-teal-50" />
+            <CarouselNext className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-12 border-orange-200 hover:bg-teal-50" />
+          </Carousel>
+        </motion.div>
       </div>
     </section>
   );

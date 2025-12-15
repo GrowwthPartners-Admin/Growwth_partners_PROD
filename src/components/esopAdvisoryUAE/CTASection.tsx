@@ -7,7 +7,7 @@ const CTASection = () => {
   const [contactModalOpen, setContactModalOpen] = useState(false);
 
   return (
-    <section className="py-20 bg-gradient-to-br from-amber-600 via-orange-600 to-amber-700 relative overflow-hidden">
+    <section className="py-20 bg-gradient-to-br from-brand-blue to-blue-700 relative overflow-hidden">
       {/* Decorative elements */}
       <div className="absolute top-0 right-0 w-96 h-96 bg-white/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
       <div className="absolute bottom-0 left-0 w-80 h-80 bg-white/10 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2" />
@@ -30,7 +30,7 @@ const CTASection = () => {
           <Button
             size="lg"
             onClick={() => setContactModalOpen(true)}
-            className="bg-white text-amber-600 hover:bg-amber-50 px-8 py-6 text-lg rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 group"
+            className="bg-white text-blue-600 hover:bg-amber-50 px-8 py-6 text-lg rounded-xl shadow-lg font-bold hover:shadow-xl transition-all duration-300 group hover:scale-105"
           >
             Enquire Now for ESOP Advisory in the UAE
             <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
