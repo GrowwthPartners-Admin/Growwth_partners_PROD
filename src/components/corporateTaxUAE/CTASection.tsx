@@ -35,7 +35,7 @@ const CTASection = () => {
             <Button 
               size="lg"
               onClick={() => setIsContactModalOpen(true)}
-              className="bg-white text-brand-orange hover:bg-gray-100 shadow-xl group"
+              className="bg-gradient-to-r from-brand-orange to-amber-600 text-white px-8 py-6 text-lg font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all "
             >
               <Calendar className="w-5 h-5 mr-2" />
               Book a Free Tax Consultation
@@ -45,7 +45,7 @@ const CTASection = () => {
               size="lg"
               variant="outline"
               onClick={() => window.open('https://calendly.com/jd-growwthpartners/15min?month=2025-11', '_blank')}
-              className="border-2 border-white text-white hover:bg-white/10 backdrop-blur-sm"
+              className="border-2 border-white text-black backdrop-blur-sm hover:bg-transparent"
             >
               <MessageSquare className="w-5 h-5 mr-2" />
               Speak to a Corporate Tax Specialist

@@ -40,23 +40,26 @@ const HeroSection = () => {
               Growwth Partners delivers accurate, on-time corporate tax filing in the UAE so your company stays compliant with the Federal Tax Authority. From year-end computations to proactive planning and UAE tax services, the team handles the details while you focus on growth.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Button 
-                size="lg" 
-                onClick={() => setIsContactModalOpen(true)}
-                className="bg-gradient-to-r from-brand-orange to-amber-600 hover:from-brand-orange/90 hover:to-amber-600/90 text-white shadow-lg shadow-brand-orange/25 group"
+             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+              <Button
+                size="lg"
+                onClick={() =>
+                window.open(
+                  "https://calendly.com/jd-growwthpartners/15min?month=2025-11",
+                  "_blank"
+                )}
+                className="bg-gradient-to-r from-brand-orange to-amber-600 hover:bg-[#059b8a] text-white px-8 py-6 text-lg font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all"
               >
-                <Calendar className="w-5 h-5 mr-2" />
                 Book a Free Tax Consultation
-                <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
-              <Button 
-                size="lg" 
+              <Button
+                size="lg"
                 variant="outline"
-                onClick={() => window.open('https://calendly.com/jd-growwthpartners/15min?month=2025-11', '_blank')}
-                className="border-2 border-brand-orange/30 text-brand-orange hover:bg-brand-orange/5"
+                onClick={() => setIsContactModalOpen(true)}
+                className="border-2 border-brand-orange/30 text-brand-orange hover:bg-brand-orange/5 px-8 py-6 text-lg font-semibold rounded-lg transition-all"
               >
-                Speak to a Corporate Tax Specialist
+                 Speak to a Tax Specialist
               </Button>
             </div>
 

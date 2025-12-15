@@ -86,7 +86,7 @@ const WhyGrowwthSection = () => {
           <Button 
             size="lg"
             onClick={() => setIsContactModalOpen(true)}
-            className="bg-gradient-to-r from-brand-orange to-amber-500 hover:from-brand-orange/90 hover:to-amber-500/90 text-white shadow-lg shadow-brand-orange/25 group"
+            className="bg-gradient-to-r from-brand-orange to-amber-600 hover:bg-[#059b8a] text-white px-8 py-6 text-lg font-semibold rounded-lg shadow-lg hover:shadow-xl hover:scale-105 transition-all"
           >
             Book a Free Tax Consultation
             <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />

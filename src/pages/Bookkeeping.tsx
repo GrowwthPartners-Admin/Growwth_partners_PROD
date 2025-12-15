@@ -58,8 +58,8 @@ const BookkeepingPage = () => {
   return (
     <Layout>
       <SEOhelper
-        title="Bookkeeping & Record Management Services | Growwth Partners"
-        description="Reliable bookkeeping services in Singapore for growing businesses. Maintain accurate records, streamline finances, and ensure smooth audits"
+        title="Bookkeeping Services in Singapore | Top Virtual Bookkeeping for Startups"
+        description="Professional bookkeeping services in Singapore for startups. From virtual bookkeeping services to dedicated bookkeeper services Singapore businesses trust, we offer the best bookkeeping services with accuracy and compliance"
         keywords="bookkeeping services, financial records, transaction management, small business accounting, financial reporting, accounts payable, accounts receivable, bank reconciliation"
         canonicalUrl="https://growwthpartners.com/bookkeeping-services-in-singapore"
         structuredData={structuredData}

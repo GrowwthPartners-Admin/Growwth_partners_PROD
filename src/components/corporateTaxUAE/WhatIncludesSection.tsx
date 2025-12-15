@@ -1,7 +1,12 @@
-import { motion } from 'framer-motion';
-import { Calculator, FileText, TrendingUp, Receipt, BarChart3, ArrowRight } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { useNavigate } from 'react-router-dom';
+import { motion } from "framer-motion";
+import {
+  Calculator,
+  FileText,
+  TrendingUp,
+  Receipt,
+  BarChart3,
+} from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const services = [
   {
@@ -11,8 +16,8 @@ const services = [
     items: [
       "Translate management accounts into taxable income",
       "Identify deductions, offsets and reliefs for SMEs",
-      "Review non-deductible items and tax adjustments"
-    ]
+      "Review non-deductible items and tax adjustments",
+    ],
   },
   {
     icon: FileText,
@@ -21,8 +26,8 @@ const services = [
     items: [
       "Prepare and lodge company tax returns with the FTA",
       "Manage deadlines, extensions and correspondence",
-      "Monitor notices and respond to FTA queries"
-    ]
+      "Monitor notices and respond to FTA queries",
+    ],
   },
   {
     icon: TrendingUp,
@@ -31,8 +36,8 @@ const services = [
     items: [
       "Assess eligibility for small business relief and relevant concessions",
       "Advise on timing of revenue and expenses",
-      "Provide structure guidance to improve long-term outcomes"
-    ]
+      "Provide structure guidance to improve long-term outcomes",
+    ],
   },
   {
     icon: Receipt,
@@ -41,8 +46,8 @@ const services = [
     items: [
       "Align VAT records with year-end positions",
       "Support Economic Substance notifications and reports",
-      "Keep documentation consistent across compliance touchpoints"
-    ]
+      "Keep documentation consistent across compliance touchpoints",
+    ],
   },
   {
     icon: BarChart3,
@@ -51,10 +56,61 @@ const services = [
     items: [
       "Plain English summaries of tax position and effective tax rate",
       "Schedules and workpapers for audit readiness",
-      "Recommendations to strengthen UAE tax services throughout the year"
-    ]
-  }
+      "Recommendations to strengthen UAE tax services throughout the year",
+    ],
+  },
 ];
+
+const ServiceCard = ({
+  service,
+  index,
+}: {
+  service: (typeof services)[number];
+  index: number;
+}) => {
+  const Icon = service.icon;
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.5, delay: index * 0.1 }}
+      className="h-full"
+    >
+      <div className="group relative h-full bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col">
+        {/* Top gradient bar */}
+        <div className={`h-2 bg-gradient-to-r ${service.color}`} />
+
+        <div className="p-6 flex flex-col flex-1">
+          <div
+            className={`w-14 h-14 rounded-xl bg-gradient-to-br ${service.color} flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300`}
+          >
+            <Icon className="w-7 h-7 text-white" />
+          </div>
+
+          <h3 className="text-xl font-bold text-gray-900 mb-4">
+            {service.title}
+          </h3>
+
+          {/* flex-1 ensures equal height across cards */}
+          <ul className="space-y-3 flex-1">
+            {service.items.map((item, idx) => (
+              <li key={idx} className="flex items-start gap-3">
+                <div className="flex-shrink-0 w-5 h-5 rounded-full bg-brand-orange/10 flex items-center justify-center mt-0.5">
+                  <div className="w-2 h-2 rounded-full bg-brand-orange" />
+                </div>
+                <span className="text-gray-600 text-sm leading-relaxed">
+                  {item}
+                </span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </motion.div>
+  );
+};
 
 const WhatIncludesSection = () => {
   const navigate = useNavigate();
@@ -73,66 +129,30 @@ const WhatIncludesSection = () => {
             Our Services
           </span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-            What Corporate Tax Filing{' '}
+            What Corporate Tax Filing{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-amber-600">
               Includes
             </span>
           </h2>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-          {services.map((service, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="group relative bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden"
-            >
-              {/* Top gradient bar */}
-              <div className={`h-2 bg-gradient-to-r ${service.color}`} />
-              
-              <div className="p-6">
-                <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${service.color} flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300`}>
-                  <service.icon className="w-7 h-7 text-white" />
-                </div>
-                
-                <h3 className="text-xl font-bold text-gray-900 mb-4">
-                  {service.title}
-                </h3>
-                
-                <ul className="space-y-3">
-                  {service.items.map((item, idx) => (
-                    <li key={idx} className="flex items-start gap-3">
-                      <div className="flex-shrink-0 w-5 h-5 rounded-full bg-brand-orange/10 flex items-center justify-center mt-0.5">
-                        <div className="w-2 h-2 rounded-full bg-brand-orange" />
-                      </div>
-                      <span className="text-gray-600 text-sm leading-relaxed">{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </motion.div>
+        {/* First row: 3 cards */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-10">
+          {services.slice(0, 3).map((service, index) => (
+            <div key={service.title} className="w-full max-w-md mx-auto">
+              <ServiceCard service={service} index={index} />
+            </div>
           ))}
         </div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.5 }}
-          className="text-center"
-        >
-          <Button 
-            size="lg"
-            onClick={() => navigate('/contact-us')}
-            className="bg-gradient-to-r from-brand-orange to-amber-600 hover:from-brand-orange/90 hover:to-amber-600/90 text-white shadow-lg shadow-brand-orange/25 group"
-          >
-            Find Out How Much You Can Save
-            <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
-          </Button>
-        </motion.div>
+        {/* Second row: 2 cards centered */}
+        <div className="max-w-4xl mx-auto flex flex-col sm:flex-row justify-center gap-16 mb-12">
+          {services.slice(3).map((service, index) => (
+            <div key={service.title} className="w-full max-w-md mx-auto">
+              <ServiceCard service={service} index={index + 3} />
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );

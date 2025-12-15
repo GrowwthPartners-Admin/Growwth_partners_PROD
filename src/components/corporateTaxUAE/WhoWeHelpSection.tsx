@@ -59,7 +59,7 @@ const processSteps = [
 
 const WhoWeHelpSection = () => {
   return (
-    <section className="py-20 bg-white overflow-hidden">
+    <section className="py-16 bg-white overflow-hidden">
       <div className="container mx-auto px-4">
         {/* Who We Help */}
         <motion.div
@@ -88,7 +88,7 @@ const WhoWeHelpSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="group relative bg-gradient-to-br from-amber-50 to-orange-50/50 rounded-2xl p-6 border border-amber-100/50 hover:shadow-xl transition-all duration-300"
+              className="group relative bg-gradient-to-br from-amber-50 to-orange-50/50 rounded-2xl p-6 border border-amber-100/50 hover:shadow-xl transition-all duration-300 shadow"
             >
               <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-brand-orange to-amber-500 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
                 <client.icon className="w-7 h-7 text-white" />

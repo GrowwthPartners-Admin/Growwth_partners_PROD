@@ -69,7 +69,7 @@ const WhyChooseSection = () => {
           transition={{ duration: 0.6, delay: 0.4 }}
           className="text-center"
         >
-          <div className="inline-flex items-center gap-3 px-6 py-4 bg-gradient-to-r from-brand-orange/10 to-amber-100/50 rounded-2xl border border-brand-orange/20">
+          <div className="inline-flex items-center gap-3 px-6 py-4 bg-gradient-to-r from-brand-orange/10 to-amber-100/50 rounded-2xl border border-brand-orange/20 shadow">
             <CheckCircle className="w-6 h-6 text-brand-orange" />
             <p className="text-gray-700 font-medium">
               Stay confident about corporate tax UAE requirements and unlock every eligible saving through structured planning.
