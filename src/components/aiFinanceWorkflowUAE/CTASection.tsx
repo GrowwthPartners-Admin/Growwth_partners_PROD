@@ -1,57 +1,69 @@
 import { useState } from "react";
+import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Zap } from "lucide-react";
+import { ArrowRight, Zap, Bot } from "lucide-react";
 import { ContactModal } from "@/components/ui/contact-modal";
 
 const CTASection = () => {
   const [contactModalOpen, setContactModalOpen] = useState(false);
 
   return (
-    <section className="py-20 bg-gradient-to-br from-amber-600 to-orange-600 relative overflow-hidden">
+    <section className="py-20 md:py-28 relative overflow-hidden">
+      {/* Background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-brand-blue to-blue-700" />
+      
       {/* Decorative elements */}
-      <div className="absolute top-0 right-0 w-96 h-96 bg-white/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
-      <div className="absolute bottom-0 left-0 w-80 h-80 bg-white/10 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2" />
-
+      <div className="absolute top-10 left-10 w-64 h-64 bg-teal-500/20 rounded-full blur-3xl" />
+      <div className="absolute bottom-10 right-10 w-80 h-80 bg-cyan-500/20 rounded-full blur-3xl" />      
+ 
       <div className="container mx-auto px-4 relative z-10">
-        <div className="max-w-3xl mx-auto text-center">
-          <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm rounded-full px-4 py-2 mb-6">
-            <Zap className="w-4 h-4 text-white" />
-            <span className="text-sm font-medium text-white">AI Automation in the UAE</span>
-          </div>
-
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-            Make Finance Workflows Faster and Smarter
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="max-w-3xl mx-auto text-center"
+        >
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6">
+            Make Finance Workflows{" "}
+            <span className="bg-gradient-to-r from-teal-300 to-cyan-300 bg-clip-text text-transparent">
+              Faster and Smarter
+            </span>
           </h2>
           
-          <p className="text-xl text-amber-100 mb-10">
-            Bring AI automation in the UAE into daily operations. Keep the tools you trust, add AI where it matters and turn finance into a real time decision engine.
+          <p className="text-lg md:text-xl text-teal-100/90 mb-10 leading-relaxed">
+            Bring AI finance automation in UAE into daily operations. Keep the tools you trust, 
+            add AI where it matters and turn finance into a real-time decision engine.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="https://calendly.com/jd-growwthpartners/15min?month=2025-11" target="_blank" rel="noopener noreferrer">
-              <Button
-                size="lg"
-                className="bg-white text-amber-600 hover:bg-amber-50 px-8 py-6 text-lg rounded-xl shadow-lg font-bold hover:shadow-xl transition-all duration-300 group hover:scale-105 w-full sm:w-auto"
-              >
-                Talk to Growwth Partners About Your Finance Workflow
-                <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </Button>
-            </a>
+            <Button
+              size="lg"
+              onClick={() =>
+                window.open(
+                  "https://calendly.com/jd-growwthpartners/15min?month=2025-11",
+                  "_blank"
+                )}
+              className="bg-white text-blue-500 hover:bg-teal-50 px-8 py-6 text-lg rounded-xl shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-1 font-semibold"
+            >
+              Talk to Ryzup.ai About Your Finance Workflow
+              <ArrowRight className="ml-2 w-5 h-5" />
+            </Button>
             <Button
               size="lg"
               variant="outline"
               onClick={() => setContactModalOpen(true)}
-              className="border-2 border-white text-white hover:bg-white/10 px-8 py-6 text-lg rounded-xl font-bold w-full sm:w-auto"
+              className="border-2 border-white/30 text-white bg-transparent px-8 py-6 text-lg rounded-xl backdrop-blur-sm transition-all duration-300"
             >
               Get Your AI Automation Plan
             </Button>
           </div>
-        </div>
+        </motion.div>
       </div>
 
       <ContactModal 
         open={contactModalOpen} 
-        onOpenChange={setContactModalOpen}
+        onOpenChange={setContactModalOpen} 
       />
     </section>
   );

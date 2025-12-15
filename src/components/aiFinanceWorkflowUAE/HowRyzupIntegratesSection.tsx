@@ -89,7 +89,7 @@ const HowRyzupIntegratesSection = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className={`bg-gradient-to-br ${colors.gradient} rounded-2xl p-6 border ${colors.border} hover:shadow-lg transition-shadow duration-300`}
+                className={`bg-gradient-to-br ${colors.gradient} rounded-2xl p-6 border ${colors.border} hover:shadow-lg transition-shadow duration-300 shadow`}
               >
                 <div className={`w-14 h-14 ${colors.bg} rounded-xl flex items-center justify-center mb-5`}>
                   <feature.icon className={`w-7 h-7 ${colors.icon}`} />

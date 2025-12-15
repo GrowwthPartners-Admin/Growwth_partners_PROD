@@ -65,7 +65,7 @@ const WhyAiNowSection = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="bg-gradient-to-br from-red-50 to-orange-50 rounded-2xl p-8 border border-red-100"
+            className="bg-gradient-to-br from-red-50 to-orange-50 rounded-2xl p-8 border border-red-100 shadow"
           >
             <h3 className="text-xl font-semibold text-gray-900 mb-6 flex items-center gap-2">
               <AlertCircle className="w-6 h-6 text-red-500" />
@@ -96,7 +96,7 @@ const WhyAiNowSection = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="bg-gradient-to-br from-amber-50 to-orange-50 rounded-2xl p-8 border border-amber-100"
+            className="bg-gradient-to-br from-amber-50 to-orange-50 rounded-2xl p-8 border border-amber-100 shadow"
           >
             <h3 className="text-xl font-semibold text-gray-900 mb-6 flex items-center gap-2">
               <Zap className="w-6 h-6 text-amber-600" />

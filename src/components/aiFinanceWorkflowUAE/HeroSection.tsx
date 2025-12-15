@@ -2,11 +2,8 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Play, Sparkles, Zap, TrendingUp, Bot } from "lucide-react";
-import { ContactModal } from "@/components/ui/contact-modal";
 
 const HeroSection = () => {
-  const [contactModalOpen, setContactModalOpen] = useState(false);
-
   return (
     <section className="relative py-20 lg:py-28 bg-gradient-to-br from-amber-50 via-orange-50/50 to-white overflow-hidden">
       {/* Background decorations */}
@@ -15,37 +12,6 @@ const HeroSection = () => {
         <div className="absolute bottom-20 right-10 w-96 h-96 bg-orange-500/10 rounded-full blur-3xl" />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-r from-amber-200/20 to-orange-200/20 rounded-full blur-3xl" />
       </div>
-
-      {/* Floating icons */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 0.5 }}
-        className="absolute top-32 right-[15%] hidden xl:block"
-      >
-        <motion.div
-          animate={{ y: [-10, 10, -10] }}
-          transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-          className="bg-white/80 backdrop-blur-sm p-4 rounded-2xl shadow-xl border border-amber-100"
-        >
-          <Bot className="w-8 h-8 text-amber-600" />
-        </motion.div>
-      </motion.div>
-
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 0.7 }}
-        className="absolute bottom-40 left-[10%] hidden xl:block"
-      >
-        <motion.div
-          animate={{ y: [10, -10, 10] }}
-          transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-          className="bg-white/80 backdrop-blur-sm p-4 rounded-2xl shadow-xl border border-orange-100"
-        >
-          <TrendingUp className="w-8 h-8 text-orange-600" />
-        </motion.div>
-      </motion.div>
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
@@ -57,7 +23,9 @@ const HeroSection = () => {
           >
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-amber-500/10 to-orange-500/10 rounded-full border border-amber-200/50">
               <Sparkles className="w-4 h-4 text-amber-600" />
-              <span className="text-sm font-medium text-amber-700">Ryzup.ai for UAE Finance Teams</span>
+              <span className="text-sm font-medium text-amber-700">
+                Ryzup.ai for UAE Finance Teams
+              </span>
             </div>
 
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-gray-900">
@@ -68,23 +36,35 @@ const HeroSection = () => {
             </h1>
 
             <p className="text-lg md:text-xl text-gray-600 leading-relaxed max-w-xl">
-              Ryzup.ai turns Google Sheets and your accounting platform into an AI-enabled finance hub. Automate reporting, error checks, reconciliations and forecasting so UAE teams move faster with fewer mistakes.
+              Ryzup.ai turns Google Sheets and your accounting platform into an
+              AI-enabled finance hub. Automate reporting, error checks,
+              reconciliations and forecasting so UAE teams move faster with
+              fewer mistakes.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 pt-2">
               <Button
                 size="lg"
-                onClick={() => setContactModalOpen(true)}
-                className="bg-gradient-to-r from-amber-600 to-orange-600 hover:from-amber-700 hover:to-orange-700 text-white gap-2 px-8 py-6 text-lg rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 group"
+                onClick={() =>
+                  window.open(
+                    "https://calendly.com/jd-growwthpartners/15min?month=2025-11",
+                    "_blank"
+                  )
+                }
+                className="bg-gradient-to-r from-amber-600 to-orange-600 hover:from-amber-700 hover:to-orange-700 text-white px-8 py-6 text-lg font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all"
               >
                 Start with a Free Strategy Call
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Button>
-              <a href="https://ryzup.ai" target="_blank" rel="noopener noreferrer">
+              <a
+                href="https://ryzup.ai"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <Button
                   size="lg"
                   variant="outline"
-                  className="gap-2 w-full sm:w-auto border-amber-300 text-amber-700 hover:bg-amber-50 px-8 py-6 text-lg rounded-xl"
+                  className="gap-2 w-full sm:w-auto border-amber-300 text-amber-700 hover:bg-amber-50 px-8 py-6 text-lg rounded-xl shadow"
                 >
                   <Play className="w-5 h-5" />
                   See Ryzup.ai in Action
@@ -141,11 +121,6 @@ const HeroSection = () => {
           </motion.div>
         </div>
       </div>
-
-      <ContactModal 
-        open={contactModalOpen} 
-        onOpenChange={setContactModalOpen}
-      />
     </section>
   );
 };
