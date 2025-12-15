@@ -536,6 +536,15 @@ export const routes: RouteRecord[] = [
           return { Component };
         },
       },
+      {
+        path: "uae/esop-advisory-uae",
+        async lazy() {
+          const { default: Component } = await import(
+            "./pages/EsopAdvisoryUAE"
+          );
+          return { Component };
+        },
+      },
       // Australia Routes
       {
         path: "au",

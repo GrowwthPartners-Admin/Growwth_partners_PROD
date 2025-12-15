@@ -100,7 +100,7 @@ export const CountryProvider = ({
     // Handle ESOP Advisory - has country-specific versions
     if (normalizedPath === "/esop-advisory-singapore" || normalizedPath.startsWith("/esop-advisory")) {
       if (country === "australia") return "/au/esop-advisory-australia";
-      // UAE and Singapore use Singapore version
+      if (country === "uae") return "/uae/esop-advisory-uae";
       return "/esop-advisory-singapore";
     }
 
