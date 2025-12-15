@@ -79,7 +79,7 @@ export const CountryProvider = ({
     // Handle AI Financial Forecasting - has country-specific versions
     if (normalizedPath === "/ai-financial-forecasting-singapore" || normalizedPath.startsWith("/ai-financial-forecasting")) {
       if (country === "australia") return "/au/ai-financial-forecasting-australia";
-      // UAE and Singapore use Singapore version
+      if (country === "uae") return "/uae/ai-financial-forecasting-uae";
       return "/ai-financial-forecasting-singapore";
     }
 
