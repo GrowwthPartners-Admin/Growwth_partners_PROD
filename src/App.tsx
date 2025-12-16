@@ -199,6 +199,15 @@ export const routes: RouteRecord[] = [
         },
       },
       {
+        path: "simplified-banking-solutions",
+        async lazy() {
+          const { default: Component } = await import(
+            "./pages/SimplifiedBankingSolutions"
+          );
+          return { Component };
+        },
+      },
+      {
         path: "privacy-policy",
         async lazy() {
           const { default: Component } = await import("./pages/PrivacyPolicy");
@@ -572,6 +581,15 @@ export const routes: RouteRecord[] = [
           return { Component };
         },
       },
+      {
+        path: "uae/simplified-banking-solutions",
+        async lazy() {
+          const { default: Component } = await import(
+            "./pages/SimplifiedBankingSolutions"
+          );
+          return { Component };
+        },
+      },
       // Australia Routes
       {
         path: "au",
@@ -756,6 +774,15 @@ export const routes: RouteRecord[] = [
         async lazy() {
           const { default: Component } = await import(
             "./pages/EsopAdvisoryAustralia"
+          );
+          return { Component };
+        },
+      },
+      {
+        path: "au/simplified-banking-solutions",
+        async lazy() {
+          const { default: Component } = await import(
+            "./pages/SimplifiedBankingSolutions"
           );
           return { Component };
         },
