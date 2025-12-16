@@ -83,7 +83,7 @@ const WhoWeHelpSection = () => {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
-                  className="group flex items-center gap-4 bg-white rounded-xl p-4 border border-gray-100 hover:shadow-md transition-all duration-300"
+                  className="group flex items-center gap-4 bg-white rounded-xl p-4 border border-gray-100 shadow transition-all duration-300"
                 >
                   <div className="w-12 h-12 rounded-xl bg-brand-blue/10 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
                     <item.icon className="w-6 h-6 text-brand-blue" />
@@ -118,7 +118,7 @@ const WhoWeHelpSection = () => {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
-                  className="group flex items-center gap-4 bg-white rounded-xl p-4 border border-gray-100 hover:shadow-md transition-all duration-300"
+                  className="group flex items-center gap-4 bg-white rounded-xl p-4 border border-gray-100 shadow transition-all duration-300"
                 >
                   <div className="w-12 h-12 rounded-xl bg-brand-orange/10 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
                     <item.icon className="w-6 h-6 text-brand-orange" />
