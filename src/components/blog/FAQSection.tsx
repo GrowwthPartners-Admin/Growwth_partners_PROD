@@ -28,25 +28,8 @@ export const FAQSection = ({ faqs, postTitle }: FAQSectionProps) => {
     return null;
   }
 
-  // Generate Schema.org FAQPage structured data
-  const faqStructuredData = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    mainEntity: validFaqs.map((faq) => ({
-      "@type": "Question",
-      name: faq.question,
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: faq.answer,
-      },
-    })),
-  };
-
   return (
     <section className="py-14 bg-muted/20">
-      <script type="application/ld+json">
-        {JSON.stringify(faqStructuredData)}
-      </script>
       
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
