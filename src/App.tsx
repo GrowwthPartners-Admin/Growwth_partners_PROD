@@ -208,6 +208,15 @@ export const routes: RouteRecord[] = [
         },
       },
       {
+        path: "accounting-for-tech-start-ups-companies",
+        async lazy() {
+          const { default: Component } = await import(
+            "./pages/TechStartupAccounting"
+          );
+          return { Component };
+        },
+      },
+      {
         path: "privacy-policy",
         async lazy() {
           const { default: Component } = await import("./pages/PrivacyPolicy");
@@ -590,6 +599,15 @@ export const routes: RouteRecord[] = [
           return { Component };
         },
       },
+      {
+        path: "uae/accounting-for-tech-start-ups-companies",
+        async lazy() {
+          const { default: Component } = await import(
+            "./pages/TechStartupAccounting"
+          );
+          return { Component };
+        },
+      },
       // Australia Routes
       {
         path: "au",
@@ -783,6 +801,15 @@ export const routes: RouteRecord[] = [
         async lazy() {
           const { default: Component } = await import(
             "./pages/SimplifiedBankingSolutions"
+          );
+          return { Component };
+        },
+      },
+      {
+        path: "au/accounting-for-tech-start-ups-companies",
+        async lazy() {
+          const { default: Component } = await import(
+            "./pages/TechStartupAccounting"
           );
           return { Component };
         },
