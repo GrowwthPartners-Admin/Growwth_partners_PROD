@@ -131,7 +131,7 @@ export const DeliveryModelSection = () => {
         >
           <Button
             size="lg"
-            className="bg-gradient-to-r from-indigo-500 to-purple-600 hover:from-indigo-600 hover:to-purple-700 text-white px-8"
+            className="bg-brand-orange hover:bg-orange-500 text-white px-8 py-6 font-bold transition-all hover:scale-105"
             onClick={() => setIsContactModalOpen(true)}
           >
             Start Your Accounting Setup

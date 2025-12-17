@@ -1,15 +1,15 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { 
-  Calculator, 
-  FileSpreadsheet, 
-  FolderSearch, 
+import {
+  Calculator,
+  FileSpreadsheet,
+  FolderSearch,
   ClipboardList,
   Clock,
   Presentation,
   AlertTriangle,
   ArrowRight,
-  CheckCircle2
+  CheckCircle2,
 } from "lucide-react";
 import { ContactModal } from "@/components/ui/contact-modal";
 import { useState } from "react";
@@ -17,38 +17,38 @@ import { useState } from "react";
 const addOnServices = [
   {
     icon: Calculator,
-    text: "FP&A with scenario modelling for hiring, pricing, and paid growth"
+    text: "FP&A with scenario modelling for hiring, pricing, and paid growth",
   },
   {
     icon: FileSpreadsheet,
-    text: "ESOP accounting and cap table coordination"
+    text: "ESOP accounting and cap table coordination",
   },
   {
     icon: FolderSearch,
-    text: "Due diligence data rooms and transaction support"
+    text: "Due diligence data rooms and transaction support",
   },
   {
     icon: ClipboardList,
-    text: "Tax and compliance coordination with local regulators"
-  }
+    text: "Tax and compliance coordination with local regulators",
+  },
 ];
 
 const proofItems = [
   {
     icon: Clock,
     title: "Close cycles cut from weeks to days",
-    description: "Streamlined processes that accelerate your financial close"
+    description: "Streamlined processes that accelerate your financial close",
   },
   {
     icon: Presentation,
     title: "Faster board cycles",
-    description: "Consistent KPI definitions and clean trend pages"
+    description: "Consistent KPI definitions and clean trend pages",
   },
   {
     icon: AlertTriangle,
     title: "Fewer last-minute surprises",
-    description: "Automated reconciliations and variance alerts"
-  }
+    description: "Automated reconciliations and variance alerts",
+  },
 ];
 
 export const AddOnServicesSection = () => {
@@ -71,7 +71,7 @@ export const AddOnServicesSection = () => {
             <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-8">
               Add-on Support for Tech Finance
             </h2>
-            
+
             <div className="space-y-4">
               {addOnServices.map((service, index) => (
                 <motion.div
@@ -85,7 +85,9 @@ export const AddOnServicesSection = () => {
                   <div className="flex-shrink-0 w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center">
                     <service.icon className="w-5 h-5 text-purple-600" />
                   </div>
-                  <p className="text-slate-700 font-medium pt-1">{service.text}</p>
+                  <p className="text-slate-700 font-medium pt-1">
+                    {service.text}
+                  </p>
                 </motion.div>
               ))}
             </div>
@@ -104,7 +106,7 @@ export const AddOnServicesSection = () => {
             <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-8">
               Proof of Impact
             </h2>
-            
+
             <div className="space-y-6">
               {proofItems.map((item, index) => (
                 <motion.div
@@ -123,9 +125,7 @@ export const AddOnServicesSection = () => {
                       <h3 className="text-lg font-bold text-slate-900 mb-1">
                         {item.title}
                       </h3>
-                      <p className="text-slate-600">
-                        {item.description}
-                      </p>
+                      <p className="text-slate-600">{item.description}</p>
                     </div>
                   </div>
                   <CheckCircle2 className="absolute top-4 right-4 w-6 h-6 text-emerald-500" />
@@ -144,8 +144,13 @@ export const AddOnServicesSection = () => {
         >
           <Button
             size="lg"
-            className="bg-indigo-600 hover:bg-indigo-700 text-white px-8"
-            onClick={() => setIsContactModalOpen(true)}
+            className="bg-orange-500 hover:bg-orange-500 font-bold text-white px-8 py-6 transition-all hover:scale-105"
+            onClick={() =>
+              window.open(
+                "https://calendly.com/jd-growwthpartners/15min?month=2025-11",
+                "_blank"
+              )
+            }
           >
             Book a Free Finance Audit
             <ArrowRight className="ml-2 h-5 w-5" />

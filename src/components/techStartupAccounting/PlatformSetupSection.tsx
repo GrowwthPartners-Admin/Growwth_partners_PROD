@@ -68,14 +68,6 @@ export const PlatformSetupSection = () => {
               ))}
             </div>
 
-            <Button
-              size="lg"
-              className="bg-indigo-600 hover:bg-indigo-700 text-white"
-              onClick={() => setIsContactModalOpen(true)}
-            >
-              Get a Quick Systems Review
-              <ArrowRight className="ml-2 h-5 w-5" />
-            </Button>
           </motion.div>
 
           <motion.div
@@ -85,7 +77,7 @@ export const PlatformSetupSection = () => {
             viewport={{ once: true }}
             className="relative"
           >
-            <div className="bg-white rounded-2xl shadow-2xl p-8 border border-slate-100">
+            <div className="bg-white rounded-2xl shadow-2xl p-8 border border-slate-100 mt-12">
               <div className="flex items-center gap-3 mb-6">
                 <div className="w-3 h-3 bg-red-400 rounded-full" />
                 <div className="w-3 h-3 bg-yellow-400 rounded-full" />
