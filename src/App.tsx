@@ -235,6 +235,33 @@ export const routes: RouteRecord[] = [
         },
       },
       {
+        path: "incorporation/foreigner",
+        async lazy() {
+          const { default: Component } = await import(
+            "./pages/IncorporationForeigner"
+          );
+          return { Component };
+        },
+      },
+      {
+        path: "uae/incorporation/foreigner",
+        async lazy() {
+          const { default: Component } = await import(
+            "./pages/IncorporationForeigner"
+          );
+          return { Component };
+        },
+      },
+      {
+        path: "au/incorporation/foreigner",
+        async lazy() {
+          const { default: Component } = await import(
+            "./pages/IncorporationForeigner"
+          );
+          return { Component };
+        },
+      },
+      {
         path: "privacy-policy",
         async lazy() {
           const { default: Component } = await import("./pages/PrivacyPolicy");
