@@ -1,47 +1,54 @@
-import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { TrendingUp, Wallet, Users, FileCheck, CheckCircle2, ArrowRight } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { ContactModal } from '@/components/ui/contact-modal';
+import React, { useState } from "react";
+import { motion } from "framer-motion";
+import {
+  TrendingUp,
+  Wallet,
+  Users,
+  FileCheck,
+  CheckCircle2,
+  ArrowRight,
+} from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { ContactModal } from "@/components/ui/contact-modal";
 
 const addOns = [
   {
     icon: TrendingUp,
-    title: 'FP&A for Ecommerce',
-    description: 'Demand planning, pricing, and channel mix analysis',
+    title: "FP&A for Ecommerce",
+    description: "Demand planning, pricing, and channel mix analysis",
   },
   {
     icon: Wallet,
-    title: 'Cash Flow Planning',
-    description: 'Purchase order and inventory cycles management',
+    title: "Cash Flow Planning",
+    description: "Purchase order and inventory cycles management",
   },
   {
     icon: Users,
-    title: 'ESOP Accounting',
-    description: 'Cap table coordination for growing teams',
+    title: "ESOP Accounting",
+    description: "Cap table coordination for growing teams",
   },
   {
     icon: FileCheck,
-    title: 'Due Diligence Support',
-    description: 'Data rooms and lender-ready packs',
+    title: "Due Diligence Support",
+    description: "Data rooms and lender-ready packs",
   },
 ];
 
 const proofPoints = [
   {
-    title: 'Payout Matching Accuracy',
-    description: 'Improved with channel-level checks',
-    metric: '99%+',
+    title: "Payout Matching Accuracy",
+    description: "Improved with channel-level checks",
+    metric: "99%+",
   },
   {
-    title: 'Faster Month-End Closes',
-    description: 'With automated order and fee reconciliations',
-    metric: '3x',
+    title: "Faster Month-End Closes",
+    description: "With automated order and fee reconciliations",
+    metric: "3x",
   },
   {
-    title: 'Clearer SKU Margins',
-    description: 'Leading to smarter ad spend decisions',
-    metric: '100%',
+    title: "Clearer SKU Margins",
+    description: "Leading to smarter ad spend decisions",
+    metric: "100%",
   },
 ];
 
@@ -74,12 +81,14 @@ const AddOnServicesSection: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              className="bg-gradient-to-br from-gray-50 to-white rounded-2xl p-6 border border-gray-100 hover:shadow-lg transition-shadow"
+              className="bg-gradient-to-br from-gray-50 to-white rounded-2xl p-6 border shadow border-gray-100 hover:shadow-lg transition-shadow"
             >
               <div className="w-12 h-12 rounded-xl bg-brand-orange/10 flex items-center justify-center mb-4">
                 <service.icon className="w-6 h-6 text-brand-orange" />
               </div>
-              <h3 className="text-lg font-bold text-gray-900 mb-2">{service.title}</h3>
+              <h3 className="text-lg font-bold text-gray-900 mb-2">
+                {service.title}
+              </h3>
               <p className="text-gray-600 text-sm">{service.description}</p>
             </motion.div>
           ))}
@@ -112,13 +121,17 @@ const AddOnServicesSection: React.FC = () => {
             >
               {/* Background decoration */}
               <div className="absolute top-0 right-0 w-32 h-32 bg-brand-orange/10 rounded-full blur-2xl" />
-              
+
               <div className="relative z-10">
                 <div className="flex items-center gap-3 mb-4">
                   <CheckCircle2 className="w-6 h-6 text-emerald-400" />
-                  <span className="text-4xl font-black text-white">{point.metric}</span>
+                  <span className="text-4xl font-black text-white">
+                    {point.metric}
+                  </span>
                 </div>
-                <h3 className="text-xl font-bold text-white mb-2">{point.title}</h3>
+                <h3 className="text-xl font-bold text-white mb-2">
+                  {point.title}
+                </h3>
                 <p className="text-white/70">{point.description}</p>
               </div>
             </motion.div>
@@ -134,7 +147,12 @@ const AddOnServicesSection: React.FC = () => {
           <Button
             size="lg"
             className="bg-brand-orange hover:bg-brand-orange/90 text-white px-8 py-6 text-lg rounded-xl"
-            onClick={() => setIsContactModalOpen(true)}
+            onClick={() =>
+              window.open(
+                "https://calendly.com/jd-growwthpartners/15min?month=2025-11",
+                "_blank"
+              )
+            }
           >
             Book a Free Ecommerce Finance Audit
             <ArrowRight className="ml-2 w-5 h-5" />
@@ -142,7 +160,10 @@ const AddOnServicesSection: React.FC = () => {
         </motion.div>
       </div>
 
-      <ContactModal open={isContactModalOpen} onOpenChange={setIsContactModalOpen} />
+      <ContactModal
+        open={isContactModalOpen}
+        onOpenChange={setIsContactModalOpen}
+      />
     </section>
   );
 };

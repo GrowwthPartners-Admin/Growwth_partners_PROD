@@ -63,20 +63,24 @@ const HeroSection: React.FC = () => {
             <div className="flex flex-col sm:flex-row gap-4 mb-12">
               <Button
                 size="lg"
-                className="bg-brand-orange hover:bg-brand-orange/90 text-white px-8 py-6 text-lg rounded-xl shadow-lg shadow-brand-orange/25"
-                onClick={() => setIsContactModalOpen(true)}
+                className="bg-brand-orange hover:bg-brand-orange/90 text-white px-8 py-6 text-lg rounded-xl shadow-lg shadow-brand-orange/25 transition-all hover:scale-105"
+                onClick={() =>
+                  window.open(
+                    "https://calendly.com/jd-growwthpartners/15min?month=2025-11",
+                    "_blank"
+                  )}
               >
                 Book a Free Ecommerce Finance Audit
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
-              <Button
+              {/* <Button
                 size="lg"
                 variant="outline"
                 className="border-white/30 text-white hover:bg-white/10 px-8 py-6 text-lg rounded-xl backdrop-blur-sm"
                 onClick={() => setIsContactModalOpen(true)}
               >
                 Speak to a Specialist
-              </Button>
+              </Button> */}
             </div>
 
             {/* Stats */}
@@ -143,26 +147,6 @@ const HeroSection: React.FC = () => {
                 <TrendingUp className="w-6 h-6 text-white mb-2" />
                 <div className="text-white font-bold">+32%</div>
                 <div className="text-white/80 text-xs">Margin Clarity</div>
-              </motion.div>
-
-              <motion.div
-                className="absolute -bottom-4 -left-6 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl p-4 shadow-xl"
-                animate={{ y: [0, 10, 0] }}
-                transition={{ duration: 5, repeat: Infinity }}
-              >
-                <Package className="w-6 h-6 text-white mb-2" />
-                <div className="text-white font-bold">SKU-Level</div>
-                <div className="text-white/80 text-xs">COGS Tracking</div>
-              </motion.div>
-
-              <motion.div
-                className="absolute top-1/2 -right-10 bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl p-4 shadow-xl"
-                animate={{ y: [0, -8, 0] }}
-                transition={{ duration: 3.5, repeat: Infinity }}
-              >
-                <Calculator className="w-6 h-6 text-white mb-2" />
-                <div className="text-white font-bold">Tax Ready</div>
-                <div className="text-white/80 text-xs">GST/VAT/Sales</div>
               </motion.div>
             </div>
           </motion.div>

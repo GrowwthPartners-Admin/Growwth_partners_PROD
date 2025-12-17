@@ -87,21 +87,6 @@ const PlatformStackSection: React.FC = () => {
           ))}
         </div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-center"
-        >
-          <Button
-            size="lg"
-            className="bg-brand-orange hover:bg-brand-orange/90 text-white px-8 py-6 text-lg rounded-xl"
-            onClick={() => setIsContactModalOpen(true)}
-          >
-            Get a Quick Stack Review
-            <ArrowRight className="ml-2 w-5 h-5" />
-          </Button>
-        </motion.div>
       </div>
 
       <ContactModal open={isContactModalOpen} onOpenChange={setIsContactModalOpen} />

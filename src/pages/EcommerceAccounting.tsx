@@ -11,6 +11,8 @@ import WhoWeHelpSection from '@/components/ecommerceAccounting/WhoWeHelpSection'
 import AddOnServicesSection from '@/components/ecommerceAccounting/AddOnServicesSection';
 import CTASection from '@/components/ecommerceAccounting/CTASection';
 import { FaqSection } from '@/components/accounting/FaqSection';
+import { Layout } from '@/components/Layout';
+import { motion } from 'framer-motion';
 
 const faqItems = [
   {
@@ -54,7 +56,7 @@ const structuredData = {
 
 const EcommerceAccounting: React.FC = () => {
   return (
-    <div className="min-h-screen bg-white">
+    <Layout>
       <SEOhelper
         title="Ecommerce Accounting Services for Online Businesses"
         description="Streamline ecommerce accounting and tax compliance with specialist ecommerce bookkeeping services for Shopify, Amazon, and online brands. Improve accuracy and scale confidently."
@@ -62,8 +64,11 @@ const EcommerceAccounting: React.FC = () => {
         canonicalUrl="https://growwthpartners.com/ecommerce-accounting-services"
         structuredData={structuredData}
       />
-      <Navbar />
-      <main>
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.5 }}
+      >
         <HeroSection />
         <WhyChooseSection />
         <WhatYouGetSection />
@@ -76,9 +81,8 @@ const EcommerceAccounting: React.FC = () => {
           subtitle="Find answers to common questions about ecommerce accounting"
         />
         <CTASection />
-      </main>
-      <Footer />
-    </div>
+      </motion.div>
+    </Layout>
   );
 };
 
