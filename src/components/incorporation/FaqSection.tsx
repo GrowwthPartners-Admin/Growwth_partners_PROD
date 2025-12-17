@@ -41,7 +41,7 @@ export const FaqSection = () => {
           viewport={{ once: true }}
           className="text-center mb-12"
         >
-          <span className="inline-block px-4 py-1 bg-[#D3E4FD] text-[#F87315] rounded-full text-sm font-semibold mb-4">
+          <span className="inline-block px-4 py-1 bg-orange-100 text-orange-600 rounded-full text-sm font-semibold mb-4">
             FAQ
           </span>
           <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Frequently Asked Questions</h3>
@@ -59,7 +59,7 @@ export const FaqSection = () => {
                 className="mb-5 border-none"
               >
                 <AccordionTrigger
-                  className="group flex items-center justify-between w-full bg-[#ededed] px-6 py-6 font-bold text-xl md:text-2xl text-black rounded-[4px] border-[1.5px] border-[#e2e2e2] transition-all duration-200 shadow-none outline-none focus-visible:outline-none data-[state=open]:border-[2.5px] data-[state=open]:border-[#1775ff] data-[state=open]:rounded-[6px]"
+                  className="group flex items-center justify-between w-full bg-[#ededed] px-6 py-6 font-bold text-xl md:text-2xl text-black rounded-[4px] border-[1.5px] border-[#e2e2e2] transition-all duration-200 shadow-none outline-none focus-visible:outline-none data-[state=open]:border-[2.5px] data-[state=open]:border-orange-500 data-[state=open]:rounded-[6px]"
                 >
                   <span className="text-left w-full select-none font-medium">{faq.question}</span>
                   <span className="flex items-center justify-center transition-all duration-300">

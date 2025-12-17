@@ -8,18 +8,18 @@ export const HeroSection = () => {
   const [contactModalOpen, setContactModalOpen] = useState(false);
 
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-slate-900 via-emerald-900 to-slate-800 py-20 lg:py-28">
+    <section className="relative overflow-hidden bg-gradient-to-br from-slate-900 via-orange-900 to-slate-800 py-20 lg:py-28">
       {/* Animated background elements */}
       <div className="absolute inset-0 overflow-hidden">
         <motion.div
           animate={{ rotate: 360 }}
           transition={{ duration: 50, repeat: Infinity, ease: "linear" }}
-          className="absolute -top-40 -right-40 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl"
+          className="absolute -top-40 -right-40 w-96 h-96 bg-orange-500/10 rounded-full blur-3xl"
         />
         <motion.div
           animate={{ rotate: -360 }}
           transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
-          className="absolute -bottom-40 -left-40 w-96 h-96 bg-teal-500/10 rounded-full blur-3xl"
+          className="absolute -bottom-40 -left-40 w-96 h-96 bg-amber-500/10 rounded-full blur-3xl"
         />
       </div>
 
@@ -31,14 +31,14 @@ export const HeroSection = () => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-emerald-500/20 border border-emerald-400/30 rounded-full mb-6">
-              <Building2 className="w-4 h-4 text-emerald-400" />
-              <span className="text-emerald-300 text-sm font-medium">Singapore Company Registration</span>
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-orange-500/20 border border-orange-400/30 rounded-full mb-6">
+              <Building2 className="w-4 h-4 text-orange-400" />
+              <span className="text-orange-300 text-sm font-medium">Singapore Company Registration</span>
             </div>
 
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
               Register Your Singapore Company with{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-300">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-amber-300">
                 Confidence
               </span>
             </h1>
@@ -51,7 +51,7 @@ export const HeroSection = () => {
               <Button
                 onClick={() => setContactModalOpen(true)}
                 size="lg"
-                className="bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-600 hover:to-teal-600 text-white px-8 py-6 text-lg"
+                className="bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white px-8 py-6 text-lg"
               >
                 Book a Free Incorporation Consult
                 <ArrowRight className="ml-2 w-5 h-5" />
@@ -74,7 +74,7 @@ export const HeroSection = () => {
                 "Fast Turnaround"
               ].map((item, index) => (
                 <div key={index} className="flex items-center gap-2">
-                  <CheckCircle className="w-5 h-5 text-emerald-400" />
+                  <CheckCircle className="w-5 h-5 text-orange-400" />
                   <span className="text-gray-300 text-sm">{item}</span>
                 </div>
               ))}
@@ -96,8 +96,8 @@ export const HeroSection = () => {
                 className="absolute -top-6 -right-6 bg-white rounded-2xl p-4 shadow-2xl"
               >
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 bg-emerald-100 rounded-full flex items-center justify-center">
-                    <FileText className="w-5 h-5 text-emerald-600" />
+                  <div className="w-10 h-10 bg-orange-100 rounded-full flex items-center justify-center">
+                    <FileText className="w-5 h-5 text-orange-600" />
                   </div>
                   <div>
                     <p className="text-sm font-semibold text-gray-800">UEN Issued</p>
@@ -112,8 +112,8 @@ export const HeroSection = () => {
                 className="absolute -bottom-6 -left-6 bg-white rounded-2xl p-4 shadow-2xl"
               >
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 bg-teal-100 rounded-full flex items-center justify-center">
-                    <Building2 className="w-5 h-5 text-teal-600" />
+                  <div className="w-10 h-10 bg-amber-100 rounded-full flex items-center justify-center">
+                    <Building2 className="w-5 h-5 text-amber-600" />
                   </div>
                   <div>
                     <p className="text-sm font-semibold text-gray-800">Full Compliance</p>
@@ -142,7 +142,7 @@ export const HeroSection = () => {
                     transition={{ delay: 0.4 + index * 0.1 }}
                     className="flex items-center gap-4 bg-white/5 rounded-xl p-4 border border-white/10"
                   >
-                    <div className="w-12 h-12 bg-gradient-to-br from-emerald-500 to-teal-500 rounded-xl flex items-center justify-center text-white font-bold">
+                    <div className="w-12 h-12 bg-gradient-to-br from-orange-500 to-amber-500 rounded-xl flex items-center justify-center text-white font-bold">
                       {item.step}
                     </div>
                     <div>

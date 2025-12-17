@@ -64,7 +64,7 @@ export const WhatIsIncludedSection = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <span className="inline-block px-4 py-2 bg-teal-100 text-teal-700 rounded-full text-sm font-semibold mb-4">
+          <span className="inline-block px-4 py-2 bg-amber-100 text-amber-700 rounded-full text-sm font-semibold mb-4">
             Full Package
           </span>
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
@@ -86,7 +86,7 @@ export const WhatIsIncludedSection = () => {
               className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100 hover:shadow-xl transition-shadow duration-300"
             >
               <div className="flex items-start gap-4 mb-6">
-                <div className="w-14 h-14 bg-gradient-to-br from-emerald-500 to-teal-500 rounded-xl flex items-center justify-center flex-shrink-0">
+                <div className="w-14 h-14 bg-gradient-to-br from-orange-500 to-amber-500 rounded-xl flex items-center justify-center flex-shrink-0">
                   <service.icon className="w-7 h-7 text-white" />
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 pt-2">{service.title}</h3>
@@ -94,7 +94,7 @@ export const WhatIsIncludedSection = () => {
               <ul className="space-y-3">
                 {service.items.map((item, itemIndex) => (
                   <li key={itemIndex} className="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 text-emerald-500 flex-shrink-0 mt-0.5" />
+                    <CheckCircle className="w-5 h-5 text-orange-500 flex-shrink-0 mt-0.5" />
                     <span className="text-gray-700">{item}</span>
                   </li>
                 ))}
@@ -113,7 +113,7 @@ export const WhatIsIncludedSection = () => {
           <Button
             onClick={() => setContactModalOpen(true)}
             size="lg"
-            className="bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-600 hover:to-teal-600 text-white px-8"
+            className="bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white px-8"
           >
             Request a Scope and Timeline
             <ArrowRight className="ml-2 w-5 h-5" />

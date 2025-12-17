@@ -32,7 +32,7 @@ export const AddOnsSection = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <span className="inline-block px-4 py-2 bg-teal-100 text-teal-700 rounded-full text-sm font-semibold mb-4">
+          <span className="inline-block px-4 py-2 bg-amber-100 text-amber-700 rounded-full text-sm font-semibold mb-4">
             Extras
           </span>
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
@@ -51,9 +51,9 @@ export const AddOnsSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="bg-white rounded-xl p-6 shadow-md border border-gray-100 hover:shadow-lg hover:border-emerald-200 transition-all duration-300 text-center"
+              className="bg-white rounded-xl p-6 shadow-md border border-gray-100 hover:shadow-lg hover:border-orange-200 transition-all duration-300 text-center"
             >
-              <div className="w-14 h-14 mx-auto bg-gradient-to-br from-emerald-500 to-teal-500 rounded-xl flex items-center justify-center mb-4">
+              <div className="w-14 h-14 mx-auto bg-gradient-to-br from-orange-500 to-amber-500 rounded-xl flex items-center justify-center mb-4">
                 <addon.icon className="w-7 h-7 text-white" />
               </div>
               <p className="text-gray-800 font-medium">{addon.title}</p>
