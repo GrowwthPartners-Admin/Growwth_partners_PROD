@@ -249,6 +249,14 @@ export const Footer = () => {
               </li>
               <li>
                 <Link 
+                  to={getCountryUrl("/incorporation/foreigner")} 
+                  className="hover:text-brand-orange transition-colors"
+                >
+                  Incorporation for Foreigners
+                </Link>
+              </li>
+              <li>
+                <Link 
                   to={getCountryUrl("/cash-flow")} 
                   className="hover:text-brand-orange transition-colors"
                 >
