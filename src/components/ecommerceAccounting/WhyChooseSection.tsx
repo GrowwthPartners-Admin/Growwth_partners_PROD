@@ -47,7 +47,7 @@ const WhyChooseSection: React.FC = () => {
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
 
   return (
-    <section className="py-24 bg-gradient-to-b from-slate-50 to-white">
+    <section className="py-20 bg-gradient-to-b from-slate-50 to-white">
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -64,7 +64,7 @@ const WhyChooseSection: React.FC = () => {
           </h2>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {reasons.map((reason, index) => (
             <motion.div
               key={reason.title}
@@ -84,21 +84,6 @@ const WhyChooseSection: React.FC = () => {
           ))}
         </div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-center"
-        >
-          <Button
-            size="lg"
-            className="bg-brand-orange hover:bg-brand-orange/90 text-white px-8 py-6 text-lg rounded-xl"
-            onClick={() => setIsContactModalOpen(true)}
-          >
-            See a Sample Ecommerce Reporting Pack
-            <ArrowRight className="ml-2 w-5 h-5" />
-          </Button>
-        </motion.div>
       </div>
 
       <ContactModal open={isContactModalOpen} onOpenChange={setIsContactModalOpen} />

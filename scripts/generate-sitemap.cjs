@@ -110,6 +110,12 @@ const staticRoutes = [
     changefreq: "weekly",
   },
 
+  {
+    path: "/ecommerce-accounting-services",
+    priority: "0.8",
+    changefreq: "weekly",
+  },
+
   // UAE pages
   { path: "/uae", priority: "1.0", changefreq: "daily" },
   { path: "/uae/about", priority: "0.8", changefreq: "weekly" },

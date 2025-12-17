@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { ArrowRight, ShoppingCart, TrendingUp, Shield } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { ContactModal } from '@/components/ui/contact-modal';
+import React, { useState } from "react";
+import { motion } from "framer-motion";
+import { ArrowRight, ShoppingCart, TrendingUp, Shield } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { ContactModal } from "@/components/ui/contact-modal";
 
 const CTASection: React.FC = () => {
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
@@ -25,25 +25,7 @@ const CTASection: React.FC = () => {
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
           {/* Icons row */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="flex justify-center gap-6 mb-8"
-          >
-            {[ShoppingCart, TrendingUp, Shield].map((Icon, index) => (
-              <motion.div
-                key={index}
-                initial={{ scale: 0 }}
-                whileInView={{ scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center"
-              >
-                <Icon className="w-8 h-8 text-white" />
-              </motion.div>
-            ))}
-          </motion.div>
+        
 
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
@@ -61,7 +43,9 @@ const CTASection: React.FC = () => {
             transition={{ delay: 0.1 }}
             className="text-xl text-white/90 mb-10 max-w-3xl mx-auto"
           >
-            Choose ecommerce accounting that scales with your brand and keeps taxes and COGS in control. Get investor-ready numbers with reliable ecommerce bookkeeping services.
+            Choose ecommerce accounting that scales with your brand and keeps
+            taxes and COGS in control. Get investor-ready numbers with reliable
+            ecommerce bookkeeping services.
           </motion.p>
 
           <motion.div
@@ -74,7 +58,12 @@ const CTASection: React.FC = () => {
             <Button
               size="lg"
               className="bg-white text-brand-orange hover:bg-white/90 px-8 py-6 text-lg rounded-xl shadow-lg font-semibold"
-              onClick={() => setIsContactModalOpen(true)}
+              onClick={() =>
+                window.open(
+                  "https://calendly.com/jd-growwthpartners/15min?month=2025-11",
+                  "_blank"
+                )
+              }
             >
               Book a Free Ecommerce Finance Audit
               <ArrowRight className="ml-2 w-5 h-5" />
@@ -82,7 +71,7 @@ const CTASection: React.FC = () => {
             <Button
               size="lg"
               variant="outline"
-              className="border-white/40 text-white hover:bg-white/10 px-8 py-6 text-lg rounded-xl backdrop-blur-sm"
+              className="border-white text-white bg-transparent hover:bg-transparent px-8 py-6 text-lg shadow-md rounded-xl backdrop-blur"
               onClick={() => setIsContactModalOpen(true)}
             >
               Request a Systems and Tax Check
@@ -91,7 +80,10 @@ const CTASection: React.FC = () => {
         </div>
       </div>
 
-      <ContactModal open={isContactModalOpen} onOpenChange={setIsContactModalOpen} />
+      <ContactModal
+        open={isContactModalOpen}
+        onOpenChange={setIsContactModalOpen}
+      />
     </section>
   );
 };
