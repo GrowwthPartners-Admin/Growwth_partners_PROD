@@ -217,6 +217,15 @@ export const routes: RouteRecord[] = [
         },
       },
       {
+        path: "ecommerce-accounting-services",
+        async lazy() {
+          const { default: Component } = await import(
+            "./pages/EcommerceAccounting"
+          );
+          return { Component };
+        },
+      },
+      {
         path: "privacy-policy",
         async lazy() {
           const { default: Component } = await import("./pages/PrivacyPolicy");
@@ -608,6 +617,15 @@ export const routes: RouteRecord[] = [
           return { Component };
         },
       },
+      {
+        path: "uae/ecommerce-accounting-services",
+        async lazy() {
+          const { default: Component } = await import(
+            "./pages/EcommerceAccounting"
+          );
+          return { Component };
+        },
+      },
       // Australia Routes
       {
         path: "au",
@@ -792,6 +810,15 @@ export const routes: RouteRecord[] = [
         async lazy() {
           const { default: Component } = await import(
             "./pages/EsopAdvisoryAustralia"
+          );
+          return { Component };
+        },
+      },
+      {
+        path: "au/ecommerce-accounting-services",
+        async lazy() {
+          const { default: Component } = await import(
+            "./pages/EcommerceAccounting"
           );
           return { Component };
         },

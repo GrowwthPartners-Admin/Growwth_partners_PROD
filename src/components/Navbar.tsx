@@ -32,6 +32,7 @@ const navItems = [
       { title: "ESOP Valuation Services", path: "/esop-valuation-singapore" },
       { title: "Banking Solutions", path: "/simplified-banking-solutions" },
       { title: "Tech Startup Accounting", path: "/accounting-for-tech-start-ups-companies" },
+      { title: "Ecommerce Accounting", path: "/ecommerce-accounting-services" },
     ],
   },
   {

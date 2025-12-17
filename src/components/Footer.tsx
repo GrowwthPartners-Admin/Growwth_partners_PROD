@@ -287,6 +287,14 @@ export const Footer = () => {
                   Tech Startup Accounting
                 </Link>
               </li>
+              <li>
+                <Link 
+                  to={getCountryUrl("/ecommerce-accounting-services")} 
+                  className="hover:text-brand-orange transition-colors"
+                >
+                  Ecommerce Accounting
+                </Link>
+              </li>
             </ul>
           </div>
         </div>
