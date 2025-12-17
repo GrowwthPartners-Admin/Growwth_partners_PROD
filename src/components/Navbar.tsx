@@ -27,7 +27,7 @@ const navItems = [
       { title: "Taxation & Compliance", path: "/taxation" },
       { title: "Part Time CFO", path: "/part-time-cfo" },
       { title: "Cash Flow Modelling", path: "/cash-flow" },
-      { title: "Company Incorporation Singapore", path: "/incorporation" },
+      { title: "Incorporation Services", path: "/incorporation" },
       { title: "ESOP Advisory Services", path: "/esop-advisory-singapore" },
       { title: "ESOP Valuation Services", path: "/esop-valuation-singapore" },
       { title: "Banking Solutions", path: "/simplified-banking-solutions" },
