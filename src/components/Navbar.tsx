@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { useCountry } from "@/contexts/CountryContext";
@@ -28,7 +27,7 @@ const navItems = [
       { title: "Taxation & Compliance", path: "/taxation" },
       { title: "Part Time CFO", path: "/part-time-cfo" },
       { title: "Cash Flow Modelling", path: "/cash-flow" },
-      { title: "Company Incorporation", path: "/incorporation" },
+      { title: "Company Incorporation Singapore", path: "/incorporation" },
       { title: "ESOP Advisory Services", path: "/esop-advisory-singapore" },
       { title: "ESOP Valuation Services", path: "/esop-valuation-singapore" },
       { title: "Banking Solutions", path: "/simplified-banking-solutions" },
@@ -127,11 +126,7 @@ export const Navbar = () => {
         <div className="flex items-center justify-between">
           {/* Logo - with navigation */}
           <div className="flex items-center">
-            <Link 
-              to={getCountryUrl("/")} 
-              className="flex items-center ml-8"
-              onClick={closeMobileMenu}
-            >
+            <Link to={getCountryUrl("/")} className="flex items-center ml-8" onClick={closeMobileMenu}>
               <img src={companyLogo} alt="Growwth Partners" className="h-11" />
             </Link>
           </div>
@@ -178,19 +173,13 @@ export const Navbar = () => {
           {/* Country Switcher & Contact Button */}
           <div className="hidden lg:flex items-center gap-4">
             <CountrySwitcher variant="dark" showLabel={true} style="dropdown" />
-            <Button 
-              onClick={() => setContactModalOpen(true)} 
-              className="bg-brand-orange hover:bg-brand-orange/90 mr-4"
-            >
+            <Button onClick={() => setContactModalOpen(true)} className="bg-brand-orange hover:bg-brand-orange/90 mr-4">
               Speak To An Expert
             </Button>
           </div>
 
           {/* Mobile Menu Button */}
-          <button
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="lg:hidden text-gray-700"
-          >
+          <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className="lg:hidden text-gray-700">
             {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
@@ -208,9 +197,7 @@ export const Navbar = () => {
                     >
                       <span>{item.title}</span>
                       <ChevronDown
-                        className={`w-4 h-4 transition-transform ${
-                          openDropdown === item.title ? "rotate-180" : ""
-                        }`}
+                        className={`w-4 h-4 transition-transform ${openDropdown === item.title ? "rotate-180" : ""}`}
                       />
                     </button>
                     {openDropdown === item.title && (
@@ -241,11 +228,11 @@ export const Navbar = () => {
             ))}
             <div className="mt-4 space-y-3">
               <CountrySwitcher variant="dark" showLabel={true} style="dropdown" className="w-full" />
-              <Button 
+              <Button
                 onClick={() => {
                   setContactModalOpen(true);
                   setMobileMenuOpen(false);
-                }} 
+                }}
                 className="w-full bg-brand-orange hover:bg-brand-orange/90"
               >
                 Speak To An Expert
@@ -255,10 +242,7 @@ export const Navbar = () => {
         )}
       </div>
 
-      <ContactModal 
-        open={contactModalOpen} 
-        onOpenChange={setContactModalOpen} 
-      />
+      <ContactModal open={contactModalOpen} onOpenChange={setContactModalOpen} />
     </header>
   );
 };
