@@ -43,7 +43,7 @@ export const AddOnsSection = () => {
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-8xl mx-auto">
           {addOns.map((addon, index) => (
             <motion.div
               key={index}

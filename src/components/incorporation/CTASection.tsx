@@ -42,9 +42,13 @@ export const CTASection = () => {
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button
-              onClick={() => setContactModalOpen(true)}
+              onClick={() =>
+                  window.open(
+                    "https://calendly.com/jd-growwthpartners/15min?month=2025-11",
+                    "_blank"
+                  )}
               size="lg"
-              className="bg-white text-orange-700 hover:bg-gray-100 px-8 py-6 text-lg"
+              className="bg-white text-orange-700 hover:bg-gray-100 px-8 py-6 text-lg font-bold transition-all hover:scale-105"
             >
               Book a Free Incorporation Consult
               <ArrowRight className="ml-2 w-5 h-5" />
@@ -53,7 +57,7 @@ export const CTASection = () => {
               onClick={() => setContactModalOpen(true)}
               size="lg"
               variant="outline"
-              className="border-white text-white hover:bg-white/10 px-8 py-6 text-lg"
+              className="border-white text-white bg-transparent border-2 hover:bg-transparent px-8 py-6 text-lg font-bold"
             >
               Get Your Requirements Checklist
             </Button>

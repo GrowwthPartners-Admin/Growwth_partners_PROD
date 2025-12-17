@@ -109,9 +109,13 @@ const staticRoutes = [
     priority: "0.8",
     changefreq: "weekly",
   },
-
   {
     path: "/ecommerce-accounting-services",
+    priority: "0.8",
+    changefreq: "weekly",
+  },
+  {
+    path: "/incorporation",
     priority: "0.8",
     changefreq: "weekly",
   },

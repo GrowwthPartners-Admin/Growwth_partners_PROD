@@ -62,7 +62,7 @@ export const WhatIsIncludedSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-12"
         >
           <span className="inline-block px-4 py-2 bg-amber-100 text-amber-700 rounded-full text-sm font-semibold mb-4">
             Full Package
@@ -113,7 +113,7 @@ export const WhatIsIncludedSection = () => {
           <Button
             onClick={() => setContactModalOpen(true)}
             size="lg"
-            className="bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white px-8"
+            className="bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-lg shadow-lg text-white px-8 py-6 font-bold transition-all hover:scale-105"
           >
             Request a Scope and Timeline
             <ArrowRight className="ml-2 w-5 h-5" />
