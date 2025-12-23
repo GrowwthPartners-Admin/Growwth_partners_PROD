@@ -20,7 +20,7 @@ const UseCaseSection = () => {
           </h2>
         </motion.div>
 
-        <div className="max-w-5xl mx-auto">
+        <div className="max-w-6xl mx-auto font-bold">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -44,7 +44,7 @@ const UseCaseSection = () => {
             <div className="p-6 md:p-8">
               <div className="grid md:grid-cols-3 gap-8">
                 {/* Challenges */}
-                <div className="space-y-4">
+                <div className="space-y-4 ">
                   <div className="flex items-center gap-2 text-red-500 mb-4">
                     <AlertTriangle className="w-5 h-5" />
                     <h4 className="font-bold text-lg">Challenges</h4>

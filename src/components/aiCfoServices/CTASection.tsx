@@ -37,7 +37,7 @@ const CTASection = () => {
                   "_blank"
                 )
               }
-              className="bg-white hover:bg-white text-orange px-8 py-6 text-lg font-bold rounded-xl shadow-lg shadow-orange-500/25"
+              className="bg-white hover:bg-white text-orange px-8 py-6 text-lg font-bold rounded-xl shadow-lg shadow-orange-500/25 transition-all hover:scale-105"
             >
               <Calendar className="mr-2 h-5 w-5" />
               Schedule an AI CFO Consultation

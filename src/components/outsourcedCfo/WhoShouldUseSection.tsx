@@ -28,8 +28,8 @@ const WhoShouldUseSection = () => {
           </p>
         </motion.div>
 
-        <div className="max-w-5xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-8 mb-12">
+        <div className="max-w-8xl mx-auto px-2">
+          <div className="grid md:grid-cols-2 gap-12 mb-12">
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -45,7 +45,7 @@ const WhoShouldUseSection = () => {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: index * 0.1 }}
-                  className="flex items-center gap-4 p-4 bg-white rounded-xl shadow-sm border border-slate-100 hover:border-orange-200 transition-colors"
+                  className="flex items-center gap-4 p-4 bg-white rounded-xl shadow border border-slate-100 hover:border-orange-200 transition-colors"
                 >
                   <div className="w-10 h-10 bg-gradient-to-br from-orange-500 to-amber-500 rounded-lg flex items-center justify-center flex-shrink-0">
                     <item.icon className="w-5 h-5 text-white" />

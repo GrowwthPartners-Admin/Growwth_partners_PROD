@@ -78,7 +78,7 @@ const HeroSection = () => {
                     "_blank"
                   )
                 }
-                className="bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white px-8 py-6 text-lg rounded-xl shadow-lg shadow-orange-500/25"
+                className="bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white px-8 py-6 text-lg rounded-xl shadow-lg shadow-orange-500/25 transition-all hover:scale-105"
               >
                 Speak to a SaaS Finance Expert
                 <ArrowRight className="ml-2 h-5 w-5" />
