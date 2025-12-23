@@ -218,7 +218,7 @@ const BlogPostPage: React.FC = () => {
                       description: seoPost.excerpt,
                       image: seoPost.heroImage || "",
                       datePublished: seoPost.publishDate,
-                      author: { "@type": "Person", name: seoPost.author || "" },
+                      author: { "@type": "Person", name: seoPost.author || "Jatin Detwani" },
                       publisher: {
                         "@type": "Organization",
                         name: "Growwth Partners",
@@ -283,7 +283,7 @@ const BlogPostPage: React.FC = () => {
                       description: seoPost.excerpt,
                       image: seoPost.heroImage || "",
                       datePublished: seoPost.publishDate,
-                      author: { "@type": "Person", name: seoPost.author || "" },
+                      author: { "@type": "Person", name: seoPost.author || "Jatin Detwani" },
                       publisher: {
                         "@type": "Organization",
                         name: "Growwth Partners",
