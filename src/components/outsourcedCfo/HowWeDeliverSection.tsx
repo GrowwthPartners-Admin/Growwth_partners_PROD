@@ -9,8 +9,8 @@ const deliverables = [
     items: [
       "Annual and multi-year financial planning",
       "Budget ownership and forecasting discipline",
-      "Scenario and sensitivity analysis"
-    ]
+      "Scenario and sensitivity analysis",
+    ],
   },
   {
     number: "02",
@@ -19,8 +19,8 @@ const deliverables = [
     items: [
       "Rolling cash flow forecasts",
       "Working capital optimisation",
-      "Capital allocation and liquidity planning"
-    ]
+      "Capital allocation and liquidity planning",
+    ],
   },
   {
     number: "03",
@@ -29,8 +29,8 @@ const deliverables = [
     items: [
       "Monthly MIS (P&L, balance sheet, cash flow)",
       "KPI dashboards and performance insights",
-      "Board and investor-ready reporting"
-    ]
+      "Board and investor-ready reporting",
+    ],
   },
   {
     number: "04",
@@ -39,8 +39,8 @@ const deliverables = [
     items: [
       "Management of bookkeeping and accounting teams",
       "Payroll oversight and compliance coordination",
-      "Process improvement and automation"
-    ]
+      "Process improvement and automation",
+    ],
   },
   {
     number: "05",
@@ -49,9 +49,9 @@ const deliverables = [
     items: [
       "Policy implementation",
       "Approval and control frameworks",
-      "Risk and compliance oversight"
-    ]
-  }
+      "Risk and compliance oversight",
+    ],
+  },
 ];
 
 const HowWeDeliverSection = () => {
@@ -76,16 +76,17 @@ const HowWeDeliverSection = () => {
           </p>
         </motion.div>
 
-        <div className="max-w-6xl mx-auto">
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {deliverables.map((deliverable, index) => (
+        <div className="max-w-8xl mx-auto">
+          {/* Row 1: 3 cards */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-6">
+            {deliverables.slice(0, 3).map((deliverable, index) => (
               <motion.div
-                key={index}
+                key={deliverable.number}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className={`bg-slate-800/50 backdrop-blur-sm rounded-2xl p-6 border border-slate-700/50 hover:border-orange-500/50 transition-all group ${index === 4 ? 'md:col-span-2 lg:col-span-1' : ''}`}
+                className="bg-slate-800/50 backdrop-blur-sm rounded-2xl p-6 border border-slate-700/50 hover:border-orange-500/50 shadow transition-all group"
               >
                 <div className="flex items-start gap-4 mb-4">
                   <span className="text-4xl font-bold text-orange-500/30 group-hover:text-orange-500/50 transition-colors">
@@ -95,12 +96,56 @@ const HowWeDeliverSection = () => {
                     <deliverable.icon className="w-6 h-6 text-white" />
                   </div>
                 </div>
-                
-                <h3 className="text-xl font-bold text-white mb-4">{deliverable.title}</h3>
-                
+
+                <h3 className="text-xl font-bold text-white mb-4">
+                  {deliverable.title}
+                </h3>
+
                 <ul className="space-y-2">
                   {deliverable.items.map((item, itemIndex) => (
-                    <li key={itemIndex} className="flex items-start gap-2 text-slate-300">
+                    <li
+                      key={itemIndex}
+                      className="flex items-start gap-2 text-slate-300"
+                    >
+                      <span className="w-1.5 h-1.5 bg-orange-400 rounded-full mt-2 flex-shrink-0" />
+                      <span className="text-sm">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* Row 2: 2 cards centered */}
+          <div className="flex flex-col sm:flex-row justify-center gap-6">
+            {deliverables.slice(3).map((deliverable, index) => (
+              <motion.div
+                key={deliverable.number}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: (index + 3) * 0.1 }}
+                className="w-full max-w-md bg-slate-800/50 backdrop-blur-sm rounded-2xl p-6 border border-slate-700/50 hover:border-orange-500/50 shadow transition-all group"
+              >
+                <div className="flex items-start gap-4 mb-4">
+                  <span className="text-4xl font-bold text-orange-500/30 group-hover:text-orange-500/50 transition-colors">
+                    {deliverable.number}
+                  </span>
+                  <div className="w-12 h-12 bg-gradient-to-br from-orange-500 to-amber-500 rounded-xl flex items-center justify-center flex-shrink-0">
+                    <deliverable.icon className="w-6 h-6 text-white" />
+                  </div>
+                </div>
+
+                <h3 className="text-xl font-bold text-white mb-4">
+                  {deliverable.title}
+                </h3>
+
+                <ul className="space-y-2">
+                  {deliverable.items.map((item, itemIndex) => (
+                    <li
+                      key={itemIndex}
+                      className="flex items-start gap-2 text-slate-300"
+                    >
                       <span className="w-1.5 h-1.5 bg-orange-400 rounded-full mt-2 flex-shrink-0" />
                       <span className="text-sm">{item}</span>
                     </li>

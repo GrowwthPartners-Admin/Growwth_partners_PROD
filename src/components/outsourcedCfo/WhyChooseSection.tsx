@@ -53,7 +53,7 @@ const WhyChooseSection = () => {
           </p>
         </motion.div>
 
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-8xl mx-auto">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {reasons.map((reason, index) => (
               <motion.div
@@ -64,7 +64,7 @@ const WhyChooseSection = () => {
                 transition={{ duration: 0.4, delay: index * 0.1 }}
                 className="group"
               >
-                <div className="h-full bg-gradient-to-br from-slate-50 to-orange-50/30 rounded-2xl p-6 border border-slate-100 hover:border-orange-300 hover:shadow-lg hover:shadow-orange-100 transition-all">
+                <div className="h-full bg-gradient-to-br from-slate-50 to-orange-50/30 rounded-2xl p-8 font-bold shadow border border-slate-100 hover:border-orange-300 hover:shadow-lg hover:shadow-orange-100 transition-all">
                   <div className="w-14 h-14 bg-gradient-to-br from-orange-500 to-amber-500 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                     <reason.icon className="w-7 h-7 text-white" />
                   </div>
@@ -82,7 +82,7 @@ const WhyChooseSection = () => {
             transition={{ duration: 0.6, delay: 0.4 }}
             className="mt-12 text-center"
           >
-            <div className="inline-block bg-gradient-to-r from-orange-500 to-amber-500 rounded-2xl p-[2px]">
+            <div className="inline-block bg-gradient-to-r shadow-lg from-orange-500 to-amber-500 rounded-2xl p-[2px]">
               <div className="bg-white rounded-2xl px-8 py-4">
                 <p className="text-lg font-semibold text-slate-900">
                   All delivered at a <span className="text-orange-600">significantly lower cost</span> than building an in-house CFO function

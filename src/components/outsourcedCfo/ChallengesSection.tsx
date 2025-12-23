@@ -37,7 +37,7 @@ const ChallengesSection = () => {
           </p>
         </motion.div>
 
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-8xl mx-auto px-auto">
           <div className="grid lg:grid-cols-2 gap-12">
             {/* Challenges */}
             <motion.div
