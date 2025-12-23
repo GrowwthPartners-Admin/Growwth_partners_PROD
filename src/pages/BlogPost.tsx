@@ -202,7 +202,7 @@ const BlogPostPage: React.FC = () => {
         <SEOhelper
           title={seoPost.title}
           description={seoPost.excerpt}
-          keywords={seoPost.categories?.join(",") || ""}
+          // keywords={seoPost.categories?.join(",") || ""}
           canonicalUrl={canonicalUrl}
           ogType="article"
           ogImage={seoPost.heroImage || "/default-og-image.png"}
