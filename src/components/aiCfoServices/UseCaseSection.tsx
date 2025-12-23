@@ -31,7 +31,7 @@ const UseCaseSection = () => {
           </p>
         </motion.div>
 
-        <div className="max-w-5xl mx-auto">
+        <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-8">
             {/* Client Info & Challenge */}
             <motion.div
@@ -39,7 +39,7 @@ const UseCaseSection = () => {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="space-y-6"
+              className="space-y-6 font-bold"
             >
               {/* Client Type */}
               <div className="bg-slate-50 rounded-2xl p-6 border border-slate-100">
@@ -83,7 +83,7 @@ const UseCaseSection = () => {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="space-y-6"
+              className="space-y-6 font-bold"
             >
               {/* Solution */}
               <div className="bg-orange-50 rounded-2xl p-6 border border-orange-100">
@@ -143,7 +143,7 @@ const UseCaseSection = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="mt-8 bg-gradient-to-r from-orange-500 to-amber-500 rounded-2xl p-8 text-white"
+            className="mt-8 bg-gradient-to-r from-orange-500 to-amber-500 shadow rounded-2xl p-8 text-white"
           >
             <div className="grid grid-cols-3 gap-8 text-center">
               <div>
