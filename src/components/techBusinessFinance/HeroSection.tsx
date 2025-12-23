@@ -43,7 +43,7 @@ const HeroSection = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-xl md:text-2xl text-orange-200 font-medium mb-8"
+            className="text-xl md:text-2xl text-orange-200 font-medium mb-12"
           >
             Financial Control, Scalability & Investor-Grade Reporting for Technology Companies
           </motion.p>

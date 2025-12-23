@@ -41,7 +41,7 @@ const WhoShouldUseSection = () => {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: index * 0.1 }}
-                  className="flex items-center gap-4 bg-white rounded-xl p-4 shadow-sm border border-slate-100"
+                  className="flex items-center gap-4 bg-white rounded-xl p-4 shadow border border-slate-100"
                 >
                   <div className="w-10 h-10 rounded-lg bg-gradient-to-r from-orange-500 to-amber-500 flex items-center justify-center flex-shrink-0">
                     <item.icon className="w-5 h-5 text-white" />
@@ -57,7 +57,7 @@ const WhoShouldUseSection = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="bg-gradient-to-br from-slate-900 to-slate-800 rounded-3xl p-8 text-white"
+            className="bg-gradient-to-br from-slate-900 to-slate-800 rounded-3xl p-8 text-white mt-8"
           >
             <h3 className="text-2xl font-bold mb-6">If your business struggles to answer:</h3>
             <div className="space-y-4 mb-8">

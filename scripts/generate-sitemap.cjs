@@ -130,6 +130,16 @@ const staticRoutes = [
     priority: "0.8",
     changefreq: "weekly",
   },
+   {
+    path: "/tech-business-finance",
+    priority: "0.8",
+    changefreq: "weekly",
+  },
+   {
+    path: "/saas-finance",
+    priority: "0.8",
+    changefreq: "weekly",
+  },
 
   // UAE pages
   { path: "/uae", priority: "1.0", changefreq: "daily" },

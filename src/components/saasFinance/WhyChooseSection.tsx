@@ -65,7 +65,7 @@ const WhyChooseSection = () => {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: index * 0.1 }}
-                  className="flex items-start gap-4 p-4 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow"
+                  className="flex items-start gap-4 p-4 bg-white rounded-xl shadow hover:shadow-md transition-shadow"
                 >
                   <div className="w-12 h-12 bg-gradient-to-br from-orange-500 to-amber-500 rounded-lg flex items-center justify-center flex-shrink-0">
                     <reason.icon className="w-6 h-6 text-white" />

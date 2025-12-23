@@ -111,7 +111,7 @@ const ChallengesSection = () => {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.3, delay: index * 0.05 }}
-                  className="flex items-center gap-3 p-3 bg-white/70 rounded-lg"
+                  className="flex items-center gap-3 p-3 bg-white/70 rounded-lg shadow"
                 >
                   <challenge.icon className="w-5 h-5 text-red-500 flex-shrink-0" />
                   <span className="text-slate-700">{challenge.title}</span>
@@ -145,7 +145,7 @@ const ChallengesSection = () => {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.3, delay: 0.2 + index * 0.05 }}
-                  className="flex items-center gap-3 p-3 bg-white/70 rounded-lg"
+                  className="flex items-center gap-3 p-3 bg-white/70 rounded-lg shadow"
                 >
                   <benefit.icon className="w-5 h-5 text-green-500 flex-shrink-0" />
                   <span className="text-slate-700">{benefit.title}</span>
