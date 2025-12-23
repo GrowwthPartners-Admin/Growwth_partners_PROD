@@ -82,6 +82,10 @@ const navItems = [
         title: "AI Advisory for Finance Transformation",
         path: "/ai-advisory-finance-transformation-singapore",
       },
+      {
+        title: "AI CFO Services",
+        path: "/ai-cfo-services",
+      },
     ],
   },
   {

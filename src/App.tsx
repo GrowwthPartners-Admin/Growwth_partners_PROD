@@ -330,6 +330,27 @@ export const routes: RouteRecord[] = [
         },
       },
       {
+        path: "ai-cfo-services",
+        async lazy() {
+          const { default: Component } = await import("./pages/AiCfoServices");
+          return { Component };
+        },
+      },
+      {
+        path: "uae/ai-cfo-services",
+        async lazy() {
+          const { default: Component } = await import("./pages/AiCfoServices");
+          return { Component };
+        },
+      },
+      {
+        path: "au/ai-cfo-services",
+        async lazy() {
+          const { default: Component } = await import("./pages/AiCfoServices");
+          return { Component };
+        },
+      },
+      {
         path: "au/saas-finance",
         async lazy() {
           const { default: Component } = await import("./pages/SaasFinance");
