@@ -1,40 +1,38 @@
 import { motion } from "framer-motion";
-import { 
-  Brain, 
-  Globe, 
-  Target, 
-  Cpu, 
+import {
+  Brain,
+  Globe,
+  Target,
   Layers,
   Shield,
-  CheckCircle
 } from "lucide-react";
 
 const reasons = [
   {
     icon: Brain,
     title: "CFOs experienced in data-driven finance transformation",
-    description: "Leaders who understand both finance and technology"
+    description: "Leaders who understand both finance and technology",
   },
   {
     icon: Globe,
     title: "Deep understanding of Singapore's regulatory environment",
-    description: "Local expertise for compliance and governance"
+    description: "Local expertise for compliance and governance",
   },
   {
     icon: Target,
     title: "Proven AI finance workflows",
-    description: "Aligned to real business outcomes, not just technology"
+    description: "Aligned to real business outcomes, not just technology",
   },
   {
     icon: Layers,
     title: "Integrated support across services",
-    description: "CFO services, finance teams, bookkeeping, and payroll"
+    description: "CFO services, finance teams, bookkeeping, and payroll",
   },
   {
     icon: Shield,
     title: "Focus on insight and governance",
-    description: "Not just tools—actionable intelligence and execution"
-  }
+    description: "Not just tools—actionable intelligence and execution",
+  },
 ];
 
 const WhyChooseSection = () => {
@@ -65,15 +63,16 @@ const WhyChooseSection = () => {
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-          {reasons.map((reason, index) => (
+        {/* Row 1: 3 cards */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+          {reasons.slice(0, 3).map((reason, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: 0.1 * index }}
-              className="group bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700/50 hover:border-orange-500/50 transition-all duration-300"
+              className="group bg-slate-800/50 backdrop-blur-sm rounded-xl p-8 border border-orange-500/50 transition-all duration-300 shadow"
             >
               <div className="w-14 h-14 bg-gradient-to-br from-orange-500/20 to-amber-500/20 rounded-xl flex items-center justify-center mb-4 group-hover:from-orange-500 group-hover:to-amber-500 transition-all">
                 <reason.icon className="w-7 h-7 text-orange-400 group-hover:text-white transition-colors" />
@@ -81,35 +80,33 @@ const WhyChooseSection = () => {
               <h3 className="font-semibold text-white mb-2 group-hover:text-orange-400 transition-colors">
                 {reason.title}
               </h3>
-              <p className="text-slate-400 text-sm">
-                {reason.description}
-              </p>
+              <p className="text-slate-400 text-sm">{reason.description}</p>
             </motion.div>
           ))}
         </div>
 
-        {/* Stats Row */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          className="grid grid-cols-2 md:grid-cols-4 gap-6"
-        >
-          {[
-            { value: "50+", label: "AI-Enabled Clients" },
-            { value: "95%", label: "Reporting Accuracy" },
-            { value: "10x", label: "Faster Insights" },
-            { value: "SGD 2M+", label: "Savings Delivered" }
-          ].map((stat, index) => (
-            <div key={index} className="text-center p-6 bg-slate-800/30 rounded-xl border border-slate-700/30">
-              <p className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-amber-400 mb-1">
-                {stat.value}
-              </p>
-              <p className="text-slate-400 text-sm">{stat.label}</p>
-            </div>
+        {/* Row 2: 2 cards centered */}
+        <div className="flex flex-col sm:flex-row justify-center gap-6 mb-12">
+          {reasons.slice(3).map((reason, index) => (
+            <motion.div
+              key={index + 3}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4, delay: 0.1 * (index + 3) }}
+              className="group w-full max-w-md bg-slate-800/50 backdrop-blur-sm rounded-xl p-8 border border-orange-500/50 transition-all duration-300"
+            >
+              <div className="w-14 h-14 bg-gradient-to-br from-orange-500/20 to-amber-500/20 rounded-xl flex items-center justify-center mb-4 group-hover:from-orange-500 group-hover:to-amber-500 transition-all">
+                <reason.icon className="w-7 h-7 text-orange-400 group-hover:text-white transition-colors" />
+              </div>
+              <h3 className="font-semibold text-white mb-2 group-hover:text-orange-400 transition-colors">
+                {reason.title}
+              </h3>
+              <p className="text-slate-400 text-sm">{reason.description}</p>
+            </motion.div>
           ))}
-        </motion.div>
+        </div>
+
       </div>
     </section>
   );

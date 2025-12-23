@@ -54,7 +54,7 @@ const HeroSection = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
-              className="text-xl md:text-2xl text-slate-300 mb-4 font-light"
+              className="text-xl md:text-2xl text-slate-300 mb-12 font-light"
             >
               Real-Time Financial Intelligence for Faster, Smarter Decisions
             </motion.p>
@@ -63,9 +63,9 @@ const HeroSection = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.5 }}
-              className="text-lg text-slate-400 mb-8 max-w-xl mx-auto lg:mx-0"
+              className="text-lg text-slate-400 mb-10 max-w-xl mx-auto lg:mx-0"
             >
-              Growwth Partners' AI CFO services in Singapore combine senior CFO expertise with AI-powered finance workflows—delivering live dashboards, predictive forecasting, and decision-grade financial intelligence that scales with your business.
+              Growwth Partners’ AI CFO in Singapore blends senior expertise with AI workflows to deliver live dashboards and predictive financial intelligence that scales with you
             </motion.p>
 
             <motion.div

@@ -12,27 +12,32 @@ const features = [
   {
     icon: LineChart,
     title: "Real-time financial reporting",
-    description: "Live dashboards that update automatically"
+    description: "Live, always-on dashboards that sync with your accounting and banking data."
   },
   {
     icon: TrendingUp,
-    title: "Predictive cash flow and forecasting",
-    description: "AI-powered predictions for better planning"
+    title: "Predictive cash flow & forecasting",
+    description: "AI-powered projections that show best, base, and worst-case outcomes before you commit."
   },
   {
     icon: Activity,
-    title: "Scenario and sensitivity modelling",
-    description: "Model different outcomes instantly"
+    title: "Scenario & sensitivity modelling",
+    description: "Instantly test pricing, hiring, and funding scenarios—without rebuilding spreadsheets."
   },
   {
     icon: BarChart3,
     title: "Automated performance monitoring",
-    description: "Track KPIs without manual effort"
+    description: "Continuous tracking of KPIs, alerts, and trends so you spot issues before they hit cash."
   },
   {
     icon: Users,
-    title: "CFO-led interpretation of AI insights",
-    description: "Human expertise guiding AI outputs"
+    title: "CFO-led interpretation of AI",
+    description: "Senior finance experts turn raw AI output into clear, board-ready recommendations."
+  },
+  {
+    icon: Brain,
+    title: "Always-on financial co-pilot",
+    description: "An AI agent that answers \"what if?\" questions on demand and surfaces insights proactively."
   }
 ];
 

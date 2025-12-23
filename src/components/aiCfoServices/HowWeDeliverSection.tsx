@@ -93,7 +93,7 @@ const HowWeDeliverSection = () => {
               transition={{ duration: 0.4, delay: 0.1 * index }}
               className={`relative group ${index === deliveryAreas.length - 1 ? 'lg:col-span-2 lg:max-w-2xl lg:mx-auto' : ''}`}
             >
-              <div className="bg-slate-50 rounded-2xl p-8 h-full hover:bg-gradient-to-br hover:from-orange-50 hover:to-amber-50 transition-all duration-300 border border-slate-100 hover:border-orange-200">
+              <div className=" rounded-2xl p-8 h-full bg-gradient-to-br from-orange-50/30 to-amber-50 transition-all duration-300 border border-slate-100 hover:border-orange-200">
                 {/* Number Badge */}
                 <div className="absolute -top-4 -left-4 w-12 h-12 bg-gradient-to-br from-orange-500 to-amber-500 rounded-xl flex items-center justify-center shadow-lg">
                   <span className="text-white font-bold">{area.number}</span>
@@ -112,7 +112,7 @@ const HowWeDeliverSection = () => {
                   {area.features.map((feature, featureIndex) => (
                     <li key={featureIndex} className="flex items-start gap-3">
                       <div className="w-2 h-2 bg-orange-500 rounded-full mt-2 flex-shrink-0" />
-                      <span className="text-slate-600">{feature}</span>
+                      <span className="text-slate-600 font-bold">{feature}</span>
                     </li>
                   ))}
                 </ul>

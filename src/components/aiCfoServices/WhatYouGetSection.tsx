@@ -1,45 +1,45 @@
 import { motion } from "framer-motion";
-import { 
-  Users, 
-  BarChart3, 
-  TrendingUp, 
-  FileCheck, 
+import {
+  Users,
+  BarChart3,
+  TrendingUp,
+  FileCheck,
   Zap,
   ArrowUpRight,
-  CheckCircle
+  CheckCircle,
 } from "lucide-react";
 
 const benefits = [
   {
     icon: Users,
     title: "Dedicated CFO with AI-enabled workflows",
-    description: "Expert financial leadership powered by cutting-edge AI tools"
+    description: "Expert financial leadership powered by cutting-edge AI tools",
   },
   {
     icon: BarChart3,
     title: "Real-time financial dashboards",
-    description: "Live visibility into all key financial metrics"
+    description: "Live visibility into all key financial metrics",
   },
   {
     icon: TrendingUp,
     title: "Predictive cash flow and forecasting models",
-    description: "AI-powered predictions for better planning"
+    description: "AI-powered predictions for better planning",
   },
   {
     icon: FileCheck,
     title: "Automated reporting and performance tracking",
-    description: "Eliminate manual reporting processes"
+    description: "Eliminate manual reporting processes",
   },
   {
     icon: Zap,
     title: "Faster, data-backed decision-making",
-    description: "Make confident decisions with real-time insights"
+    description: "Make confident decisions with real-time insights",
   },
   {
     icon: ArrowUpRight,
     title: "Scalable solution as complexity increases",
-    description: "Finance systems that grow with your business"
-  }
+    description: "Finance systems that grow with your business",
+  },
 ];
 
 const WhatYouGetSection = () => {
@@ -97,9 +97,9 @@ const WhatYouGetSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.4 }}
-          className="mt-12 bg-gradient-to-r from-slate-900 to-slate-800 rounded-2xl p-8"
+          className="mt-12 bg-gradient-to-r from-slate-900 to-slate-800 rounded-2xl p-8 max-w-4xl mx-auto"
         >
-          <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+          <div className="flex flex-col md:flex-row items-center md:items-center justify-between gap-6 text-center md:text-left">
             <div className="flex items-center gap-4">
               <div className="w-16 h-16 bg-orange-500/20 rounded-xl flex items-center justify-center">
                 <CheckCircle className="w-8 h-8 text-orange-400" />

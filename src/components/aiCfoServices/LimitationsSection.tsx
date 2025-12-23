@@ -60,7 +60,7 @@ const LimitationsSection = () => {
         </motion.div>
 
         {/* Modern Comparison Layout */}
-        <div className="max-w-5xl mx-auto">
+        <div className="max-w-7xl mx-auto">
           <div className="grid gap-4">
             {limitations.map((item, index) => (
               <motion.div
@@ -69,7 +69,7 @@ const LimitationsSection = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: 0.1 * index }}
-                className="group relative bg-gradient-to-r from-slate-50 to-white rounded-xl p-6 border border-slate-100 hover:border-orange-200 hover:shadow-lg transition-all"
+                className="group relative bg-gradient-to-r from-slate-50 to-white shadow rounded-xl p-6 border border-slate-100 hover:border-orange-200 hover:shadow-lg transition-all"
               >
                 <div className="flex flex-col md:flex-row items-start md:items-center gap-4">
                   {/* Problem Side */}
