@@ -38,6 +38,7 @@ const navItems = [
       { title: "Tech Business Finance", path: "/tech-business-finance" },
       { title: "SaaS Finance Services", path: "/saas-finance" },
       { title: "Outsourced CFO Services", path: "/outsourced-cfo-services" },
+      { title: "Startup CFO Services", path: "/startup-cfo-services" },
     ],
   },
   {
