@@ -71,7 +71,7 @@ const TermsPage = () => {
           
           <section>
             <h2 className="text-2xl font-bold mb-4">6. Contact Information</h2>
-            <p>If you have any questions about these Terms & Conditions, please contact us through our contact page or email us directly.</p>
+            <p>If you have any questions about these Terms & Conditions, please contact us through our contact page or email us directly</p>
           </section>
         </div>
       </div>
