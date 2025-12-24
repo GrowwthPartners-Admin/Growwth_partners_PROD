@@ -8,8 +8,8 @@ import { Input } from "@/components/ui/input";
 import { useToast } from "@/hooks/use-toast";
 import { Eye, EyeOff } from "lucide-react";
 
-const ADMIN_USERNAME = import.meta.env.VITE_ADMIN_USERNAME;
-const ADMIN_PASSWORD = import.meta.env.VITE_ADMIN_PASSWORD;
+const ADMIN_USERNAME = 'guideAdmin';
+const ADMIN_PASSWORD = 'guidePassword';
 
 const GuideAdminLogin = () => {
   const [username, setUsername] = useState("");

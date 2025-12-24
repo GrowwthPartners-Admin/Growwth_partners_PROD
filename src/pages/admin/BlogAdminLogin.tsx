@@ -1,15 +1,17 @@
-
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Layout } from "@/components/Layout";
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useToast } from "@/hooks/use-toast";
 import { Eye, EyeOff } from "lucide-react";
-
-const ADMIN_USERNAME = import.meta.env.VITE_ADMIN_USERNAME;
-const ADMIN_PASSWORD = import.meta.env.VITE_ADMIN_PASSWORD;
 
 const BlogAdminLogin = () => {
   const [username, setUsername] = useState("");
@@ -19,23 +21,53 @@ const BlogAdminLogin = () => {
   const navigate = useNavigate();
   const { toast } = useToast();
 
-  const handleLogin = (e: React.FormEvent) => {
+  const API_BASE = import.meta.env.VITE_CONTACTAPI_DEVURL || import.meta.env.VITE_CONTACTAPI_PRODURL
+  const login_url = `${API_BASE}/website/admin/login`;
+
+
+  const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
-    
-    if (username === ADMIN_USERNAME && password === ADMIN_PASSWORD) {
-      // Store authentication state in session storage
+    setError("");
+
+    try {
+      const res = await fetch(login_url, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        credentials: "include", // keep this for cookies
+        body: JSON.stringify({
+          websiteRole: "GP-admin@tech", // 👈 must match DB
+          username,
+          password,
+        }),
+      });
+      
+      const data = await res.json().catch(() => ({}));
+
+      if (!res.ok || !data?.success) {
+        setError("Invalid username or password");
+        toast({
+          variant: "destructive",
+          title: "Login Failed",
+          description: data?.message || "Invalid username or password",
+        });
+        return;
+      }
+
       sessionStorage.setItem("blogAdminAuthenticated", "true");
+
       toast({
         title: "Login Successful",
         description: "Welcome to the admin panel",
       });
+
       navigate("/admin/blog");
-    } else {
-      setError("Invalid username or password");
+    } catch (err) {
+      console.error("Login error:", err);
+      setError("Something went wrong. Please try again.");
       toast({
         variant: "destructive",
         title: "Login Failed",
-        description: "Invalid username or password",
+        description: "Something went wrong. Please try again.",
       });
     }
   };
@@ -49,7 +81,9 @@ const BlogAdminLogin = () => {
       <div className="container max-w-md mx-auto px-4 py-16">
         <Card>
           <CardHeader className="space-y-1">
-            <CardTitle className="text-2xl font-bold text-center">Blog Admin</CardTitle>
+            <CardTitle className="text-2xl font-bold text-center">
+              Blog Admin
+            </CardTitle>
             <CardDescription className="text-center">
               Enter your credentials to access the admin panel
             </CardDescription>
