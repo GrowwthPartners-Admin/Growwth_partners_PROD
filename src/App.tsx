@@ -400,6 +400,27 @@ export const routes: RouteRecord[] = [
         },
       },
       {
+        path: "sme-cfo-services",
+        async lazy() {
+          const { default: Component } = await import("./pages/SmeCfoServices");
+          return { Component };
+        },
+      },
+      {
+        path: "uae/sme-cfo-services",
+        async lazy() {
+          const { default: Component } = await import("./pages/SmeCfoServices");
+          return { Component };
+        },
+      },
+      {
+        path: "au/sme-cfo-services",
+        async lazy() {
+          const { default: Component } = await import("./pages/SmeCfoServices");
+          return { Component };
+        },
+      },
+      {
         path: "privacy-policy",
         async lazy() {
           const { default: Component } = await import("./pages/PrivacyPolicy");
