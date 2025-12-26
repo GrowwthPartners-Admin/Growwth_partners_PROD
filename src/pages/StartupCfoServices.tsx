@@ -9,8 +9,24 @@ import ChallengesSection from "@/components/startupCfo/ChallengesSection";
 import HowWeDeliverSection from "@/components/startupCfo/HowWeDeliverSection";
 import WhyChooseSection from "@/components/startupCfo/WhyChooseSection";
 import UseCaseSection from "@/components/startupCfo/UseCaseSection";
-import FaqSection from "@/components/startupCfo/FaqSection";
 import CTASection from "@/components/startupCfo/CTASection";
+import { FaqSection } from "@/components/accounting/FaqSection";
+
+
+const faqs = [
+  {
+    question: "Do startups really need a CFO early?",
+    answer: "Yes. CFO-level planning improves cash discipline, reduces risk, and significantly improves fundraising outcomes. Early financial leadership helps founders make better decisions and build investor confidence."
+  },
+  {
+    question: "How is a Startup CFO different from a regular CFO?",
+    answer: "A Startup CFO focuses on growth metrics, fundraising, and runway management rather than mature-company operations. They understand the unique challenges of early-stage companies and investor expectations."
+  },
+  {
+    question: "Is Startup CFO support affordable for early-stage startups?",
+    answer: "Yes. Fractional and virtual models make CFO expertise accessible without full-time hiring costs. You get senior-level financial leadership at a fraction of the cost of a full-time CFO."
+  }
+];
 
 const StartupCfoServices = () => {
   const { pathname } = useLocation();
@@ -27,19 +43,59 @@ const StartupCfoServices = () => {
 
   const { location } = getLocationInfo();
 
-  // Structured data for SEO
   const structuredData = {
     "@context": "https://schema.org",
-    "@type": "Service",
-    "name": `Startup CFO Services in ${location}`,
-    "description": `CFO services for startups including modelling, investor reporting, cash burn control, and financial systems setup in ${location}.`,
-    "provider": {
-      "@type": "Organization",
-      "name": "Growwth Partners",
-      "url": "https://growwthpartners.com"
-    },
-    "areaServed": location,
-    "serviceType": "Startup CFO Services"
+    "@graph": [
+      {
+        "@type": "FAQPage",
+        "@id": "https://growwthpartners.com/startup-cfo-services/#faq",
+        mainEntity: faqs.map((faq) => ({
+          "@type": "Question",
+          name: faq.question,
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: faq.answer,
+          },
+        })),
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://growwthpartners.com/#organization",
+        name: "Growwth Partners",
+        url: "https://growwthpartners.com",
+        areaServed: ["Singapore", "United Arab Emirates", "Australia"],
+        serviceArea: [
+          {
+            "@type": "AdministrativeArea",
+            name: "Singapore",
+          },
+          {
+            "@type": "Country",
+            name: "United Arab Emirates",
+          },
+          {
+            "@type": "Country",
+            name: "Australia",
+          },
+        ],
+        contactPoint: [
+          {
+            "@type": "ContactPoint",
+            email: "jd@growwthpartners.com",
+            telephone: "+65 9861 5600",
+            contactType: "business",
+            areaServed: "SG",
+          },
+        ],
+        address: {
+          "@type": "PostalAddress",
+          streetAddress: "65 Chulia Street",
+          addressLocality: "Singapore",
+          postalCode: "049513",
+          addressCountry: "SG",
+        },
+      },
+    ],
   };
 
   return (
@@ -48,6 +104,7 @@ const StartupCfoServices = () => {
         title={`Startup CFO Services in ${location} | Fundraising & Growth Strategy`}
         description="CFO services for startups including modelling, investor reporting, cash burn control, and financial systems setup."
         keywords="startup CFO Singapore, financial modelling for startups, startup reporting, investor support"
+        canonicalUrl="https://growwthpartners.com/startup-cfo-services"
         structuredData={structuredData}
       />
       <Navbar />
@@ -59,7 +116,10 @@ const StartupCfoServices = () => {
         <HowWeDeliverSection />
         <WhyChooseSection />
         <UseCaseSection />
-        <FaqSection />
+        <FaqSection
+          faqs={faqs}
+          subtitle="Find answers to common questions about our Startup CFO Services"
+        />
         <CTASection />
       </main>
       <Footer />

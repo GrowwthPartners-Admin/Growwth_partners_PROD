@@ -67,7 +67,7 @@ const ChallengesSection = () => {
   return (
     <section className="py-20 md:py-28 bg-white overflow-hidden">
       <div className="container mx-auto px-4">
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-8xl mx-auto">
           {/* Challenges */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -120,10 +120,11 @@ const ChallengesSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.5 }}
-              className="mt-8 p-6 bg-gradient-to-r from-red-500/10 to-orange-500/10 rounded-2xl border border-red-200 text-center"
+              className="mt-8 p-6 bg-gradient-to-r from-red-500/10 to-orange-500/10 rounded-2xl border-2 shadow border-red-300 text-center max-w-md mx-auto"
             >
               <p className="text-red-800 font-medium">
-                These issues reduce valuation, delay fundraising, and increase failure risk.
+                These issues reduce valuation, delay fundraising, and increase
+                failure risk.
               </p>
             </motion.div>
           </div>
@@ -153,7 +154,7 @@ const ChallengesSection = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: index * 0.1 }}
-                  className="flex items-center gap-3 p-4 bg-white/5 rounded-xl border border-white/10 hover:bg-white/10 transition-colors"
+                  className="flex items-center gap-3 p-6 bg-white/5 rounded-xl border border-white/10 hover:bg-white/10 transition-colors"
                 >
                   <div className="w-10 h-10 bg-gradient-to-br from-orange-500 to-amber-500 rounded-lg flex items-center justify-center flex-shrink-0">
                     <item.icon className="w-5 h-5 text-white" />
@@ -167,9 +168,9 @@ const ChallengesSection = () => {
               <Button
                 size="lg"
                 onClick={() => setIsContactModalOpen(true)}
-                className="bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white px-8 py-6 text-lg rounded-xl group"
+                className="bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white px-8 py-6 text-lg rounded-xl group transition-all hover:scale-105"
               >
-                Get Started
+                Get Started 
                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Button>
             </div>

@@ -13,7 +13,7 @@ const UseCaseSection = () => {
   return (
     <section className="py-20 md:py-28 bg-gradient-to-b from-white to-slate-50">
       <div className="container mx-auto px-4">
-        <div className="max-w-5xl mx-auto">
+        <div className="max-w-8xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -34,11 +34,11 @@ const UseCaseSection = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="bg-white rounded-3xl border border-slate-200 shadow-xl overflow-hidden"
+            className="bg-white rounded-3xl border font-bold border-slate-200 shadow-xl overflow-hidden"
           >
             {/* Header */}
             <div className="bg-gradient-to-r from-slate-900 to-slate-800 p-6 md:p-8">
-              <div className="flex flex-wrap items-center gap-4">
+              <div className="flex flex-wrap items-center gap-6">
                 <div className="w-16 h-16 bg-gradient-to-br from-orange-500 to-amber-500 rounded-2xl flex items-center justify-center">
                   <Building2 className="w-8 h-8 text-white" />
                 </div>

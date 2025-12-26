@@ -23,7 +23,7 @@ const ChallengesSection: React.FC = () => {
   return (
     <section className="py-20 bg-white">
       <div className="container mx-auto px-4">
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-8xl mx-auto">
           {/* Challenges */}
           <div className="mb-20">
             <div className="text-center mb-12">
@@ -39,7 +39,7 @@ const ChallengesSection: React.FC = () => {
               {challenges.map((challenge, index) => (
                 <div 
                   key={index}
-                  className="group relative bg-slate-50 rounded-2xl p-6 hover:bg-white hover:shadow-xl transition-all duration-500 border border-slate-100 overflow-hidden"
+                  className="group relative bg-slate-50 rounded-2xl p-8 hover:bg-white shadow hover:shadow-xl transition-all duration-500 border border-slate-100 overflow-hidden"
                 >
                   <div className={`absolute top-0 left-0 w-full h-1 bg-gradient-to-r ${challenge.color}`} />
                   
@@ -82,7 +82,7 @@ const ChallengesSection: React.FC = () => {
             </div>
 
             <div className="mt-10 text-center">
-              <p className="text-amber-400 text-lg font-medium">
+              <p className="text-amber-400 text-lg font-bold">
                 All delivered at a fraction of the cost of a full-time CFO.
               </p>
             </div>

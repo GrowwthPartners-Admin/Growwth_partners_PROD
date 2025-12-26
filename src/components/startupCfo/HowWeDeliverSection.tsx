@@ -82,7 +82,7 @@ const HowWeDeliverSection = () => {
   return (
     <section className="py-20 md:py-28 bg-gradient-to-b from-slate-50 to-white">
       <div className="container mx-auto px-4">
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -101,7 +101,7 @@ const HowWeDeliverSection = () => {
             </p>
           </motion.div>
 
-          <div className="space-y-6">
+          <div className="space-y-8">
             {services.map((service, index) => (
               <motion.div
                 key={index}
@@ -111,7 +111,7 @@ const HowWeDeliverSection = () => {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 className="group"
               >
-                <div className="bg-white rounded-2xl border border-slate-200 hover:border-orange-300 hover:shadow-xl transition-all duration-300 overflow-hidden">
+                <div className="bg-white rounded-2xl border border-slate-200 hover:border-orange-300 shadow hover:shadow-xl transition-all duration-300 overflow-hidden">
                   <div className="flex flex-col lg:flex-row">
                     {/* Left Section */}
                     <div className={`lg:w-1/3 p-6 md:p-8 bg-gradient-to-br ${service.color} flex items-center gap-4`}>
@@ -119,9 +119,6 @@ const HowWeDeliverSection = () => {
                         {service.number}
                       </div>
                       <div className="flex items-center gap-3">
-                        <div className="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center">
-                          <service.icon className="w-6 h-6 text-white" />
-                        </div>
                         <h3 className="text-xl md:text-2xl font-bold text-white">
                           {service.title}
                         </h3>

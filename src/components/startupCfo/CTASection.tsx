@@ -1,11 +1,8 @@
-import { useState } from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Rocket, Shield, TrendingUp } from "lucide-react";
-import { ContactModal } from "@/components/ui/contact-modal";
+import { ArrowRight } from "lucide-react";
 
 const CTASection = () => {
-  const [isContactModalOpen, setIsContactModalOpen] = useState(false);
 
   return (
     <section className="py-20 md:py-28 bg-gradient-to-br from-slate-900 via-slate-800 to-orange-900/30 relative overflow-hidden">
@@ -15,26 +12,6 @@ const CTASection = () => {
         <div className="absolute bottom-0 right-1/4 w-80 h-80 bg-amber-500/10 rounded-full blur-3xl" />
       </div>
 
-      {/* Floating Icons */}
-      <motion.div
-        className="absolute top-20 right-[20%] hidden lg:block"
-        animate={{ y: [0, -10, 0] }}
-        transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-      >
-        <div className="p-3 bg-orange-500/20 rounded-xl backdrop-blur-sm">
-          <Rocket className="w-6 h-6 text-orange-400" />
-        </div>
-      </motion.div>
-
-      <motion.div
-        className="absolute bottom-20 left-[15%] hidden lg:block"
-        animate={{ y: [0, 10, 0] }}
-        transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-      >
-        <div className="p-3 bg-green-500/20 rounded-xl backdrop-blur-sm">
-          <TrendingUp className="w-6 h-6 text-green-400" />
-        </div>
-      </motion.div>
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
@@ -56,42 +33,16 @@ const CTASection = () => {
 
             <Button
               size="lg"
-              onClick={() => setIsContactModalOpen(true)}
-              className="bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white px-10 py-7 text-lg rounded-xl shadow-lg shadow-orange-500/25 hover:shadow-orange-500/40 transition-all duration-300 group"
+              onClick={() => window.open('https://calendly.com/jd-growwthpartners/15min?month=2025-11', '_blank')}
+              className="bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white px-10 py-7 text-lg rounded-xl shadow-lg shadow-orange-500/25 hover:shadow-orange-500/40 transition-all duration-300 group hover:scale-105" 
             >
               Schedule a Startup CFO Consultation
               <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </Button>
 
-            {/* Trust Indicators */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="mt-12 flex flex-wrap justify-center gap-6 text-slate-400"
-            >
-              <div className="flex items-center gap-2">
-                <Shield className="w-5 h-5 text-orange-400" />
-                <span>Trusted by 100+ Startups</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <TrendingUp className="w-5 h-5 text-green-400" />
-                <span>$50M+ Funding Raised</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Rocket className="w-5 h-5 text-blue-400" />
-                <span>Seed to Series A Experts</span>
-              </div>
-            </motion.div>
           </motion.div>
         </div>
       </div>
-
-      <ContactModal
-        open={isContactModalOpen}
-        onOpenChange={setIsContactModalOpen}
-      />
     </section>
   );
 };

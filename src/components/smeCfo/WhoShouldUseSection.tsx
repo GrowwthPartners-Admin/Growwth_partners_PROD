@@ -19,7 +19,7 @@ const WhoShouldUseSection: React.FC = () => {
   return (
     <section className="py-20 bg-gradient-to-br from-slate-50 to-amber-50/30">
       <div className="container mx-auto px-4">
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-8xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
               Who Should Use SME CFO Services?
@@ -28,7 +28,7 @@ const WhoShouldUseSection: React.FC = () => {
 
           <div className="grid lg:grid-cols-2 gap-12">
             <div>
-              <h3 className="text-xl font-bold text-slate-900 mb-6">
+              <h3 className="text-xl font-bold text-slate-900 mb-6 ml-2">
                 SME CFO services are ideal for:
               </h3>
 
@@ -36,7 +36,7 @@ const WhoShouldUseSection: React.FC = () => {
                 {idealFor.map((item, index) => (
                   <div 
                     key={index}
-                    className="flex items-start gap-4 p-4 bg-white rounded-xl shadow-sm hover:shadow-md transition-all duration-300 border border-slate-100"
+                    className="flex items-start gap-4 p-4 bg-white rounded-xl shadow hover:shadow-md transition-all duration-300 border border-slate-100"
                   >
                     <div className="w-10 h-10 bg-gradient-to-br from-amber-500 to-orange-600 rounded-lg flex items-center justify-center flex-shrink-0">
                       <item.icon className="w-5 h-5 text-white" />
@@ -62,7 +62,7 @@ const WhoShouldUseSection: React.FC = () => {
                   {questions.map((question, index) => (
                     <div 
                       key={index}
-                      className="flex items-center gap-3 bg-white/10 backdrop-blur-sm rounded-lg p-4"
+                      className="flex items-center gap-3 bg-white/10 backdrop-blur-sm shadow rounded-lg p-4"
                     >
                       <span className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center text-sm font-bold">
                         {index + 1}
