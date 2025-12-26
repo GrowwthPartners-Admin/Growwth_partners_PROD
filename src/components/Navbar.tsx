@@ -40,6 +40,14 @@ const navItems = [
       { title: "Outsourced CFO Services", path: "/outsourced-cfo-services" },
       { title: "Startup CFO Services", path: "/startup-cfo-services" },
       { title: "SME CFO Services", path: "/sme-cfo-services" },
+      {
+        title: "Corporate Tax Filing",
+        path: "/corporate-tax-filing-singapore",
+      },
+      {
+        title: "Business Valuation Services",
+        path: "/valuation-services-singapore",
+      },
     ],
   },
   {
@@ -56,14 +64,6 @@ const navItems = [
       {
         title: "Strategic Finance Support",
         path: "/strategic-finance-singapore",
-      },
-      {
-        title: "Corporate Tax Filing",
-        path: "/corporate-tax-filing-singapore",
-      },
-      {
-        title: "Business Valuation Services",
-        path: "/valuation-services-singapore",
       },
       {
         title: "AI Finance Workflow",
