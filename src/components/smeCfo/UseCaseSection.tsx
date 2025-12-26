@@ -5,7 +5,7 @@ const UseCaseSection: React.FC = () => {
   return (
     <section className="py-20 bg-gradient-to-br from-slate-900 to-slate-800">
       <div className="container mx-auto px-4">
-        <div className="max-w-5xl mx-auto">
+        <div className="max-w-8xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
               Practical Use Case
@@ -25,7 +25,7 @@ const UseCaseSection: React.FC = () => {
               </div>
             </div>
 
-            <div className="p-8">
+            <div className="p-8 font-bold">
               <div className="grid md:grid-cols-3 gap-8">
                 {/* Challenges */}
                 <div className="space-y-4">

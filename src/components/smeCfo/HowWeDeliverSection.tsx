@@ -1,55 +1,55 @@
-import React from 'react';
-import { TrendingUp, Wallet, PieChart, BarChart3, Target } from 'lucide-react';
+import React from "react";
+import { TrendingUp, Wallet, PieChart, BarChart3, Target } from "lucide-react";
 
 const deliverables = [
   {
-    number: '01',
+    number: "01",
     icon: TrendingUp,
-    title: 'Financial Planning & Forecasting',
+    title: "Financial Planning & Forecasting",
     items: [
-      'Annual budgets and rolling forecasts',
-      'Short- and mid-term cash flow projections',
-      'Scenario and sensitivity analysis',
+      "Annual budgets and rolling forecasts",
+      "Short- and mid-term cash flow projections",
+      "Scenario and sensitivity analysis",
     ],
   },
   {
-    number: '02',
+    number: "02",
     icon: Wallet,
-    title: 'Cash Flow & Working Capital Management',
+    title: "Cash Flow & Working Capital Management",
     items: [
-      'Monthly cash flow forecasting',
-      'Receivables and payables optimisation',
-      'Liquidity risk management',
+      "Monthly cash flow forecasting",
+      "Receivables and payables optimisation",
+      "Liquidity risk management",
     ],
   },
   {
-    number: '03',
+    number: "03",
     icon: PieChart,
-    title: 'Profitability & Cost Control',
+    title: "Profitability & Cost Control",
     items: [
-      'Product, service, and department-level margin analysis',
-      'Cost leakage identification',
-      'Pricing and cost optimisation strategies',
+      "Product, service, and department-level margin analysis",
+      "Cost leakage identification",
+      "Pricing and cost optimisation strategies",
     ],
   },
   {
-    number: '04',
+    number: "04",
     icon: BarChart3,
-    title: 'Management & Performance Reporting',
+    title: "Management & Performance Reporting",
     items: [
-      'Monthly MIS (P&L, balance sheet, cash flow)',
-      'KPI dashboards aligned to business goals',
-      'Variance and trend analysis',
+      "Monthly MIS (P&L, balance sheet, cash flow)",
+      "KPI dashboards aligned to business goals",
+      "Variance and trend analysis",
     ],
   },
   {
-    number: '05',
+    number: "05",
     icon: Target,
-    title: 'Strategic Decision Support',
+    title: "Strategic Decision Support",
     items: [
-      'Expansion and investment decisions',
-      'Hiring and resource planning',
-      'Capital allocation guidance',
+      "Expansion and investment decisions",
+      "Hiring and resource planning",
+      "Capital allocation guidance",
     ],
   },
 ];
@@ -64,27 +64,31 @@ const HowWeDeliverSection: React.FC = () => {
               How Growwth Partners Delivers SME CFO Value
             </h2>
             <p className="text-lg text-slate-600 max-w-3xl mx-auto">
-              Our SME CFO services are designed to bring structure, control, and predictability to your finance function.
+              Our SME CFO services are designed to bring structure, control, and
+              predictability to your finance function.
             </p>
           </div>
 
-          <div className="space-y-8">
+          <div className="space-y-8 font-bold">
             {deliverables.map((item, index) => (
-              <div 
+              <div
                 key={index}
                 className="group bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-500 overflow-hidden border border-slate-100"
               >
                 <div className="flex flex-col lg:flex-row">
                   <div className="lg:w-1/3 bg-gradient-to-br from-amber-500 to-orange-600 p-8 flex items-center">
                     <div className="flex items-center gap-6">
-                      <span className="text-5xl font-bold text-white/30">{item.number}</span>
+                      <span className="text-5xl font-bold text-white/30">
+                        {item.number}
+                      </span>
                       <div>
-                        <item.icon className="w-10 h-10 text-white mb-3" />
-                        <h3 className="text-xl font-bold text-white">{item.title}</h3>
+                        <h3 className="text-xl font-bold text-white">
+                          {item.title}
+                        </h3>
                       </div>
                     </div>
                   </div>
-                  
+
                   <div className="lg:w-2/3 p-8">
                     <ul className="space-y-4">
                       {item.items.map((listItem, idx) => (

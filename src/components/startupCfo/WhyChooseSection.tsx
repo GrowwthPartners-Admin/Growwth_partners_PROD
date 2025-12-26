@@ -1,44 +1,42 @@
 import { motion } from "framer-motion";
-import { 
-  Rocket, 
-  TrendingUp, 
-  Globe, 
-  Cpu, 
-  Layers,
-  Target 
-} from "lucide-react";
+import { Rocket, TrendingUp, Globe, Cpu, Layers, Target } from "lucide-react";
 
 const reasons = [
   {
     icon: Rocket,
     title: "Startup Expertise",
-    description: "Extensive experience with startups across SaaS, tech, fintech, ecommerce, and marketplaces"
+    description:
+      "Extensive experience with startups across SaaS, tech, fintech, ecommerce, and marketplaces",
   },
   {
     icon: TrendingUp,
     title: "Investor Alignment",
-    description: "Strong understanding of investor expectations and funding dynamics"
+    description:
+      "Strong understanding of investor expectations and funding dynamics",
   },
   {
     icon: Globe,
     title: "Singapore Expertise",
-    description: "Deep knowledge of Singapore's regulatory and reporting environment"
+    description:
+      "Deep knowledge of Singapore's regulatory and reporting environment",
   },
   {
     icon: Cpu,
     title: "AI-Enabled Insights",
-    description: "AI-enabled dashboards for real-time financial insights"
+    description: "AI-enabled dashboards for real-time financial insights",
   },
   {
     icon: Layers,
     title: "Integrated Partner",
-    description: "One partner for CFO services, finance teams, bookkeeping, and payroll"
+    description:
+      "One partner for CFO services, finance teams, bookkeeping, and payroll",
   },
   {
     icon: Target,
     title: "Decision-Grade Clarity",
-    description: "We focus on decision-grade financial clarity, not just reports"
-  }
+    description:
+      "We focus on decision-grade financial clarity, not just reports",
+  },
 ];
 
 const WhyChooseSection = () => {
@@ -51,7 +49,7 @@ const WhyChooseSection = () => {
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-8xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -59,7 +57,7 @@ const WhyChooseSection = () => {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <span className="inline-block px-4 py-1.5 bg-orange-500/20 text-orange-400 rounded-full text-sm font-medium mb-4">
+            <span className="inline-block px-4 py-1.5 bg-orange-500/20 text-orange-400 rounded-full shadow text-sm font-medium mb-4 mx-auto">
               Why Growwth Partners
             </span>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6">
