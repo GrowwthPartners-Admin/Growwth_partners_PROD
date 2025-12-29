@@ -91,8 +91,8 @@ const CorporateTaxFilingUAE = () => {
   return (
     <Layout>
       <SEOhelper
-        title="Corporate Tax Filing Services UAE | Growwth Partners"
-        description="Ensure compliance with UAE's new corporate tax laws with expert assistance. Growwth Partners provides corporate tax filing in the UAE with SME focused optimisation and FTA aligned reporting."
+        title="Corporate Tax UAE | Professional UAE Tax Services"
+        description="Reliable corporate tax services in UAE covering filing, compliance, and advisory. Stay compliant with expert-led UAE tax services."
         keywords="corporate tax filing UAE, FTA compliance, UAE tax services, corporate tax UAE, SME tax optimisation, VAT UAE, ESR compliance"
         canonicalUrl="https://growwthpartners.com/uae/corporate-tax-filing-uae"
         structuredData={structuredData}
