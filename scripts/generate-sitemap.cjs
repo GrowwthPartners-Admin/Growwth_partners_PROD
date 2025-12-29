@@ -171,26 +171,7 @@ const staticRoutes = [
   { path: "/uae/about", priority: "0.8", changefreq: "weekly" },
   { path: "/uae/blog", priority: "0.7", changefreq: "daily" },
   { path: "/uae/contact-us", priority: "0.8", changefreq: "weekly" },
-  {
-    path: "/uae/accounting-services-in-uae",
-    priority: "0.8",
-    changefreq: "weekly",
-  },
-  {
-    path: "/uae/bookkeeping-services-in-uae",
-    priority: "0.8",
-    changefreq: "weekly",
-  },
-  {
-    path: "/uae/payroll-services-in-uae",
-    priority: "0.8",
-    changefreq: "weekly",
-  },
-  {
-    path: "/uae/cash-flow-services-in-uae",
-    priority: "0.8",
-    changefreq: "weekly",
-  },
+  
   {
     path: "/uae/company-incorporation-services-in-uae",
     priority: "0.8",
@@ -207,11 +188,7 @@ const staticRoutes = [
   { path: "/uae/achievements", priority: "0.7", changefreq: "weekly" },
   { path: "/uae/guide", priority: "0.7", changefreq: "weekly" },
   { path: "/uae/news", priority: "0.7", changefreq: "daily" },
-  {
-    path: "/uae/taxation-services-in-uae",
-    priority: "0.8",
-    changefreq: "monthly",
-  },
+
   {
     path: "/uae/virtual-cfo-services-uae",
     priority: "0.8",
@@ -235,26 +212,7 @@ const staticRoutes = [
   { path: "/au/about", priority: "0.8", changefreq: "weekly" },
   { path: "/au/blog", priority: "0.7", changefreq: "daily" },
   { path: "/au/contact-us", priority: "0.8", changefreq: "weekly" },
-  {
-    path: "/au/accounting-services-in-australia",
-    priority: "0.8",
-    changefreq: "weekly",
-  },
-  {
-    path: "/au/bookkeeping-services-in-australia",
-    priority: "0.8",
-    changefreq: "weekly",
-  },
-  {
-    path: "/au/payroll-services-in-australia",
-    priority: "0.8",
-    changefreq: "weekly",
-  },
-  {
-    path: "/au/cash-flow-services-in-australia",
-    priority: "0.8",
-    changefreq: "weekly",
-  },
+  
   {
     path: "/au/company-incorporation-services-in-australia",
     priority: "0.8",
@@ -275,11 +233,6 @@ const staticRoutes = [
   { path: "/au/achievements", priority: "0.7", changefreq: "weekly" },
   { path: "/au/guide", priority: "0.7", changefreq: "weekly" },
   { path: "/au/news", priority: "0.7", changefreq: "daily" },
-  {
-    path: "/au/taxation-services-in-australia",
-    priority: "0.8",
-    changefreq: "monthly",
-  },
   {
     path: "/au/virtual-cfo-services-australia",
     priority: "0.8",
