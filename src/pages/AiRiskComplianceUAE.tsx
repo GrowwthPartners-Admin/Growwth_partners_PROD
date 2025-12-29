@@ -85,8 +85,8 @@ const AiRiskComplianceUAE = () => {
   return (
     <Layout>
       <SEOhelper
-        title="AI for Risk, Compliance & Fraud UAE | Ryzup.ai"
-        description="Detect fraud, monitor risks, and stay compliant using AI tools. Ryzup.ai helps UAE finance teams automate checks, protect sensitive data, and prepare audit-ready reports."
+        title="AI Compliance UAE | AI Risk Monitoring & Fraud Control"
+        description="AI compliance solutions in UAE with real-time AI risk monitoring. Detect fraud, manage compliance, and protect your business operations."
         keywords="ai risk compliance uae, ai fraud detection dubai, ryzup.ai, compliance automation uae, risk monitoring, audit preparation"
         canonicalUrl="https://growwthpartners.com/uae/ai-risk-compliance-fraud-uae"
         structuredData={structuredData}

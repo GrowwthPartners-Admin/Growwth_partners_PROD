@@ -84,8 +84,8 @@ const AIDecisionIntelligenceAustralia = () => {
   return (
     <Layout>
       <SEOhelper
-        title="AI Decision Intelligence for CFOs in Australia | Ryzup.ai"
-        description="Get AI-powered financial dashboards, automated analysis, and predictive insights for CFOs in Australia. Ask questions in plain English and make faster decisions."
+        title="AI Dashboards for CFOs Australia | Decision Intelligence"
+        description=" AI dashboards for CFOs in Australia delivering real-time decision intelligence. Turn complex financial data into clear, actionable insights"
         keywords="AI decision intelligence, CFO dashboards Australia, AI financial analysis, predictive insights, finance automation Australia"
         canonicalUrl="https://growwthpartners.com/au/ai-decision-intelligence-australia"
         structuredData={structuredData}

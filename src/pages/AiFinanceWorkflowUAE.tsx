@@ -80,8 +80,8 @@ const AiFinanceWorkflowUAE = () => {
   return (
     <Layout>
       <SEOhelper
-        title="AI Finance Workflow Integration UAE | Ryzup.ai"
-        description="Automate finance processes and boost efficiency with AI. Ryzup.ai helps UAE finance teams integrate AI for faster reporting, accurate reconciliations and real time insights."
+        title="AI Automation UAE | Intelligent Finance Workflows"
+        description="AI automation solutions in UAE to streamline finance workflows. Automate accounting, reporting, and operational finance processes."
         keywords="ai finance automation uae, finance workflow ai, ryzup.ai, ai finance uae, automated reporting, finance automation dubai"
         canonicalUrl="https://growwthpartners.com/uae/ai-finance-workflow-uae"
         structuredData={structuredData}

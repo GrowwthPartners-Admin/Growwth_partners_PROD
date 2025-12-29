@@ -89,8 +89,8 @@ const AIRiskComplianceAustralia = () => {
   return (
     <Layout>
       <SEOhelper
-        title="AI for Risk, Compliance & Fraud Detection Australia | Ryzup.ai"
-        description="Detect risks before they occur with AI-powered spreadsheet checks, anomaly detection and privacy-safe workflows. Reduce errors, spot suspicious activity faster, and stay compliant with Ryzup.ai in Australia."
+        title="AI Compliance Australia | AI Risk Detection Solutions"
+        description=" AI compliance solutions in Australia with advanced AI risk detection. Monitor, manage, and reduce regulatory and financial risk proactively."
         keywords="ai fraud detection australia, ai compliance tools, risk management ai, financial anomaly detection, compliance automation australia, ryzup.ai"
         canonicalUrl="https://growwthpartners.com/au/ai-risk-compliance-australia"
         structuredData={structuredData}
