@@ -80,8 +80,8 @@ const AiFinancialForecastingUAE = () => {
   return (
     <Layout>
       <SEOhelper
-        title="AI-Powered Financial Forecasting UAE | Ryzup.ai"
-        description="Predict cash flow and financial outcomes with AI models. Ryzup.ai delivers scenario planning and risk mitigation for UAE finance teams with live, decision-ready forecasts."
+        title="AI Financial Forecasting UAE | Predictive Finance Models"
+        description="AI financial forecasting in UAE for accurate cash flow and revenue predictions. Make smarter decisions using predictive finance models."
         keywords="ai financial forecasting uae, ai forecasting dubai, ryzup.ai, predictive models uae, scenario planning, cash flow forecasting"
         canonicalUrl="https://growwthpartners.com/uae/ai-financial-forecasting-uae"
         structuredData={structuredData}
