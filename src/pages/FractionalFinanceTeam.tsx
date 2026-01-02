@@ -8,59 +8,60 @@ import HowWeDeliverSection from "@/components/fractionalFinanceTeam/HowWeDeliver
 import WhyChooseSection from "@/components/fractionalFinanceTeam/WhyChooseSection";
 import UseCaseSection from "@/components/fractionalFinanceTeam/UseCaseSection";
 import CTASection from "@/components/fractionalFinanceTeam/CTASection";
-import FaqSection from "@/components/fractionalFinanceTeam/FaqSection";
+import { FaqSection } from "@/components/accounting/FaqSection";
 import SEOhelper from "@/components/SEOhelper";
 
+const faqs = [
+  {
+    question: "How is a Fractional Finance Team different from a Part-Time Finance Team?",
+    answer: "A Fractional Finance Team focuses more on analysis, forecasting, and controls, while Part-Time Finance Teams focus primarily on execution and day-to-day finance tasks."
+  },
+  {
+    question: "Can this service support fundraising or expansion?",
+    answer: "Yes. Fractional Finance Teams often support modelling, performance analysis, and reporting required for fundraising and strategic initiatives."
+  },
+  {
+    question: "Is this suitable for SMEs?",
+    answer: "Yes. It is particularly valuable for SMEs transitioning from basic accounting to structured financial management."
+  }
+];
+
 const FractionalFinanceTeamPage = () => {
-  const structuredData = {
+const structuredData = {
     "@context": "https://schema.org",
     "@graph": [
       {
         "@type": "FAQPage",
         "@id": "https://growwthpartners.com/fractional-finance-team/#faq",
-        name: "Fractional Finance Team Services - FAQ",
-        mainEntity: [
-          {
-            "@type": "Question",
-            name: "How is a Fractional Finance Team different from a Part-Time Finance Team?",
-            acceptedAnswer: {
-              "@type": "Answer",
-              text: "A Fractional Finance Team focuses more on analysis, forecasting, and controls, while Part-Time Finance Teams focus primarily on execution and day-to-day finance tasks.",
-            },
+        mainEntity: faqs.map((faq) => ({
+          "@type": "Question",
+          name: faq.question,
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: faq.answer,
           },
-          {
-            "@type": "Question",
-            name: "Can this service support fundraising or expansion?",
-            acceptedAnswer: {
-              "@type": "Answer",
-              text: "Yes. Fractional Finance Teams often support modelling, performance analysis, and reporting required for fundraising and strategic initiatives.",
-            },
-          },
-          {
-            "@type": "Question",
-            name: "Is this suitable for SMEs?",
-            acceptedAnswer: {
-              "@type": "Answer",
-              text: "Yes. It is particularly valuable for SMEs transitioning from basic accounting to structured financial management.",
-            },
-          },
-        ],
-      },
-      {
-        "@type": "Service",
-        "@id": "https://growwthpartners.com/fractional-finance-team/#service",
-        name: "Fractional Finance Team Services",
-        serviceType: "Fractional Finance Team Services",
-        areaServed: ["Singapore", "United Arab Emirates", "Australia"],
-        provider: {
-          "@id": "https://growwthpartners.com/#organization",
-        },
+        })),
       },
       {
         "@type": "Organization",
         "@id": "https://growwthpartners.com/#organization",
         name: "Growwth Partners",
         url: "https://growwthpartners.com",
+        areaServed: ["Singapore", "United Arab Emirates", "Australia"],
+        serviceArea: [
+          {
+            "@type": "AdministrativeArea",
+            name: "Singapore",
+          },
+          {
+            "@type": "Country",
+            name: "United Arab Emirates",
+          },
+          {
+            "@type": "Country",
+            name: "Australia",
+          },
+        ],
         contactPoint: [
           {
             "@type": "ContactPoint",
@@ -70,6 +71,13 @@ const FractionalFinanceTeamPage = () => {
             areaServed: "SG",
           },
         ],
+        address: {
+          "@type": "PostalAddress",
+          streetAddress: "65 Chulia Street",
+          addressLocality: "Singapore",
+          postalCode: "049513",
+          addressCountry: "SG",
+        },
       },
     ],
   };
@@ -96,7 +104,10 @@ const FractionalFinanceTeamPage = () => {
         <HowWeDeliverSection />
         <WhyChooseSection />
         <UseCaseSection />
-        <FaqSection />
+        <FaqSection
+          faqs={faqs}
+          subtitle="Find answers to common questions about our Outsourced CFO Services"
+        />
         <CTASection />
       </motion.div>
     </Layout>

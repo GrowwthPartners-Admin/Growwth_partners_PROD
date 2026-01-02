@@ -105,7 +105,7 @@ const HowWeDeliverSection = () => {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 className={`group relative overflow-hidden rounded-2xl border border-slate-200 hover:border-transparent hover:shadow-xl transition-all duration-300`}
               >
-                <div className={`absolute inset-0 bg-gradient-to-r ${service.bgGradient} opacity-0 group-hover:opacity-100 transition-opacity duration-300`} />
+                <div className={`absolute inset-0 bg-gradient-to-r ${service.bgGradient} opacity-0 opacity-100 transition-opacity duration-300`} />
                 
                 <div className="relative p-6 md:p-8">
                   <div className="flex flex-col md:flex-row md:items-start gap-6">

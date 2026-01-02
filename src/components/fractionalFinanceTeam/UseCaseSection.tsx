@@ -30,7 +30,7 @@ const UseCaseSection = () => {
   return (
     <section className="py-20 md:py-28 bg-white">
       <div className="container mx-auto px-4">
-        <div className="max-w-5xl mx-auto">
+        <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -38,7 +38,7 @@ const UseCaseSection = () => {
             transition={{ duration: 0.6 }}
             className="text-center mb-12"
           >
-            <span className="inline-flex items-center gap-2 px-4 py-1.5 bg-orange-100 text-orange-600 rounded-full text-sm font-medium mb-4">
+            <span className="inline-flex items-center gap-2 px-4 py-1.5 bg-orange-100 text-orange-600 rounded-full text-sm font-semibold mb-4">
               <Trophy className="w-4 h-4" />
               Success Story
             </span>
@@ -52,7 +52,7 @@ const UseCaseSection = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="bg-gradient-to-br from-slate-900 via-slate-800 to-orange-900 rounded-3xl overflow-hidden"
+            className="bg-gradient-to-br from-slate-900 via-slate-800 to-orange-900 rounded-3xl overflow-hidden font-semibold"
           >
             {/* Header */}
             <div className="px-8 py-6 border-b border-white/10">

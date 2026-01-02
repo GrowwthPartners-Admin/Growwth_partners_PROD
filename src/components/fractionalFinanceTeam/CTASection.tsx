@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 
 const CTASection = () => {
   return (
-    <section className="py-20 md:py-28 bg-gradient-to-br from-slate-900 via-slate-800 to-orange-900 relative overflow-hidden">
+    <section className="py-20 md:py-20 bg-gradient-to-br from-slate-900 via-slate-800 to-orange-900 relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-20 left-10 w-72 h-72 bg-orange-500/20 rounded-full blur-3xl" />
@@ -14,17 +14,6 @@ const CTASection = () => {
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
-            <span className="inline-flex items-center gap-2 px-4 py-2 bg-orange-500/20 border border-orange-500/30 rounded-full text-orange-300 text-sm font-medium mb-6">
-              <Calendar className="w-4 h-4" />
-              Get Started Today
-            </span>
-          </motion.div>
 
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
@@ -56,19 +45,19 @@ const CTASection = () => {
             transition={{ duration: 0.6, delay: 0.3 }}
           >
             <Button
-              asChild
+            
               size="lg"
+              onClick={() =>
+                  window.open(
+                    "https://calendly.com/jd-growwthpartners/15min?month=2025-11",
+                    "_blank"
+                  )}
               className="bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white px-10 py-7 text-lg rounded-xl shadow-lg shadow-orange-500/25"
             >
-              <a
-                href="https://calendly.com/growwth-partner/30min"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-3"
-              >
+            
                 Schedule a Fractional Finance Team Consultation
                 <ArrowRight className="w-5 h-5" />
-              </a>
+             
             </Button>
           </motion.div>
 

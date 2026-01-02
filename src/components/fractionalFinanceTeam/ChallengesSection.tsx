@@ -1,8 +1,8 @@
 import { motion } from "framer-motion";
-import { 
-  AlertTriangle, 
-  XCircle, 
-  CheckCircle2, 
+import {
+  AlertTriangle,
+  XCircle,
+  CheckCircle2,
   TrendingDown,
   Eye,
   Clock,
@@ -11,7 +11,7 @@ import {
   BarChart3,
   Zap,
   Layers,
-  Link2
+  Link2,
 } from "lucide-react";
 
 const ChallengesSection = () => {
@@ -20,7 +20,10 @@ const ChallengesSection = () => {
     { icon: Eye, text: "Weak budget ownership and accountability" },
     { icon: BarChart3, text: "Poor visibility into drivers of profitability" },
     { icon: Clock, text: "Delayed or inconsistent performance analysis" },
-    { icon: UserX, text: "Overreliance on founders or senior leadership for analysis" }
+    {
+      icon: UserX,
+      text: "Overreliance on founders or senior leadership for analysis",
+    },
   ];
 
   const benefits = [
@@ -29,15 +32,59 @@ const ChallengesSection = () => {
     { icon: TrendingDown, text: "Improved forecasting and reporting quality" },
     { icon: Zap, text: "Reduced dependency on founders for analysis" },
     { icon: Layers, text: "Flexible engagement that scales with complexity" },
-    { icon: Link2, text: "Integration with CFO services for strategic oversight" }
+    { icon: Link2, text: "Integration with CFO services for strategic oversight" },
   ];
+
+  const RowItem = ({
+    variant,
+    text,
+    delay,
+  }: {
+    variant: "gap" | "benefit";
+    text: string;
+    delay: number;
+  }) => {
+    const isGap = variant === "gap";
+
+    return (
+      <motion.div
+        initial={{ opacity: 0, x: isGap ? -20 : 20 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5, delay }}
+        className={[
+          "flex items-center gap-4 p-4 rounded-xl border shadow-sm",
+          isGap
+            ? "bg-white border-red-100"
+            : "bg-white/5 border-white/10 hover:border-green-500/30 transition-colors",
+        ].join(" ")}
+      >
+        <div
+          className={[
+            "w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0",
+            isGap ? "bg-red-100" : "bg-green-500/20",
+          ].join(" ")}
+        >
+          {isGap ? (
+            <XCircle className="w-5 h-5 text-red-500" />
+          ) : (
+            <CheckCircle2 className="w-5 h-5 text-green-400" />
+          )}
+        </div>
+
+        <p className={isGap ? "text-slate-700 font-medium" : "text-white font-medium"}>
+          {text}
+        </p>
+      </motion.div>
+    );
+  };
 
   return (
     <section className="py-20 md:py-28">
       {/* Challenges Part */}
       <div className="bg-gradient-to-br from-red-50 to-orange-50 py-16">
         <div className="container mx-auto px-4">
-          <div className="max-w-5xl mx-auto">
+          <div className="max-w-8xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -57,22 +104,32 @@ const ChallengesSection = () => {
               </p>
             </motion.div>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
-              {gaps.map((gap, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="flex items-center gap-4 p-4 bg-white rounded-xl shadow-sm border border-red-100"
-                >
-                  <div className="w-10 h-10 bg-red-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <XCircle className="w-5 h-5 text-red-500" />
+            {/* 3 + 2 centered */}
+            <div className="space-y-4 mb-8">
+              {/* Row 1 */}
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+                {gaps.slice(0, 3).map((gap, index) => (
+                  <RowItem
+                    key={gap.text}
+                    variant="gap"
+                    text={gap.text}
+                    delay={index * 0.1}
+                  />
+                ))}
+              </div>
+
+              {/* Row 2 (2 centered) */}
+              <div className="flex flex-col sm:flex-row justify-center gap-4">
+                {gaps.slice(3).map((gap, index) => (
+                  <div key={gap.text} className="w-full max-w-md">
+                    <RowItem
+                      variant="gap"
+                      text={gap.text}
+                      delay={(index + 3) * 0.1}
+                    />
                   </div>
-                  <p className="text-slate-700 font-medium">{gap.text}</p>
-                </motion.div>
-              ))}
+                ))}
+              </div>
             </div>
 
             <motion.div
@@ -80,7 +137,7 @@ const ChallengesSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.3 }}
-              className="bg-gradient-to-r from-red-500 to-orange-500 rounded-2xl p-6 text-center"
+              className="bg-gradient-to-r from-red-500 to-orange-500 rounded-2xl p-6 text-center shadow-xl"
             >
               <div className="flex items-center justify-center gap-3">
                 <AlertTriangle className="w-6 h-6 text-white" />
@@ -96,7 +153,7 @@ const ChallengesSection = () => {
       {/* What You Get Part */}
       <div className="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 py-16">
         <div className="container mx-auto px-4">
-          <div className="max-w-5xl mx-auto">
+          <div className="max-w-8xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -113,21 +170,15 @@ const ChallengesSection = () => {
               </h2>
             </motion.div>
 
+            {/* 3 + 3 normal */}
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
               {benefits.map((benefit, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, x: 20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="flex items-center gap-4 p-4 bg-white/5 rounded-xl border border-white/10 hover:border-green-500/30 transition-colors"
-                >
-                  <div className="w-10 h-10 bg-green-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <CheckCircle2 className="w-5 h-5 text-green-400" />
-                  </div>
-                  <p className="text-white font-medium">{benefit.text}</p>
-                </motion.div>
+                <RowItem
+                  key={benefit.text}
+                  variant="benefit"
+                  text={benefit.text}
+                  delay={index * 0.1}
+                />
               ))}
             </div>
 
@@ -136,10 +187,14 @@ const ChallengesSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.3 }}
-              className="bg-gradient-to-r from-green-500/20 to-emerald-500/20 rounded-2xl p-6 text-center border border-green-500/30"
+              className="bg-gradient-to-r from-green-500/20 to-emerald-500/20 rounded-2xl p-6 text-center border border-green-500/30 shadow-xl"
             >
               <p className="text-slate-300 text-lg">
-                This model delivers <span className="text-green-400 font-semibold">strong analytical capability</span> without fixed overhead.
+                This model delivers{" "}
+                <span className="text-green-400 font-semibold">
+                  strong analytical capability
+                </span>{" "}
+                without fixed overhead.
               </p>
             </motion.div>
           </div>
