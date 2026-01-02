@@ -33,7 +33,7 @@ const UseCaseSection = () => {
                   <Building2 className="w-7 h-7 text-brand-orange" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold text-white">SME Services Company</h3>
+                  <h3 className="text-xl font-bold text-white">Marketplace Business</h3>
                   <p className="text-gray-400">Singapore</p>
                 </div>
               </div>
@@ -51,9 +51,9 @@ const UseCaseSection = () => {
                 </div>
                 <ul className="space-y-3">
                   {[
-                    "Manual bookkeeping",
-                    "Delayed reporting",
-                    "Founder managing finance operations"
+                    "Multiple sales channels and payment gateways",
+                    "Manual reconciliations and delayed reporting",
+                    "Limited visibility into cash flow"
                   ].map((item, idx) => (
                     <li key={idx} className="flex items-start gap-2 text-gray-600">
                       <span className="w-1.5 h-1.5 bg-red-400 rounded-full mt-2" />
@@ -73,9 +73,9 @@ const UseCaseSection = () => {
                 </div>
                 <ul className="space-y-3">
                   {[
-                    "Deployed a Part-Time Finance Team",
-                    "Standardised bookkeeping and reporting processes",
-                    "Coordinated with CFO for monthly reviews"
+                    "Deployed a Virtual Finance Team",
+                    "Implemented cloud accounting and dashboards",
+                    "Standardised reconciliations and reporting"
                   ].map((item, idx) => (
                     <li key={idx} className="flex items-start gap-2 text-gray-600">
                       <span className="w-1.5 h-1.5 bg-brand-orange rounded-full mt-2" />
@@ -95,9 +95,10 @@ const UseCaseSection = () => {
                 </div>
                 <ul className="space-y-3 font-semibold">
                   {[
-                    "Timely and accurate financial reports",
-                    "Reduced founder involvement in daily finance",
-                    "Improved operational efficiency and confidence"
+                    "Faster month-end closes",
+                    "Improved cash flow visibility",
+                    "Reduced finance-related operational workload",
+                    "Greater confidence in scaling decisions"
                   ].map((item, idx) => (
                     <li key={idx} className="flex items-start gap-2 text-gray-700">
                       <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
