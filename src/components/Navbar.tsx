@@ -45,6 +45,7 @@ const navItems = [
       { title: "Part-Time Finance Team", path: "/part-time-finance-team" },
       { title: "Virtual Finance Team", path: "/virtual-finance-team" },
       { title: "Outsourced Bookkeeping", path: "/outsourced-bookkeeping" },
+      { title: "Outsourced Payroll", path: "/outsourced-payroll" },
     ],
   },
   {
