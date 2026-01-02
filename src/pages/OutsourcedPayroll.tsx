@@ -6,37 +6,70 @@ import { ChallengesSection } from "@/components/outsourcedPayroll/ChallengesSect
 import { HowWeDeliverSection } from "@/components/outsourcedPayroll/HowWeDeliverSection";
 import { WhyChooseSection } from "@/components/outsourcedPayroll/WhyChooseSection";
 import { UseCaseSection } from "@/components/outsourcedPayroll/UseCaseSection";
-import { FAQSection } from "@/components/outsourcedPayroll/FAQSection";
 import { CTASection } from "@/components/outsourcedPayroll/CTASection";
 import { motion } from "framer-motion";
 import SEOhelper from "@/components/SEOhelper";
+import { FaqSection } from "@/components/accounting/FaqSection";
+
+const faqs = [
+  {
+    question: "Is outsourced payroll compliant with Singapore regulations?",
+    answer:
+      "Yes. Outsourced payroll services are designed to ensure full compliance with Singapore statutory and employment requirements.",
+  },
+  {
+    question: "Can outsourced payroll scale as my team grows?",
+    answer:
+      "Yes. Payroll services scale seamlessly with employee count and complexity.",
+  },
+  {
+    question: "Will I still have visibility into payroll data?",
+    answer:
+      "Yes. You receive detailed payroll reports, summaries, and documentation every cycle.",
+  },
+];
 
 const OutsourcedPayrollPage = () => {
   const structuredData = {
     "@context": "https://schema.org",
     "@graph": [
       {
+        "@type": "FAQPage",
+        "@id": "https://growwthpartners.com/outsourced-bookkeeping/#faq",
+        mainEntity: faqs.map((faq) => ({
+          "@type": "Question",
+          name: faq.question,
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: faq.answer,
+          },
+        })),
+      },
+      {
         "@type": "Service",
         "@id": "https://growwthpartners.com/outsourced-payroll/#service",
-        name: "Outsourced Payroll Services in Singapore",
-        description: "Accurate, compliant, and on-time payroll services delivered through structured processes and experienced professionals.",
-        serviceType: "Outsourced Payroll Services",
-        areaServed: ["Singapore", "United Arab Emirates", "Australia"],
+        name: "Outsourced Bookkeeping Services Singapore",
+        serviceType: "Bookkeeping Services",
+        description:
+          "Monthly bookkeeping, reconciliations, expense tracking, and closing delivered by an expert team.",
         provider: {
           "@id": "https://growwthpartners.com/#organization",
         },
+        areaServed: ["Singapore", "United Arab Emirates", "Australia"],
       },
       {
         "@type": "Organization",
         "@id": "https://growwthpartners.com/#organization",
         name: "Growwth Partners",
         url: "https://growwthpartners.com",
+        areaServed: ["Singapore", "United Arab Emirates", "Australia"],
         contactPoint: [
           {
             "@type": "ContactPoint",
             email: "jd@growwthpartners.com",
             telephone: "+65 9861 5600",
             contactType: "business",
+            areaServed: "SG",
           },
         ],
         address: {
@@ -47,36 +80,6 @@ const OutsourcedPayrollPage = () => {
           addressCountry: "SG",
         },
       },
-      {
-        "@type": "FAQPage",
-        "@id": "https://growwthpartners.com/outsourced-payroll/#faq",
-        mainEntity: [
-          {
-            "@type": "Question",
-            name: "Is outsourced payroll compliant with Singapore regulations?",
-            acceptedAnswer: {
-              "@type": "Answer",
-              text: "Yes. Outsourced payroll services are designed to ensure full compliance with Singapore statutory and employment requirements."
-            }
-          },
-          {
-            "@type": "Question",
-            name: "Can outsourced payroll scale as my team grows?",
-            acceptedAnswer: {
-              "@type": "Answer",
-              text: "Yes. Payroll services scale seamlessly with employee count and complexity."
-            }
-          },
-          {
-            "@type": "Question",
-            name: "Will I still have visibility into payroll data?",
-            acceptedAnswer: {
-              "@type": "Answer",
-              text: "Yes. You receive detailed payroll reports, summaries, and documentation every cycle."
-            }
-          }
-        ]
-      }
     ],
   };
 
@@ -102,7 +105,10 @@ const OutsourcedPayrollPage = () => {
         <HowWeDeliverSection />
         <WhyChooseSection />
         <UseCaseSection />
-        <FAQSection />
+        <FaqSection
+          faqs={faqs}
+          subtitle="Find answers to common questions about Outsourced payroll services"
+        />
         <CTASection />
       </motion.div>
     </Layout>
