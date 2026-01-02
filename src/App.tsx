@@ -379,6 +379,69 @@ export const routes: RouteRecord[] = [
         },
       },
       {
+        path: "startup-cfo-services",
+        async lazy() {
+          const { default: Component } = await import("./pages/StartupCfoServices");
+          return { Component };
+        },
+      },
+      {
+        path: "uae/startup-cfo-services",
+        async lazy() {
+          const { default: Component } = await import("./pages/StartupCfoServices");
+          return { Component };
+        },
+      },
+      {
+        path: "au/startup-cfo-services",
+        async lazy() {
+          const { default: Component } = await import("./pages/StartupCfoServices");
+          return { Component };
+        },
+      },
+      {
+        path: "sme-cfo-services",
+        async lazy() {
+          const { default: Component } = await import("./pages/SmeCfoServices");
+          return { Component };
+        },
+      },
+      {
+        path: "uae/sme-cfo-services",
+        async lazy() {
+          const { default: Component } = await import("./pages/SmeCfoServices");
+          return { Component };
+        },
+      },
+      {
+        path: "au/sme-cfo-services",
+        async lazy() {
+          const { default: Component } = await import("./pages/SmeCfoServices");
+          return { Component };
+        },
+      },
+      {
+        path: "remote-cfo-finance-team",
+        async lazy() {
+          const { default: Component } = await import("./pages/RemoteCfoServices");
+          return { Component };
+        },
+      },
+      {
+        path: "uae/remote-cfo-finance-team",
+        async lazy() {
+          const { default: Component } = await import("./pages/RemoteCfoServices");
+          return { Component };
+        },
+      },
+      {
+        path: "au/remote-cfo-finance-team",
+        async lazy() {
+          const { default: Component } = await import("./pages/RemoteCfoServices");
+          return { Component };
+        },
+      },
+      {
         path: "privacy-policy",
         async lazy() {
           const { default: Component } = await import("./pages/PrivacyPolicy");
@@ -636,42 +699,26 @@ export const routes: RouteRecord[] = [
           return { Component };
         },
       },
+      // UAE service redirects to Singapore canonical URLs
       {
         path: "accounting-services-in-uae",
-        async lazy() {
-          const { default: Component } = await import("./pages/Accounting");
-          return { Component };
-        },
+        element: <Navigate to="/accounting-services-in-singapore" replace />,
       },
       {
         path: "bookkeeping-services-in-uae",
-        async lazy() {
-          const { default: Component } = await import("./pages/Bookkeeping");
-          return { Component };
-        },
+        element: <Navigate to="/bookkeeping-services-in-singapore" replace />,
       },
       {
         path: "payroll-services-in-uae",
-        async lazy() {
-          const { default: Component } = await import("./pages/Payroll");
-          return { Component };
-        },
+        element: <Navigate to="/payroll-services-in-singapore" replace />,
       },
-
       {
         path: "taxation-Services-in-uae",
-        async lazy() {
-          const { default: Component } = await import("./pages/Taxation");
-          return { Component };
-        },
+        element: <Navigate to="/taxation" replace />,
       },
-
       {
         path: "cash-flow-services-in-uae",
-        async lazy() {
-          const { default: Component } = await import("./pages/CashFlow");
-          return { Component };
-        },
+        element: <Navigate to="/cash-flow-services-in-singapore" replace />,
       },
       {
         path: "company-incorporation-services-in-uae",
@@ -1026,42 +1073,26 @@ export const routes: RouteRecord[] = [
           return { Component };
         },
       },
+      // Australia service redirects to Singapore canonical URLs
       {
         path: "accounting-services-in-australia",
-        async lazy() {
-          const { default: Component } = await import("./pages/Accounting");
-          return { Component };
-        },
+        element: <Navigate to="/accounting-services-in-singapore" replace />,
       },
       {
         path: "bookkeeping-services-in-australia",
-        async lazy() {
-          const { default: Component } = await import("./pages/Bookkeeping");
-          return { Component };
-        },
+        element: <Navigate to="/bookkeeping-services-in-singapore" replace />,
       },
       {
         path: "payroll-services-in-australia",
-        async lazy() {
-          const { default: Component } = await import("./pages/Payroll");
-          return { Component };
-        },
+        element: <Navigate to="/payroll-services-in-singapore" replace />,
       },
-
       {
         path: "taxation-Services-in-australia",
-        async lazy() {
-          const { default: Component } = await import("./pages/Taxation");
-          return { Component };
-        },
+        element: <Navigate to="/taxation" replace />,
       },
-
       {
         path: "cash-flow-services-in-australia",
-        async lazy() {
-          const { default: Component } = await import("./pages/CashFlow");
-          return { Component };
-        },
+        element: <Navigate to="/cash-flow-services-in-singapore" replace />,
       },
       {
         path: "company-incorporation-services-in-australia",

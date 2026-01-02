@@ -38,6 +38,9 @@ const navItems = [
       { title: "Tech Business Finance", path: "/tech-business-finance" },
       { title: "SaaS Finance Services", path: "/saas-finance" },
       { title: "Outsourced CFO Services", path: "/outsourced-cfo-services" },
+      { title: "Startup CFO Services", path: "/startup-cfo-services" },
+      { title: "SME CFO Services", path: "/sme-cfo-services" },
+      { title: "Remote CFO & Finance Team", path: "/remote-cfo-finance-team" },
     ],
   },
   {
@@ -60,12 +63,12 @@ const navItems = [
         path: "/corporate-tax-filing-singapore",
       },
       {
-        title: "Business Valuation Services",
-        path: "/valuation-services-singapore",
-      },
-      {
         title: "AI Finance Workflow",
         path: "/ai-finance-workflow-singapore",
+      },
+      {
+        title: "Business Valuation Services",
+        path: "/valuation-services-singapore",
       },
       {
         title: "AI Financial Forecasting",
@@ -153,17 +156,44 @@ export const Navbar = () => {
                       {item.title}
                       <ChevronDown className="ml-1 w-4 h-4" />
                     </button>
-                    <div className="absolute left-0 mt-10 w-56 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
-                      <div className="bg-white rounded-md shadow-lg py-2">
-                        {item.items?.map((subItem) => (
-                          <Link
-                            key={subItem.title}
-                            to={getCountryUrl(subItem.path)}
-                            className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-brand-orange"
-                          >
-                            {subItem.title}
-                          </Link>
-                        ))}
+                    <div className={`absolute left-0 mt-10 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 ${item.items && item.items.length > 10 ? 'w-auto' : 'w-56'}`}>
+                      <div className={`bg-white rounded-md shadow-lg py-2 ${item.items && item.items.length > 10 ? 'flex' : ''}`}>
+                        {item.items && item.items.length > 10 ? (
+                          <>
+                            <div className="w-56">
+                              {item.items.slice(0, 10).map((subItem) => (
+                                <Link
+                                  key={subItem.title}
+                                  to={getCountryUrl(subItem.path)}
+                                  className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-brand-orange"
+                                >
+                                  {subItem.title}
+                                </Link>
+                              ))}
+                            </div>
+                            <div className="w-56 border-l border-gray-100">
+                              {item.items.slice(10).map((subItem) => (
+                                <Link
+                                  key={subItem.title}
+                                  to={getCountryUrl(subItem.path)}
+                                  className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-brand-orange"
+                                >
+                                  {subItem.title}
+                                </Link>
+                              ))}
+                            </div>
+                          </>
+                        ) : (
+                          item.items?.map((subItem) => (
+                            <Link
+                              key={subItem.title}
+                              to={getCountryUrl(subItem.path)}
+                              className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-brand-orange"
+                            >
+                              {subItem.title}
+                            </Link>
+                          ))
+                        )}
                       </div>
                     </div>
                   </div>

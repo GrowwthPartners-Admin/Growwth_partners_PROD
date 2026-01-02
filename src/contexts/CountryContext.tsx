@@ -43,11 +43,7 @@ export const CountryProvider = ({
     }
   };
 
-  const getCountryServiceSlug = (base: string) => {
-    if (country === "uae") return `${base}-services-in-uae`;
-    if (country === "australia") return `${base}-services-in-australia`;
-    return `${base}-services-in-singapore`;
-  };
+  // Service slugs - always return Singapore canonical URLs
 
   const getCountryUrl = (path: string): string => {
     // Normalize path - remove trailing slashes
@@ -128,31 +124,29 @@ export const CountryProvider = ({
       return "/part-time-cfo";
     }
 
-    // Taxation has country-specific versions
+    // Taxation - single canonical URL
     if (normalizedPath === "/taxation" || normalizedPath.startsWith("/taxation/")) {
-      if (country === "uae") return "/taxation-Services-in-uae";
-      if (country === "australia") return "/taxation-Services-in-australia";
       return "/taxation";
     }
 
-    // Service pages with country-specific slugs
+    // Service pages - always return Singapore canonical URLs
     if (normalizedPath === "/accounting" || normalizedPath.startsWith("/accounting/")) {
-      return `/${getCountryServiceSlug("accounting")}`;
+      return "/accounting-services-in-singapore";
     }
     if (normalizedPath === "/bookkeeping" || normalizedPath.startsWith("/bookkeeping/")) {
-      return `/${getCountryServiceSlug("bookkeeping")}`;
+      return "/bookkeeping-services-in-singapore";
     }
     if (normalizedPath === "/payroll" || normalizedPath.startsWith("/payroll/")) {
-      return `/${getCountryServiceSlug("payroll")}`;
+      return "/payroll-services-in-singapore";
     }
     if (normalizedPath === "/cash-flow" || normalizedPath.startsWith("/cash-flow/")) {
-      return `/${getCountryServiceSlug("cash-flow")}`;
+      return "/cash-flow-services-in-singapore";
     }
     if (normalizedPath === "/company-incorporation" || normalizedPath.startsWith("/company-incorporation/")) {
-      return `/${getCountryServiceSlug("company-incorporation")}`;
+      return "/company-incorporation-services-in-singapore";
     }
     if (normalizedPath === "/corporate-secretary" || normalizedPath.startsWith("/corporate-secretary/")) {
-      return `/${getCountryServiceSlug("corporate-secretary")}`;
+      return "/corporate-secretary-services-in-singapore";
     }
 
     // Pages that have country-prefixed versions (about, blog, contact-us, success-stories, guide, news, achievements)

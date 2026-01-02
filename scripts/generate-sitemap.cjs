@@ -130,23 +130,38 @@ const staticRoutes = [
     priority: "0.8",
     changefreq: "weekly",
   },
-   {
+  {
     path: "/tech-business-finance",
     priority: "0.8",
     changefreq: "weekly",
   },
-   {
+  {
     path: "/saas-finance",
     priority: "0.8",
     changefreq: "weekly",
   },
-     {
+  {
     path: "/ai-cfo-services",
     priority: "0.8",
     changefreq: "weekly",
   },
-     {
+  {
     path: "/outsourced-cfo-services",
+    priority: "0.8",
+    changefreq: "weekly",
+  },
+  {
+    path: "/sme-cfo-services",
+    priority: "0.8",
+    changefreq: "weekly",
+  },
+  {
+    path: "/startup-cfo-services",
+    priority: "0.8",
+    changefreq: "weekly",
+  },
+  {
+    path: "/remote-cfo-finance-team",
     priority: "0.8",
     changefreq: "weekly",
   },
@@ -156,26 +171,7 @@ const staticRoutes = [
   { path: "/uae/about", priority: "0.8", changefreq: "weekly" },
   { path: "/uae/blog", priority: "0.7", changefreq: "daily" },
   { path: "/uae/contact-us", priority: "0.8", changefreq: "weekly" },
-  {
-    path: "/uae/accounting-services-in-uae",
-    priority: "0.8",
-    changefreq: "weekly",
-  },
-  {
-    path: "/uae/bookkeeping-services-in-uae",
-    priority: "0.8",
-    changefreq: "weekly",
-  },
-  {
-    path: "/uae/payroll-services-in-uae",
-    priority: "0.8",
-    changefreq: "weekly",
-  },
-  {
-    path: "/uae/cash-flow-services-in-uae",
-    priority: "0.8",
-    changefreq: "weekly",
-  },
+  
   {
     path: "/uae/company-incorporation-services-in-uae",
     priority: "0.8",
@@ -192,43 +188,31 @@ const staticRoutes = [
   { path: "/uae/achievements", priority: "0.7", changefreq: "weekly" },
   { path: "/uae/guide", priority: "0.7", changefreq: "weekly" },
   { path: "/uae/news", priority: "0.7", changefreq: "daily" },
+
   {
-    path: "/uae/taxation-services-in-uae",
+    path: "/uae/virtual-cfo-services-uae",
     priority: "0.8",
     changefreq: "monthly",
   },
-  { path: "/uae/virtual-cfo-services-uae", priority: "0.8", changefreq: "monthly" },
 
-  { path: "/uae/corporate-tax-filing-uae", priority: "0.8", changefreq: "monthly" },
+  {
+    path: "/uae/corporate-tax-filing-uae",
+    priority: "0.8",
+    changefreq: "monthly",
+  },
   { path: "/uae/esop-advisory-uae", priority: "0.8", changefreq: "monthly" },
-  { path: "/uae/ai-finance-workflow-uae", priority: "0.8", changefreq: "monthly" },
-
+  {
+    path: "/uae/ai-finance-workflow-uae",
+    priority: "0.8",
+    changefreq: "monthly",
+  },
 
   // Australia pages
   { path: "/au", priority: "1.0", changefreq: "daily" },
   { path: "/au/about", priority: "0.8", changefreq: "weekly" },
   { path: "/au/blog", priority: "0.7", changefreq: "daily" },
   { path: "/au/contact-us", priority: "0.8", changefreq: "weekly" },
-  {
-    path: "/au/accounting-services-in-australia",
-    priority: "0.8",
-    changefreq: "weekly",
-  },
-  {
-    path: "/au/bookkeeping-services-in-australia",
-    priority: "0.8",
-    changefreq: "weekly",
-  },
-  {
-    path: "/au/payroll-services-in-australia",
-    priority: "0.8",
-    changefreq: "weekly",
-  },
-  {
-    path: "/au/cash-flow-services-in-australia",
-    priority: "0.8",
-    changefreq: "weekly",
-  },
+  
   {
     path: "/au/company-incorporation-services-in-australia",
     priority: "0.8",
@@ -250,21 +234,16 @@ const staticRoutes = [
   { path: "/au/guide", priority: "0.7", changefreq: "weekly" },
   { path: "/au/news", priority: "0.7", changefreq: "daily" },
   {
-    path: "/au/taxation-services-in-australia",
-    priority: "0.8",
-    changefreq: "monthly",
-  },
-  {
     path: "/au/virtual-cfo-services-australia",
     priority: "0.8",
     changefreq: "monthly",
   },
-   {
+  {
     path: "/au/corporate-tax-filing-australia",
     priority: "0.8",
     changefreq: "monthly",
   },
-   {
+  {
     path: "/au/ai-finance-workflow-australia",
     priority: "0.8",
     changefreq: "monthly",
@@ -274,17 +253,17 @@ const staticRoutes = [
     priority: "0.8",
     changefreq: "monthly",
   },
-   {
+  {
     path: "/au/esop-advisory-australia",
     priority: "0.8",
     changefreq: "monthly",
   },
-   {
+  {
     path: "/au/ai-risk-compliance-australia",
     priority: "0.8",
     changefreq: "monthly",
   },
-   {
+  {
     path: "/au/ai-decision-intelligence-australia",
     priority: "0.8",
     changefreq: "monthly",
