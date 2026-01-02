@@ -442,6 +442,27 @@ export const routes: RouteRecord[] = [
         },
       },
       {
+        path: "fractional-finance-team",
+        async lazy() {
+          const { default: Component } = await import("./pages/FractionalFinanceTeam");
+          return { Component };
+        },
+      },
+      {
+        path: "uae/fractional-finance-team",
+        async lazy() {
+          const { default: Component } = await import("./pages/FractionalFinanceTeam");
+          return { Component };
+        },
+      },
+      {
+        path: "au/fractional-finance-team",
+        async lazy() {
+          const { default: Component } = await import("./pages/FractionalFinanceTeam");
+          return { Component };
+        },
+      },
+      {
         path: "privacy-policy",
         async lazy() {
           const { default: Component } = await import("./pages/PrivacyPolicy");
