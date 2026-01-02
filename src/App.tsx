@@ -463,6 +463,27 @@ export const routes: RouteRecord[] = [
         },
       },
       {
+        path: "part-time-finance-team",
+        async lazy() {
+          const { default: Component } = await import("./pages/PartTimeFinanceTeam");
+          return { Component };
+        },
+      },
+      {
+        path: "uae/part-time-finance-team",
+        async lazy() {
+          const { default: Component } = await import("./pages/PartTimeFinanceTeam");
+          return { Component };
+        },
+      },
+      {
+        path: "au/part-time-finance-team",
+        async lazy() {
+          const { default: Component } = await import("./pages/PartTimeFinanceTeam");
+          return { Component };
+        },
+      },
+      {
         path: "privacy-policy",
         async lazy() {
           const { default: Component } = await import("./pages/PrivacyPolicy");
