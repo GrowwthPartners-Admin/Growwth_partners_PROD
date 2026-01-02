@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { 
   Clock, Eye, Users, Link2, ShieldAlert,
-  UserCheck, Cloud, CheckCircle2, BarChart3, Settings, TrendingUp
+  UserCheck, Cloud, CheckCircle, BarChart3, Settings, TrendingUp, Zap
 } from "lucide-react";
 
 const challenges = [
@@ -35,41 +35,34 @@ const challenges = [
 const benefits = [
   {
     icon: UserCheck,
-    title: "Dedicated Virtual Professionals",
-    description: "Experienced finance team members assigned to your business"
+    text: "Dedicated virtual finance professionals"
   },
   {
     icon: Cloud,
-    title: "Cloud-Based Systems",
-    description: "Modern accounting and reporting platforms"
+    text: "Cloud-based accounting and reporting systems"
   },
   {
-    icon: CheckCircle2,
-    title: "Reliable Monthly Closes",
-    description: "Consistent reporting timelines you can count on"
+    icon: CheckCircle,
+    text: "Reliable monthly closes and reporting timelines"
   },
   {
     icon: BarChart3,
-    title: "Data Accuracy",
-    description: "Improved accuracy and transparency"
+    text: "Improved data accuracy and transparency"
   },
   {
     icon: Settings,
-    title: "Reduced Burden",
-    description: "Less operational load on leadership"
+    text: "Reduced operational burden on leadership"
   },
   {
     icon: TrendingUp,
-    title: "Scalable Infrastructure",
-    description: "Finance that grows with your business"
+    text: "Scalable finance infrastructure as business grows"
   }
 ];
 
 const ChallengesSection = () => {
   return (
-    <section className="py-20 md:py-28 bg-background overflow-hidden">
+    <section className="py-20 bg-white overflow-hidden">
       <div className="container mx-auto px-4">
-        {/* Challenges */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -77,85 +70,87 @@ const ChallengesSection = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <span className="inline-block px-4 py-1.5 bg-destructive/10 text-destructive rounded-full text-sm font-medium mb-4">
-            Common Pain Points
-          </span>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-foreground">
+          <span className="text-brand-orange font-semibold text-sm uppercase tracking-wider">The Problem & Solution</span>
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mt-4 mb-6">
             Challenges of Traditional Finance Setups
           </h2>
-          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            Businesses using fragmented or manual finance setups often face these critical issues 
-            that Virtual Finance Team services address.
+          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+            Businesses using fragmented or manual finance setups often face issues that Virtual Finance Team services address through standardising processes and leveraging cloud technology.
           </p>
         </motion.div>
 
-        {/* Challenges Grid - Creative Layout */}
-        <div className="relative mb-24">
-          <div className="absolute inset-0 bg-gradient-to-r from-destructive/5 via-transparent to-destructive/5 rounded-3xl" />
-          <div className="relative grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 p-6 md:p-10">
+        {/* Challenges Grid */}
+        <div className="relative mb-20">
+          <div className="grid md:grid-cols-3 lg:grid-cols-5 gap-4">
             {challenges.map((challenge, index) => (
               <motion.div
-                key={index}
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
+                key={challenge.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: index * 0.1 }}
-                className="group relative"
+                className="relative group"
               >
-                <div className="absolute inset-0 bg-gradient-to-br from-destructive/10 to-destructive/5 rounded-2xl transform group-hover:scale-105 transition-transform duration-300" />
-                <div className="relative p-6 text-center">
-                  <div className="w-14 h-14 bg-destructive/10 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:bg-destructive/20 transition-colors">
-                    <challenge.icon className="w-7 h-7 text-destructive" />
+                <div className="bg-gradient-to-br from-red-50 to-orange-50 border border-red-100 rounded-2xl p-6 h-full hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+                  <div className="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center mb-4 group-hover:bg-red-200 transition-colors">
+                    <challenge.icon className="w-6 h-6 text-red-600" />
                   </div>
-                  <h3 className="font-semibold text-foreground mb-2 text-sm md:text-base">{challenge.title}</h3>
-                  <p className="text-muted-foreground text-xs md:text-sm">{challenge.description}</p>
+                  <h3 className="text-lg font-semibold text-gray-900 mb-2">{challenge.title}</h3>
+                  <p className="text-gray-600 text-sm">{challenge.description}</p>
                 </div>
               </motion.div>
             ))}
           </div>
+
+          {/* Decorative arrow */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.5 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.6 }}
+            className="flex justify-center my-12"
+          >
+            <div className="w-16 h-16 bg-brand-orange rounded-full flex items-center justify-center shadow-lg shadow-brand-orange/30">
+              <Zap className="w-8 h-8 text-white" />
+            </div>
+          </motion.div>
         </div>
 
-        {/* Solution - What You Get */}
+        {/* Solution Section */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-12"
+          className="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 rounded-3xl p-8 md:p-12"
         >
-          <span className="inline-block px-4 py-1.5 bg-primary/10 text-primary rounded-full text-sm font-medium mb-4">
-            The Solution
-          </span>
-          <h2 className="text-3xl md:text-4xl font-bold mb-6 text-foreground">
-            What You Get with Our Virtual Finance Team
-          </h2>
-          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            Enterprise-grade finance operations at SME-friendly cost levels.
-          </p>
-        </motion.div>
+          <div className="text-center mb-10">
+            <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">
+              What You Get with Our Virtual Finance Team Services
+            </h3>
+            <p className="text-gray-400 max-w-2xl mx-auto">
+              Enterprise-grade finance operations at SME-friendly cost levels
+            </p>
+          </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {benefits.map((benefit, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: index * 0.1 }}
-              className="group p-6 bg-gradient-to-br from-primary/5 to-accent/5 rounded-2xl border border-primary/10 hover:border-primary/30 transition-all duration-300"
-            >
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:bg-primary/20 transition-colors">
-                  <benefit.icon className="w-6 h-6 text-primary" />
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {benefits.map((benefit, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: index * 0.1 }}
+                className="flex items-center gap-4 bg-white/5 backdrop-blur-sm rounded-xl p-5 border border-white/10 hover:bg-white/10 transition-colors"
+              >
+                <div className="w-12 h-12 bg-brand-orange/20 rounded-xl flex items-center justify-center flex-shrink-0">
+                  <benefit.icon className="w-6 h-6 text-brand-orange" />
                 </div>
-                <div>
-                  <h3 className="font-semibold text-foreground mb-2">{benefit.title}</h3>
-                  <p className="text-muted-foreground text-sm">{benefit.description}</p>
-                </div>
-              </div>
-            </motion.div>
-          ))}
-        </div>
+                <span className="text-white font-medium">{benefit.text}</span>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
       </div>
     </section>
   );
