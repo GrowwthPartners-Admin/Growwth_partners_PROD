@@ -15,6 +15,8 @@ import { supabase } from "@/integrations/supabase/client";
 import postsData from "@/generated/posts.json";
 import { FAQSection } from "@/components/blog/FAQSection";
 import { Head } from "vite-react-ssg";
+import { getBlogPostBySlug, getBlogPostContentById, getRelatedBlogPosts } from "@/lib/blogApi";
+
 
 interface BlogPost {
   id: string;
@@ -77,123 +79,225 @@ const BlogPostPage: React.FC = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
-  useEffect(() => {
-    const fetchPost = async () => {
-      if (!slug) return;
 
-      try {
-        setLoading(true);
+useEffect(() => {
+  const fetchPost = async () => {
+    if (!slug) return;
 
-        // Fetch the current post (without Content and faqs initially for faster load)
-        const { data: currentPost, error: postError } = await supabase
-          .from("blog_post")
-          .select(
-            "id, title, slug, Hero_image, Categories, Author, Excerpt, publishdate"
-          )
-          .eq("slug", slug)
-          .single();
+    try {
+      setLoading(true);
+      setError(null);
 
-        if (postError) {
-          console.error("Error fetching post:", postError);
-          setError("Post not found");
-          return;
-        }
+      // 1) Fetch current post meta by slug (fast)
+      const currentPost = await getBlogPostBySlug(slug);
 
-        // Transform the data to match our interface (without content initially)
-        const transformedPost: BlogPost = {
-          id: currentPost.id.toString(),
-          slug: currentPost.slug || "",
-          title: currentPost.title || "",
-          excerpt: currentPost.Excerpt || "",
-          content: "", // Will be loaded separately
-          heroImage: currentPost.Hero_image || "",
-          publishDate: currentPost.publishdate || "",
-          author: currentPost.Author || "Jatin Detwani",
-          authorBio: "",
-          categories: currentPost.Categories
-            ? currentPost.Categories.split(",").map((c: string) => c.trim())
-            : [],
-          faqs: [], // Will be loaded separately
-        };
-
-        setPost(transformedPost);
-
-        // Lazy load full content and FAQs
-        const { data: fullContent } = await supabase
-          .from("blog_post")
-          .select("Content, faqs")
-          .eq("id", currentPost.id)
-          .single();
-
-        if (fullContent) {
-          setPost((prev) =>
-            prev
-              ? {
-                  ...prev,
-                  content: fullContent.Content || "",
-                  faqs: Array.isArray(fullContent.faqs)
-                    ? (fullContent.faqs as Array<{
-                        question: string;
-                        answer: string;
-                      }>)
-                    : [],
-                }
-              : prev
-          );
-        }
-
-        // Fetch related posts (optimized - no Content or faqs)
-        const { data: allPosts, error: relatedError } = await supabase
-          .from("blog_post")
-          .select(
-            "id, title, slug, Hero_image, Categories, Author, Excerpt, publishdate"
-          )
-          .neq("id", currentPost.id)
-          .limit(6);
-
-        if (!relatedError && allPosts) {
-          const transformedRelatedPosts: BlogPost[] = allPosts.map((p) => ({
-            id: p.id.toString(),
-            slug: p.slug || "",
-            title: p.title || "",
-            excerpt: p.Excerpt || "",
-            content: "",
-            heroImage: p.Hero_image || "",
-            publishDate: p.publishdate || "",
-            author: p.Author || "Jatin Detwani",
-            authorBio: "",
-            categories: p.Categories
-              ? p.Categories.split(",").map((c: string) => c.trim())
-              : [],
-          }));
-
-          // Filter related posts by category if available
-          const currentCategories = transformedPost.categories || [];
-          const byCategory = transformedRelatedPosts
-            .filter((p) =>
-              p.categories?.some((c) => currentCategories.includes(c))
-            )
-            .slice(0, 3);
-
-          if (byCategory.length >= 3) {
-            setRelatedPosts(byCategory);
-          } else {
-            const recent = transformedRelatedPosts
-              .filter((p) => !byCategory.includes(p))
-              .slice(0, 3 - byCategory.length);
-            setRelatedPosts([...byCategory, ...recent]);
-          }
-        }
-      } catch (err) {
-        console.error("Error fetching blog post:", err);
-        setError("Failed to load blog post");
-      } finally {
-        setLoading(false);
+      if (!currentPost || !currentPost.id) {
+        setError("Post not found");
+        return;
       }
-    };
 
-    fetchPost();
-  }, [slug]);
+      // 2) Transform meta (content/faqs will be lazy loaded)
+      const transformedPost: BlogPost = {
+        id: String(currentPost.id),
+        slug: currentPost.slug || "",
+        title: currentPost.title || "",
+        excerpt: currentPost.excerpt || currentPost.Excerpt || "",
+        content: "",
+        heroImage: currentPost.heroImage || currentPost.Hero_image || "",
+        publishDate: currentPost.publishDate || currentPost.publishdate || "",
+        author: currentPost.author || currentPost.Author || "Jatin Detwani",
+        authorBio: currentPost.authorBio || "",
+        categories: (() => {
+          const raw = currentPost.categories ?? currentPost.Categories;
+          if (Array.isArray(raw)) return raw;
+          if (typeof raw === "string") return raw.split(",").map((c: string) => c.trim()).filter(Boolean);
+          return [];
+        })(),
+        faqs: [],
+      };
+
+      setPost(transformedPost);
+
+      // 3) Lazy load full content + FAQs
+      const full = await getBlogPostContentById(currentPost.id);
+
+      if (full) {
+        setPost((prev) =>
+          prev
+            ? {
+                ...prev,
+                content: full.content || full.Content || "",
+                faqs: Array.isArray(full.faqs) ? full.faqs : [],
+              }
+            : prev
+        );
+      }
+
+      // 4) Related posts
+      const allPosts = await getRelatedBlogPosts(currentPost.id, 6);
+
+      if (Array.isArray(allPosts)) {
+        const transformedRelatedPosts: BlogPost[] = allPosts.map((p: any) => ({
+          id: String(p.id),
+          slug: p.slug || "",
+          title: p.title || "",
+          excerpt: p.excerpt || p.Excerpt || "",
+          content: "",
+          heroImage: p.heroImage || p.Hero_image || "",
+          publishDate: p.publishDate || p.publishdate || "",
+          author: p.author || p.Author || "Jatin Detwani",
+          authorBio: "",
+          categories: (() => {
+            const raw = p.categories ?? p.Categories;
+            if (Array.isArray(raw)) return raw;
+            if (typeof raw === "string") return raw.split(",").map((c: string) => c.trim()).filter(Boolean);
+            return [];
+          })(),
+        }));
+
+        const currentCategories = transformedPost.categories || [];
+        const byCategory = transformedRelatedPosts
+          .filter((p) => p.categories?.some((c) => currentCategories.includes(c)))
+          .slice(0, 3);
+
+        if (byCategory.length >= 3) {
+          setRelatedPosts(byCategory);
+        } else {
+          const recent = transformedRelatedPosts
+            .filter((p) => !byCategory.includes(p))
+            .slice(0, 3 - byCategory.length);
+          setRelatedPosts([...byCategory, ...recent]);
+        }
+      }
+    } catch (err) {
+      console.error("Error fetching blog post:", err);
+      setError("Failed to load blog post");
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  fetchPost();
+}, [slug]);
+
+
+  // useEffect(() => {
+  //   const fetchPost = async () => {
+  //     if (!slug) return;
+
+  //     try {
+  //       setLoading(true);
+
+  //       // Fetch the current post (without Content and faqs initially for faster load)
+  //       const { data: currentPost, error: postError } = await supabase
+  //         .from("blog_post")
+  //         .select(
+  //           "id, title, slug, Hero_image, Categories, Author, Excerpt, publishdate"
+  //         )
+  //         .eq("slug", slug)
+  //         .single();
+
+  //       if (postError) {
+  //         console.error("Error fetching post:", postError);
+  //         setError("Post not found");
+  //         return;
+  //       }
+
+  //       // Transform the data to match our interface (without content initially)
+  //       const transformedPost: BlogPost = {
+  //         id: currentPost.id.toString(),
+  //         slug: currentPost.slug || "",
+  //         title: currentPost.title || "",
+  //         excerpt: currentPost.Excerpt || "",
+  //         content: "", // Will be loaded separately
+  //         heroImage: currentPost.Hero_image || "",
+  //         publishDate: currentPost.publishdate || "",
+  //         author: currentPost.Author || "Jatin Detwani",
+  //         authorBio: "",
+  //         categories: currentPost.Categories
+  //           ? currentPost.Categories.split(",").map((c: string) => c.trim())
+  //           : [],
+  //         faqs: [], // Will be loaded separately
+  //       };
+
+  //       setPost(transformedPost);
+
+  //       // Lazy load full content and FAQs
+  //       const { data: fullContent } = await supabase
+  //         .from("blog_post")
+  //         .select("Content, faqs")
+  //         .eq("id", currentPost.id)
+  //         .single();
+
+  //       if (fullContent) {
+  //         setPost((prev) =>
+  //           prev
+  //             ? {
+  //                 ...prev,
+  //                 content: fullContent.Content || "",
+  //                 faqs: Array.isArray(fullContent.faqs)
+  //                   ? (fullContent.faqs as Array<{
+  //                       question: string;
+  //                       answer: string;
+  //                     }>)
+  //                   : [],
+  //               }
+  //             : prev
+  //         );
+  //       }
+
+  //       // Fetch related posts (optimized - no Content or faqs)
+  //       const { data: allPosts, error: relatedError } = await supabase
+  //         .from("blog_post")
+  //         .select(
+  //           "id, title, slug, Hero_image, Categories, Author, Excerpt, publishdate"
+  //         )
+  //         .neq("id", currentPost.id)
+  //         .limit(6);
+
+  //       if (!relatedError && allPosts) {
+  //         const transformedRelatedPosts: BlogPost[] = allPosts.map((p) => ({
+  //           id: p.id.toString(),
+  //           slug: p.slug || "",
+  //           title: p.title || "",
+  //           excerpt: p.Excerpt || "",
+  //           content: "",
+  //           heroImage: p.Hero_image || "",
+  //           publishDate: p.publishdate || "",
+  //           author: p.Author || "Jatin Detwani",
+  //           authorBio: "",
+  //           categories: p.Categories
+  //             ? p.Categories.split(",").map((c: string) => c.trim())
+  //             : [],
+  //         }));
+
+  //         // Filter related posts by category if available
+  //         const currentCategories = transformedPost.categories || [];
+  //         const byCategory = transformedRelatedPosts
+  //           .filter((p) =>
+  //             p.categories?.some((c) => currentCategories.includes(c))
+  //           )
+  //           .slice(0, 3);
+
+  //         if (byCategory.length >= 3) {
+  //           setRelatedPosts(byCategory);
+  //         } else {
+  //           const recent = transformedRelatedPosts
+  //             .filter((p) => !byCategory.includes(p))
+  //             .slice(0, 3 - byCategory.length);
+  //           setRelatedPosts([...byCategory, ...recent]);
+  //         }
+  //       }
+  //     } catch (err) {
+  //       console.error("Error fetching blog post:", err);
+  //       setError("Failed to load blog post");
+  //     } finally {
+  //       setLoading(false);
+  //     }
+  //   };
+
+  //   fetchPost();
+  // }, [slug]);
 
   return (
     <Layout>
