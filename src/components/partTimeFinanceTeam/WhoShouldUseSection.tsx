@@ -51,7 +51,7 @@ const WhoShouldUseSection = () => {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: index * 0.1 }}
-                  className="flex items-start gap-4 p-4 bg-white rounded-xl border border-gray-100 hover:shadow-md transition-shadow"
+                  className="flex items-start gap-4 p-4 bg-white rounded-xl border border-gray-100 shadow hover:shadow-md transition-shadow"
                 >
                   <div className="w-10 h-10 bg-brand-orange/10 rounded-lg flex items-center justify-center flex-shrink-0">
                     <item.icon className="w-5 h-5 text-brand-orange" />
@@ -67,9 +67,9 @@ const WhoShouldUseSection = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="relative"
+            className="relative mt-8"
           >
-            <div className="bg-gradient-to-br from-brand-orange/10 via-orange-50 to-amber-50 rounded-3xl p-8 md:p-10">
+            <div className="bg-gradient-to-br from-brand-orange/10 via-orange-50 to-amber-50 rounded-3xl p-8 md:p-10 shadow">
               <div className="flex items-center gap-3 mb-6">
                 <AlertCircle className="w-8 h-8 text-brand-orange" />
                 <h3 className="text-xl font-bold text-gray-900">Signs You Need This Service</h3>

@@ -83,7 +83,7 @@ const HowWeDeliverSection = () => {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className="group"
             >
-              <div className="bg-white rounded-2xl border border-gray-100 p-6 md:p-8 hover:shadow-xl transition-all duration-300 hover:border-brand-orange/30">
+              <div className="bg-white rounded-2xl border p-6 md:p-8 hover:shadow-xl transition-all duration-300 border-brand-orange/30 shadow">
                 <div className="flex flex-col md:flex-row md:items-start gap-6">
                   {/* Number and Icon */}
                   <div className="flex items-center gap-4">

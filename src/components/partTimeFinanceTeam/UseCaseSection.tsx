@@ -23,7 +23,7 @@ const UseCaseSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="max-w-5xl mx-auto"
+          className="max-w-7xl mx-auto font-semibold"
         >
           <div className="bg-white rounded-3xl shadow-xl overflow-hidden">
             {/* Header */}
@@ -86,20 +86,20 @@ const UseCaseSection = () => {
               </div>
 
               {/* Outcome */}
-              <div className="p-6 md:p-8 bg-gradient-to-br from-green-50 to-emerald-50">
-                <div className="flex items-center gap-3 mb-6">
+              <div className="p-6 md:p-8 bg-gradient-to-br from-green-50 to-emerald-50 ">
+                <div className="flex items-center gap-3 mb-6 ">
                   <div className="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center">
                     <TrendingUp className="w-5 h-5 text-green-600" />
                   </div>
                   <h4 className="text-lg font-bold text-gray-900">Outcome</h4>
                 </div>
-                <ul className="space-y-3">
+                <ul className="space-y-3 font-semibold">
                   {[
                     "Timely and accurate financial reports",
                     "Reduced founder involvement in daily finance",
                     "Improved operational efficiency and confidence"
                   ].map((item, idx) => (
-                    <li key={idx} className="flex items-start gap-2 text-gray-700 font-medium">
+                    <li key={idx} className="flex items-start gap-2 text-gray-700">
                       <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
                       {item}
                     </li>
