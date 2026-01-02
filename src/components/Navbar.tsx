@@ -161,28 +161,19 @@ export const Navbar = () => {
                       <div className={`bg-white rounded-md shadow-lg py-2 ${item.items && item.items.length > 10 ? 'flex' : ''}`}>
                         {item.items && item.items.length > 10 ? (
                           <>
-                            <div className="w-56">
-                              {item.items.slice(0, 10).map((subItem) => (
-                                <Link
-                                  key={subItem.title}
-                                  to={getCountryUrl(subItem.path)}
-                                  className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-brand-orange"
-                                >
-                                  {subItem.title}
-                                </Link>
-                              ))}
-                            </div>
-                            <div className="w-56 border-l border-gray-100">
-                              {item.items.slice(10).map((subItem) => (
-                                <Link
-                                  key={subItem.title}
-                                  to={getCountryUrl(subItem.path)}
-                                  className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-brand-orange"
-                                >
-                                  {subItem.title}
-                                </Link>
-                              ))}
-                            </div>
+                            {Array.from({ length: Math.ceil(item.items.length / 10) }).map((_, colIndex) => (
+                              <div key={colIndex} className={`w-56 ${colIndex > 0 ? 'border-l border-gray-100' : ''}`}>
+                                {item.items.slice(colIndex * 10, (colIndex + 1) * 10).map((subItem) => (
+                                  <Link
+                                    key={subItem.title}
+                                    to={getCountryUrl(subItem.path)}
+                                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-brand-orange"
+                                  >
+                                    {subItem.title}
+                                  </Link>
+                                ))}
+                              </div>
+                            ))}
                           </>
                         ) : (
                           item.items?.map((subItem) => (
