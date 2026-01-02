@@ -10,7 +10,7 @@ const HeroSection = () => {
   ];
 
   return (
-    <section className="relative min-h-[90vh] flex items-center overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-orange-900">
+    <section className="relative min-h-[90vh] flex items-center overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-orange-900 pt-16 md:pt-20">
       {/* Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-20 left-10 w-72 h-72 bg-orange-500/10 rounded-full blur-3xl" />
@@ -63,7 +63,7 @@ const HeroSection = () => {
               transition={{ duration: 0.6, delay: 0.3 }}
               className="text-lg text-slate-400 mb-8 max-w-xl"
             >
-              Growwth Partners' Fractional Finance Team services in Singapore provide access to experienced finance professionals—analysts, controllers, and finance managers—on a flexible, part-time basis. This allows businesses to scale finance capability in line with growth, without long-term hiring commitments.
+              Access experienced finance analysts, controllers, and managers on a flexible basis—scale your finance capability without long-term hiring commitments.
             </motion.p>
 
             <motion.div
