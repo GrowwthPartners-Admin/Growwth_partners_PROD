@@ -1,26 +1,26 @@
 import { motion } from "framer-motion";
-import { Check, Rocket, TrendingUp, User, Building2, DollarSign, AlertCircle } from "lucide-react";
+import { Check, Rocket, Globe, Building2, DollarSign, Eye, AlertCircle } from "lucide-react";
 
 const idealFor = [
   {
     icon: Rocket,
-    text: "Startups and SMEs with growing transaction volumes"
+    text: "Startups and SMEs operating with lean teams"
   },
   {
-    icon: TrendingUp,
-    text: "Businesses that need execution support but not full-time hires"
-  },
-  {
-    icon: User,
-    text: "Founder-led companies managing finance manually"
+    icon: Globe,
+    text: "Businesses expanding into Singapore without local finance hires"
   },
   {
     icon: Building2,
-    text: "Organisations transitioning from basic bookkeeping to structured reporting"
+    text: "Companies with distributed or remote operations"
   },
   {
     icon: DollarSign,
-    text: "Companies expanding operations without increasing fixed costs"
+    text: "Organisations seeking cost-efficient finance scalability"
+  },
+  {
+    icon: Eye,
+    text: "Founders who want real-time financial visibility without operational burden"
   }
 ];
 
@@ -37,10 +37,10 @@ const WhoShouldUseSection = () => {
           >
             <span className="text-brand-orange font-semibold text-sm uppercase tracking-wider">Is This Right For You?</span>
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mt-4 mb-6">
-              Who Should Use Part-Time Finance Team Services?
+              Who Should Use Virtual Finance Team Services?
             </h2>
             <p className="text-lg text-gray-600 mb-8">
-              Part-Time Finance Team services are ideal for businesses seeking professional finance execution without the overhead of full-time staff.
+              Virtual Finance Team services are ideal for businesses seeking modern, scalable finance operations without traditional overhead.
             </p>
 
             <div className="space-y-4">
@@ -76,16 +76,16 @@ const WhoShouldUseSection = () => {
               </div>
               
               <p className="text-gray-700 mb-6">
-                If your business struggles with any of the following, this model provides immediate relief:
+                If your business relies on multiple tools, spreadsheets, or vendors to manage finance, a Virtual Finance Team simplifies and centralises the entire function:
               </p>
 
               <div className="space-y-4">
                 {[
-                  "Delayed month-end closes",
-                  "Inconsistent financial reports",
-                  "Finance-related operational bottlenecks",
-                  "Over-reliance on founders for finance tasks",
-                  "Lack of structured reporting processes"
+                  "Fragmented finance tools and systems",
+                  "Manual spreadsheet-based reporting",
+                  "Multiple vendors handling different finance tasks",
+                  "Lack of real-time financial visibility",
+                  "No unified finance operations"
                 ].map((sign, index) => (
                   <div key={index} className="flex items-center gap-3">
                     <div className="w-6 h-6 bg-brand-orange rounded-full flex items-center justify-center flex-shrink-0">

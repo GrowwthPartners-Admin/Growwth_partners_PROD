@@ -8,16 +8,16 @@ import {
 
 const faqs = [
   {
-    question: "How is a Part-Time Finance Team different from outsourcing bookkeeping?",
-    answer: "A Part-Time Finance Team provides structured, ongoing support and integrates closely with leadership and CFO services, rather than performing isolated tasks. This means you get consistent professionals who understand your business, follow established processes, and contribute to strategic discussions—not just transactional service providers."
+    question: "How is a Virtual Finance Team different from outsourcing accounting?",
+    answer: "A Virtual Finance Team provides continuous, integrated support with clear ownership, rather than isolated or task-based outsourcing. You get dedicated professionals who understand your business, use unified cloud systems, and operate as a true extension of your organisation with full accountability."
   },
   {
-    question: "Can this service scale as transaction volumes increase?",
-    answer: "Yes. The level of support scales with your business needs and transaction complexity. We can increase hours, add specialised resources, or expand the scope of services as your business grows, ensuring your finance function always matches your operational requirements."
+    question: "Can Virtual Finance Teams support growing transaction volumes?",
+    answer: "Yes. Virtual Finance Teams scale efficiently as transaction volume and complexity increase. The cloud-based infrastructure and process-driven approach means we can expand capacity, add specialised resources, or enhance capabilities without disruption to your operations."
   },
   {
-    question: "Is this suitable for early-stage startups?",
-    answer: "Absolutely. It provides professional finance execution without the cost of full-time hires. Early-stage startups benefit from having experienced finance professionals handle their books correctly from day one, establishing good practices that scale with the business."
+    question: "Is data security maintained with a Virtual Finance Team?",
+    answer: "Absolutely. Secure cloud systems and access controls ensure data integrity and confidentiality. We implement enterprise-grade security protocols, regular backups, and role-based access to protect your financial data at all times."
   }
 ];
 
@@ -37,7 +37,7 @@ const FaqSection = () => {
             Frequently Asked Questions
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Find answers to common questions about our Part-Time Finance Team services
+            Find answers to common questions about our Virtual Finance Team services
           </p>
         </motion.div>
 
