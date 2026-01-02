@@ -31,22 +31,22 @@ const HeroSection = () => {
               className="inline-flex items-center gap-2 px-4 py-2 bg-brand-orange/20 rounded-full text-brand-orange text-sm font-medium mb-6"
             >
               <Users className="w-4 h-4" />
-              Your Digital-First Finance Department
+              Flexible Finance Team for Growing Businesses
             </motion.div>
 
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
-              Virtual Finance Team Services in{" "}
+              Part-Time Finance Team Services in{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-orange-400">
                 Singapore
               </span>
             </h1>
 
             <p className="text-xl md:text-2xl text-gray-300 mb-4 font-light">
-              A Cloud-First, Scalable Finance Team Built for Modern Businesses
+              Flexible, Cost-Efficient Finance Execution Without Full-Time Headcount
             </p>
 
             <p className="text-gray-400 text-lg mb-8 max-w-xl">
-              A fully integrated, cloud-based finance function—combining experienced finance professionals, structured processes, and AI-enabled tools—to deliver accurate reporting, financial control, and real-time visibility without building an in-house team.
+              Access experienced finance professionals on a flexible basis—delivering reliable execution, accurate reporting, and operational discipline without long-term hiring commitments.
             </p>
 
             <motion.div
@@ -61,7 +61,7 @@ const HeroSection = () => {
                 className="bg-brand-orange hover:bg-brand-orange/90 text-white px-8 py-6 text-lg group"
               >
                 <Link to="/contact">
-                  Build Your Virtual Finance Team
+                  Build a Fractional Finance Team
                   <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </Link>
               </Button>
@@ -78,7 +78,7 @@ const HeroSection = () => {
               <div className="absolute inset-0 bg-gradient-to-r from-brand-orange/20 to-blue-500/20 rounded-3xl blur-2xl" />
               <img
                 src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                alt="Virtual finance team collaboration"
+                alt="Part-time finance team collaboration"
                 className="relative rounded-3xl shadow-2xl w-full object-cover aspect-[4/3]"
               />
               
@@ -89,8 +89,8 @@ const HeroSection = () => {
                 transition={{ delay: 0.8 }}
                 className="absolute -bottom-6 -left-6 bg-white rounded-2xl p-4 shadow-xl"
               >
-                <div className="text-3xl font-bold text-brand-orange">24/7</div>
-                <div className="text-sm text-gray-600">Cloud Access</div>
+                <div className="text-3xl font-bold text-brand-orange">50%</div>
+                <div className="text-sm text-gray-600">Cost Savings</div>
               </motion.div>
 
               <motion.div
@@ -99,8 +99,8 @@ const HeroSection = () => {
                 transition={{ delay: 1 }}
                 className="absolute -top-6 -right-6 bg-white rounded-2xl p-4 shadow-xl"
               >
-                <div className="text-3xl font-bold text-green-600">Real-Time</div>
-                <div className="text-sm text-gray-600">Financial Visibility</div>
+                <div className="text-3xl font-bold text-green-600">100%</div>
+                <div className="text-sm text-gray-600">Flexible Scaling</div>
               </motion.div>
             </div>
           </motion.div>

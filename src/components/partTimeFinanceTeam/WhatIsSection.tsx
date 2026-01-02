@@ -1,26 +1,26 @@
 import { motion } from "framer-motion";
-import { Users, BarChart3, Calculator, Wallet, Cloud, Monitor } from "lucide-react";
+import { Calculator, FileText, Settings, Shield, Users } from "lucide-react";
 
 const features = [
   {
-    icon: Users,
-    title: "Finance Managers & Analysts",
-    description: "Experienced professionals for strategic oversight"
-  },
-  {
     icon: Calculator,
-    title: "Accountants & Bookkeeping",
-    description: "Accurate day-to-day transaction handling"
+    title: "Day-to-day Finance Execution",
+    description: "Reliable handling of routine finance operations"
   },
   {
-    icon: Wallet,
-    title: "Payroll & Compliance",
-    description: "Seamless payroll and regulatory support"
+    icon: FileText,
+    title: "Accurate & Timely Reporting",
+    description: "Consistent, deadline-driven financial reports"
   },
   {
-    icon: Monitor,
-    title: "Cloud Accounting & Dashboards",
-    description: "Real-time visibility into financial data"
+    icon: Settings,
+    title: "Operational Finance Support",
+    description: "Seamless coordination with your operations"
+  },
+  {
+    icon: Shield,
+    title: "Compliance-Ready Records",
+    description: "Documentation that meets regulatory standards"
   }
 ];
 
@@ -37,21 +37,11 @@ const WhatIsSection = () => {
         >
           <span className="text-brand-orange font-semibold text-sm uppercase tracking-wider">Understanding the Service</span>
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mt-4 mb-6">
-            What Are Virtual Finance Team Services?
+            What Are Part-Time Finance Team Services?
           </h2>
           <p className="text-lg text-gray-600 leading-relaxed">
-            Virtual Finance Team services deliver end-to-end finance execution and reporting through a remote, digitally enabled team that operates as an extension of your organisation.
+            Part-Time Finance Team services provide access to skilled finance professionals—such as accountants, analysts, and controllers—who support your business for a defined number of hours or days each month.
           </p>
-        </motion.div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="text-center mb-8"
-        >
-          <h3 className="text-xl font-semibold text-gray-800">A Virtual Finance Team typically includes:</h3>
         </motion.div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
@@ -82,12 +72,12 @@ const WhatIsSection = () => {
         >
           <div className="flex justify-center mb-6">
             <div className="w-16 h-16 bg-brand-orange/20 rounded-full flex items-center justify-center">
-              <Cloud className="w-8 h-8 text-brand-orange" />
+              <Users className="w-8 h-8 text-brand-orange" />
             </div>
           </div>
           <p className="text-xl text-white max-w-3xl mx-auto leading-relaxed">
-            Unlike traditional outsourcing, Virtual Finance Teams are{" "}
-            <span className="text-brand-orange font-semibold">process-driven, continuously engaged, and fully accountable</span>, ensuring consistency and reliability.
+            Unlike ad-hoc outsourcing, Part-Time Finance Team services operate as an{" "}
+            <span className="text-brand-orange font-semibold">extension of your internal team</span>, with structured processes and accountability.
           </p>
         </motion.div>
       </div>

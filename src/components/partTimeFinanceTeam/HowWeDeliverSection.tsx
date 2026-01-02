@@ -1,55 +1,54 @@
 import { motion } from "framer-motion";
-import { Cloud, Calculator, BarChart3, Wallet, Users, CheckCircle } from "lucide-react";
+import { Calculator, Calendar, Settings, Shield, Users, CheckCircle } from "lucide-react";
 
 const services = [
   {
-    icon: Cloud,
-    number: "01",
-    title: "Cloud-Based Accounting & Systems",
-    items: [
-      "Implementation and management of cloud accounting platforms",
-      "Standardised chart of accounts and reporting structures",
-      "Secure, real-time access to financial data"
-    ]
-  },
-  {
     icon: Calculator,
+    number: "01",
+    title: "Accounting & Bookkeeping Execution",
+    items: [
+      "Accurate transaction recording",
+      "Bank and balance sheet reconciliations",
+      "Expense and vendor management"
+    ]
+  },
+  {
+    icon: Calendar,
     number: "02",
-    title: "Day-to-Day Finance Execution",
+    title: "Month-End Close & Reporting",
     items: [
-      "Accurate bookkeeping and reconciliations",
       "Timely month-end closes",
-      "Invoicing, collections, and expense management"
+      "Preparation of P&L, balance sheet, and cash flow statements",
+      "Standardised reporting formats"
     ]
   },
   {
-    icon: BarChart3,
+    icon: Settings,
     number: "03",
-    title: "Management Reporting & Dashboards",
+    title: "Operational Finance Support",
     items: [
-      "Monthly financial statements (P&L, balance sheet, cash flow)",
-      "KPI dashboards aligned to business goals",
-      "Variance and trend analysis"
+      "Support for invoicing and collections",
+      "Coordination with internal teams",
+      "Documentation and process improvement"
     ]
   },
   {
-    icon: Wallet,
+    icon: Shield,
     number: "04",
-    title: "Payroll & Compliance Support",
+    title: "Compliance & Audit Readiness",
     items: [
-      "Payroll coordination and reporting",
-      "Statutory compliance support aligned with Singapore requirements",
-      "Audit-ready documentation"
+      "Clean, well-documented financial records",
+      "Support during audits and reviews",
+      "Alignment with Singapore compliance requirements"
     ]
   },
   {
     icon: Users,
     number: "05",
-    title: "Integration with CFO & Strategy Teams",
+    title: "Integration with CFO & Finance Leadership",
     items: [
-      "Alignment with Virtual, Fractional, or Outsourced CFO services",
-      "Escalation of insights for strategic decision-making",
-      "Continuous process improvement"
+      "Alignment with Virtual, Fractional, or Part-Time CFO services",
+      "Escalation of insights and issues for strategic review"
     ]
   }
 ];
@@ -67,10 +66,10 @@ const HowWeDeliverSection = () => {
         >
           <span className="text-brand-orange font-semibold text-sm uppercase tracking-wider">Our Approach</span>
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mt-4 mb-6">
-            How Growwth Partners Delivers Virtual Finance Team Value
+            How Growwth Partners Delivers Part-Time Finance Team Value
           </h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            Our Virtual Finance Team services are built on technology, governance, and accountability.
+            Our services are designed to bring structure, reliability, and discipline to finance execution.
           </p>
         </motion.div>
 

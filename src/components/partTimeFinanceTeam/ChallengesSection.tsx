@@ -1,58 +1,58 @@
 import { motion } from "framer-motion";
-import { Clock, Eye, UserX, Users as UsersIcon, Shield, CheckCircle, TrendingUp, Zap, BarChart3, Settings, Cloud, Database } from "lucide-react";
+import { AlertTriangle, BookOpen, Clock, Users, FileWarning, UserX, CheckCircle, TrendingUp, Shield, Zap, BarChart3, Settings } from "lucide-react";
 
 const challenges = [
   {
-    icon: Clock,
-    title: "Delayed Reporting",
-    description: "Inconsistent and late financial data"
+    icon: BookOpen,
+    title: "Incomplete Bookkeeping",
+    description: "Records that don't capture the full picture"
   },
   {
-    icon: Eye,
-    title: "Limited Visibility",
-    description: "No real-time view into performance"
+    icon: Clock,
+    title: "Delayed Month-End Closes",
+    description: "Late financial data affecting decisions"
+  },
+  {
+    icon: Users,
+    title: "Poor Coordination",
+    description: "Disconnect between finance and operations"
+  },
+  {
+    icon: FileWarning,
+    title: "Weak Documentation",
+    description: "Unpreparedness for audits and reviews"
   },
   {
     icon: UserX,
-    title: "Individual Dependency",
-    description: "Systems reliant on people, not processes"
-  },
-  {
-    icon: UsersIcon,
-    title: "Poor Coordination",
-    description: "Disconnect between accounting and payroll"
-  },
-  {
-    icon: Shield,
-    title: "Audit Risks",
-    description: "Increased risk during compliance reviews"
+    title: "Founder Dependency",
+    description: "Leaders stuck in routine finance tasks"
   }
 ];
 
 const benefits = [
   {
-    icon: UsersIcon,
-    text: "Dedicated virtual finance professionals"
+    icon: Users,
+    text: "Dedicated part-time finance professionals"
   },
   {
-    icon: Cloud,
-    text: "Cloud-based accounting and reporting systems"
+    icon: BarChart3,
+    text: "Structured monthly execution and reporting"
   },
   {
     icon: CheckCircle,
-    text: "Reliable monthly closes and reporting timelines"
-  },
-  {
-    icon: Database,
-    text: "Improved data accuracy and transparency"
+    text: "Clear ownership of finance tasks"
   },
   {
     icon: TrendingUp,
-    text: "Reduced operational burden on leadership"
+    text: "Reduced operational burden on founders"
+  },
+  {
+    icon: Shield,
+    text: "Improved data accuracy and reliability"
   },
   {
     icon: Settings,
-    text: "Scalable finance infrastructure as business grows"
+    text: "Flexible engagement that scales with volume"
   }
 ];
 
@@ -69,10 +69,10 @@ const ChallengesSection = () => {
         >
           <span className="text-brand-orange font-semibold text-sm uppercase tracking-wider">The Problem & Solution</span>
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mt-4 mb-6">
-            Challenges of Traditional Finance Setups
+            Common Finance Execution Challenges
           </h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            Businesses using fragmented or manual finance setups often face issues that Virtual Finance Team services address by standardising processes and leveraging cloud technology.
+            Without a dedicated finance team, businesses often experience issues that create operational risk and reduce decision-making confidence.
           </p>
         </motion.div>
 
@@ -123,10 +123,10 @@ const ChallengesSection = () => {
         >
           <div className="text-center mb-10">
             <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">
-              What You Get with Our Virtual Finance Team Services
+              What You Get with Our Part-Time Finance Team Services
             </h3>
             <p className="text-gray-400 max-w-2xl mx-auto">
-              This approach delivers enterprise-grade finance operations at SME-friendly cost levels
+              This model ensures finance execution keeps pace with business growth
             </p>
           </div>
 

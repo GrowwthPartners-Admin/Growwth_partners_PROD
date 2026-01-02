@@ -21,9 +21,9 @@ const CTASection = () => {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6"
           >
-            Build a Modern Finance Function{" "}
+            Strengthen Finance Execution{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-amber-400">
-              Without Hiring Locally
+              Without Full-Time Hiring
             </span>
           </motion.h2>
 
@@ -34,8 +34,8 @@ const CTASection = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-lg md:text-xl text-slate-300 mb-10 max-w-2xl mx-auto"
           >
-            Get a cloud-first, scalable finance team that grows with your
-            business.
+            Get reliable, professional finance support that scales with your
+            business needs.{" "}
           </motion.p>
 
           <motion.div
@@ -54,7 +54,7 @@ const CTASection = () => {
               }
               className="bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white px-10 py-7 text-lg rounded-xl shadow-lg shadow-orange-500/25"
             >
-              Schedule a Virtual Finance Team Consultation
+              Schedule a Part-Time Finance Team Consultation
               <ArrowRight className="w-5 h-5" />
             </Button>
           </motion.div>

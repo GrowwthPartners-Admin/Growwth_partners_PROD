@@ -1,31 +1,31 @@
 import { motion } from "framer-motion";
-import { Globe, MapPin, Users, Cpu, Settings, CheckCircle } from "lucide-react";
+import { Award, MapPin, Users, Cpu, Target, CheckCircle } from "lucide-react";
 
 const reasons = [
   {
-    icon: Globe,
-    title: "Global Experience",
-    description: "Extensive experience delivering virtual finance teams globally"
+    icon: Award,
+    title: "Experienced Professionals",
+    description: "Finance professionals with expertise across multiple industries"
   },
   {
     icon: MapPin,
     title: "Singapore Expertise",
-    description: "Strong understanding of Singapore's accounting, tax, and compliance environment"
+    description: "Strong understanding of Singapore's accounting and compliance landscape"
   },
   {
     icon: Users,
-    title: "CFO-Led Governance",
-    description: "CFO-led governance and oversight for strategic alignment"
+    title: "CFO Integration",
+    description: "Seamless integration with CFO services for strategic oversight"
   },
   {
     icon: Cpu,
     title: "AI-Enabled Tools",
-    description: "Automation and insight through advanced technology"
+    description: "Faster processing and improved accuracy through technology"
   },
   {
-    icon: Settings,
-    title: "One Partner Solution",
-    description: "Execution, reporting, and strategic alignment from a single partner"
+    icon: Target,
+    title: "Process-Driven Execution",
+    description: "Clear accountability and systematic approach to finance"
   }
 ];
 
@@ -45,7 +45,7 @@ const WhyChooseSection = () => {
               Why Choose Growwth Partners?
             </h2>
             <p className="text-lg text-gray-600 mb-8">
-              We focus on building systems, not dependencies, so finance scales with your business.
+              We focus on getting the fundamentals right, so leadership can focus on growth.
             </p>
 
             <div className="space-y-4">
@@ -82,8 +82,8 @@ const WhyChooseSection = () => {
             <div className="relative">
               <div className="absolute inset-0 bg-gradient-to-r from-brand-orange/20 to-blue-500/20 rounded-3xl blur-2xl" />
               <img
-                src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                alt="Virtual finance team working remotely"
+                src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                alt="Professional finance team meeting"
                 className="relative rounded-3xl shadow-2xl w-full object-cover aspect-[4/3]"
               />
               
@@ -100,8 +100,8 @@ const WhyChooseSection = () => {
                     <CheckCircle className="w-6 h-6 text-green-600" />
                   </div>
                   <div>
-                    <p className="font-semibold text-gray-900">Cloud-First Finance Operations</p>
-                    <p className="text-sm text-gray-600">Trusted by businesses across Singapore and beyond</p>
+                    <p className="font-semibold text-gray-900">Trusted by Growing Businesses</p>
+                    <p className="text-sm text-gray-600">In Singapore and across the region</p>
                   </div>
                 </div>
               </motion.div>
