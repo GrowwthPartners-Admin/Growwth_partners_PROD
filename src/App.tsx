@@ -452,6 +452,111 @@ export const routes: RouteRecord[] = [
         },
       },
       {
+        path: "fractional-finance-team",
+        async lazy() {
+          const { default: Component } = await import("./pages/FractionalFinanceTeam");
+          return { Component };
+        },
+      },
+      {
+        path: "uae/fractional-finance-team",
+        async lazy() {
+          const { default: Component } = await import("./pages/FractionalFinanceTeam");
+          return { Component };
+        },
+      },
+      {
+        path: "au/fractional-finance-team",
+        async lazy() {
+          const { default: Component } = await import("./pages/FractionalFinanceTeam");
+          return { Component };
+        },
+      },
+      {
+        path: "part-time-finance-team",
+        async lazy() {
+          const { default: Component } = await import("./pages/PartTimeFinanceTeam");
+          return { Component };
+        },
+      },
+      {
+        path: "uae/part-time-finance-team",
+        async lazy() {
+          const { default: Component } = await import("./pages/PartTimeFinanceTeam");
+          return { Component };
+        },
+      },
+      {
+        path: "au/part-time-finance-team",
+        async lazy() {
+          const { default: Component } = await import("./pages/PartTimeFinanceTeam");
+          return { Component };
+        },
+      },
+      {
+        path: "virtual-finance-team",
+        async lazy() {
+          const { default: Component } = await import("./pages/VirtualFinanceTeam");
+          return { Component };
+        },
+      },
+      {
+        path: "uae/virtual-finance-team",
+        async lazy() {
+          const { default: Component } = await import("./pages/VirtualFinanceTeam");
+          return { Component };
+        },
+      },
+      {
+        path: "au/virtual-finance-team",
+        async lazy() {
+          const { default: Component } = await import("./pages/VirtualFinanceTeam");
+          return { Component };
+        },
+      },
+      {
+        path: "outsourced-bookkeeping",
+        async lazy() {
+          const { default: Component } = await import("./pages/OutsourcedBookkeeping");
+          return { Component };
+        },
+      },
+      {
+        path: "uae/outsourced-bookkeeping",
+        async lazy() {
+          const { default: Component } = await import("./pages/OutsourcedBookkeeping");
+          return { Component };
+        },
+      },
+      {
+        path: "au/outsourced-bookkeeping",
+        async lazy() {
+          const { default: Component } = await import("./pages/OutsourcedBookkeeping");
+          return { Component };
+        },
+      },
+      {
+        path: "outsourced-payroll",
+        async lazy() {
+          const { default: Component } = await import("./pages/OutsourcedPayroll");
+          return { Component };
+        },
+      },
+      {
+        path: "uae/outsourced-payroll",
+        async lazy() {
+          const { default: Component } = await import("./pages/OutsourcedPayroll");
+          return { Component };
+        },
+      },
+      {
+        path: "au/outsourced-payroll",
+        async lazy() {
+          const { default: Component } = await import("./pages/OutsourcedPayroll");
+          return { Component };
+        },
+      },
+      {
         path: "privacy-policy",
         async lazy() {
           const { default: Component } = await import("./pages/PrivacyPolicy");
