@@ -3,27 +3,27 @@ import { ClientOnly } from "vite-react-ssg";
 import type { RouteRecord } from "vite-react-ssg";
 import { Navigate } from "react-router-dom";
 import Layout from "./Layout";
-import { supabase } from "@/integrations/supabase/client";
+// import { supabase } from "@/integrations/supabase/client";
 import { CountryProvider } from "./contexts/CountryContext";
 
 // We need to lazy-load the BlogAdminPage component to ensure it's not eagerly imported on the server
 const BlogAdminPage = React.lazy(() => import("./pages/admin/BlogAdmin"));
 
-async function getBlogSlugs() {
-  try {
-    const { data: posts, error } = await supabase.from("blog_post").select("slug").not("slug", "is", null);
+// async function getBlogSlugs() {
+//   try {
+//     const { data: posts, error } = await supabase.from("blog_post").select("slug").not("slug", "is", null);
 
-    if (error) {
-      console.error("SSG slug fetch error", error);
-      return [];
-    }
+//     if (error) {
+//       console.error("SSG slug fetch error", error);
+//       return [];
+//     }
 
-    return posts.map((post) => `/blog/${post.slug}`);
-  } catch (error) {
-    console.error("Error fetching blog slugs:", error);
-    return [];
-  }
-}
+//     return posts.map((post) => `/blog/${post.slug}`);
+//   } catch (error) {
+//     console.error("Error fetching blog slugs:", error);
+//     return [];
+//   }
+// }
 
 // --- Static imports for non-lazy routes ---
 import NotFound from "./pages/NotFound";
@@ -228,9 +228,7 @@ export const routes: RouteRecord[] = [
       {
         path: "incorporation",
         async lazy() {
-          const { default: Component } = await import(
-            "./pages/Incorporation"
-          );
+          const { default: Component } = await import("./pages/Incorporation");
           return { Component };
         },
       },
@@ -264,27 +262,21 @@ export const routes: RouteRecord[] = [
       {
         path: "fintech-finance",
         async lazy() {
-          const { default: Component } = await import(
-            "./pages/FintechFinance"
-          );
+          const { default: Component } = await import("./pages/FintechFinance");
           return { Component };
         },
       },
       {
         path: "uae/fintech-finance",
         async lazy() {
-          const { default: Component } = await import(
-            "./pages/FintechFinance"
-          );
+          const { default: Component } = await import("./pages/FintechFinance");
           return { Component };
         },
       },
       {
         path: "au/fintech-finance",
         async lazy() {
-          const { default: Component } = await import(
-            "./pages/FintechFinance"
-          );
+          const { default: Component } = await import("./pages/FintechFinance");
           return { Component };
         },
       },
@@ -360,42 +352,54 @@ export const routes: RouteRecord[] = [
       {
         path: "outsourced-cfo-services",
         async lazy() {
-          const { default: Component } = await import("./pages/OutsourcedCfoServices");
+          const { default: Component } = await import(
+            "./pages/OutsourcedCfoServices"
+          );
           return { Component };
         },
       },
       {
         path: "uae/outsourced-cfo-services",
         async lazy() {
-          const { default: Component } = await import("./pages/OutsourcedCfoServices");
+          const { default: Component } = await import(
+            "./pages/OutsourcedCfoServices"
+          );
           return { Component };
         },
       },
       {
         path: "au/outsourced-cfo-services",
         async lazy() {
-          const { default: Component } = await import("./pages/OutsourcedCfoServices");
+          const { default: Component } = await import(
+            "./pages/OutsourcedCfoServices"
+          );
           return { Component };
         },
       },
       {
         path: "startup-cfo-services",
         async lazy() {
-          const { default: Component } = await import("./pages/StartupCfoServices");
+          const { default: Component } = await import(
+            "./pages/StartupCfoServices"
+          );
           return { Component };
         },
       },
       {
         path: "uae/startup-cfo-services",
         async lazy() {
-          const { default: Component } = await import("./pages/StartupCfoServices");
+          const { default: Component } = await import(
+            "./pages/StartupCfoServices"
+          );
           return { Component };
         },
       },
       {
         path: "au/startup-cfo-services",
         async lazy() {
-          const { default: Component } = await import("./pages/StartupCfoServices");
+          const { default: Component } = await import(
+            "./pages/StartupCfoServices"
+          );
           return { Component };
         },
       },
@@ -423,21 +427,27 @@ export const routes: RouteRecord[] = [
       {
         path: "remote-cfo-finance-team",
         async lazy() {
-          const { default: Component } = await import("./pages/RemoteCfoServices");
+          const { default: Component } = await import(
+            "./pages/RemoteCfoServices"
+          );
           return { Component };
         },
       },
       {
         path: "uae/remote-cfo-finance-team",
         async lazy() {
-          const { default: Component } = await import("./pages/RemoteCfoServices");
+          const { default: Component } = await import(
+            "./pages/RemoteCfoServices"
+          );
           return { Component };
         },
       },
       {
         path: "au/remote-cfo-finance-team",
         async lazy() {
-          const { default: Component } = await import("./pages/RemoteCfoServices");
+          const { default: Component } = await import(
+            "./pages/RemoteCfoServices"
+          );
           return { Component };
         },
       },
@@ -934,9 +944,7 @@ export const routes: RouteRecord[] = [
       {
         path: "uae/incorporation",
         async lazy() {
-          const { default: Component } = await import(
-            "./pages/Incorporation"
-          );
+          const { default: Component } = await import("./pages/Incorporation");
           return { Component };
         },
       },
@@ -1140,9 +1148,7 @@ export const routes: RouteRecord[] = [
       {
         path: "au/incorporation",
         async lazy() {
-          const { default: Component } = await import(
-            "./pages/Incorporation"
-          );
+          const { default: Component } = await import("./pages/Incorporation");
           return { Component };
         },
       },
@@ -1602,17 +1608,52 @@ export const routes: RouteRecord[] = [
           return { Component };
         },
         entry: "src/pages/BlogPost.tsx",
-        getStaticPaths: async () => {
-          const { data: posts, error } = await supabase
-            .from("blog_post")
-            .select("slug");
+        // getStaticPaths: async () => {
+        //   const { data: posts, error } = await supabase
+        //     .from("blog_post")
+        //     .select("slug");
 
-          if (error) {
-            console.error("SSG slug fetch error", error);
+        //   if (error) {
+        //     console.error("SSG slug fetch error", error);
+        //     return [];
+        //   }
+
+        //   return posts!.map((p) => `blog/${p.slug}`);
+        // },
+        getStaticPaths: async () => {
+          try {
+            const BASE_API_URL =
+             import.meta.env.VITE_CONTACTAPI_DEVURL || import.meta.env.VITE_CONTACTAPI_PRODURL;
+
+            const res = await fetch(
+              `${BASE_API_URL}/api/website/blog/public/slugs`,
+              {
+                method: "GET",
+                headers: { "Content-Type": "application/json" },
+              }
+            );
+
+            const text = await res.text();
+            if (!res.ok) {
+              console.error("SSG slug fetch error:", res.status, text);
+              return [];
+            }
+
+            let slugs: string[] = [];
+            try {
+              const json = JSON.parse(text);
+              slugs = (json?.data ?? json) as string[];
+            } catch {
+              slugs = [];
+            }
+
+            if (!Array.isArray(slugs)) return [];
+
+            return slugs.filter(Boolean).map((slug) => `blog/${slug}`);
+          } catch (err) {
+            console.error("SSG slug fetch error:", err);
             return [];
           }
-
-          return posts!.map((p) => `blog/${p.slug}`);
         },
       },
       {
