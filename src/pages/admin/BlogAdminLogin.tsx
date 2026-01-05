@@ -22,7 +22,7 @@ const BlogAdminLogin = () => {
   const { toast } = useToast();
 
   const API_BASE = import.meta.env.VITE_CONTACTAPI_DEVURL || import.meta.env.VITE_CONTACTAPI_PRODURL
-  const login_url = `${API_BASE}/website/admin/login`;
+  const login_url = `${API_BASE}/api/website/admin/login`;
 
 
   const handleLogin = async (e: React.FormEvent) => {
