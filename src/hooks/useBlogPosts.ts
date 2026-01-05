@@ -1,8 +1,11 @@
-
 import { useEffect, useState, useCallback } from "react";
-import { supabase } from "@/integrations/supabase/client";
+import {
+  apiListAllPosts,
+  apiCreatePost,
+  apiDeletePost,
+  apiUpdatePost,
+} from "@/lib/blogApi";
 
-// Define types for blog posts (match Supabase table columns)
 export interface BlogPost {
   id: number;
   title: string;
@@ -11,12 +14,11 @@ export interface BlogPost {
   excerpt?: string;
   content?: string;
   author?: string;
-  categories?: string[] | string;  // Modified to handle both string array and string
+  categories?: string[] | string;
   publishDate?: string;
   faqs?: Array<{ question?: string; answer?: string }>;
 }
 
-// Helper to serialize/deserialize categories
 const serializeCategories = (categories: string[]) => categories.join(",");
 const deserializeCategories = (catString?: string) =>
   catString ? catString.split(",").map((c) => c.trim()) : [];
@@ -25,157 +27,127 @@ export const useBlogPosts = () => {
   const [posts, setPosts] = useState<BlogPost[]>([]);
   const [loading, setLoading] = useState(true);
 
-  // Supabase Fetch All
+  // API Fetch All
   const fetchPosts = useCallback(async () => {
     setLoading(true);
-    const { data, error } = await supabase
-      .from("blog_post")
-      .select("*")
-      .order("id", { ascending: false });
+    try {
+      const data = await apiListAllPosts();
 
-    if (!error && data) {
-      setPosts(
-        data.map((post) => ({
-          id: post.id,
-          title: post.title,
-          slug: post.slug || "",
-          heroImage: post.Hero_image || "",
-          excerpt: post.Excerpt || "",
-          content: post.Content || "",
-          author: post.Author || "",
-          categories: deserializeCategories(post.Categories || ""),
-          publishDate: post.publishdate || "", // Fixed: using lowercase publishdate from database
-          faqs: Array.isArray(post.faqs) ? post.faqs as Array<{ question: string; answer: string }> : [],
-        }))
-      );
-    } else {
-      console.error("Error fetching posts:", error);
+      // Expect backend returns supabase-like rows or already transformed.
+      // Handle both safely:
+      const transformed: BlogPost[] = (Array.isArray(data) ? data : []).map((post: any) => ({
+        id: Number(post.id),
+        title: post.title || "",
+        slug: post.slug || "",
+        heroImage: post.heroImage ?? post.Hero_image ?? "",
+        excerpt: post.excerpt ?? post.Excerpt ?? "",
+        content: post.content ?? post.Content ?? "",
+        author: post.author ?? post.Author ?? "",
+        categories: Array.isArray(post.categories)
+          ? post.categories
+          : Array.isArray(post.Categories)
+          ? post.Categories
+          : deserializeCategories(post.categories ?? post.Categories ?? ""),
+        publishDate: post.publishDate ?? post.publishdate ?? "",
+        faqs: Array.isArray(post.faqs) ? post.faqs : [],
+      }));
+
+      setPosts(transformed);
+    } catch (err) {
+      console.error("Error fetching posts:", err);
+    } finally {
+      setLoading(false);
     }
-    setLoading(false);
   }, []);
 
-  // Fetch on mount
   useEffect(() => {
     fetchPosts();
   }, [fetchPosts]);
 
-  // Get post by slug
-  const getPostBySlug = (slug: string) => {
-    return posts.find((p) => p.slug === slug);
-  };
+  const getPostBySlug = (slug: string) => posts.find((p) => p.slug === slug);
 
   // Create post
   const addPost = async (post: Omit<BlogPost, "id" | "publishDate">) => {
     setLoading(true);
     try {
-      const { data, error } = await supabase
-        .from("blog_post")
-        .insert([
-          {
-            title: post.title,
-            slug: post.slug,
-            Hero_image: post.heroImage ?? "",
-            Excerpt: post.excerpt ?? "",
-            Content: post.content ?? "",
-            Author: post.author ?? "",
-            Categories: Array.isArray(post.categories) 
-              ? serializeCategories(post.categories) 
-              : post.categories ?? "",
-            faqs: post.faqs || [],
-            // publishdate is set by database default
-          },
-        ])
-        .select()
-        .single();
-        
-      if (error) {
-        console.error("Error adding post:", error);
-        setLoading(false);
-        throw error;
-      }
-      
+      const payload = {
+        title: post.title,
+        slug: post.slug,
+        heroImage: post.heroImage ?? "",
+        excerpt: post.excerpt ?? "",
+        content: post.content ?? "",
+        author: post.author ?? "",
+        categories: Array.isArray(post.categories)
+          ? serializeCategories(post.categories)
+          : post.categories ?? "",
+        faqs: post.faqs || [],
+      };
+
+      const created = await apiCreatePost(payload);
       await fetchPosts();
-      return data;
-    } catch (error) {
+      return created;
+    } finally {
       setLoading(false);
-      throw error;
     }
   };
 
   // Delete post
   const deletePost = async (id: number) => {
     setLoading(true);
-    const { error } = await supabase.from("blog_post").delete().eq("id", id);
-    if (!error) {
+    try {
+      const result = await apiDeletePost({ id });
       await fetchPosts();
-      return true;
+      return !!result;
+    } catch (e) {
+      console.error("Delete failed:", e);
+      return false;
+    } finally {
+      setLoading(false);
     }
-    setLoading(false);
-    return false;
   };
 
   // Update post
-  // Fix: Ensure the fields are properly typed according to BlogPost interface
   const updatePost = async (id: number, updatedPost: Partial<BlogPost> & { title: string }) => {
     setLoading(true);
-    const toUpdate: any = { ...updatedPost };
-    if (updatedPost.categories) {
-      toUpdate.Categories = Array.isArray(updatedPost.categories) 
-        ? serializeCategories(updatedPost.categories) 
-        : updatedPost.categories;
-      delete toUpdate.categories;
-    }
-    if (updatedPost.heroImage) {
-      toUpdate.Hero_image = updatedPost.heroImage;
-      delete toUpdate.heroImage;
-    }
-    if (updatedPost.excerpt) {
-      toUpdate.Excerpt = updatedPost.excerpt;
-      delete toUpdate.excerpt;
-    }
-    if (updatedPost.content) {
-      toUpdate.Content = updatedPost.content;
-      delete toUpdate.content;
-    }
-    if (updatedPost.author) {
-      toUpdate.Author = updatedPost.author;
-      delete toUpdate.author;
-    }
-    if (updatedPost.publishDate) {
-      toUpdate.publishdate = updatedPost.publishDate;
-      delete toUpdate.publishDate;
-    }
-    if (updatedPost.faqs !== undefined) {
-      toUpdate.faqs = updatedPost.faqs;
-    }
-    const { data, error } = await supabase
-      .from("blog_post")
-      .update(toUpdate)
-      .eq("id", id)
-      .select()
-      .single();
-    if (!error && data) {
+    try {
+      const payload: any = {
+        id,
+        title: updatedPost.title,
+      };
+
+      if (updatedPost.slug !== undefined) payload.slug = updatedPost.slug;
+      if (updatedPost.heroImage !== undefined) payload.heroImage = updatedPost.heroImage;
+      if (updatedPost.excerpt !== undefined) payload.excerpt = updatedPost.excerpt;
+      if (updatedPost.content !== undefined) payload.content = updatedPost.content;
+      if (updatedPost.author !== undefined) payload.author = updatedPost.author;
+
+      if (updatedPost.categories !== undefined) {
+        payload.categories = Array.isArray(updatedPost.categories)
+          ? serializeCategories(updatedPost.categories)
+          : updatedPost.categories;
+      }
+
+      if (updatedPost.faqs !== undefined) payload.faqs = updatedPost.faqs;
+
+      const updated = await apiUpdatePost(payload);
       await fetchPosts();
-      return data;
+      return updated;
+    } catch (e) {
+      console.error("Update failed:", e);
+      return null;
+    } finally {
+      setLoading(false);
     }
-    setLoading(false);
-    return null;
   };
 
-  // Get all posts
-  const getAllPosts = () => posts;
-
-  // Get dynamic posts (optional, currently always show all)
-  const getDynamicPosts = () => posts;
-
   return {
-    posts: getAllPosts(),
+    posts,
     loading,
     getPostBySlug,
     addPost,
     deletePost,
     updatePost,
-    dynamicPosts: getDynamicPosts(),
+    dynamicPosts: posts,
     refetch: fetchPosts,
   };
 };

@@ -22,6 +22,7 @@ import {
 } from "lucide-react";
 import { sendToContactApi, mapContactPagePayload } from "@/lib/contactApi";
 import  ReCAPTCHA  from "react-google-recaptcha";
+import {fetchConfigValue} from '@/lib/blogApi';
 
 const services = [
   "Accounting Services",
@@ -74,6 +75,21 @@ export const ContactForm = () => {
   const { country } = useCountry();
   const [isSubmitting, setIsSubmitting] = useState(false);
 
+const [siteKey, setSiteKey] = useState<string>("");
+
+useEffect(() => {
+  let mounted = true;
+  (async () => {
+    const key = await fetchConfigValue("VITE_SITE_KEY");
+    if (mounted) setSiteKey(key ?? "");
+  })();
+  return () => {
+    mounted = false;
+  };
+}, []);
+
+const hasSiteKey = siteKey.trim().length > 0;
+
   const getDefaultCountryCode = () => {
     switch (country) {
       case "uae":
@@ -103,7 +119,7 @@ export const ContactForm = () => {
   }, [country]);
 
   const recaptcha = useRef<any>(null);
-  const key = import.meta.env.VITE_SITE_KEY;
+  // const key = import.meta.env.VITE_SITE_KEY;
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -178,7 +194,7 @@ export const ContactForm = () => {
           />
         </div>
       </div>
-      
+
       <div className="space-y-2">
         <Label htmlFor="company">Company Name</Label>
         <div className="relative">
@@ -294,12 +310,11 @@ export const ContactForm = () => {
 
       {isBrowser && (
         <div className="w-full flex justify-center">
-          <div className="w-full flex justify-center">
-            <ReCAPTCHA
-              sitekey={key}
-              ref={recaptcha}
-            />
-          </div>
+          {hasSiteKey ? (
+            <ReCAPTCHA sitekey={siteKey.trim()} ref={recaptcha} />
+          ) : (
+            <div className="text-sm text-gray-500">Almost there! Captcha is loading…</div>
+          )}
         </div>
       )}
       <Button
@@ -309,7 +324,6 @@ export const ContactForm = () => {
       >
         {isSubmitting ? "Submitting..." : "Submit Request"}
       </Button>
-
     </form>
   );
 };

@@ -1,6 +1,6 @@
-import { supabase } from "@/integrations/supabase/client";
+// import { supabase } from "@/integrations/supabase/client";
 import { nanoid } from "nanoid";
-
+import { uploadBlogImageToApi } from "@/lib/blogApi";
 /**
  * Compress and convert image to WebP format
  */
@@ -56,32 +56,21 @@ export const uploadToSupabaseStorage = async (
   folder: string = "content-images"
 ): Promise<string> => {
   try {
-    // Compress image first
     const compressedBlob = await compressImage(file);
 
-    // Generate unique filename
     const timestamp = Date.now();
     const randomId = nanoid(10);
-    const fileName = `${folder}/${timestamp}_${randomId}.webp`;
+    const filename = `${timestamp}_${randomId}.webp`;
 
-    // Upload to Supabase Storage
-    const { data, error } = await supabase.storage
-      .from("blog-images")
-      .upload(fileName, compressedBlob, {
-        contentType: "image/webp",
-        cacheControl: "3600",
-        upsert: false,
-      });
+    const result = await uploadBlogImageToApi({
+      file: compressedBlob,
+      folder,
+      filename,
+    });
 
-    if (error) {
-      console.error("Upload error:", error);
-      throw new Error(`Upload failed: ${error.message}`);
-    }
-
-    // Get public URL
-    const {
-      data: { publicUrl },
-    } = supabase.storage.from("blog-images").getPublicUrl(fileName);
+    // Expect { publicUrl, path } from backend
+    const publicUrl = result?.publicUrl || result?.url;
+    if (!publicUrl) throw new Error("Upload succeeded but publicUrl missing");
 
     return publicUrl;
   } catch (error) {
@@ -93,29 +82,29 @@ export const uploadToSupabaseStorage = async (
 /**
  * Delete image from Supabase Storage
  */
-export const deleteFromSupabaseStorage = async (
-  imageUrl: string
-): Promise<void> => {
-  try {
-    // Extract filename from URL
-    const urlParts = imageUrl.split("/blog-images/");
-    if (urlParts.length < 2) {
-      throw new Error("Invalid image URL");
-    }
+// export const deleteFromSupabaseStorage = async (
+//   imageUrl: string
+// ): Promise<void> => {
+//   try {
+//     // Extract filename from URL
+//     const urlParts = imageUrl.split("/blog-images/");
+//     if (urlParts.length < 2) {
+//       throw new Error("Invalid image URL");
+//     }
 
-    const fileName = urlParts[1];
+//     const fileName = urlParts[1];
 
-    // Delete from storage
-    const { error } = await supabase.storage
-      .from("blog-images")
-      .remove([fileName]);
+//     // Delete from storage
+//     const { error } = await supabase.storage
+//       .from("blog-images")
+//       .remove([fileName]);
 
-    if (error) {
-      console.error("Delete error:", error);
-      throw new Error(`Delete failed: ${error.message}`);
-    }
-  } catch (error) {
-    console.error("Image delete error:", error);
-    throw error;
-  }
-};
+//     if (error) {
+//       console.error("Delete error:", error);
+//       throw new Error(`Delete failed: ${error.message}`);
+//     }
+//   } catch (error) {
+//     console.error("Image delete error:", error);
+//     throw error;
+//   }
+// };
