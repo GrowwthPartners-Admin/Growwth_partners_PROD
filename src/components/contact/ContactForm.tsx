@@ -22,7 +22,7 @@ import {
 } from "lucide-react";
 import { sendToContactApi, mapContactPagePayload } from "@/lib/contactApi";
 import  ReCAPTCHA  from "react-google-recaptcha";
-import {fetchConfigValue} from '@/lib/configApi';
+import {fetchConfigValue} from '@/lib/blogApi';
 
 const services = [
   "Accounting Services",

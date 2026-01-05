@@ -1,5 +1,5 @@
 import { useEffect, useState, useCallback } from "react";
-import { fetchBlogPostsListing } from "@/integrations/supabase/backendClient";
+import { fetchBlogPostsListing } from "@/lib/blogApi";
 
 export interface BlogPostListing {
   id: number;

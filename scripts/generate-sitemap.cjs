@@ -2,13 +2,13 @@ const { writeFileSync } = require("fs");
 const { join } = require("path");
 require("dotenv").config();
 
-const { createClient } = require("@supabase/supabase-js");
+// const { createClient } = require("@supabase/supabase-js");
 
 // Initialize with the same URL & key, via env
-const supabase = createClient(
-  process.env.SUPABASE_URL,
-  process.env.SUPABASE_ANON_KEY
-);
+// const supabase = createClient(
+//   process.env.SUPABASE_URL,
+//   process.env.SUPABASE_ANON_KEY
+// );
 
 // Define all static routes
 const staticRoutes = [
@@ -171,7 +171,7 @@ const staticRoutes = [
   { path: "/uae/about", priority: "0.8", changefreq: "weekly" },
   { path: "/uae/blog", priority: "0.7", changefreq: "daily" },
   { path: "/uae/contact-us", priority: "0.8", changefreq: "weekly" },
-  
+
   {
     path: "/uae/company-incorporation-services-in-uae",
     priority: "0.8",
@@ -212,7 +212,7 @@ const staticRoutes = [
   { path: "/au/about", priority: "0.8", changefreq: "weekly" },
   { path: "/au/blog", priority: "0.7", changefreq: "daily" },
   { path: "/au/contact-us", priority: "0.8", changefreq: "weekly" },
-  
+
   {
     path: "/au/company-incorporation-services-in-australia",
     priority: "0.8",
@@ -270,35 +270,64 @@ const staticRoutes = [
   },
 ];
 
+
 async function generateSitemap() {
   const outPath = join(__dirname, "..", "public", "sitemap.xml");
+  const BASE_API_URL = "https://api-growwth-dev.growwthpartners.in" || "https://api-growwth-prod.growwthpartners.in"
+
+  const SITEMAP_POSTS_URL = `${BASE_API_URL}/api/website/blog/public/sitemapPosts`;
 
   try {
-    // Create an abort signal with 15 second timeout
     const abortController = new AbortController();
     const timeoutId = setTimeout(() => abortController.abort(), 15000);
 
-    // Fetch blog posts with slugs and publish dates
-    const { data: posts, error } = await supabase
-      .from("blog_post")
-      .select("slug, publishdate")
-      .not("slug", "is", null)
-      .abortSignal(abortController.signal);
+    const res = await fetch(SITEMAP_POSTS_URL, {
+      method: "GET",
+      headers: { "Content-Type": "application/json" },
+      signal: abortController.signal,
+    });
 
     clearTimeout(timeoutId);
 
-    if (error) {
-      console.warn("⚠️  Supabase fetch error for sitemap:", error);
+    const text = await res.text();
+
+    if (!res.ok) {
+      console.warn(
+        "⚠️  Blog API fetch error for sitemap:",
+        res.status,
+        text.slice(0, 200)
+      );
       console.warn(
         "⚠️  Keeping existing sitemap.xml to allow build to continue"
       );
-      process.exit(0); // Exit successfully to allow build to proceed
+      process.exit(0);
     }
 
-    // Generate XML sitemap
+    let json;
+    try {
+      json = JSON.parse(text);
+    } catch (e) {
+      console.warn(
+        "⚠️  Blog API returned non-JSON for sitemap:",
+        text.slice(0, 200)
+      );
+      console.warn(
+        "⚠️  Keeping existing sitemap.xml to allow build to continue"
+      );
+      process.exit(0);
+    }
+
+    const posts = json?.data ?? json;
+    if (!Array.isArray(posts)) {
+      console.warn("⚠️  Blog API unexpected shape for sitemap:", json);
+      console.warn(
+        "⚠️  Keeping existing sitemap.xml to allow build to continue"
+      );
+      process.exit(0);
+    }
+
     const baseUrl = "https://growwthpartners.com";
 
-    // Static routes XML
     const staticUrlsXml = staticRoutes
       .map(
         (route) =>
@@ -310,23 +339,25 @@ async function generateSitemap() {
       )
       .join("\n");
 
-    // Blog posts XML (with lastmod dates)
     const blogPostsXml =
-      posts && posts.length > 0
+      posts.length > 0
         ? posts
-            .map(
-              (post) =>
-                `  <url>
-    <loc>${baseUrl}/blog/${post.slug}</loc>
-    <lastmod>${post.publishdate}</lastmod>
-    <changefreq>monthly</changefreq>
+            .map((post) => {
+              const slug = String(post.slug || "").trim();
+              const lastmod = String(post.publishdate || "").trim();
+
+              // If publishdate is empty, skip lastmod tag (valid sitemap)
+              return `  <url>
+    <loc>${baseUrl}/blog/${slug}</loc>
+${
+  lastmod ? `    <lastmod>${lastmod}</lastmod>\n` : ""
+}    <changefreq>monthly</changefreq>
     <priority>0.6</priority>
-  </url>`
-            )
+  </url>`;
+            })
             .join("\n")
         : "";
 
-    // Combine into final XML
     const sitemapXml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${staticUrlsXml}
@@ -334,15 +365,14 @@ ${blogPostsXml ? "\n" + blogPostsXml : ""}
 </urlset>`;
 
     writeFileSync(outPath, sitemapXml, "utf-8");
+
     console.log(
-      `✅ Successfully generated sitemap with ${
-        staticRoutes.length
-      } static pages and ${posts?.length || 0} blog posts`
+      `✅ Successfully generated sitemap with ${staticRoutes.length} static pages and ${posts.length} blog posts`
     );
   } catch (err) {
-    console.warn("⚠️  Failed to generate sitemap:", err.message);
+    console.warn("⚠️  Failed to generate sitemap:", err?.message || err);
     console.warn("⚠️  Keeping existing sitemap.xml to allow build to continue");
-    process.exit(0); // Exit successfully to allow build to proceed
+    process.exit(0);
   }
 }
 

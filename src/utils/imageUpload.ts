@@ -1,4 +1,4 @@
-import { supabase } from "@/integrations/supabase/client";
+// import { supabase } from "@/integrations/supabase/client";
 import { nanoid } from "nanoid";
 import { uploadBlogImageToApi } from "@/lib/blogApi";
 /**

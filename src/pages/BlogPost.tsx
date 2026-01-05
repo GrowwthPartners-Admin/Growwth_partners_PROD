@@ -11,7 +11,7 @@ import { ArrowRight, Share, Mail } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
 import SEOhelper from "@/components/SEOhelper";
 import { useCountry } from "@/contexts/CountryContext";
-import { supabase } from "@/integrations/supabase/client";
+// import { supabase } from "@/integrations/supabase/client";
 import postsData from "@/generated/posts.json";
 import { FAQSection } from "@/components/blog/FAQSection";
 import { Head } from "vite-react-ssg";

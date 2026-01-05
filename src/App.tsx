@@ -3,27 +3,27 @@ import { ClientOnly } from "vite-react-ssg";
 import type { RouteRecord } from "vite-react-ssg";
 import { Navigate } from "react-router-dom";
 import Layout from "./Layout";
-import { supabase } from "@/integrations/supabase/client";
+// import { supabase } from "@/integrations/supabase/client";
 import { CountryProvider } from "./contexts/CountryContext";
 
 // We need to lazy-load the BlogAdminPage component to ensure it's not eagerly imported on the server
 const BlogAdminPage = React.lazy(() => import("./pages/admin/BlogAdmin"));
 
-async function getBlogSlugs() {
-  try {
-    const { data: posts, error } = await supabase.from("blog_post").select("slug").not("slug", "is", null);
+// async function getBlogSlugs() {
+//   try {
+//     const { data: posts, error } = await supabase.from("blog_post").select("slug").not("slug", "is", null);
 
-    if (error) {
-      console.error("SSG slug fetch error", error);
-      return [];
-    }
+//     if (error) {
+//       console.error("SSG slug fetch error", error);
+//       return [];
+//     }
 
-    return posts.map((post) => `/blog/${post.slug}`);
-  } catch (error) {
-    console.error("Error fetching blog slugs:", error);
-    return [];
-  }
-}
+//     return posts.map((post) => `/blog/${post.slug}`);
+//   } catch (error) {
+//     console.error("Error fetching blog slugs:", error);
+//     return [];
+//   }
+// }
 
 // --- Static imports for non-lazy routes ---
 import NotFound from "./pages/NotFound";
@@ -1518,7 +1518,7 @@ export const routes: RouteRecord[] = [
         getStaticPaths: async () => {
           try {
             const BASE_API_URL =
-              process.env.VITE_API_URL || "http://localhost:8081";
+             import.meta.env.VITE_CONTACTAPI_DEVURL || import.meta.env.VITE_CONTACTAPI_PRODURL;
 
             const res = await fetch(
               `${BASE_API_URL}/api/website/blog/public/slugs`,
