@@ -2,7 +2,7 @@
 // Contact API integration for external endpoint
 const API_BASE = import.meta.env.VITE_CONTACTAPI_DEVURL || import.meta.env.VITE_CONTACTAPI_PRODURL
 
-const CONTACT_API_URL = `${API_BASE}/contact-growwth`;
+const CONTACT_API_URL = `${API_BASE}/api/contact-growwth`;
 
 interface ContactApiPayload {
   data: {
