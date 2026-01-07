@@ -191,13 +191,18 @@ const staticRoutes = [
     changefreq: "weekly",
   },
 
-    {
+  {
     path: "/virtual-finance-team",
     priority: "0.8",
     changefreq: "weekly",
   },
   {
     path: "/part-time-cfo-services",
+    priority: "0.8",
+    changefreq: "weekly",
+  },
+  {
+    path: "/fractional-cfo-services",
     priority: "0.8",
     changefreq: "weekly",
   },
@@ -249,6 +254,11 @@ const staticRoutes = [
   },
   {
     path: "/uae/part-time-cfo-services",
+    priority: "0.8",
+    changefreq: "weekly",
+  },
+  {
+    path: "/uae/fractional-cfo-services",
     priority: "0.8",
     changefreq: "weekly",
   },
@@ -321,6 +331,11 @@ const staticRoutes = [
   },
   {
     path: "/au/part-time-cfo-services",
+    priority: "0.8",
+    changefreq: "weekly",
+  },
+  {
+    path: "/au/fractional-cfo-services",
     priority: "0.8",
     changefreq: "weekly",
   },
