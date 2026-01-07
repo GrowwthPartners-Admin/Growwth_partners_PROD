@@ -500,6 +500,27 @@ export const routes: RouteRecord[] = [
         },
       },
       {
+        path: "part-time-cfo-services",
+        async lazy() {
+          const { default: Component } = await import("./pages/PartTimeCfoServices");
+          return { Component };
+        },
+      },
+      {
+        path: "uae/part-time-cfo-services",
+        async lazy() {
+          const { default: Component } = await import("./pages/PartTimeCfoServices");
+          return { Component };
+        },
+      },
+      {
+        path: "au/part-time-cfo-services",
+        async lazy() {
+          const { default: Component } = await import("./pages/PartTimeCfoServices");
+          return { Component };
+        },
+      },
+      {
         path: "part-time-finance-team",
         async lazy() {
           const { default: Component } = await import("./pages/PartTimeFinanceTeam");
