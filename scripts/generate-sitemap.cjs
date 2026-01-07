@@ -146,6 +146,11 @@ const staticRoutes = [
     changefreq: "weekly",
   },
   {
+    path: "/on-demand-cfo-services",
+    priority: "0.8",
+    changefreq: "weekly",
+  },
+  {
     path: "/outsourced-cfo-services",
     priority: "0.8",
     changefreq: "weekly",
@@ -231,6 +236,11 @@ const staticRoutes = [
     priority: "0.8",
     changefreq: "monthly",
   },
+  {
+    path: "/uae/on-demand-cfo-services",
+    priority: "0.8",
+    changefreq: "weekly",
+  },
 
   // Australia pages
   { path: "/au", priority: "1.0", changefreq: "daily" },
@@ -292,6 +302,11 @@ const staticRoutes = [
     path: "/au/ai-decision-intelligence-australia",
     priority: "0.8",
     changefreq: "monthly",
+  },
+  {
+    path: "/au/on-demand-cfo-services",
+    priority: "0.8",
+    changefreq: "weekly",
   },
 ];
 
