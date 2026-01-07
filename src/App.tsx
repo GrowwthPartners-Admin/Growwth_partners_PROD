@@ -626,6 +626,27 @@ export const routes: RouteRecord[] = [
         },
       },
       {
+        path: "virtual-cfo-services",
+        async lazy() {
+          const { default: Component } = await import("./pages/VirtualCfoServices");
+          return { Component };
+        },
+      },
+      {
+        path: "uae/virtual-cfo-services",
+        async lazy() {
+          const { default: Component } = await import("./pages/VirtualCfoServices");
+          return { Component };
+        },
+      },
+      {
+        path: "au/virtual-cfo-services",
+        async lazy() {
+          const { default: Component } = await import("./pages/VirtualCfoServices");
+          return { Component };
+        },
+      },
+      {
         path: "privacy-policy",
         async lazy() {
           const { default: Component } = await import("./pages/PrivacyPolicy");

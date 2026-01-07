@@ -206,6 +206,11 @@ const staticRoutes = [
     priority: "0.8",
     changefreq: "weekly",
   },
+  {
+    path: "/virtual-cfo-services",
+    priority: "0.8",
+    changefreq: "weekly",
+  },
 
   // UAE pages
   { path: "/uae", priority: "1.0", changefreq: "daily" },
@@ -259,6 +264,11 @@ const staticRoutes = [
   },
   {
     path: "/uae/fractional-cfo-services",
+    priority: "0.8",
+    changefreq: "weekly",
+  },
+  {
+    path: "/uae/virtual-cfo-services",
     priority: "0.8",
     changefreq: "weekly",
   },
@@ -336,6 +346,11 @@ const staticRoutes = [
   },
   {
     path: "/au/fractional-cfo-services",
+    priority: "0.8",
+    changefreq: "weekly",
+  },
+  {
+    path: "/au/virtual-cfo-services",
     priority: "0.8",
     changefreq: "weekly",
   },
