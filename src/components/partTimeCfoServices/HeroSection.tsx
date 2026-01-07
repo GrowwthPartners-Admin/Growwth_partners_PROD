@@ -63,8 +63,7 @@ const HeroSection = () => {
             </p>
 
             <p className="text-lg text-slate-400 mb-8 leading-relaxed">
-              Growwth Partners' Part-Time CFO services in Singapore provide experienced CFO-level leadership on a flexible basis, helping startups and SMEs gain financial control, improve decision-making, and scale sustainably—without full-time overhead.
-            </p>
+Growwth Partners offers part-time CFO services in Singapore, providing startups and SMEs with expert financial leadership to drive control, better decisions, and sustainable scaling—without the full-time cost            </p>
 
             <Button
               onClick={() =>
