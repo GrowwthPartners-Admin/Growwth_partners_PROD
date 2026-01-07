@@ -50,7 +50,7 @@ const CTASection = () => {
                     "_blank"
                   )
                 }
-                className="bg-brand-orange hover:bg-brand-orange/90 text-white rounded-full px-8 py-6 text-lg font-medium group"
+                className="bg-brand-orange hover:bg-brand-orange/90 text-white rounded-full px-8 py-6 text-lg font-medium group transition-all hover:scale-105"
               >
                 👉 Schedule a Free Part-Time CFO Consultation
                 <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />

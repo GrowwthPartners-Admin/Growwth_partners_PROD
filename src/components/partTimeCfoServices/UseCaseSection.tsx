@@ -23,7 +23,7 @@ const UseCaseSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="max-w-5xl mx-auto"
+          className="max-w-8xl mx-auto font-bold"
         >
           <div className="bg-white rounded-3xl shadow-xl overflow-hidden border border-gray-100">
             {/* Header */}
