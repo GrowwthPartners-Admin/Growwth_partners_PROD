@@ -54,7 +54,7 @@ const WhyFractionalSection = () => {
           </p>
         </motion.div>
 
-        <div className="max-w-5xl mx-auto">
+        <div className="max-w-8xl mx-auto">
           <div className="grid md:grid-cols-2 gap-6">
             {advantages.map((advantage, index) => (
               <motion.div
@@ -65,7 +65,7 @@ const WhyFractionalSection = () => {
                 transition={{ delay: index * 0.1 }}
                 className="group"
               >
-                <div className="bg-gradient-to-br from-slate-50 to-orange-50 rounded-2xl p-8 border border-slate-100 hover:border-orange-200 transition-all duration-300 h-full">
+                <div className="bg-gradient-to-br from-slate-50 to-orange-50 rounded-2xl p-8 border border-orange-200 transition-all duration-300 h-full">
                   <div className="flex items-start justify-between mb-6">
                     <div className="w-14 h-14 bg-gradient-to-br from-orange-500 to-amber-500 rounded-2xl flex items-center justify-center shadow-lg shadow-orange-500/20">
                       <advantage.icon className="w-7 h-7 text-white" />

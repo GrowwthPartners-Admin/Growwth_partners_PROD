@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Target, TrendingUp, FileText, Users, Zap, Calendar, BarChart3, DollarSign, PieChart, Settings, Sparkles } from "lucide-react";
+import { Target, TrendingUp, FileText, DollarSign, Sparkles } from "lucide-react";
 
 const HowWeDeliverSection = () => {
   const deliveryAreas = [
@@ -74,35 +74,85 @@ const HowWeDeliverSection = () => {
           </p>
         </motion.div>
 
-        <div className="max-w-7xl mx-auto">
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {deliveryAreas.map((area, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1, duration: 0.6 }}
-                className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 hover:border-white/20 transition-all group"
-              >
-                <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${area.color} flex items-center justify-center mb-5 group-hover:scale-110 transition-transform`}>
-                  <area.icon className="w-7 h-7 text-white" />
-                </div>
-                
-                <h3 className="text-xl font-bold text-white mb-4">
-                  {area.title}
-                </h3>
-                
-                <ul className="space-y-3">
-                  {area.items.map((item, idx) => (
-                    <li key={idx} className="flex items-start gap-3 text-slate-300">
-                      <div className="w-1.5 h-1.5 rounded-full bg-indigo-400 mt-2 flex-shrink-0" />
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </motion.div>
-            ))}
+        <div className="max-w-8xl mx-auto">
+          {/* 3 + 2 centered */}
+          <div className="space-y-6">
+            {/* Row 1 */}
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {deliveryAreas.slice(0, 3).map((area, index) => (
+                <motion.div
+                  key={area.title}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.1, duration: 0.6 }}
+                  className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 hover:border-white/20 transition-all group"
+                >
+                  <div
+                    className={`w-14 h-14 rounded-xl bg-gradient-to-br ${area.color} flex items-center justify-center mb-5 group-hover:scale-110 transition-transform`}
+                  >
+                    <area.icon className="w-7 h-7 text-white" />
+                  </div>
+
+                  <h3 className="text-xl font-bold text-white mb-4">
+                    {area.title}
+                  </h3>
+
+                  <ul className="space-y-3">
+                    {area.items.map((item, idx) => (
+                      <li
+                        key={idx}
+                        className="flex items-start gap-3 text-slate-300"
+                      >
+                        <div className="w-1.5 h-1.5 rounded-full bg-indigo-400 mt-2 flex-shrink-0" />
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </motion.div>
+              ))}
+            </div>
+
+            {/* Row 2 (centered) */}
+            <div className="flex flex-col lg:flex-row justify-center gap-6">
+              {deliveryAreas.slice(3).map((area, i) => {
+                const index = i + 3; // keep animation stagger consistent
+                return (
+                  <motion.div
+                    key={area.title}
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: index * 0.1, duration: 0.6 }}
+                    className="w-full lg:max-w-[520px]"
+                  >
+                    <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 hover:border-white/20 transition-all group h-full">
+                      <div
+                        className={`w-14 h-14 rounded-xl bg-gradient-to-br ${area.color} flex items-center justify-center mb-5 group-hover:scale-110 transition-transform`}
+                      >
+                        <area.icon className="w-7 h-7 text-white" />
+                      </div>
+
+                      <h3 className="text-xl font-bold text-white mb-4">
+                        {area.title}
+                      </h3>
+
+                      <ul className="space-y-3">
+                        {area.items.map((item, idx) => (
+                          <li
+                            key={idx}
+                            className="flex items-start gap-3 text-slate-300"
+                          >
+                            <div className="w-1.5 h-1.5 rounded-full bg-indigo-400 mt-2 flex-shrink-0" />
+                            <span>{item}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </motion.div>
+                );
+              })}
+            </div>
           </div>
         </div>
       </div>

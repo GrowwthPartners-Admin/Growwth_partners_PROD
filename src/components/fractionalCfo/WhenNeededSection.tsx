@@ -1,33 +1,41 @@
 import { motion } from "framer-motion";
-import { TrendingUp, Eye, Briefcase, Globe, Users, CheckCircle } from "lucide-react";
+import {
+  TrendingUp,
+  Eye,
+  Briefcase,
+  Globe,
+  Users,
+  CheckCircle,
+} from "lucide-react";
 
 const WhenNeededSection = () => {
   const scenarios = [
     {
       icon: TrendingUp,
       title: "Revenue Growing Faster Than Controls",
-      description: "Financial systems can't keep pace with business growth"
+      description: "Financial systems can't keep pace with business growth",
     },
     {
       icon: Eye,
       title: "Lack of Financial Visibility",
-      description: "Founders making decisions without clear financial data"
+      description: "Founders making decisions without clear financial data",
     },
     {
       icon: Briefcase,
       title: "Fundraising or Investor Discussions",
-      description: "Need investor-ready financials and due diligence support"
+      description: "Need investor-ready financials and due diligence support",
     },
     {
       icon: Globe,
       title: "Market Expansion Planned",
-      description: "Strategic financial guidance for new market entry"
+      description: "Strategic financial guidance for new market entry",
     },
     {
       icon: Users,
       title: "Finance Team Needs Senior Oversight",
-      description: "Existing teams require CFO-level leadership and direction"
-    }
+      description:
+        "Existing teams require CFO-level leadership and direction",
+    },
   ];
 
   return (
@@ -51,35 +59,73 @@ const WhenNeededSection = () => {
           </p>
         </motion.div>
 
-        <div className="max-w-5xl mx-auto">
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {scenarios.map((scenario, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="group"
-              >
-                <div className="bg-white rounded-2xl p-6 h-full shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-100 hover:border-orange-200">
-                  <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 bg-gradient-to-br from-orange-100 to-amber-100 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:from-orange-500 group-hover:to-amber-500 transition-all duration-300">
-                      <scenario.icon className="w-6 h-6 text-orange-600 group-hover:text-white transition-colors" />
-                    </div>
-                    <div>
-                      <h3 className="text-lg font-semibold text-slate-900 mb-2">
-                        {scenario.title}
-                      </h3>
-                      <p className="text-slate-600 text-sm">
-                        {scenario.description}
-                      </p>
+        <div className="max-w-8xl mx-auto">
+          {/* 3 + 2 centered */}
+          <div className="space-y-6">
+            {/* Row 1 */}
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {scenarios.slice(0, 3).map((scenario, index) => (
+                <motion.div
+                  key={scenario.title}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.1 }}
+                  className="group"
+                >
+                  <div className="bg-white rounded-2xl p-6 h-full shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-100 hover:border-orange-200">
+                    <div className="flex items-start gap-4">
+                      <div className="w-12 h-12 bg-gradient-to-br from-orange-100 to-amber-100 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:from-orange-500 group-hover:to-amber-500 transition-all duration-300">
+                        <scenario.icon className="w-6 h-6 text-orange-600 group-hover:text-white transition-colors" />
+                      </div>
+                      <div>
+                        <h3 className="text-lg font-semibold text-slate-900 mb-2">
+                          {scenario.title}
+                        </h3>
+                        <p className="text-slate-600 text-sm">
+                          {scenario.description}
+                        </p>
+                      </div>
                     </div>
                   </div>
-                </div>
-              </motion.div>
-            ))}
+                </motion.div>
+              ))}
+            </div>
+
+            {/* Row 2 (centered) */}
+            <div className="flex flex-col lg:flex-row justify-center gap-6">
+              {scenarios.slice(3).map((scenario, i) => {
+                const index = i + 3; // keep stagger continuous
+                return (
+                  <motion.div
+                    key={scenario.title}
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: index * 0.1 }}
+                    className="group w-full lg:max-w-[520px]"
+                  >
+                    <div className="bg-white rounded-2xl p-6 h-full shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-100 hover:border-orange-200">
+                      <div className="flex items-start gap-4">
+                        <div className="w-12 h-12 bg-gradient-to-br from-orange-100 to-amber-100 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:from-orange-500 group-hover:to-amber-500 transition-all duration-300">
+                          <scenario.icon className="w-6 h-6 text-orange-600 group-hover:text-white transition-colors" />
+                        </div>
+                        <div>
+                          <h3 className="text-lg font-semibold text-slate-900 mb-2">
+                            {scenario.title}
+                          </h3>
+                          <p className="text-slate-600 text-sm">
+                            {scenario.description}
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </motion.div>
+                );
+              })}
+            </div>
           </div>
+          {/* /3 + 2 centered */}
 
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -90,10 +136,14 @@ const WhenNeededSection = () => {
           >
             <div className="flex items-center gap-3 mb-4">
               <CheckCircle className="w-6 h-6 text-orange-500" />
-              <h3 className="text-xl font-bold text-slate-900">Ready for Fractional CFO Support?</h3>
+              <h3 className="text-xl font-bold text-slate-900">
+                Ready for Fractional CFO Support?
+              </h3>
             </div>
             <p className="text-slate-600">
-              If your business is at a growth inflection point and needs strategic financial leadership without the commitment of a full-time hire, Fractional CFO services provide the perfect solution.
+              If your business is at a growth inflection point and needs strategic
+              financial leadership without the commitment of a full-time hire,
+              Fractional CFO services provide the perfect solution.
             </p>
           </motion.div>
         </div>

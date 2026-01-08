@@ -1,6 +1,13 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Cloud, TrendingUp, BarChart3, Shield, Zap } from "lucide-react";
+import {
+  ArrowRight,
+  Cloud,
+  TrendingUp,
+  BarChart3,
+  Shield,
+  Zap,
+} from "lucide-react";
 
 const HeroSection = () => {
   return (
@@ -59,25 +66,29 @@ const HeroSection = () => {
               transition={{ delay: 0.2 }}
               className="inline-flex items-center gap-2 bg-indigo-500/20 border border-indigo-500/30 rounded-full px-4 py-2 mb-6"
             >
-              <Cloud className="w-4 h-4 text-indigo-400" />
-              <span className="text-indigo-300 text-sm font-medium">
+              <Cloud className="w-4 h-4 text-orange-400" />
+              <span className="text-orange-400 text-sm font-medium">
                 Your Finance, Simplified — Your Growth, Accelerated
               </span>
             </motion.div>
 
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
-              Virtual CFO Services in{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-400">
+              Virtual CFO <span className="text-brand-orange">Services</span> in{" "}
+              <span className="text-transparent font-bold bg-clip-text bg-gradient-to-r from-orange-500 to-orange-600">
                 Singapore
               </span>
             </h1>
 
             <p className="text-xl md:text-2xl text-slate-300 mb-6 font-light">
-              CFO-Level Financial Leadership Without the Cost of a Full-Time Hire
+              CFO-Level Financial Leadership Without the Cost of a Full-Time
+              Hire
             </p>
 
             <p className="text-lg text-slate-400 mb-8 leading-relaxed max-w-xl">
-              Growwth Partners' Virtual CFO services provide senior CFO expertise, strategic financial oversight, and AI-powered reporting—delivered remotely, efficiently, and at a fraction of the cost.
+              Growwth Partners' Virtual CFO services provide senior CFO
+              expertise, strategic financial oversight, and AI-powered
+              reporting—delivered remotely, efficiently, and at a fraction of
+              the cost.
             </p>
 
             <motion.div
@@ -87,8 +98,13 @@ const HeroSection = () => {
             >
               <Button
                 size="lg"
-                className="bg-gradient-to-r from-indigo-500 to-purple-500 hover:from-indigo-600 hover:to-purple-600 text-white px-8 py-6 text-lg rounded-full shadow-lg shadow-indigo-500/25 hover:shadow-indigo-500/40 transition-all duration-300"
-                onClick={() => window.open("https://calendly.com/growwth-partners/30min", "_blank")}
+                className="bg-gradient-to-r from-orange-500 to-orange-500 hover:from-orange-500 hover:to-orange-600 text-white px-8 py-6 font-bold text-lg rounded-full shadow-lg shadow-indigo-500/25 hover:shadow-indigo-500/40 transition-all duration-300 hover:scale-105"
+                onClick={() =>
+                  window.open(
+                    "https://calendly.com/jd-growwthpartners/15min?month=2025-11",
+                    "_blank"
+                  )
+                }
               >
                 Schedule a CFO Strategy Call
                 <ArrowRight className="ml-2 w-5 h-5" />
@@ -104,16 +120,32 @@ const HeroSection = () => {
             className="relative"
           >
             <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-3xl p-8 border border-white/10 shadow-2xl">
-              <h3 className="text-2xl font-bold text-white mb-6">
+              <h3 className="text-2xl font-bold text-orange-500 mb-6">
                 What a Virtual CFO Delivers
               </h3>
-              
+
               <div className="space-y-4">
                 {[
-                  { icon: TrendingUp, text: "Forward-Looking Financial Planning", color: "text-indigo-400" },
-                  { icon: BarChart3, text: "Cash Flow & Runway Control", color: "text-purple-400" },
-                  { icon: Shield, text: "Strategic Decision-Making", color: "text-cyan-400" },
-                  { icon: Zap, text: "Investor & Board-Level Reporting", color: "text-pink-400" },
+                  {
+                    icon: TrendingUp,
+                    text: "Forward-Looking Financial Planning",
+                    color: "text-indigo-400",
+                  },
+                  {
+                    icon: BarChart3,
+                    text: "Cash Flow & Runway Control",
+                    color: "text-purple-400",
+                  },
+                  {
+                    icon: Shield,
+                    text: "Strategic Decision-Making",
+                    color: "text-cyan-400",
+                  },
+                  {
+                    icon: Zap,
+                    text: "Investor & Board-Level Reporting",
+                    color: "text-pink-400",
+                  },
                 ].map((item, index) => (
                   <motion.div
                     key={index}
@@ -125,7 +157,9 @@ const HeroSection = () => {
                     <div className={`p-2 rounded-lg bg-white/10 ${item.color}`}>
                       <item.icon className="w-5 h-5" />
                     </div>
-                    <span className="text-slate-200 font-medium">{item.text}</span>
+                    <span className="text-slate-200 font-medium">
+                      {item.text}
+                    </span>
                   </motion.div>
                 ))}
               </div>
@@ -133,12 +167,18 @@ const HeroSection = () => {
               <div className="mt-8 pt-6 border-t border-white/10">
                 <div className="grid grid-cols-2 gap-4">
                   <div className="text-center">
-                    <div className="text-3xl font-bold text-indigo-400">Remote</div>
-                    <div className="text-slate-400 text-sm">Delivery Model</div>
+                    <div className="text-3xl font-bold text-orange-400">
+                      Remote
+                    </div>
+                    <div className="text-yellow-400 text-sm">
+                      Delivery Model
+                    </div>
                   </div>
                   <div className="text-center">
-                    <div className="text-3xl font-bold text-purple-400">AI-Powered</div>
-                    <div className="text-slate-400 text-sm">Workflows</div>
+                    <div className="text-3xl font-bold text-orange-400">
+                      AI-Powered
+                    </div>
+                    <div className="text-yellow-400 text-sm">Workflows</div>
                   </div>
                 </div>
               </div>

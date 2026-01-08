@@ -66,8 +66,7 @@ const HeroSection = () => {
             </p>
 
             <p className="text-lg text-slate-400 mb-8 leading-relaxed max-w-xl">
-              Growwth Partners' Fractional CFO services deliver executive-level financial leadership on a part-time basis—designed for businesses that need strategic control, disciplined forecasting, and investor-ready reporting without full-time overhead.
-            </p>
+Fractional CFO services for strategic growth: get executive financial control, disciplined forecasting, and investor-ready reporting without the full-time overhead            </p>
 
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -77,7 +76,7 @@ const HeroSection = () => {
               <Button
                 size="lg"
                 className="bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white px-8 py-6 text-lg rounded-full shadow-lg shadow-orange-500/25 hover:shadow-orange-500/40 transition-all duration-300"
-                onClick={() => window.open("https://calendly.com/growwth-partners/30min", "_blank")}
+                onClick={() => window.open('https://calendly.com/jd-growwthpartners/15min?month=2025-11', '_blank')}
               >
                 Speak to a Fractional CFO
                 <ArrowRight className="ml-2 w-5 h-5" />

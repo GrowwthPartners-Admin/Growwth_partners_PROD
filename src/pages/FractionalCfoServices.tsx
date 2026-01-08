@@ -27,33 +27,59 @@ const FractionalCfoServices = () => {
     }
   ];
 
-  const structuredData = {
+const structuredData = {
     "@context": "https://schema.org",
-    "@type": "Service",
-    "name": "Fractional CFO Services Singapore",
-    "provider": {
-      "@type": "Organization",
-      "name": "Growwth Partners"
-    },
-    "description": "Growwth Partners provides Fractional CFO services for startups and SMEs. Expert strategy, forecasting, reporting, and investor support—flexible and cost-efficient.",
-    "areaServed": {
-      "@type": "Country",
-      "name": "Singapore"
-    },
-    "serviceType": "Fractional CFO Services"
-  };
-
-  const faqStructuredData = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": faqs.map(faq => ({
-      "@type": "Question",
-      "name": faq.question,
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": faq.answer
-      }
-    }))
+    "@graph": [
+      {
+        "@type": "FAQPage",
+        "@id": "https://growwthpartners.com/fractional-cfo-services/#faq",
+        mainEntity: faqs.map((faq) => ({
+          "@type": "Question",
+          name: faq.question,
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: faq.answer,
+          },
+        })),
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://growwthpartners.com/#organization",
+        name: "Growwth Partners",
+        url: "https://growwthpartners.com",
+        areaServed: ["Singapore", "United Arab Emirates", "Australia"],
+        serviceArea: [
+          {
+            "@type": "AdministrativeArea",
+            name: "Singapore",
+          },
+          {
+            "@type": "Country",
+            name: "United Arab Emirates",
+          },
+          {
+            "@type": "Country",
+            name: "Australia",
+          },
+        ],
+        contactPoint: [
+          {
+            "@type": "ContactPoint",
+            email: "jd@growwthpartners.com",
+            telephone: "+65 9861 5600",
+            contactType: "business",
+            areaServed: "SG",
+          },
+        ],
+        address: {
+          "@type": "PostalAddress",
+          streetAddress: "65 Chulia Street",
+          addressLocality: "Singapore",
+          postalCode: "049513",
+          addressCountry: "SG",
+        },
+      },
+    ],
   };
 
   return (
@@ -62,11 +88,9 @@ const FractionalCfoServices = () => {
         title="Fractional CFO Services in Singapore | Flexible, Expert Financial Leadership"
         description="Growwth Partners provides Fractional CFO services for startups and SMEs. Expert strategy, forecasting, reporting, and investor support—flexible and cost-efficient."
         keywords="fractional CFO services Singapore, hire fractional CFO, part-time CFO Singapore, outsourced CFO Singapore, strategic finance support"
+        canonicalUrl="https://growwthpartners.com/fractional-cfo-services"
         structuredData={structuredData}
       />
-      <script type="application/ld+json">
-        {JSON.stringify(faqStructuredData)}
-      </script>
       <Navbar />
       <main>
         <HeroSection />
