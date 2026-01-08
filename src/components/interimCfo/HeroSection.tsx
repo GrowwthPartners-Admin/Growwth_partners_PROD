@@ -33,12 +33,12 @@ const HeroSection = () => {
           </h1>
 
           {/* Subheading */}
-          <p className="text-xl md:text-2xl text-white/90 font-medium mb-6 max-w-4xl mx-auto leading-relaxed">
+          <p className="text-xl md:text-2xl text-white font-medium mb-6 max-w-4xl mx-auto leading-relaxed">
             Stabilise Financial Leadership During Transitions, Turnarounds, and High-Risk Phases
           </p>
 
           {/* Description */}
-          <p className="text-lg text-white/70 mb-12 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-lg text-gray-200 mb-12 max-w-3xl mx-auto leading-relaxed">
             Growwth Partners' Interim CFO services in Singapore provide immediate, hands-on CFO leadership 
             to stabilise finance operations, restore control, and guide the business safely through 
             transition—until a permanent solution is in place.
@@ -72,7 +72,7 @@ const HeroSection = () => {
                   <stat.icon className="w-6 h-6 text-orange-400" />
                 </div>
                 <div className="text-3xl font-bold text-white mb-1">{stat.value}</div>
-                <div className="text-white/60 text-sm font-medium">{stat.label}</div>
+                <div className="text-gray-300 text-sm font-medium">{stat.label}</div>
               </div>
             ))}
           </div>

@@ -31,7 +31,7 @@ const CTASection = () => {
           </h2>
 
           {/* Description */}
-          <p className="text-xl text-gray-300 mb-10 max-w-2xl mx-auto">
+          <p className="text-xl text-gray-100 mb-10 max-w-2xl mx-auto">
             Don't let leadership gaps threaten your business stability. 
             Get experienced Interim CFO support deployed within days.
           </p>
@@ -50,20 +50,20 @@ const CTASection = () => {
           </div>
 
           {/* Trust Badges */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-6 text-gray-400">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-6 text-gray-100">
             <div className="flex items-center gap-2">
-              <Clock className="w-5 h-5 text-orange-400" />
-              <span>24-48hr Deployment</span>
+              <Clock className="w-5 h-5 text-orange-300" />
+              <span className="font-medium">24-48hr Deployment</span>
             </div>
-            <div className="hidden sm:block w-1 h-1 bg-gray-600 rounded-full" />
+            <div className="hidden sm:block w-1.5 h-1.5 bg-orange-400 rounded-full" />
             <div className="flex items-center gap-2">
-              <Shield className="w-5 h-5 text-orange-400" />
-              <span>Proven Track Record</span>
+              <Shield className="w-5 h-5 text-orange-300" />
+              <span className="font-medium">Proven Track Record</span>
             </div>
-            <div className="hidden sm:block w-1 h-1 bg-gray-600 rounded-full" />
+            <div className="hidden sm:block w-1.5 h-1.5 bg-orange-400 rounded-full" />
             <div className="flex items-center gap-2">
-              <Phone className="w-5 h-5 text-orange-400" />
-              <span>Free Consultation</span>
+              <Phone className="w-5 h-5 text-orange-300" />
+              <span className="font-medium">Free Consultation</span>
             </div>
           </div>
         </div>

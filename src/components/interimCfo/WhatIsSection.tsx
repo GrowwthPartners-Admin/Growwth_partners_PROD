@@ -94,22 +94,22 @@ const WhatIsSection = () => {
                       <p className="text-orange-300 font-medium mb-6">Execution-Focused Leadership</p>
                       
                       {/* Description */}
-                      <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-5 border border-white/10 mb-6">
-                        <p className="text-gray-300 leading-relaxed">
-                          Unlike advisory roles, an <span className="text-orange-400 font-semibold">Interim CFO</span> is 
+                      <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-5 border border-white/20 mb-6">
+                        <p className="text-gray-100 leading-relaxed">
+                          Unlike advisory roles, an <span className="text-orange-300 font-semibold">Interim CFO</span> is 
                           operational, accountable, and execution-focused.
                         </p>
                       </div>
                       
                       {/* Stats Grid */}
                       <div className="grid grid-cols-2 gap-4">
-                        <div className="bg-gradient-to-br from-orange-500/10 to-amber-500/10 rounded-xl p-5 text-center border border-orange-500/20">
+                        <div className="bg-gradient-to-br from-orange-500/20 to-amber-500/20 rounded-xl p-5 text-center border border-orange-400/30">
                           <div className="text-2xl font-bold text-white mb-1">Full</div>
-                          <div className="text-sm text-orange-300/80">Ownership</div>
+                          <div className="text-sm text-orange-200">Ownership</div>
                         </div>
-                        <div className="bg-gradient-to-br from-amber-500/10 to-orange-500/10 rounded-xl p-5 text-center border border-amber-500/20">
+                        <div className="bg-gradient-to-br from-amber-500/20 to-orange-500/20 rounded-xl p-5 text-center border border-amber-400/30">
                           <div className="text-2xl font-bold text-white mb-1">Hands-On</div>
-                          <div className="text-sm text-amber-300/80">Leadership</div>
+                          <div className="text-sm text-amber-200">Leadership</div>
                         </div>
                       </div>
                     </div>

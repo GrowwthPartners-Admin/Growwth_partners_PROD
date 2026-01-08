@@ -72,7 +72,7 @@ const WhyChooseSection = () => {
                   <reason.icon className="w-7 h-7 text-white" />
                 </div>
                 <h3 className="text-xl font-bold text-white mb-3">{reason.title}</h3>
-                <p className="text-gray-400 leading-relaxed">{reason.description}</p>
+                <p className="text-gray-200 leading-relaxed">{reason.description}</p>
               </div>
             ))}
           </div>
