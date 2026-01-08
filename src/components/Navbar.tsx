@@ -41,6 +41,7 @@ const navItems = [
       { title: "Part-Time CFO Services", path: "/part-time-cfo-services" },
       { title: "Fractional CFO Services", path: "/fractional-cfo-services" },
       { title: "Virtual CFO Services", path: "/virtual-cfo-services" },
+      { title: "Interim CFO Services", path: "/interim-cfo-services" },
       { title: "Outsourced CFO Services", path: "/outsourced-cfo-services" },
       { title: "Startup CFO Services", path: "/startup-cfo-services" },
       { title: "SME CFO Services", path: "/sme-cfo-services" },
