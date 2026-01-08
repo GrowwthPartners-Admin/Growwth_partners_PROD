@@ -36,7 +36,7 @@ const ChallengesSection = () => {
           </p>
         </motion.div>
 
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-8xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-8">
             {/* Risks Column */}
             <motion.div
@@ -63,7 +63,7 @@ const ChallengesSection = () => {
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: index * 0.1 }}
-                    className="flex items-center gap-4 p-4 bg-white/80 rounded-xl"
+                    className="flex items-center gap-4 p-4 bg-white/80 rounded-xl shadow"
                   >
                     <div className="w-10 h-10 bg-red-100 rounded-lg flex items-center justify-center flex-shrink-0">
                       <risk.icon className="w-5 h-5 text-red-600" />
@@ -103,7 +103,7 @@ const ChallengesSection = () => {
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: index * 0.1 }}
-                    className="flex items-center gap-4 p-4 bg-white/80 rounded-xl"
+                    className="flex items-center gap-4 p-4 bg-white/80 rounded-xl shadow"
                   >
                     <div className="w-10 h-10 bg-emerald-100 rounded-lg flex items-center justify-center flex-shrink-0">
                       <benefit.icon className="w-5 h-5 text-emerald-600" />

@@ -20,13 +20,13 @@ const UseCaseSection = () => {
           </p>
         </motion.div>
 
-        <div className="max-w-5xl mx-auto">
+        <div className="max-w-8xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="bg-white rounded-3xl shadow-2xl overflow-hidden border border-slate-100"
+            className="bg-white rounded-3xl shadow-2xl overflow-hidden border border-slate-100 font-bold"
           >
             {/* Header */}
             <div className="bg-gradient-to-r from-indigo-600 to-purple-600 p-8 text-white">
