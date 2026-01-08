@@ -521,6 +521,27 @@ export const routes: RouteRecord[] = [
         },
       },
       {
+        path: "fractional-cfo-services",
+        async lazy() {
+          const { default: Component } = await import("./pages/FractionalCfoServices");
+          return { Component };
+        },
+      },
+      {
+        path: "uae/fractional-cfo-services",
+        async lazy() {
+          const { default: Component } = await import("./pages/FractionalCfoServices");
+          return { Component };
+        },
+      },
+      {
+        path: "au/fractional-cfo-services",
+        async lazy() {
+          const { default: Component } = await import("./pages/FractionalCfoServices");
+          return { Component };
+        },
+      },
+      {
         path: "part-time-finance-team",
         async lazy() {
           const { default: Component } = await import("./pages/PartTimeFinanceTeam");
@@ -601,6 +622,27 @@ export const routes: RouteRecord[] = [
         path: "au/outsourced-payroll",
         async lazy() {
           const { default: Component } = await import("./pages/OutsourcedPayroll");
+          return { Component };
+        },
+      },
+      {
+        path: "virtual-cfo-services",
+        async lazy() {
+          const { default: Component } = await import("./pages/VirtualCfoServices");
+          return { Component };
+        },
+      },
+      {
+        path: "uae/virtual-cfo-services",
+        async lazy() {
+          const { default: Component } = await import("./pages/VirtualCfoServices");
+          return { Component };
+        },
+      },
+      {
+        path: "au/virtual-cfo-services",
+        async lazy() {
+          const { default: Component } = await import("./pages/VirtualCfoServices");
           return { Component };
         },
       },
