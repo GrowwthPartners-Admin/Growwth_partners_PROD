@@ -34,6 +34,7 @@ const navItems = [
       { title: "Banking Solutions", path: "/simplified-banking-solutions" },
       { title: "Tech Startup Accounting", path: "/accounting-for-tech-start-ups-companies" },
       { title: "Ecommerce Accounting", path: "/ecommerce-accounting-services" },
+      { title: "Ecommerce Finance Services", path: "/ecommerce-finance-services" },
       { title: "Fintech Finance Services", path: "/fintech-finance" },
       { title: "Tech Business Finance", path: "/tech-business-finance" },
       { title: "SaaS Finance Services", path: "/saas-finance" },
