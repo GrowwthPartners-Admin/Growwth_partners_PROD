@@ -40,12 +40,12 @@ const UseCaseSection = () => {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <span className="inline-block px-4 py-2 bg-emerald-100 text-emerald-700 rounded-full text-sm font-semibold mb-4">
+            <span className="inline-block px-4 py-2 bg-orange-100 text-orange-700 rounded-full text-sm font-semibold mb-4">
               Real Results
             </span>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900">
               Practical{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-500 to-teal-500">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-amber-500">
                 Use Case
               </span>
             </h2>
@@ -59,13 +59,13 @@ const UseCaseSection = () => {
             className="bg-white rounded-3xl shadow-xl overflow-hidden border border-gray-100"
           >
             {/* Client Header */}
-            <div className="bg-gradient-to-r from-emerald-600 to-teal-600 p-6 text-white">
+            <div className="bg-gradient-to-r from-orange-600 to-amber-600 p-6 text-white">
               <div className="flex items-center gap-4">
                 <div className="p-3 bg-white/20 rounded-xl">
                   <Building2 className="w-8 h-8 text-white" />
                 </div>
                 <div>
-                  <p className="text-emerald-100 text-sm font-medium">Client Type</p>
+                  <p className="text-orange-100 text-sm font-medium">Client Type</p>
                   <h3 className="text-xl font-bold">D2C Ecommerce Brand (Singapore)</h3>
                 </div>
               </div>
@@ -92,13 +92,13 @@ const UseCaseSection = () => {
                 {/* Solutions */}
                 <div>
                   <div className="flex items-center gap-2 mb-4">
-                    <Wrench className="w-5 h-5 text-emerald-500" />
+                    <Wrench className="w-5 h-5 text-orange-500" />
                     <h4 className="font-bold text-gray-900">Our Solution</h4>
                   </div>
                   <ul className="space-y-3">
                     {solutions.map((solution, index) => (
                       <li key={index} className="flex items-start gap-2 text-sm text-gray-600">
-                        <CheckCircle2 className="w-4 h-4 text-emerald-500 mt-0.5 shrink-0" />
+                        <CheckCircle2 className="w-4 h-4 text-orange-500 mt-0.5 shrink-0" />
                         {solution}
                       </li>
                     ))}
@@ -108,13 +108,13 @@ const UseCaseSection = () => {
                 {/* Outcomes */}
                 <div>
                   <div className="flex items-center gap-2 mb-4">
-                    <TrendingUp className="w-5 h-5 text-teal-500" />
+                    <TrendingUp className="w-5 h-5 text-amber-500" />
                     <h4 className="font-bold text-gray-900">Outcome</h4>
                   </div>
                   <ul className="space-y-3">
                     {outcomes.map((outcome, index) => (
                       <li key={index} className="flex items-start gap-2 text-sm text-gray-600">
-                        <outcome.icon className="w-4 h-4 text-teal-500 mt-0.5 shrink-0" />
+                        <outcome.icon className="w-4 h-4 text-amber-500 mt-0.5 shrink-0" />
                         {outcome.text}
                       </li>
                     ))}

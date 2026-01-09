@@ -81,10 +81,10 @@ const ChallengesSection = () => {
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
             >
-              <div className="bg-gradient-to-br from-emerald-600/20 to-teal-600/20 rounded-3xl p-8 border border-emerald-500/20">
+              <div className="bg-gradient-to-br from-orange-600/20 to-amber-600/20 rounded-3xl p-8 border border-orange-500/20">
                 <div className="flex items-center gap-3 mb-6">
-                  <div className="p-3 bg-emerald-500/20 rounded-xl">
-                    <Sparkles className="w-6 h-6 text-emerald-400" />
+                  <div className="p-3 bg-orange-500/20 rounded-xl">
+                    <Sparkles className="w-6 h-6 text-orange-400" />
                   </div>
                   <h2 className="text-2xl md:text-3xl font-bold text-white">
                     What You Get With Us
@@ -103,9 +103,9 @@ const ChallengesSection = () => {
                       whileInView={{ opacity: 1, x: 0 }}
                       viewport={{ once: true }}
                       transition={{ delay: 0.3 + index * 0.1 }}
-                      className="flex items-center gap-4 p-4 bg-white/5 rounded-xl border border-emerald-500/20 hover:border-emerald-400/40 transition-colors"
+                      className="flex items-center gap-4 p-4 bg-white/5 rounded-xl border border-orange-500/20 hover:border-orange-400/40 transition-colors"
                     >
-                      <CheckCircle className="w-5 h-5 text-emerald-400 shrink-0" />
+                      <CheckCircle className="w-5 h-5 text-orange-400 shrink-0" />
                       <span className="text-gray-100">{benefit}</span>
                     </motion.div>
                   ))}

@@ -14,12 +14,12 @@ const HeroSection = () => {
   ];
 
   return (
-    <section className="relative min-h-[90vh] flex items-center bg-gradient-to-br from-slate-900 via-slate-800 to-emerald-900 overflow-hidden">
+    <section className="relative min-h-[90vh] flex items-center bg-gradient-to-br from-slate-900 via-slate-800 to-orange-900 overflow-hidden">
       {/* Animated Background Elements */}
       <div className="absolute inset-0">
-        <div className="absolute top-20 left-10 w-72 h-72 bg-emerald-500/20 rounded-full blur-3xl animate-pulse" />
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-teal-500/15 rounded-full blur-3xl animate-pulse delay-1000" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-r from-emerald-600/10 to-teal-600/10 rounded-full blur-3xl" />
+        <div className="absolute top-20 left-10 w-72 h-72 bg-orange-500/20 rounded-full blur-3xl animate-pulse" />
+        <div className="absolute bottom-20 right-10 w-96 h-96 bg-amber-500/15 rounded-full blur-3xl animate-pulse delay-1000" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-r from-orange-600/10 to-amber-600/10 rounded-full blur-3xl" />
         
         {/* Grid Pattern */}
         <div 
@@ -38,7 +38,7 @@ const HeroSection = () => {
         className="absolute top-32 right-[15%] hidden lg:block"
       >
         <div className="p-4 bg-white/10 backdrop-blur-sm rounded-2xl border border-white/20">
-          <ShoppingCart className="w-8 h-8 text-emerald-400" />
+          <ShoppingCart className="w-8 h-8 text-orange-400" />
         </div>
       </motion.div>
 
@@ -48,7 +48,7 @@ const HeroSection = () => {
         className="absolute bottom-40 left-[10%] hidden lg:block"
       >
         <div className="p-4 bg-white/10 backdrop-blur-sm rounded-2xl border border-white/20">
-          <BarChart3 className="w-8 h-8 text-teal-400" />
+          <BarChart3 className="w-8 h-8 text-amber-400" />
         </div>
       </motion.div>
 
@@ -66,15 +66,15 @@ const HeroSection = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="inline-flex items-center gap-2 px-4 py-2 bg-emerald-500/20 border border-emerald-400/30 rounded-full mb-6"
+              className="inline-flex items-center gap-2 px-4 py-2 bg-orange-500/20 border border-orange-400/30 rounded-full mb-6"
             >
-              <TrendingUp className="w-4 h-4 text-emerald-400" />
-              <span className="text-emerald-300 text-sm font-medium">Ecommerce Finance Experts</span>
+              <TrendingUp className="w-4 h-4 text-orange-400" />
+              <span className="text-orange-300 text-sm font-medium">Ecommerce Finance Experts</span>
             </motion.div>
 
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
               Ecommerce Finance Services in{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-400">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-amber-400">
                 Singapore
               </span>
             </h1>
@@ -87,7 +87,7 @@ const HeroSection = () => {
               <Button 
                 onClick={() => setContactModalOpen(true)}
                 size="lg"
-                className="bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-600 hover:to-teal-600 text-white px-8 py-6 text-lg font-semibold shadow-lg shadow-emerald-500/25"
+                className="bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white px-8 py-6 text-lg font-semibold shadow-lg shadow-orange-500/25"
               >
                 Speak to an Ecommerce Finance Expert
                 <ArrowRight className="ml-2 w-5 h-5" />
@@ -122,8 +122,8 @@ const HeroSection = () => {
               {/* Main Card */}
               <div className="bg-white/10 backdrop-blur-lg rounded-3xl p-8 border border-white/20 shadow-2xl">
                 <div className="flex items-center gap-4 mb-6">
-                  <div className="p-3 bg-emerald-500/20 rounded-xl">
-                    <DollarSign className="w-8 h-8 text-emerald-400" />
+                  <div className="p-3 bg-orange-500/20 rounded-xl">
+                    <DollarSign className="w-8 h-8 text-orange-400" />
                   </div>
                   <div>
                     <h3 className="text-white font-semibold text-lg">SKU Profitability Dashboard</h3>
@@ -134,10 +134,10 @@ const HeroSection = () => {
                 {/* Mock Chart Bars */}
                 <div className="space-y-4">
                   {[
-                    { name: "Product A", margin: 85, color: "bg-emerald-400" },
-                    { name: "Product B", margin: 72, color: "bg-teal-400" },
-                    { name: "Product C", margin: 58, color: "bg-cyan-400" },
-                    { name: "Product D", margin: 45, color: "bg-emerald-300" },
+                    { name: "Product A", margin: 85, color: "bg-orange-400" },
+                    { name: "Product B", margin: 72, color: "bg-amber-400" },
+                    { name: "Product C", margin: 58, color: "bg-yellow-400" },
+                    { name: "Product D", margin: 45, color: "bg-orange-300" },
                   ].map((item, idx) => (
                     <div key={idx} className="space-y-1">
                       <div className="flex justify-between text-sm">
@@ -159,11 +159,11 @@ const HeroSection = () => {
                 {/* Bottom Stats */}
                 <div className="grid grid-cols-2 gap-4 mt-6 pt-6 border-t border-white/10">
                   <div className="text-center">
-                    <div className="text-2xl font-bold text-emerald-400">$2.4M</div>
+                    <div className="text-2xl font-bold text-orange-400">$2.4M</div>
                     <div className="text-xs text-gray-400">Monthly Revenue</div>
                   </div>
                   <div className="text-center">
-                    <div className="text-2xl font-bold text-teal-400">32%</div>
+                    <div className="text-2xl font-bold text-amber-400">32%</div>
                     <div className="text-xs text-gray-400">Avg. Margin</div>
                   </div>
                 </div>
@@ -176,12 +176,12 @@ const HeroSection = () => {
                 className="absolute -bottom-6 -left-6 bg-white rounded-2xl p-4 shadow-xl"
               >
                 <div className="flex items-center gap-3">
-                  <div className="p-2 bg-emerald-100 rounded-lg">
-                    <TrendingUp className="w-5 h-5 text-emerald-600" />
+                  <div className="p-2 bg-orange-100 rounded-lg">
+                    <TrendingUp className="w-5 h-5 text-orange-600" />
                   </div>
                   <div>
                     <div className="text-sm font-semibold text-gray-800">Cash Flow</div>
-                    <div className="text-xs text-emerald-600">+24% this month</div>
+                    <div className="text-xs text-orange-600">+24% this month</div>
                   </div>
                 </div>
               </motion.div>

@@ -85,12 +85,12 @@ const HowWeDeliverSection = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <span className="inline-block px-4 py-2 bg-emerald-100 text-emerald-700 rounded-full text-sm font-semibold mb-4">
+            <span className="inline-block px-4 py-2 bg-orange-100 text-orange-700 rounded-full text-sm font-semibold mb-4">
               Our Approach
             </span>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
               How Growwth Partners Delivers{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-500 to-teal-500">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-amber-500">
                 Ecommerce Finance Value
               </span>
             </h2>
@@ -109,20 +109,20 @@ const HowWeDeliverSection = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="group relative bg-gray-50 hover:bg-white rounded-2xl p-6 border border-gray-100 hover:border-emerald-200 hover:shadow-xl transition-all duration-300"
+                className="group relative bg-gray-50 hover:bg-white rounded-2xl p-6 border border-gray-100 hover:border-orange-200 hover:shadow-xl transition-all duration-300"
               >
                 {/* Number Badge */}
-                <div className="absolute top-4 right-4 text-4xl font-bold text-gray-100 group-hover:text-emerald-100 transition-colors">
+                <div className="absolute top-4 right-4 text-4xl font-bold text-gray-100 group-hover:text-orange-100 transition-colors">
                   {item.number}
                 </div>
 
                 {/* Icon */}
-                <div className="p-3 bg-emerald-100 rounded-xl inline-block mb-4 group-hover:bg-emerald-200 transition-colors">
-                  <item.icon className="w-6 h-6 text-emerald-600" />
+                <div className="p-3 bg-orange-100 rounded-xl inline-block mb-4 group-hover:bg-orange-200 transition-colors">
+                  <item.icon className="w-6 h-6 text-orange-600" />
                 </div>
 
                 {/* Title */}
-                <h3 className="font-bold text-gray-900 mb-4 group-hover:text-emerald-700 transition-colors pr-12">
+                <h3 className="font-bold text-gray-900 mb-4 group-hover:text-orange-700 transition-colors pr-12">
                   {item.title}
                 </h3>
 
@@ -130,7 +130,7 @@ const HowWeDeliverSection = () => {
                 <ul className="space-y-2">
                   {item.items.map((listItem, idx) => (
                     <li key={idx} className="flex items-start gap-2 text-sm text-gray-600">
-                      <ArrowRight className="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" />
+                      <ArrowRight className="w-4 h-4 text-orange-500 shrink-0 mt-0.5" />
                       <span>{listItem}</span>
                     </li>
                   ))}

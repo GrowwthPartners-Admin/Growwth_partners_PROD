@@ -43,7 +43,7 @@ const WhyChooseSection = () => {
   ];
 
   return (
-    <section className="py-20 lg:py-28 bg-gradient-to-br from-slate-900 via-slate-800 to-emerald-900">
+    <section className="py-20 lg:py-28 bg-gradient-to-br from-slate-900 via-slate-800 to-orange-900">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           {/* Header */}
@@ -53,12 +53,12 @@ const WhyChooseSection = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <span className="inline-block px-4 py-2 bg-emerald-500/20 border border-emerald-400/30 text-emerald-300 rounded-full text-sm font-semibold mb-4">
+            <span className="inline-block px-4 py-2 bg-orange-500/20 border border-orange-400/30 text-orange-300 rounded-full text-sm font-semibold mb-4">
               Why Growwth Partners
             </span>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6">
               Why Choose Growwth Partners for{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-400">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-amber-400">
                 Ecommerce Finance?
               </span>
             </h2>
@@ -73,12 +73,12 @@ const WhyChooseSection = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="group p-6 bg-white/5 hover:bg-white/10 rounded-2xl border border-white/10 hover:border-emerald-400/30 transition-all duration-300 backdrop-blur-sm"
+                className="group p-6 bg-white/5 hover:bg-white/10 rounded-2xl border border-white/10 hover:border-orange-400/30 transition-all duration-300 backdrop-blur-sm"
               >
-                <div className="p-3 bg-emerald-500/20 rounded-xl inline-block mb-4 group-hover:bg-emerald-500/30 transition-colors">
-                  <reason.icon className="w-6 h-6 text-emerald-400" />
+                <div className="p-3 bg-orange-500/20 rounded-xl inline-block mb-4 group-hover:bg-orange-500/30 transition-colors">
+                  <reason.icon className="w-6 h-6 text-orange-400" />
                 </div>
-                <h3 className="font-bold text-white mb-2 group-hover:text-emerald-300 transition-colors">
+                <h3 className="font-bold text-white mb-2 group-hover:text-orange-300 transition-colors">
                   {reason.title}
                 </h3>
                 <p className="text-gray-200 text-sm leading-relaxed">

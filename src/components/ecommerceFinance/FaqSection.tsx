@@ -28,14 +28,14 @@ const FaqSection = () => {
         <div className="max-w-4xl mx-auto">
           {/* Header */}
           <div className="text-center mb-12">
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-emerald-100 rounded-full mb-6">
-              <HelpCircle className="w-4 h-4 text-emerald-600" />
-              <span className="text-emerald-700 text-sm font-semibold">AEO Focused</span>
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-orange-100 rounded-full mb-6">
+              <HelpCircle className="w-4 h-4 text-orange-600" />
+              <span className="text-orange-700 text-sm font-semibold">AEO Focused</span>
             </div>
 
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
               Frequently Asked{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-500 to-teal-500">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-amber-500">
                 Questions
               </span>
             </h2>
@@ -52,9 +52,9 @@ const FaqSection = () => {
                 <AccordionItem 
                   key={index} 
                   value={`item-${index}`}
-                  className="border border-gray-200 rounded-xl px-6 data-[state=open]:border-emerald-300 data-[state=open]:shadow-md transition-all"
+                  className="border border-gray-200 rounded-xl px-6 data-[state=open]:border-orange-300 data-[state=open]:shadow-md transition-all"
                 >
-                  <AccordionTrigger className="text-left text-lg font-semibold text-gray-900 hover:text-emerald-600 py-5 hover:no-underline">
+                  <AccordionTrigger className="text-left text-lg font-semibold text-gray-900 hover:text-orange-600 py-5 hover:no-underline">
                     {faq.question}
                   </AccordionTrigger>
                   <AccordionContent className="text-gray-600 pb-5 leading-relaxed">

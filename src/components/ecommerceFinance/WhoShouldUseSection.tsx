@@ -58,7 +58,7 @@ const WhoShouldUseSection = () => {
             >
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8">
                 Who Should Use{" "}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-500 to-teal-500">
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-amber-500">
                   Ecommerce Finance Services?
                 </span>
               </h2>
@@ -71,10 +71,10 @@ const WhoShouldUseSection = () => {
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: index * 0.1 }}
-                    className="flex items-start gap-4 p-4 bg-white rounded-xl border border-gray-100 hover:border-emerald-200 hover:shadow-md transition-all"
+                    className="flex items-start gap-4 p-4 bg-white rounded-xl border border-gray-100 hover:border-orange-200 hover:shadow-md transition-all"
                   >
-                    <div className="p-2 bg-emerald-100 rounded-lg shrink-0">
-                      <item.icon className="w-5 h-5 text-emerald-600" />
+                    <div className="p-2 bg-orange-100 rounded-lg shrink-0">
+                      <item.icon className="w-5 h-5 text-orange-600" />
                     </div>
                     <div>
                       <h3 className="font-semibold text-gray-900">{item.title}</h3>
@@ -92,7 +92,7 @@ const WhoShouldUseSection = () => {
               viewport={{ once: true }}
               className="lg:sticky lg:top-24"
             >
-              <div className="bg-gradient-to-br from-emerald-600 to-teal-600 rounded-3xl p-8 text-white shadow-xl">
+              <div className="bg-gradient-to-br from-orange-600 to-amber-600 rounded-3xl p-8 text-white shadow-xl">
                 <div className="flex items-center gap-3 mb-6">
                   <div className="p-3 bg-white/20 rounded-xl">
                     <HelpCircle className="w-6 h-6 text-white" />
@@ -110,14 +110,14 @@ const WhoShouldUseSection = () => {
                       transition={{ delay: 0.3 + index * 0.1 }}
                       className="flex items-start gap-3 p-4 bg-white/10 rounded-xl backdrop-blur-sm"
                     >
-                      <CheckCircle2 className="w-5 h-5 text-emerald-300 shrink-0 mt-0.5" />
+                      <CheckCircle2 className="w-5 h-5 text-orange-200 shrink-0 mt-0.5" />
                       <span className="text-white/95 font-medium">{question}</span>
                     </motion.div>
                   ))}
                 </div>
 
                 <div className="p-4 bg-white/10 rounded-xl border border-white/20">
-                  <div className="flex items-center gap-2 text-emerald-200">
+                  <div className="flex items-center gap-2 text-orange-100">
                     <ArrowRight className="w-5 h-5" />
                     <span className="font-semibold">
                       You need specialised ecommerce finance support.

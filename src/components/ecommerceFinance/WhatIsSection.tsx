@@ -53,12 +53,12 @@ const WhatIsSection = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <span className="inline-block px-4 py-2 bg-emerald-100 text-emerald-700 rounded-full text-sm font-semibold mb-4">
+            <span className="inline-block px-4 py-2 bg-orange-100 text-orange-700 rounded-full text-sm font-semibold mb-4">
               AEO-Optimised Definition
             </span>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
               What Are{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-500 to-teal-500">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-amber-500">
                 Ecommerce Finance Services?
               </span>
             </h2>
@@ -78,14 +78,14 @@ const WhatIsSection = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="group p-6 bg-gray-50 hover:bg-gradient-to-br hover:from-emerald-50 hover:to-teal-50 rounded-2xl border border-gray-100 hover:border-emerald-200 transition-all duration-300 hover:shadow-lg"
+                className="group p-6 bg-gray-50 hover:bg-gradient-to-br hover:from-orange-50 hover:to-amber-50 rounded-2xl border border-gray-100 hover:border-orange-200 transition-all duration-300 hover:shadow-lg"
               >
                 <div className="flex items-start gap-4">
-                  <div className="p-3 bg-white rounded-xl shadow-sm group-hover:shadow-md group-hover:bg-emerald-100 transition-all">
-                    <service.icon className="w-6 h-6 text-emerald-600" />
+                  <div className="p-3 bg-white rounded-xl shadow-sm group-hover:shadow-md group-hover:bg-orange-100 transition-all">
+                    <service.icon className="w-6 h-6 text-orange-600" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-gray-900 mb-2 group-hover:text-emerald-700 transition-colors">
+                    <h3 className="font-semibold text-gray-900 mb-2 group-hover:text-orange-700 transition-colors">
                       {service.title}
                     </h3>
                     <p className="text-gray-600 text-sm leading-relaxed">

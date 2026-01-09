@@ -8,11 +8,11 @@ const CTASection = () => {
   const [contactModalOpen, setContactModalOpen] = useState(false);
 
   return (
-    <section className="py-20 lg:py-28 bg-gradient-to-br from-emerald-600 via-emerald-700 to-teal-700 relative overflow-hidden">
+    <section className="py-20 lg:py-28 bg-gradient-to-br from-orange-600 via-orange-700 to-amber-700 relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0">
         <div className="absolute top-0 left-0 w-72 h-72 bg-white/10 rounded-full blur-3xl" />
-        <div className="absolute bottom-0 right-0 w-96 h-96 bg-teal-400/10 rounded-full blur-3xl" />
+        <div className="absolute bottom-0 right-0 w-96 h-96 bg-amber-400/10 rounded-full blur-3xl" />
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
@@ -35,7 +35,7 @@ const CTASection = () => {
 
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6">
             Scale Your Ecommerce Business with{" "}
-            <span className="text-emerald-200">Financial Control</span> and Confidence
+            <span className="text-orange-100">Financial Control</span> and Confidence
           </h2>
 
           <p className="text-lg text-gray-100 mb-10 max-w-2xl mx-auto">
@@ -45,7 +45,7 @@ const CTASection = () => {
           <Button
             onClick={() => setContactModalOpen(true)}
             size="lg"
-            className="bg-white text-emerald-700 hover:bg-gray-100 px-8 py-6 text-lg font-semibold shadow-xl shadow-emerald-900/20"
+            className="bg-white text-orange-700 hover:bg-gray-100 px-8 py-6 text-lg font-semibold shadow-xl shadow-orange-900/20"
           >
             Schedule an Ecommerce Finance Consultation
             <ArrowRight className="ml-2 w-5 h-5" />
