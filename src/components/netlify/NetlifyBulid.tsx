@@ -1,19 +1,16 @@
 //   Trigger a Netlify deployment.
-export async function triggerNetlifyBuild(): Promise<void> {
-  const hookUrl = import.meta.env.VITE_REACT_APP_NETLIFY_BUILD_HOOK_URL;
 
-  const response = await fetch(hookUrl, {
+export async function triggerNetlifyBuild(): Promise<void> {
+  const BASE_API_URL = import.meta.env.VITE_CONTACTAPI_DEVURL || import.meta.env.VITE_CONTACTAPI_PRODURL;
+  
+  const res = await fetch(`${BASE_API_URL}/website/admin/triggerdeploygp`, {
     method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
+    headers: { "Content-Type": "application/json" },
     body: JSON.stringify({}),
   });
 
-  if (!response.ok) {
-    const text = await response.text();
-    throw new Error(
-      `Netlify build hook failed (status ${response.status}): ${text}`
-    );
-  }
+  const text = await res.text();
+  if (!res.ok) throw new Error(text || `HTTP ${res.status}`);
+
+  JSON.parse(text);
 }
