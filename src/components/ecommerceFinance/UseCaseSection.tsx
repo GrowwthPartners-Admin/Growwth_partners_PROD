@@ -32,7 +32,7 @@ const UseCaseSection = () => {
   return (
     <section className="py-20 lg:py-28 bg-gray-50">
       <div className="container mx-auto px-4">
-        <div className="max-w-5xl mx-auto">
+        <div className="max-w-8xl mx-auto">
           {/* Header */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -72,54 +72,62 @@ const UseCaseSection = () => {
             </div>
 
             <div className="p-8">
-              <div className="grid md:grid-cols-3 gap-8">
-                {/* Challenges */}
-                <div>
+              <div className="grid md:grid-cols-3 gap-6 font-bold">
+                
+                {/* Challenges - Red/Pink Background */}
+                <div className="bg-red-50/50 p-6 rounded-2xl border border-red-100">
                   <div className="flex items-center gap-2 mb-4">
-                    <AlertCircle className="w-5 h-5 text-red-500" />
+                    <div className="p-2 bg-red-100 rounded-lg">
+                      <AlertCircle className="w-5 h-5 text-red-600" />
+                    </div>
                     <h4 className="font-bold text-gray-900">Challenges</h4>
                   </div>
                   <ul className="space-y-3">
                     {challenges.map((challenge, index) => (
-                      <li key={index} className="flex items-start gap-2 text-sm text-gray-600">
-                        <div className="w-1.5 h-1.5 bg-red-400 rounded-full mt-2 shrink-0" />
+                      <li key={index} className="flex items-start gap-2 text-sm text-gray-700">
+                        <div className="w-1.5 h-1.5 bg-red-500 rounded-full mt-2 shrink-0" />
                         {challenge}
                       </li>
                     ))}
                   </ul>
                 </div>
 
-                {/* Solutions */}
-                <div>
+                {/* Solutions - Blue/Slate Background */}
+                <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100">
                   <div className="flex items-center gap-2 mb-4">
-                    <Wrench className="w-5 h-5 text-orange-500" />
+                    <div className="p-2 bg-slate-100 rounded-lg">
+                      <Wrench className="w-5 h-5 text-slate-600" />
+                    </div>
                     <h4 className="font-bold text-gray-900">Our Solution</h4>
                   </div>
                   <ul className="space-y-3">
                     {solutions.map((solution, index) => (
-                      <li key={index} className="flex items-start gap-2 text-sm text-gray-600">
-                        <CheckCircle2 className="w-4 h-4 text-orange-500 mt-0.5 shrink-0" />
+                      <li key={index} className="flex items-start gap-2 text-sm text-gray-700">
+                        <CheckCircle2 className="w-4 h-4 text-slate-500 mt-0.5 shrink-0" />
                         {solution}
                       </li>
                     ))}
                   </ul>
                 </div>
 
-                {/* Outcomes */}
-                <div>
+                {/* Outcomes - Amber/Green Background */}
+                <div className="bg-green-50 p-6 rounded-2xl border border-green-100">
                   <div className="flex items-center gap-2 mb-4">
-                    <TrendingUp className="w-5 h-5 text-amber-500" />
+                    <div className="p-2 bg-green-100 rounded-lg">
+                      <TrendingUp className="w-5 h-5 text-amber-600" />
+                    </div>
                     <h4 className="font-bold text-gray-900">Outcome</h4>
                   </div>
                   <ul className="space-y-3">
                     {outcomes.map((outcome, index) => (
-                      <li key={index} className="flex items-start gap-2 text-sm text-gray-600">
-                        <outcome.icon className="w-4 h-4 text-amber-500 mt-0.5 shrink-0" />
+                      <li key={index} className="flex items-start gap-2 text-sm text-gray-700">
+                        <outcome.icon className="w-4 h-4 text-amber-600 mt-0.5 shrink-0" />
                         {outcome.text}
                       </li>
                     ))}
                   </ul>
                 </div>
+
               </div>
             </div>
           </motion.div>

@@ -5,13 +5,6 @@ import { useState } from "react";
 import { ContactModal } from "@/components/ui/contact-modal";
 
 const HeroSection = () => {
-  const [contactModalOpen, setContactModalOpen] = useState(false);
-
-  const stats = [
-    { value: "500+", label: "Ecommerce Brands Served" },
-    { value: "98%", label: "Margin Visibility Achieved" },
-    { value: "40%", label: "Cash Flow Improvement" },
-  ];
 
   return (
     <section className="relative min-h-[90vh] flex items-center bg-gradient-to-br from-slate-900 via-slate-800 to-orange-900 overflow-hidden">
@@ -31,26 +24,8 @@ const HeroSection = () => {
         />
       </div>
 
-      {/* Floating Icons */}
-      <motion.div
-        animate={{ y: [0, -20, 0] }}
-        transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute top-32 right-[15%] hidden lg:block"
-      >
-        <div className="p-4 bg-white/10 backdrop-blur-sm rounded-2xl border border-white/20">
-          <ShoppingCart className="w-8 h-8 text-orange-400" />
-        </div>
-      </motion.div>
 
-      <motion.div
-        animate={{ y: [0, 15, 0] }}
-        transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
-        className="absolute bottom-40 left-[10%] hidden lg:block"
-      >
-        <div className="p-4 bg-white/10 backdrop-blur-sm rounded-2xl border border-white/20">
-          <BarChart3 className="w-8 h-8 text-amber-400" />
-        </div>
-      </motion.div>
+
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -85,30 +60,15 @@ const HeroSection = () => {
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
               <Button 
-                onClick={() => setContactModalOpen(true)}
+                onClick={() => window.open('https://calendly.com/jd-growwthpartners/15min?month=2025-11', '_blank')}
                 size="lg"
-                className="bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white px-8 py-6 text-lg font-semibold shadow-lg shadow-orange-500/25"
+                className="bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white px-8 py-6 text-lg font-bold rounded-3xl transition-all hover:scale-105 shadow-lg shadow-orange-500/25"
               >
                 Speak to an Ecommerce Finance Expert
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
             </div>
 
-            {/* Stats */}
-            <div className="grid grid-cols-3 gap-6 mt-12">
-              {stats.map((stat, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.4 + index * 0.1 }}
-                  className="text-center lg:text-left"
-                >
-                  <div className="text-2xl md:text-3xl font-bold text-white">{stat.value}</div>
-                  <div className="text-sm text-gray-300 mt-1">{stat.label}</div>
-                </motion.div>
-              ))}
-            </div>
           </motion.div>
 
           {/* Right Visual */}
@@ -126,7 +86,7 @@ const HeroSection = () => {
                     <DollarSign className="w-8 h-8 text-orange-400" />
                   </div>
                   <div>
-                    <h3 className="text-white font-semibold text-lg">SKU Profitability Dashboard</h3>
+                    <h3 className="text-white font-semibold text-lg">Growwth Partners Profitability Dashboard</h3>
                     <p className="text-gray-300 text-sm">Real-time margin tracking</p>
                   </div>
                 </div>
@@ -169,28 +129,12 @@ const HeroSection = () => {
                 </div>
               </div>
 
-              {/* Floating Mini Card */}
-              <motion.div
-                animate={{ y: [0, -10, 0] }}
-                transition={{ duration: 3, repeat: Infinity }}
-                className="absolute -bottom-6 -left-6 bg-white rounded-2xl p-4 shadow-xl"
-              >
-                <div className="flex items-center gap-3">
-                  <div className="p-2 bg-orange-100 rounded-lg">
-                    <TrendingUp className="w-5 h-5 text-orange-600" />
-                  </div>
-                  <div>
-                    <div className="text-sm font-semibold text-gray-800">Cash Flow</div>
-                    <div className="text-xs text-orange-600">+24% this month</div>
-                  </div>
-                </div>
-              </motion.div>
+
             </div>
           </motion.div>
         </div>
       </div>
 
-      <ContactModal open={contactModalOpen} onOpenChange={setContactModalOpen} />
     </section>
   );
 };

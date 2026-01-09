@@ -45,7 +45,7 @@ const WhatIsSection = () => {
   return (
     <section className="py-20 lg:py-28 bg-white">
       <div className="container mx-auto px-4">
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-8xl mx-auto">
           {/* Header */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -78,7 +78,7 @@ const WhatIsSection = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="group p-6 bg-gray-50 hover:bg-gradient-to-br hover:from-orange-50 hover:to-amber-50 rounded-2xl border border-gray-100 hover:border-orange-200 transition-all duration-300 hover:shadow-lg"
+                className="group p-6 bg-gradient-to-br from-orange-50 to-amber-50 rounded-2xl border border-gray-100 hover:border-orange-200 transition-all shadow duration-300 hover:shadow-lg"
               >
                 <div className="flex items-start gap-4">
                   <div className="p-3 bg-white rounded-xl shadow-sm group-hover:shadow-md group-hover:bg-orange-100 transition-all">

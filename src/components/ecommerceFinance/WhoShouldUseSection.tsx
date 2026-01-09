@@ -48,7 +48,7 @@ const WhoShouldUseSection = () => {
   return (
     <section className="py-20 lg:py-28 bg-gradient-to-b from-gray-50 to-white">
       <div className="container mx-auto px-4">
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-8xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 items-start">
             {/* Left - Who Should Use */}
             <motion.div
@@ -71,7 +71,7 @@ const WhoShouldUseSection = () => {
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: index * 0.1 }}
-                    className="flex items-start gap-4 p-4 bg-white rounded-xl border border-gray-100 hover:border-orange-200 hover:shadow-md transition-all"
+                    className="flex items-start gap-4 p-4 bg-white rounded-xl border border-gray-100 hover:border-orange-200 shadow hover:shadow-md transition-all"
                   >
                     <div className="p-2 bg-orange-100 rounded-lg shrink-0">
                       <item.icon className="w-5 h-5 text-orange-600" />
@@ -90,9 +90,9 @@ const WhoShouldUseSection = () => {
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="lg:sticky lg:top-24"
+              className="lg:sticky lg:top-24 "
             >
-              <div className="bg-gradient-to-br from-orange-600 to-amber-600 rounded-3xl p-8 text-white shadow-xl">
+              <div className="bg-gradient-to-br from-orange-400 to-amber-500 rounded-3xl p-8 text-slate-600 shadow-xl">
                 <div className="flex items-center gap-3 mb-6">
                   <div className="p-3 bg-white/20 rounded-xl">
                     <HelpCircle className="w-6 h-6 text-white" />
@@ -108,18 +108,18 @@ const WhoShouldUseSection = () => {
                       whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: true }}
                       transition={{ delay: 0.3 + index * 0.1 }}
-                      className="flex items-start gap-3 p-4 bg-white/10 rounded-xl backdrop-blur-sm"
+                      className="flex items-start gap-3 p-4 bg-white/10 rounded-xl backdrop-blur-sm text-slate-700"
                     >
                       <CheckCircle2 className="w-5 h-5 text-orange-200 shrink-0 mt-0.5" />
-                      <span className="text-white/95 font-medium">{question}</span>
+                      <span className="text-slate-700 font-bold">{question}</span>
                     </motion.div>
                   ))}
                 </div>
 
                 <div className="p-4 bg-white/10 rounded-xl border border-white/20">
-                  <div className="flex items-center gap-2 text-orange-100">
+                  <div className="flex items-center gap-2 text-slate-600">
                     <ArrowRight className="w-5 h-5" />
-                    <span className="font-semibold">
+                    <span className="font-bold">
                       You need specialised ecommerce finance support.
                     </span>
                   </div>

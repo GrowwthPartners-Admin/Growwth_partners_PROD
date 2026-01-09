@@ -77,7 +77,7 @@ const HowWeDeliverSection = () => {
   return (
     <section className="py-20 lg:py-28 bg-white">
       <div className="container mx-auto px-4">
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-8xl mx-auto">
           {/* Header */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -109,10 +109,10 @@ const HowWeDeliverSection = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="group relative bg-gray-50 hover:bg-white rounded-2xl p-6 border border-gray-100 hover:border-orange-200 hover:shadow-xl transition-all duration-300"
+                className="group relative bg-gray-50 hover:bg-white rounded-2xl p-6 border border-gray-100 shadow hover:border-orange-200 hover:shadow-xl transition-all duration-300"
               >
                 {/* Number Badge */}
-                <div className="absolute top-4 right-4 text-4xl font-bold text-gray-100 group-hover:text-orange-100 transition-colors">
+                <div className="absolute top-4 right-4 text-4xl font-bold text-orange-100 transition-colors">
                   {item.number}
                 </div>
 
