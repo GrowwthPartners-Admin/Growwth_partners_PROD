@@ -668,6 +668,27 @@ export const routes: RouteRecord[] = [
         },
       },
       {
+        path: "ecommerce-finance-services",
+        async lazy() {
+          const { default: Component } = await import("./pages/EcommerceFinanceServices");
+          return { Component };
+        },
+      },
+      {
+        path: "uae/ecommerce-finance-services",
+        async lazy() {
+          const { default: Component } = await import("./pages/EcommerceFinanceServices");
+          return { Component };
+        },
+      },
+      {
+        path: "au/ecommerce-finance-services",
+        async lazy() {
+          const { default: Component } = await import("./pages/EcommerceFinanceServices");
+          return { Component };
+        },
+      },
+      {
         path: "privacy-policy",
         async lazy() {
           const { default: Component } = await import("./pages/PrivacyPolicy");

@@ -55,6 +55,7 @@ const staticRoutes = [
   { path: "/news", priority: "0.7", changefreq: "daily" },
   { path: "/terms", priority: "0.3", changefreq: "monthly" },
   { path: "/privacy-policy", priority: "0.3", changefreq: "monthly" },
+  { path: "/ecommerce-finance-services", priority: "0.8", changefreq: "weekly" },
   { path: "/use-of-ai-in-finance", priority: "0.8", changefreq: "monthly" },
   {
     path: "/valuation-services-singapore",
