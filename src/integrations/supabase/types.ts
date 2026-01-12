@@ -22,7 +22,7 @@ export type Database = {
           Excerpt: string | null
           faqs: Json | null
           Hero_image: string | null
-          id: number
+          id: string
           publishdate: string | null
           slug: string | null
           title: string
@@ -34,7 +34,7 @@ export type Database = {
           Excerpt?: string | null
           faqs?: Json | null
           Hero_image?: string | null
-          id?: number
+          id?: string
           publishdate?: string | null
           slug?: string | null
           title: string
@@ -46,7 +46,7 @@ export type Database = {
           Excerpt?: string | null
           faqs?: Json | null
           Hero_image?: string | null
-          id?: number
+          id?: string
           publishdate?: string | null
           slug?: string | null
           title?: string

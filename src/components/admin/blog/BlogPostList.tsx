@@ -11,7 +11,7 @@ export const BlogPostList = () => {
   const { posts, deletePost, dynamicPosts } = useBlogPosts();
   const [editingPost, setEditingPost] = useState<BlogPost | null>(null);
   
-  const handleDelete = async (id: number) => {
+  const handleDelete = async (id: string) => {
     try {
       await deletePost(id);
       toast({
