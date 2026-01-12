@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { AlertTriangle, FileX, Wallet, TrendingDown, Shield, Users, CheckCircle, BarChart3 } from "lucide-react";
+import { AlertTriangle, FileX, Wallet, TrendingDown, Shield, Users, CheckCircle, BarChart3, Scale } from "lucide-react";
 
 const challenges = [
   { icon: FileX, text: "Incorrect or inconsistent token accounting" },
@@ -11,98 +11,94 @@ const challenges = [
 ];
 
 const benefits = [
-  "Web3-experienced CFO and finance team",
-  "Token-aware accounting and reporting",
-  "Treasury and liquidity dashboards",
-  "Compliance-ready financial documentation",
-  "Investor-grade financial transparency",
-  "Scalable finance infrastructure as the ecosystem grows"
+  { icon: Users, text: "Web3-experienced CFO and finance team" },
+  { icon: CheckCircle, text: "Token-aware accounting and reporting" },
+  { icon: BarChart3, text: "Treasury and liquidity dashboards" },
+  { icon: Shield, text: "Compliance-ready financial documentation" },
+  { icon: TrendingDown, text: "Investor-grade financial transparency" },
+  { icon: Scale, text: "Scalable finance infrastructure as the ecosystem grows" }
 ];
 
 const ChallengesSection = () => {
   return (
-    <section className="py-20 bg-white">
-      <div className="container mx-auto px-4">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
-        >
-          <span className="inline-block px-4 py-1 bg-red-100 text-red-600 rounded-full text-sm font-medium mb-4">
-            Challenges & Solutions
-          </span>
-          <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
-            Key Financial Challenges in Crypto & Web3 Businesses
-          </h2>
-          <p className="text-lg text-slate-600">
-            These challenges directly impact credibility and funding potential
-          </p>
-        </motion.div>
-
+    <section className="py-20 bg-slate-900 relative overflow-hidden">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(249,115,22,0.1),transparent_70%)]" />
+      
+      <div className="container-custom relative z-10">
         <div className="grid lg:grid-cols-2 gap-12">
-          {/* Challenges Grid */}
+          {/* Risks Column */}
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
+            initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <div className="bg-gradient-to-br from-red-50 to-purple-50 rounded-3xl p-8 border border-red-100">
-              <h3 className="text-xl font-bold text-slate-900 mb-6 flex items-center gap-2">
-                <AlertTriangle className="w-6 h-6 text-red-500" />
-                Common Pain Points
-              </h3>
-              <div className="grid gap-4">
+            <div className="p-8 bg-gradient-to-br from-red-500/10 to-transparent rounded-2xl border border-red-500/20">
+              <div className="flex items-center gap-3 mb-6">
+                <div className="p-2 bg-red-500/20 rounded-lg">
+                  <AlertTriangle className="h-6 w-6 text-red-400" />
+                </div>
+                <h3 className="text-2xl font-bold text-white">
+                  Key Financial Challenges
+                </h3>
+              </div>
+              <p className="text-slate-400 mb-8">
+                Without Web3-specific finance expertise, companies often face:
+              </p>
+              <div className="space-y-4">
                 {challenges.map((challenge, index) => (
                   <motion.div
                     key={index}
-                    initial={{ opacity: 0, y: 10 }}
-                    whileInView={{ opacity: 1, y: 0 }}
+                    initial={{ opacity: 0, x: -10 }}
+                    whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 0.4, delay: index * 0.1 }}
-                    className="flex items-center gap-3 bg-white rounded-xl p-4 shadow"
+                    transition={{ duration: 0.4, delay: 0.1 * index }}
+                    className="flex items-center gap-4 p-4 bg-slate-800/50 rounded-xl border border-slate-700"
                   >
-                    <challenge.icon className="w-5 h-5 text-red-500 flex-shrink-0" />
-                    <span className="text-slate-700">{challenge.text}</span>
+                    <challenge.icon className="h-5 w-5 text-red-400 shrink-0" />
+                    <span className="text-slate-300">{challenge.text}</span>
                   </motion.div>
                 ))}
               </div>
+              <p className="mt-6 text-orange-400 font-medium">
+                These challenges directly impact credibility and funding potential.
+              </p>
             </div>
           </motion.div>
 
-          {/* What You Get */}
+          {/* Benefits Column */}
           <motion.div
-            initial={{ opacity: 0, x: 30 }}
+            initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <div className="bg-gradient-to-br from-purple-500 to-cyan-500 rounded-3xl p-8 text-white h-full">
-              <h3 className="text-xl font-bold mb-6 flex items-center gap-2">
-                <CheckCircle className="w-6 h-6" />
-                What You Get with Our Crypto & Web3 Finance Services
-              </h3>
-              <div className="space-y-4 mb-8">
+            <div className="p-8 bg-gradient-to-br from-orange-500/10 to-transparent rounded-2xl border border-orange-500/20">
+              <div className="flex items-center gap-3 mb-6">
+                <div className="p-2 bg-orange-500/20 rounded-lg">
+                  <Scale className="h-6 w-6 text-orange-400" />
+                </div>
+                <h3 className="text-2xl font-bold text-white">
+                  What You Get with Our Services
+                </h3>
+              </div>
+              <p className="text-slate-400 mb-8">
+                Our focus is to help Web3 businesses look institutional without losing decentralisation benefits.
+              </p>
+              <div className="space-y-4">
                 {benefits.map((benefit, index) => (
                   <motion.div
                     key={index}
-                    initial={{ opacity: 0, y: 10 }}
-                    whileInView={{ opacity: 1, y: 0 }}
+                    initial={{ opacity: 0, x: 10 }}
+                    whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 0.4, delay: index * 0.1 }}
-                    className="flex items-center gap-3 bg-white/20 rounded-xl p-4 shadow"
+                    transition={{ duration: 0.4, delay: 0.1 * index }}
+                    className="flex items-center gap-4 p-4 bg-slate-800/50 rounded-xl border border-slate-700"
                   >
-                    <CheckCircle className="w-5 h-5 flex-shrink-0" />
-                    <span>{benefit}</span>
+                    <benefit.icon className="h-5 w-5 text-orange-400 shrink-0" />
+                    <span className="text-slate-300">{benefit.text}</span>
                   </motion.div>
                 ))}
-              </div>
-              <div className="bg-white/20 rounded-xl p-6 text-center">
-                <p className="font-semibold">
-                  Our focus is to help Web3 businesses look institutional without losing decentralisation benefits.
-                </p>
               </div>
             </div>
           </motion.div>

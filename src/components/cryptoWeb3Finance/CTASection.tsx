@@ -1,42 +1,41 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { Calendar } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 const CTASection = () => {
   return (
-    <section className="py-20 bg-gradient-to-br from-purple-600 via-purple-500 to-cyan-500">
-      <div className="container mx-auto px-4">
+    <section className="py-20 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 relative overflow-hidden">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(249,115,22,0.2),transparent_50%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_50%,rgba(249,115,22,0.1),transparent_50%)]" />
+
+      <div className="container-custom relative z-10">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="max-w-4xl mx-auto text-center"
+          className="text-center max-w-5xl mx-auto"
         >
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6">
-            Bring Financial Clarity and Credibility to Your Web3 Business
+            Bring Financial Clarity and Credibility to Your{" "}
+            <span className="text-brand-orange font-extrabold">Web3 Business</span>
           </h2>
-
-          <p className="text-xl text-white/90 mb-10 max-w-3xl mx-auto">
+          <p className="text-xl text-slate-300 mb-8">
             Get CFO-led financial leadership, token-aware accounting, and compliance-ready reporting designed specifically for crypto and Web3 companies.
           </p>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center"
+          <Button
+            size="lg"
+            onClick={() =>
+              window.open(
+                "https://calendly.com/jd-growwthpartners/15min?month=2025-11",
+                "_blank"
+              )
+            }
+            className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white px-8 py-6 text-lg font-semibold rounded-full shadow-lg shadow-orange-500/25 transition-all duration-300 hover:shadow-orange-500/40 group hover:scale-105"
           >
-            <Button
-              size="lg"
-              onClick={() => window.open('https://calendly.com/jd-growwthpartners/15min?month=2025-11', '_blank')}
-              className="bg-white hover:bg-white/90 text-purple-600 px-8 py-6 text-lg rounded-xl shadow-lg shadow-purple-500/25"
-            >
-              <Calendar className="mr-2 h-5 w-5" />
-              Schedule a Crypto & Web3 Finance Consultation
-            </Button>
-          </motion.div>
+            Schedule a Crypto & Web3 Finance Consultation
+            <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+          </Button>
         </motion.div>
       </div>
     </section>
