@@ -9,7 +9,7 @@ const supabaseKey = process.env.SUPABASE_ANON_KEY!;
 const supabase = createClient(supabaseUrl, supabaseKey);
 
 interface BlogPost {
-  id: number;
+  id: string;
   title: string;
   Hero_image: string | null;
   Content: string | null;

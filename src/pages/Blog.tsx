@@ -70,7 +70,7 @@ const BlogPage = () => {
   };
 
   const handleReadMore = (slug: string) => {
-    window.open(getCountryUrl(`/blog/${slug}`), "_blank");
+    navigate(getCountryUrl(`/blog/${slug}`));
   };
 
   const structuredData = {

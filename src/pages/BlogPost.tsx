@@ -11,7 +11,6 @@ import { ArrowRight, Share, Mail } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
 import SEOhelper from "@/components/SEOhelper";
 import { useCountry } from "@/contexts/CountryContext";
-// import { supabase } from "@/integrations/supabase/client";
 import postsData from "@/generated/posts.json";
 import { FAQSection } from "@/components/blog/FAQSection";
 import { Head } from "vite-react-ssg";
@@ -19,7 +18,7 @@ import { getBlogPostBySlug, getBlogPostContentById, getRelatedBlogPosts } from "
 
 
 interface BlogPost {
-  id: string;
+  // id: string;
   slug: string;
   title: string;
   excerpt: string;
@@ -91,14 +90,14 @@ useEffect(() => {
       // 1) Fetch current post meta by slug (fast)
       const currentPost = await getBlogPostBySlug(slug);
 
-      if (!currentPost || !currentPost.id) {
+      if (!currentPost) {
         setError("Post not found");
         return;
       }
 
       // 2) Transform meta (content/faqs will be lazy loaded)
       const transformedPost: BlogPost = {
-        id: String(currentPost.id),
+        // id: String(currentPost.id),
         slug: currentPost.slug || "",
         title: currentPost.title || "",
         excerpt: currentPost.excerpt || currentPost.Excerpt || "",
@@ -119,7 +118,7 @@ useEffect(() => {
       setPost(transformedPost);
 
       // 3) Lazy load full content + FAQs
-      const full = await getBlogPostContentById(currentPost.id);
+      const full = await getBlogPostContentById(currentPost.slug);
 
       if (full) {
         setPost((prev) =>
@@ -138,7 +137,7 @@ useEffect(() => {
 
       if (Array.isArray(allPosts)) {
         const transformedRelatedPosts: BlogPost[] = allPosts.map((p: any) => ({
-          id: String(p.id),
+          // id: String(p.id),
           slug: p.slug || "",
           title: p.title || "",
           excerpt: p.excerpt || p.Excerpt || "",

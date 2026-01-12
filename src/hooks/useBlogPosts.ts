@@ -7,7 +7,7 @@ import {
 } from "@/lib/blogApi";
 
 export interface BlogPost {
-  id: number;
+  id: string;
   title: string;
   slug?: string;
   heroImage?: string;
@@ -36,7 +36,7 @@ export const useBlogPosts = () => {
       // Expect backend returns supabase-like rows or already transformed.
       // Handle both safely:
       const transformed: BlogPost[] = (Array.isArray(data) ? data : []).map((post: any) => ({
-        id: Number(post.id),
+        id: String(post.id),
         title: post.title || "",
         slug: post.slug || "",
         heroImage: post.heroImage ?? post.Hero_image ?? "",
@@ -92,7 +92,7 @@ export const useBlogPosts = () => {
   };
 
   // Delete post
-  const deletePost = async (id: number) => {
+  const deletePost = async (id: string) => {
     setLoading(true);
     try {
       const result = await apiDeletePost({ id });
@@ -107,7 +107,7 @@ export const useBlogPosts = () => {
   };
 
   // Update post
-  const updatePost = async (id: number, updatedPost: Partial<BlogPost> & { title: string }) => {
+  const updatePost = async (id: string, updatedPost: Partial<BlogPost> & { title: string }) => {
     setLoading(true);
     try {
       const payload: any = {
