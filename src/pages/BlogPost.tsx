@@ -637,9 +637,9 @@ useEffect(() => {
                 Related Articles
               </h2>
               <div className="grid md:grid-cols-3 gap-8">
-                {relatedPosts.map((rp) => (
+                {relatedPosts.map((rp, index) => (
                   <Card
-                    key={rp.id}
+                    key={rp.slug || index}
                     className="hover:shadow-lg transition-shadow duration-300 flex flex-col h-full"
                   >
                     <Link
