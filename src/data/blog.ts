@@ -6,7 +6,7 @@ import { BlogPost } from "@/hooks/useBlogPosts";
 // Default blog posts for initial setup
 const defaultPosts: BlogPost[] = [
   {
-    id: 1,
+    id: "550e8400-e29b-41d4-a716-446655440001",
     title: "10 Tax-Saving Strategies for Small Businesses",
     slug: "tax-saving-strategies-small-businesses",
     heroImage: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1211&q=80",
@@ -81,7 +81,7 @@ Remember that tax avoidance (legally minimizing taxes) is perfectly acceptable, 
     `
   },
   {
-    id: 2,
+    id: "550e8400-e29b-41d4-a716-446655440002",
     title: "Understanding Cash Flow Management for Startups",
     slug: "cash-flow-management-startups",
     heroImage: "https://images.unsplash.com/photo-1553729459-efe14ef6055d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
@@ -213,7 +213,7 @@ Remember, cash is reality. Profit is an opinion.
     `
   },
   {
-    id: 3,
+    id: "550e8400-e29b-41d4-a716-446655440003",
     title: "Essential Bookkeeping Practices for Small Businesses",
     slug: "essential-bookkeeping-practices-small-businesses",
     heroImage: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1211&q=80",
@@ -417,7 +417,7 @@ export const blogOperations = {
   createPost: (post: Omit<BlogPost, "id">) => {
     const newPost = {
       ...post,
-      id: Date.now(), // Use timestamp as unique ID
+      id: crypto.randomUUID(), // Use UUID as unique ID
     };
     
     blogData.posts.push(newPost);
@@ -430,7 +430,7 @@ export const blogOperations = {
   },
   
   // Update post
-  updatePost: (id: number, updatedPost: Partial<BlogPost>) => {
+  updatePost: (id: string, updatedPost: Partial<BlogPost>) => {
     const index = blogData.posts.findIndex(post => post.id === id);
     if (index !== -1) {
       blogData.posts[index] = { ...blogData.posts[index], ...updatedPost };
@@ -440,7 +440,7 @@ export const blogOperations = {
   },
   
   // Delete post
-  deletePost: (id: number) => {
+  deletePost: (id: string) => {
     const index = blogData.posts.findIndex(post => post.id === id);
     if (index !== -1) {
       blogData.posts.splice(index, 1);

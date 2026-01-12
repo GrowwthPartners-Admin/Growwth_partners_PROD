@@ -2,7 +2,7 @@ import { useEffect, useState, useCallback } from "react";
 import { fetchBlogPostsListing } from "@/lib/blogApi";
 
 export interface BlogPostListing {
-  id: number;
+  id: string;
   title: string;
   slug: string;
   heroImage: string;
