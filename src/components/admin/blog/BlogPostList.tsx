@@ -38,7 +38,7 @@ export const BlogPostList = () => {
     <div className="space-y-4">
       {dynamicPosts.map((post) => (
         <div
-          key={post.id}
+          key={post.slug}
           className="flex items-center justify-between p-4 border rounded-lg"
         >
           <div>

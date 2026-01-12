@@ -103,11 +103,11 @@ export async function getBlogPostBySlug(slug: string) {
   return parseApiResponse(res);
 }
 
-export async function getBlogPostContentById(id: string | number) {
+export async function getBlogPostContentById(slug: string | number) {
   const res = await fetch(`${BASE_API_URL}/api/website/blog/getContent`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ id }),
+    body: JSON.stringify({ slug }),
   });
   return parseApiResponse(res);
 }
