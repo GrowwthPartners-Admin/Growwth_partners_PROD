@@ -48,7 +48,7 @@ const WhoShouldUseSection = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: 0.1 * index }}
-                className="group p-6 bg-white rounded-2xl border border-slate-200 hover:border-orange-300 hover:shadow-lg hover:shadow-orange-100/50 transition-all duration-300 h-full"
+                className="group p-6 bg-white rounded-2xl border border-slate-200 hover:border-orange-300 shadow hover:shadow-lg hover:shadow-orange-100/50 transition-all duration-300 h-full"
               >
                 <div className="p-3 bg-gradient-to-br from-orange-100 to-orange-50 rounded-xl w-fit mb-4 group-hover:scale-110 transition-transform">
                   <item.icon className="h-6 w-6 text-orange-600" />

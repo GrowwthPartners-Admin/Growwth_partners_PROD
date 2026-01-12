@@ -13,7 +13,7 @@ const WhatIsSection = () => {
   return (
     <section className="py-20 bg-gradient-to-b from-slate-50 to-white">
       <div className="container mx-auto px-4">
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -21,7 +21,7 @@ const WhatIsSection = () => {
             transition={{ duration: 0.6 }}
             className="text-center mb-12"
           >
-            <span className="text-teal-600 font-semibold text-sm uppercase tracking-wider">
+            <span className="text-orange-600 font-semibold text-sm uppercase tracking-wider">
               Definition
             </span>
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mt-4 mb-6">
@@ -52,7 +52,7 @@ const WhatIsSection = () => {
                     transition={{ delay: index * 0.1 }}
                     className="flex items-center gap-4 bg-white p-4 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow"
                   >
-                    <div className="w-12 h-12 bg-gradient-to-br from-teal-500 to-emerald-500 rounded-xl flex items-center justify-center flex-shrink-0">
+                    <div className="w-12 h-12 bg-gradient-to-br from-orange-500 to-orange-400 rounded-xl flex items-center justify-center flex-shrink-0">
                       <feature.icon className="w-6 h-6 text-white" />
                     </div>
                     <p className="text-gray-700 font-medium">{feature.text}</p>
@@ -66,12 +66,12 @@ const WhatIsSection = () => {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="bg-gradient-to-br from-teal-500 to-emerald-600 rounded-3xl p-8 text-white"
+              className="bg-gradient-to-br from-orange-400 to-orange-500 rounded-3xl p-8 text-white"
             >
               <h3 className="text-2xl font-bold mb-4">
                 Forward-Looking & Growth-Focused
               </h3>
-              <p className="text-teal-100 text-lg leading-relaxed">
+              <p className="text-orange-100 text-lg leading-relaxed">
                 Unlike traditional accounting, Startup Finance services are forward-looking and growth-focused, helping founders make informed decisions under uncertainty.
               </p>
               <div className="mt-6 pt-6 border-t border-white/20">

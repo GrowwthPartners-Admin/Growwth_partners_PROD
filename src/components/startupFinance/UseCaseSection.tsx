@@ -20,7 +20,7 @@ const UseCaseSection = () => {
           </h2>
         </motion.div>
 
-        <div className="max-w-5xl mx-auto">
+        <div className="max-w-8xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -29,7 +29,7 @@ const UseCaseSection = () => {
             className="bg-white rounded-3xl shadow-xl overflow-hidden border border-gray-100"
           >
             {/* Header */}
-            <div className="bg-gradient-to-r from-teal-600 to-emerald-600 p-6">
+            <div className="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 p-6">
               <div className="flex items-center gap-4">
                 <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center">
                   <Building2 className="w-8 h-8 text-white" />
@@ -66,7 +66,7 @@ const UseCaseSection = () => {
                 {/* Solution */}
                 <div>
                   <div className="flex items-center gap-2 mb-4">
-                    <Lightbulb className="w-5 h-5 text-teal-500" />
+                    <Lightbulb className="w-5 h-5 text-yellow-600" />
                     <h4 className="font-bold text-gray-900">Our Solution</h4>
                   </div>
                   <ul className="space-y-3">
@@ -76,7 +76,7 @@ const UseCaseSection = () => {
                       "Delivered investor-ready financial dashboards",
                     ].map((item, index) => (
                       <li key={index} className="flex items-start gap-2 text-gray-600">
-                        <div className="w-1.5 h-1.5 bg-teal-400 rounded-full mt-2 flex-shrink-0" />
+                        <div className="w-1.5 h-1.5 bg-yellow-600 rounded-full mt-2 flex-shrink-0" />
                         {item}
                       </li>
                     ))}

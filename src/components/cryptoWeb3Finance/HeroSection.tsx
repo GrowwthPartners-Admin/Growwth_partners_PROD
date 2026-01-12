@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { CheckCircle, Clock, Shield } from "lucide-react";
+import { ArrowRight, CheckCircle, Clock, Shield } from "lucide-react";
 
 const HeroSection = () => {
   return (
@@ -54,6 +54,8 @@ const HeroSection = () => {
                 className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white px-8 py-8 text-lg font-semibold rounded-full shadow-xl shadow-orange-500/25 transition-all duration-300 hover:shadow-orange-500/40 hover:scale-105"
               >
                 Speak to a Crypto Finance Expert
+            <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+
               </Button>
             </motion.div>
           </motion.div>
