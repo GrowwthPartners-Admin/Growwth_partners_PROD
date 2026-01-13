@@ -74,11 +74,12 @@ export const Services1MegaMenu = ({ onNavigate }: Services1MegaMenuProps) => {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 10, scale: 0.98 }}
             transition={{ duration: 0.2, ease: "easeOut" }}
-            className="hidden lg:block fixed top-[80px] left-1/2 -translate-x-1/2 z-50"
+            // Centered in viewport via full-width fixed flex container (avoids transform clobbering)
+            className="hidden lg:flex fixed top-[80px] left-0 right-0 z-50 justify-center px-4"
           >
             <div
-              // ✅ reduced size: 860 (from 920+), smaller padding inside
-              className="relative w-[860px] overflow-hidden rounded-3xl border border-white/40 bg-white/90 backdrop-blur-xl shadow-[0_30px_90px_-35px_rgba(0,0,0,0.35)]"
+              // ✅ responsive: 860px desktop, but never overflow viewport
+              className="relative w-[860px] max-w-[calc(100vw-2rem)] overflow-hidden rounded-3xl border border-white/40 bg-white/90 backdrop-blur-xl shadow-[0_30px_90px_-35px_rgba(0,0,0,0.35)]"
             >
               {/* subtle background accents */}
               <div className="pointer-events-none absolute -top-24 -right-24 h-72 w-72 rounded-full bg-brand-orange/10 blur-3xl" />
