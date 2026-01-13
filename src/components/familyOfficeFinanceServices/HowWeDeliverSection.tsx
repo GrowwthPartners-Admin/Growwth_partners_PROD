@@ -124,7 +124,7 @@ const HowWeDeliverSection: React.FC = () => {
                 </div>
                 <div className="flex-1">
                   <div className="flex items-center gap-3 mb-3">
-                    <span className="text-emerald-400 font-bold text-sm">{service.number}</span>
+                    <span className="text-emerald-400 font-bold text-md">{service.number}</span>
                     <h3 className="text-xl font-bold text-white">{service.title}</h3>
                   </div>
                   <ul className="space-y-3">

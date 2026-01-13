@@ -87,7 +87,7 @@ const ChallengesSection: React.FC = () => {
                   <div className="w-10 h-10 rounded-lg bg-red-100 flex items-center justify-center flex-shrink-0">
                     <challenge.icon className="w-5 h-5 text-red-600" />
                   </div>
-                  <p className="text-slate-700 font-medium">{challenge.text}</p>
+                  <p className="text-slate-700 font-bold">{challenge.text}</p>
                 </motion.div>
               ))}
             </div>
@@ -124,7 +124,7 @@ const ChallengesSection: React.FC = () => {
                   <div className="w-10 h-10 rounded-lg bg-emerald-100 flex items-center justify-center flex-shrink-0">
                     <benefit.icon className="w-5 h-5 text-emerald-600" />
                   </div>
-                  <p className="text-slate-700 font-medium">{benefit.text}</p>
+                  <p className="text-slate-700 font-bold">{benefit.text}</p>
                 </motion.div>
               ))}
             </div>

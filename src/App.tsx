@@ -514,6 +514,32 @@ export const routes: RouteRecord[] = [
           return { Component };
         },
       },
+
+
+
+            {
+        path: "family-office-finance-services",
+        async lazy() {
+          const { default: Component } = await import("./pages/FamilyOfficeFinanceServices");
+          return { Component };
+        },
+      },
+      {
+        path: "uae/family-office-finance-services",
+        async lazy() {
+          const { default: Component } = await import("./pages/FamilyOfficeFinanceServices");
+          return { Component };
+        },
+      },
+      {
+        path: "au/family-office-finance-services",
+        async lazy() {
+          const { default: Component } = await import("./pages/FamilyOfficeFinanceServices");
+          return { Component };
+        },
+      },
+
+
       {
         path: "sme-finance-services",
         async lazy() {

@@ -106,7 +106,7 @@ const ChallengesSection = () => {
                 transition={{ duration: 0.4, delay: index * 0.1 }}
                 className="relative group"
               >
-                <div className="bg-gradient-to-br from-red-50 to-orange-50 border border-red-100 rounded-2xl p-5 h-full hover:shadow-lg transition-all duration-300 hover:-translate-y-1 text-center">
+                <div className="bg-gradient-to-br from-red-50 to-orange-50 border border-red-100 shadow rounded-2xl p-5 h-full hover:shadow-lg transition-all duration-300 hover:-translate-y-1 text-center">
                   <div className="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center mb-4 group-hover:bg-red-200 transition-colors mx-auto">
                     <challenge.icon className="w-6 h-6 text-red-600" />
                   </div>
