@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Receipt, Briefcase, Clock, TrendingUp, BarChart3, FileText } from "lucide-react";
+import { Receipt, Briefcase, Clock, TrendingUp, BarChart3 } from "lucide-react";
 
 const focusAreas = [
   {
@@ -42,12 +42,12 @@ const WhatIsSection: React.FC = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <span className="text-indigo-600 font-semibold text-sm uppercase tracking-wider">
+            <span className="text-orange-600 font-semibold text-sm uppercase tracking-wider">
               What Are Professional Services Finance Services?
             </span>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mt-4 mb-6">
               Specialised Financial Leadership for{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-purple-600">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-600 to-amber-600">
                 Project-Driven Businesses
               </span>
             </h2>
@@ -66,7 +66,7 @@ const WhatIsSection: React.FC = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <div className="bg-gradient-to-br from-slate-50 to-indigo-50 rounded-3xl p-8">
+            <div className="bg-gradient-to-br from-slate-50 to-orange-50 rounded-3xl p-8">
               <h3 className="text-xl font-bold text-gray-900 mb-6">These services focus on:</h3>
               <div className="space-y-4">
                 {focusAreas.map((area, index) => (
@@ -78,7 +78,7 @@ const WhatIsSection: React.FC = () => {
                     transition={{ duration: 0.4, delay: 0.1 * index }}
                     className="flex items-start gap-4 p-4 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300"
                   >
-                    <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-indigo-500 to-purple-500 rounded-xl flex items-center justify-center">
+                    <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-orange-500 to-amber-500 rounded-xl flex items-center justify-center">
                       <area.icon className="w-6 h-6 text-white" />
                     </div>
                     <div>

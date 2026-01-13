@@ -67,7 +67,7 @@ const services = [
 
 const HowWeDeliverSection: React.FC = () => {
   return (
-    <section className="py-20 lg:py-28 bg-gradient-to-br from-slate-900 via-indigo-900 to-purple-900">
+    <section className="py-20 lg:py-28 bg-gradient-to-br from-slate-900 via-slate-800 to-orange-900/20">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -76,12 +76,12 @@ const HowWeDeliverSection: React.FC = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <span className="text-indigo-400 font-semibold text-sm uppercase tracking-wider">
+          <span className="text-orange-400 font-semibold text-sm uppercase tracking-wider">
             Our Approach
           </span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mt-4 mb-6">
             How Growwth Partners Delivers{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-400">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-amber-400">
               Professional Services Finance Value
             </span>
           </h2>
@@ -102,21 +102,21 @@ const HowWeDeliverSection: React.FC = () => {
             >
               <div className="flex items-center gap-4 mb-6">
                 <div className="relative">
-                  <div className="w-14 h-14 bg-gradient-to-br from-indigo-500 to-purple-500 rounded-xl flex items-center justify-center">
+                  <div className="w-14 h-14 bg-gradient-to-br from-orange-500 to-amber-500 rounded-xl flex items-center justify-center">
                     <service.icon className="w-7 h-7 text-white" />
                   </div>
-                  <span className="absolute -top-2 -right-2 w-6 h-6 bg-white text-indigo-600 text-xs font-bold rounded-full flex items-center justify-center">
+                  <span className="absolute -top-2 -right-2 w-6 h-6 bg-white text-orange-600 text-xs font-bold rounded-full flex items-center justify-center">
                     {service.number}
                   </span>
                 </div>
-                <h3 className="text-xl font-bold text-white group-hover:text-indigo-300 transition-colors">
+                <h3 className="text-xl font-bold text-white group-hover:text-orange-300 transition-colors">
                   {service.title}
                 </h3>
               </div>
               <ul className="space-y-3">
                 {service.items.map((item, i) => (
                   <li key={i} className="flex items-start gap-3">
-                    <span className="w-1.5 h-1.5 bg-indigo-400 rounded-full mt-2 flex-shrink-0" />
+                    <span className="w-1.5 h-1.5 bg-orange-400 rounded-full mt-2 flex-shrink-0" />
                     <span className="text-slate-300 text-sm">{item}</span>
                   </li>
                 ))}

@@ -32,7 +32,7 @@ const FaqSection = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <span className="text-indigo-600 font-semibold text-sm uppercase tracking-wider">Got Questions?</span>
+          <span className="text-orange-600 font-semibold text-sm uppercase tracking-wider">Got Questions?</span>
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mt-4 mb-4">
             Frequently Asked Questions
           </h2>
@@ -55,7 +55,7 @@ const FaqSection = () => {
                 value={`item-${index}`}
                 className="bg-gray-50 rounded-2xl border border-gray-100 px-6 overflow-hidden"
               >
-                <AccordionTrigger className="text-left text-lg font-semibold text-gray-900 hover:text-indigo-600 py-6 [&[data-state=open]]:text-indigo-600">
+                <AccordionTrigger className="text-left text-lg font-semibold text-gray-900 hover:text-orange-600 py-6 [&[data-state=open]]:text-orange-600">
                   {faq.question}
                 </AccordionTrigger>
                 <AccordionContent className="text-gray-600 pb-6 leading-relaxed">

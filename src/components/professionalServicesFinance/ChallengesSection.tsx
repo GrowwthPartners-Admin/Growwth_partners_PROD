@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { AlertTriangle, CheckCircle, Briefcase, Clock, TrendingUp, BarChart3, Users, Target } from "lucide-react";
+import { AlertTriangle, CheckCircle, Clock, TrendingUp, BarChart3, Users, Target } from "lucide-react";
 
 const challenges = [
   { icon: AlertTriangle, text: "Revenue leakage from unbilled or under-billed work" },
@@ -30,12 +30,12 @@ const ChallengesSection: React.FC = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <span className="text-indigo-600 font-semibold text-sm uppercase tracking-wider">
+          <span className="text-orange-600 font-semibold text-sm uppercase tracking-wider">
             Challenges & Solutions
           </span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mt-4">
             Common Financial Challenges in{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-purple-600">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-600 to-amber-600">
               Professional Services Firms
             </span>
           </h2>
@@ -82,9 +82,9 @@ const ChallengesSection: React.FC = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <div className="bg-gradient-to-br from-indigo-600 to-purple-600 rounded-3xl p-8 text-white h-full">
+            <div className="bg-gradient-to-br from-orange-600 to-amber-600 rounded-3xl p-8 text-white h-full">
               <h3 className="text-2xl font-bold mb-6 flex items-center gap-3">
-                <CheckCircle className="w-7 h-7 text-indigo-200" />
+                <CheckCircle className="w-7 h-7 text-orange-200" />
                 What You Get with Our Services
               </h3>
               <div className="space-y-4">
@@ -97,7 +97,7 @@ const ChallengesSection: React.FC = () => {
                     transition={{ duration: 0.4, delay: 0.3 + 0.1 * index }}
                     className="flex items-start gap-3 p-4 bg-white/10 backdrop-blur rounded-xl border border-white/20"
                   >
-                    <item.icon className="w-5 h-5 text-indigo-200 flex-shrink-0 mt-0.5" />
+                    <item.icon className="w-5 h-5 text-orange-200 flex-shrink-0 mt-0.5" />
                     <p className="text-white/90">{item.text}</p>
                   </motion.div>
                 ))}

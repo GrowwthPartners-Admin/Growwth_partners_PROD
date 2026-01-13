@@ -42,12 +42,12 @@ const WhyChooseSection: React.FC = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <span className="text-indigo-600 font-semibold text-sm uppercase tracking-wider">
+            <span className="text-orange-600 font-semibold text-sm uppercase tracking-wider">
               Why Choose Us
             </span>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mt-4 mb-6">
               Why Choose Growwth Partners for{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-purple-600">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-600 to-amber-600">
                 Professional Services Finance?
               </span>
             </h2>
@@ -55,8 +55,8 @@ const WhyChooseSection: React.FC = () => {
               We help services firms move from effort-driven growth to profit-driven growth.
             </p>
 
-            <div className="flex items-center gap-4 p-6 bg-gradient-to-r from-indigo-50 to-purple-50 rounded-2xl border border-indigo-100">
-              <div className="w-16 h-16 bg-gradient-to-br from-indigo-500 to-purple-500 rounded-xl flex items-center justify-center flex-shrink-0">
+            <div className="flex items-center gap-4 p-6 bg-gradient-to-r from-orange-50 to-amber-50 rounded-2xl border border-orange-100">
+              <div className="w-16 h-16 bg-gradient-to-br from-orange-500 to-amber-500 rounded-xl flex items-center justify-center flex-shrink-0">
                 <ArrowRight className="w-8 h-8 text-white" />
               </div>
               <div>
@@ -81,9 +81,9 @@ const WhyChooseSection: React.FC = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: 0.1 * index }}
-                  className="flex items-start gap-4 p-5 bg-gradient-to-r from-slate-50 to-indigo-50/50 rounded-xl hover:shadow-md transition-shadow duration-300"
+                  className="flex items-start gap-4 p-5 bg-gradient-to-r from-slate-50 to-orange-50/50 rounded-xl hover:shadow-md transition-shadow duration-300"
                 >
-                  <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-indigo-500 to-purple-500 rounded-xl flex items-center justify-center">
+                  <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-orange-500 to-amber-500 rounded-xl flex items-center justify-center">
                     <reason.icon className="w-6 h-6 text-white" />
                   </div>
                   <div>

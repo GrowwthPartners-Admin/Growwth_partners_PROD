@@ -18,7 +18,7 @@ const questions = [
 
 const WhoShouldUseSection: React.FC = () => {
   return (
-    <section className="py-20 lg:py-28 bg-gradient-to-br from-slate-50 via-indigo-50/30 to-purple-50/30">
+    <section className="py-20 lg:py-28 bg-gradient-to-br from-slate-50 via-orange-50/30 to-amber-50/30">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -27,7 +27,7 @@ const WhoShouldUseSection: React.FC = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <span className="text-indigo-600 font-semibold text-sm uppercase tracking-wider">
+          <span className="text-orange-600 font-semibold text-sm uppercase tracking-wider">
             Is This Right For You?
           </span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mt-4 mb-6">
@@ -55,9 +55,9 @@ const WhoShouldUseSection: React.FC = () => {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: 0.1 * index }}
-                  className="flex items-center gap-4 p-4 bg-gradient-to-r from-indigo-50 to-purple-50 rounded-xl"
+                  className="flex items-center gap-4 p-4 bg-gradient-to-r from-orange-50 to-amber-50 rounded-xl"
                 >
-                  <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-indigo-500 to-purple-500 rounded-xl flex items-center justify-center">
+                  <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-orange-500 to-amber-500 rounded-xl flex items-center justify-center">
                     <item.icon className="w-6 h-6 text-white" />
                   </div>
                   <p className="text-gray-800 font-medium">{item.text}</p>
@@ -72,10 +72,10 @@ const WhoShouldUseSection: React.FC = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="bg-gradient-to-br from-indigo-600 to-purple-600 rounded-3xl p-8 text-white"
+            className="bg-gradient-to-br from-orange-600 to-amber-600 rounded-3xl p-8 text-white"
           >
             <div className="flex items-center gap-3 mb-6">
-              <HelpCircle className="w-8 h-8 text-indigo-200" />
+              <HelpCircle className="w-8 h-8 text-orange-200" />
               <h3 className="text-2xl font-bold">
                 If your firm struggles to answer:
               </h3>
@@ -90,7 +90,7 @@ const WhoShouldUseSection: React.FC = () => {
                   transition={{ duration: 0.4, delay: 0.3 + 0.1 * index }}
                   className="flex items-start gap-3 p-4 bg-white/10 backdrop-blur rounded-xl border border-white/20"
                 >
-                  <span className="text-indigo-200 font-bold text-lg">?</span>
+                  <span className="text-orange-200 font-bold text-lg">?</span>
                   <p className="text-white/90 font-medium">{question}</p>
                 </motion.div>
               ))}

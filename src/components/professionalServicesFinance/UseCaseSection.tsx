@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Building2, AlertTriangle, Wrench, CheckCircle, ArrowRight } from "lucide-react";
+import { Building2, AlertTriangle, Wrench, CheckCircle } from "lucide-react";
 
 const challenges = [
   "Poor project margin visibility",
@@ -23,7 +23,7 @@ const outcomes = [
 
 const UseCaseSection: React.FC = () => {
   return (
-    <section className="py-20 lg:py-28 bg-gradient-to-br from-slate-50 via-indigo-50/30 to-purple-50/30">
+    <section className="py-20 lg:py-28 bg-gradient-to-br from-slate-50 via-orange-50/30 to-amber-50/30">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -32,7 +32,7 @@ const UseCaseSection: React.FC = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <span className="text-indigo-600 font-semibold text-sm uppercase tracking-wider">
+          <span className="text-orange-600 font-semibold text-sm uppercase tracking-wider">
             Success Story
           </span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mt-4">
@@ -48,12 +48,12 @@ const UseCaseSection: React.FC = () => {
           className="max-w-5xl mx-auto"
         >
           {/* Client type header */}
-          <div className="bg-gradient-to-r from-indigo-600 to-purple-600 rounded-t-3xl p-6 flex items-center gap-4">
+          <div className="bg-gradient-to-r from-orange-600 to-amber-600 rounded-t-3xl p-6 flex items-center gap-4">
             <div className="w-14 h-14 bg-white/20 backdrop-blur rounded-xl flex items-center justify-center">
               <Building2 className="w-7 h-7 text-white" />
             </div>
             <div>
-              <p className="text-indigo-200 text-sm font-medium">Client Type</p>
+              <p className="text-orange-200 text-sm font-medium">Client Type</p>
               <h3 className="text-2xl font-bold text-white">Digital Marketing Agency (Singapore)</h3>
             </div>
           </div>
@@ -82,15 +82,15 @@ const UseCaseSection: React.FC = () => {
               {/* Solution */}
               <div className="p-8">
                 <div className="flex items-center gap-3 mb-6">
-                  <div className="w-10 h-10 bg-indigo-100 rounded-lg flex items-center justify-center">
-                    <Wrench className="w-5 h-5 text-indigo-500" />
+                  <div className="w-10 h-10 bg-orange-100 rounded-lg flex items-center justify-center">
+                    <Wrench className="w-5 h-5 text-orange-500" />
                   </div>
                   <h4 className="text-lg font-bold text-gray-900">Solution</h4>
                 </div>
                 <ul className="space-y-3">
                   {solutions.map((item, index) => (
                     <li key={index} className="flex items-start gap-3">
-                      <span className="w-2 h-2 bg-indigo-400 rounded-full mt-2 flex-shrink-0" />
+                      <span className="w-2 h-2 bg-orange-400 rounded-full mt-2 flex-shrink-0" />
                       <span className="text-gray-600">{item}</span>
                     </li>
                   ))}

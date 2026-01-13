@@ -8,11 +8,12 @@ const CTASection: React.FC = () => {
   const [contactModalOpen, setContactModalOpen] = useState(false);
 
   return (
-    <section className="py-20 lg:py-28 bg-gradient-to-br from-indigo-600 via-purple-600 to-indigo-700 relative overflow-hidden">
+    <section className="py-20 lg:py-28 bg-gradient-to-br from-slate-900 via-slate-800 to-orange-900 relative overflow-hidden">
       {/* Background elements */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-0 left-1/4 w-96 h-96 bg-white/5 rounded-full blur-3xl" />
-        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-purple-400/10 rounded-full blur-3xl" />
+        <div className="absolute top-20 left-10 w-72 h-72 bg-orange-500/20 rounded-full blur-3xl" />
+        <div className="absolute bottom-20 right-10 w-96 h-96 bg-amber-500/20 rounded-full blur-3xl" />
+        <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:60px_60px]" />
       </div>
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -32,18 +33,21 @@ const CTASection: React.FC = () => {
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: 0.1 * index }}
-                  className="w-14 h-14 bg-white/10 backdrop-blur rounded-xl flex items-center justify-center border border-white/20"
+                  className="w-14 h-14 bg-gradient-to-br from-orange-500/20 to-amber-500/20 border border-white/10 backdrop-blur rounded-xl flex items-center justify-center"
                 >
-                  <Icon className="w-7 h-7 text-white" />
+                  <Icon className="w-7 h-7 text-orange-400" />
                 </motion.div>
               ))}
             </div>
 
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6">
-              Eliminate Revenue Leakage and Improve Service Profitability
+              Eliminate Revenue Leakage and{" "}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-amber-400">
+                Improve Service Profitability
+              </span>
             </h2>
 
-            <p className="text-xl text-indigo-100 mb-10 max-w-2xl mx-auto">
+            <p className="text-xl text-slate-300 mb-10 max-w-2xl mx-auto">
               Get CFO-led financial control that helps your professional services firm maximise margins and scale with confidence.
             </p>
 
@@ -56,12 +60,16 @@ const CTASection: React.FC = () => {
               <Button
                 size="lg"
                 onClick={() => setContactModalOpen(true)}
-                className="group bg-white text-indigo-600 hover:bg-indigo-50 px-10 py-7 text-lg font-semibold rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300"
+                className="group bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white px-10 py-7 text-lg font-semibold rounded-xl shadow-lg shadow-orange-500/25 hover:shadow-orange-500/40 transition-all duration-300"
               >
                 Schedule a Professional Services Finance Consultation
                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Button>
             </motion.div>
+
+            <p className="mt-6 text-sm text-slate-400">
+              No commitment required • Free initial consultation
+            </p>
           </motion.div>
         </div>
       </div>
