@@ -100,6 +100,7 @@ export const services1Categories: ServiceCategory[] = [
       { title: "Tech Startup Accounting", path: "/accounting-for-tech-start-ups-companies", icon: Laptop },
       { title: "Ecommerce Accounting", path: "/ecommerce-accounting-services", icon: ShoppingCart },
       { title: "Ecommerce Finance Services", path: "/ecommerce-finance-services", icon: ShoppingCart },
+      { title: "Trading & Distribution Finance", path: "/trading-distribution-finance", icon: ShoppingCart },
       { title: "Fintech Finance Services", path: "/fintech-finance", icon: Coins },
       { title: "Tech Business Finance", path: "/tech-business-finance", icon: Laptop },
       { title: "SaaS Finance Services", path: "/saas-finance", icon: Cloud },
