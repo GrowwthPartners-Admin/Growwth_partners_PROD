@@ -24,7 +24,7 @@ const navItems = [
   },
   {
     title: "Services1",
-    path: "/services",
+    // path: "/services",
     dropdown: "mega-menu", // Special type for mega menu
   },
   {
@@ -112,8 +112,8 @@ export const Navbar = () => {
   };
 
   return (
-    <header className="sticky top-0 z-50 bg-white shadow-md">
-      <div className="container-custom py-3">
+    <header className="sticky top-0 z-50 bg-white shadow-md overflow-visible">
+  <div className="container-custom py-3 overflow-visible">
         <div className="flex items-center justify-between">
           {/* Logo - with navigation */}
           <div className="flex items-center">
