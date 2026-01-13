@@ -45,7 +45,7 @@ const UseCaseSection: React.FC = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="max-w-5xl mx-auto"
+          className="max-w-8xl mx-auto"
         >
           {/* Client type header */}
           <div className="bg-gradient-to-r from-orange-600 to-amber-600 rounded-t-3xl p-6 flex items-center gap-4">

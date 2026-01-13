@@ -65,11 +65,11 @@ const ChallengesSection: React.FC = () => {
                     className="flex items-start gap-3 p-4 bg-white rounded-xl shadow-sm"
                   >
                     <item.icon className="w-5 h-5 text-red-500 flex-shrink-0 mt-0.5" />
-                    <p className="text-gray-700">{item.text}</p>
+                    <p className="text-gray-700 font-bold">{item.text}</p>
                   </motion.div>
                 ))}
               </div>
-              <p className="mt-6 text-gray-600 font-medium text-center bg-white/60 p-4 rounded-xl">
+              <p className="mt-6 text-gray-600 font-bold text-center bg-white/60 p-4 rounded-xl">
                 These challenges limit scalability and reduce margins.
               </p>
             </div>
@@ -82,9 +82,9 @@ const ChallengesSection: React.FC = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <div className="bg-gradient-to-br from-orange-600 to-amber-600 rounded-3xl p-8 text-white h-full">
-              <h3 className="text-2xl font-bold mb-6 flex items-center gap-3">
-                <CheckCircle className="w-7 h-7 text-orange-200" />
+            <div className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-3xl p-8 border border-green-100 h-full">
+              <h3 className="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-3">
+                <CheckCircle className="w-7 h-7 text-green-600" />
                 What You Get with Our Services
               </h3>
               <div className="space-y-4">
@@ -95,18 +95,16 @@ const ChallengesSection: React.FC = () => {
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.4, delay: 0.3 + 0.1 * index }}
-                    className="flex items-start gap-3 p-4 bg-white/10 backdrop-blur rounded-xl border border-white/20"
+                    className="flex items-start gap-3 p-4 bg-white rounded-xl shadow-sm"
                   >
-                    <item.icon className="w-5 h-5 text-orange-200 flex-shrink-0 mt-0.5" />
-                    <p className="text-white/90">{item.text}</p>
+                    <item.icon className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
+                    <p className="text-gray-700 font-bold">{item.text}</p>
                   </motion.div>
                 ))}
               </div>
-              <div className="mt-6 bg-white/20 backdrop-blur rounded-xl p-4 text-center">
-                <p className="font-semibold">
-                  Designed to support profitable, sustainable professional services growth.
-                </p>
-              </div>
+              <p className="mt-6 text-gray-600 font-bold text-center bg-white/60 p-4 rounded-xl">
+                Designed to support profitable, sustainable professional services growth.
+              </p>
             </div>
           </motion.div>
         </div>
