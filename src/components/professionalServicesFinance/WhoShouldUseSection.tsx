@@ -72,11 +72,11 @@ const WhoShouldUseSection: React.FC = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="bg-gradient-to-br from-orange-600 to-amber-600 rounded-3xl p-8 text-white"
+            className="bg-gradient-to-br from-slate-50 to-orange-100 rounded-3xl p-8 text-white"
           >
             <div className="flex items-center gap-3 mb-6">
-              <HelpCircle className="w-8 h-8 text-orange-200" />
-              <h3 className="text-2xl font-bold">
+              <HelpCircle className="w-8 h-8 text-orange-400" />
+              <h3 className="text-2xl font-bold text-black">
                 If your firm struggles to answer:
               </h3>
             </div>
@@ -88,15 +88,15 @@ const WhoShouldUseSection: React.FC = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: 0.3 + 0.1 * index }}
-                  className="flex items-start gap-3 p-4 bg-white/10 backdrop-blur rounded-xl border border-white/20"
+                  className="flex items-start gap-3 p-4 bg-white/10 backdrop-blur shadow rounded-xl border border-gray-300"
                 >
-                  <span className="text-orange-200 font-bold text-lg">?</span>
-                  <p className="text-white/90 font-medium">{question}</p>
+                  <span className="text-orange-500 font-bold text-lg">?</span>
+                  <p className="text-gray-700 font-bold">{question}</p>
                 </motion.div>
               ))}
             </div>
             <div className="bg-white/20 backdrop-blur rounded-xl p-6 text-center">
-              <p className="text-xl font-semibold">
+              <p className="text-xl font-semibold text-gray-700">
                 You need specialised professional services finance support.
               </p>
             </div>

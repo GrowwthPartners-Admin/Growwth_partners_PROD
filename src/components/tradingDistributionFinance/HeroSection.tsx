@@ -2,10 +2,8 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { ArrowRight, TrendingUp, Package, DollarSign, BarChart3 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { ContactModal } from "@/components/ui/contact-modal";
 
 const HeroSection: React.FC = () => {
-  const [contactModalOpen, setContactModalOpen] = useState(false);
 
   return (
     <section className="relative min-h-[90vh] flex items-center overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-emerald-900">
@@ -71,8 +69,7 @@ const HeroSection: React.FC = () => {
               transition={{ delay: 0.5, duration: 0.6 }}
               className="text-lg text-slate-300 mb-8 leading-relaxed max-w-xl"
             >
-              Growwth Partners' Trading & Distribution Finance services in Singapore deliver CFO-led financial control, margin transparency, and cash cycle optimisation—helping trading businesses protect profitability, improve liquidity, and scale sustainably.
-            </motion.p>
+CFO-led finance for trading & distribution: margin clarity, better cash flow, and sustainable scale.            </motion.p>
 
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -81,7 +78,7 @@ const HeroSection: React.FC = () => {
             >
               <Button
                 size="lg"
-                onClick={() => setContactModalOpen(true)}
+                onClick={() => window.open('https://calendly.com/jd-growwthpartners/15min?month=2025-11', '_blank')}
                 className="group bg-gradient-to-r from-emerald-500 to-cyan-500 hover:from-emerald-600 hover:to-cyan-600 text-white px-8 py-6 text-lg rounded-xl shadow-lg shadow-emerald-500/25 hover:shadow-emerald-500/40 transition-all duration-300"
               >
                 Speak to a Trading Finance Expert
@@ -165,7 +162,6 @@ const HeroSection: React.FC = () => {
         </div>
       </div>
 
-      <ContactModal open={contactModalOpen} onOpenChange={setContactModalOpen} />
     </section>
   );
 };

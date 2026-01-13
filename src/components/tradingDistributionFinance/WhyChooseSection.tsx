@@ -68,7 +68,7 @@ const WhyChooseSection: React.FC = () => {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1, duration: 0.5 }}
-                  className="flex items-start gap-4 p-4 rounded-xl bg-slate-50 hover:bg-emerald-50 border border-slate-100 hover:border-emerald-200 transition-all duration-300 group"
+                  className="flex items-start gap-4 p-4 rounded-xl shadow bg-slate-50 hover:bg-emerald-50 border border-slate-100 hover:border-emerald-200 transition-all duration-300 group"
                 >
                   <div className="w-12 h-12 rounded-xl bg-white shadow-sm flex items-center justify-center group-hover:bg-emerald-100 transition-colors duration-300">
                     <reason.icon className="w-6 h-6 text-emerald-600" />

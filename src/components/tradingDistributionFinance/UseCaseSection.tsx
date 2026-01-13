@@ -55,7 +55,7 @@ const UseCaseSection: React.FC = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="max-w-5xl mx-auto"
+          className="max-w-8xl mx-auto"
         >
           <div className="bg-white rounded-3xl shadow-xl overflow-hidden border border-slate-100">
             {/* Header */}

@@ -2,13 +2,11 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { ArrowRight, Briefcase, Clock, TrendingUp, Receipt } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { ContactModal } from "@/components/ui/contact-modal";
 
 const HeroSection: React.FC = () => {
-  const [contactModalOpen, setContactModalOpen] = useState(false);
 
   return (
-    <section className="relative min-h-[90vh] flex items-center overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-orange-900/20">
+    <section className="relative min-h-[90vh] py-20 flex items-center overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-orange-900/20">
       {/* Animated background elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-20 left-10 w-72 h-72 bg-orange-500/10 rounded-full blur-3xl animate-pulse" />
@@ -40,7 +38,7 @@ const HeroSection: React.FC = () => {
               className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-orange-500/20 border border-orange-500/30 mb-6"
             >
               <Briefcase className="w-4 h-4 text-orange-400" />
-              <span className="text-orange-300 text-sm font-medium">Professional Services Finance</span>
+              <span className="text-orange-300 text-sm font-medium">Professional Finance Services</span>
             </motion.div>
 
             <motion.h1
@@ -49,7 +47,7 @@ const HeroSection: React.FC = () => {
               transition={{ delay: 0.3, duration: 0.6 }}
               className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight"
             >
-              Professional Services{" "}
+              Professional {" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-amber-400">
                 Finance Services
               </span>{" "}
@@ -60,7 +58,7 @@ const HeroSection: React.FC = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4, duration: 0.6 }}
-              className="text-xl sm:text-2xl text-orange-100 font-medium mb-4"
+              className="text-xl sm:text-2xl text-orange-100 font-medium mb-10"
             >
               Improve Profitability, Control Revenue Leakage & Build Predictable Cash Flow
             </motion.p>
@@ -71,8 +69,7 @@ const HeroSection: React.FC = () => {
               transition={{ delay: 0.5, duration: 0.6 }}
               className="text-lg text-slate-300 mb-8 leading-relaxed max-w-xl"
             >
-              Growwth Partners' Professional Services Finance services in Singapore deliver CFO-led financial discipline, project-level visibility, and cash flow control—helping professional services firms maximise profitability, improve utilisation, and scale with confidence.
-            </motion.p>
+CFO-led finance for professional services firms: better profitability, utilisation, and scalable growth.            </motion.p>
 
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -81,7 +78,7 @@ const HeroSection: React.FC = () => {
             >
               <Button
                 size="lg"
-                onClick={() => setContactModalOpen(true)}
+                onClick={() => window.open('https://calendly.com/jd-growwthpartners/15min?month=2025-11', '_blank')}
                 className="group bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white px-8 py-6 text-lg rounded-xl shadow-lg shadow-orange-500/25 hover:shadow-orange-500/40 transition-all duration-300"
               >
                 Speak to a Professional Services Finance Expert
@@ -165,7 +162,6 @@ const HeroSection: React.FC = () => {
         </div>
       </div>
 
-      <ContactModal open={contactModalOpen} onOpenChange={setContactModalOpen} />
     </section>
   );
 };

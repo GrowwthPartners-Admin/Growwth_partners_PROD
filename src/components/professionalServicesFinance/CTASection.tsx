@@ -2,10 +2,8 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { ArrowRight, Briefcase, TrendingUp, Receipt } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { ContactModal } from "@/components/ui/contact-modal";
 
 const CTASection: React.FC = () => {
-  const [contactModalOpen, setContactModalOpen] = useState(false);
 
   return (
     <section className="py-20 lg:py-28 bg-gradient-to-br from-slate-900 via-slate-800 to-orange-900 relative overflow-hidden">
@@ -24,21 +22,7 @@ const CTASection: React.FC = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            {/* Icon row */}
-            <div className="flex justify-center gap-4 mb-8">
-              {[Briefcase, TrendingUp, Receipt].map((Icon, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, scale: 0.5 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: 0.1 * index }}
-                  className="w-14 h-14 bg-gradient-to-br from-orange-500/20 to-amber-500/20 border border-white/10 backdrop-blur rounded-xl flex items-center justify-center"
-                >
-                  <Icon className="w-7 h-7 text-orange-400" />
-                </motion.div>
-              ))}
-            </div>
+          
 
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6">
               Eliminate Revenue Leakage and{" "}
@@ -59,7 +43,7 @@ const CTASection: React.FC = () => {
             >
               <Button
                 size="lg"
-                onClick={() => setContactModalOpen(true)}
+                onClick={() => window.open('https://calendly.com/jd-growwthpartners/15min?month=2025-11', '_blank')}
                 className="group bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white px-10 py-7 text-lg font-semibold rounded-xl shadow-lg shadow-orange-500/25 hover:shadow-orange-500/40 transition-all duration-300"
               >
                 Schedule a Professional Services Finance Consultation
@@ -73,8 +57,6 @@ const CTASection: React.FC = () => {
           </motion.div>
         </div>
       </div>
-
-      <ContactModal open={contactModalOpen} onOpenChange={setContactModalOpen} />
     </section>
   );
 };

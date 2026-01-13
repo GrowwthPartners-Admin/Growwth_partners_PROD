@@ -55,7 +55,7 @@ const WhyChooseSection: React.FC = () => {
               We help services firms move from effort-driven growth to profit-driven growth.
             </p>
 
-            <div className="flex items-center gap-4 p-6 bg-gradient-to-r from-orange-50 to-amber-50 rounded-2xl border border-orange-100">
+            <div className="flex items-center gap-4 p-6 bg-gradient-to-r from-orange-50 to-amber-50 shadow rounded-2xl border border-orange-100">
               <div className="w-16 h-16 bg-gradient-to-br from-orange-500 to-amber-500 rounded-xl flex items-center justify-center flex-shrink-0">
                 <ArrowRight className="w-8 h-8 text-white" />
               </div>
@@ -81,7 +81,7 @@ const WhyChooseSection: React.FC = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: 0.1 * index }}
-                  className="flex items-start gap-4 p-5 bg-gradient-to-r from-slate-50 to-orange-50/50 rounded-xl hover:shadow-md transition-shadow duration-300"
+                  className="flex items-start gap-4 p-5 bg-gradient-to-r from-slate-50 to-orange-50/50 rounded-xl shadow-md hover:shadow-md transition-shadow duration-300"
                 >
                   <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-orange-500 to-amber-500 rounded-xl flex items-center justify-center">
                     <reason.icon className="w-6 h-6 text-white" />

@@ -2,10 +2,8 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { ArrowRight, Package, TrendingUp, DollarSign } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { ContactModal } from "@/components/ui/contact-modal";
 
 const CTASection: React.FC = () => {
-  const [contactModalOpen, setContactModalOpen] = useState(false);
 
   return (
     <section className="py-20 lg:py-28 bg-gradient-to-br from-slate-900 via-emerald-900 to-slate-900 relative overflow-hidden">
@@ -23,22 +21,7 @@ const CTASection: React.FC = () => {
           transition={{ duration: 0.6 }}
           className="max-w-4xl mx-auto text-center"
         >
-          {/* Icons */}
-          <div className="flex justify-center gap-4 mb-8">
-            {[Package, TrendingUp, DollarSign].map((Icon, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, scale: 0.5 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1, duration: 0.5 }}
-                className="w-14 h-14 rounded-2xl bg-gradient-to-br from-emerald-500/20 to-cyan-500/20 border border-white/10 flex items-center justify-center"
-              >
-                <Icon className="w-7 h-7 text-emerald-400" />
-              </motion.div>
-            ))}
-          </div>
-
+         
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6">
             Optimise Margins and Cash Flow{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400">
@@ -58,7 +41,7 @@ const CTASection: React.FC = () => {
           >
             <Button
               size="lg"
-              onClick={() => setContactModalOpen(true)}
+              onClick={() => window.open('https://calendly.com/jd-growwthpartners/15min?month=2025-11', '_blank')}
               className="group bg-gradient-to-r from-emerald-500 to-cyan-500 hover:from-emerald-600 hover:to-cyan-600 text-white px-10 py-7 text-lg rounded-xl shadow-lg shadow-emerald-500/25 hover:shadow-emerald-500/40 transition-all duration-300"
             >
               Schedule a Trading Finance Consultation
@@ -72,7 +55,6 @@ const CTASection: React.FC = () => {
         </motion.div>
       </div>
 
-      <ContactModal open={contactModalOpen} onOpenChange={setContactModalOpen} />
     </section>
   );
 };
