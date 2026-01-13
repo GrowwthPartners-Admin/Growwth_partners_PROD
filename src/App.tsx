@@ -535,6 +535,27 @@ export const routes: RouteRecord[] = [
           return { Component };
         },
       },
+      {
+        path: "professional-services-finance",
+        async lazy() {
+          const { default: Component } = await import("./pages/ProfessionalServicesFinance");
+          return { Component };
+        },
+      },
+      {
+        path: "uae/professional-services-finance",
+        async lazy() {
+          const { default: Component } = await import("./pages/ProfessionalServicesFinance");
+          return { Component };
+        },
+      },
+      {
+        path: "au/professional-services-finance",
+        async lazy() {
+          const { default: Component } = await import("./pages/ProfessionalServicesFinance");
+          return { Component };
+        },
+      },
 
 
             {
