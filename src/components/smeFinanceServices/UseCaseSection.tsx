@@ -23,7 +23,7 @@ const UseCaseSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="max-w-7xl mx-auto"
+          className="max-w-8xl mx-auto"
         >
           <div className="bg-white rounded-3xl shadow-xl overflow-hidden">
             {/* Header */}
@@ -42,7 +42,7 @@ const UseCaseSection = () => {
             {/* Content Grid */}
             <div className="grid md:grid-cols-3 gap-0 divide-y md:divide-y-0 md:divide-x divide-gray-100">
               {/* Challenges */}
-              <div className="p-6 md:p-8">
+              <div className="p-6 md:p-8 bg-gradient-to-br from-red-50 to-red-50">
                 <div className="flex items-center gap-3 mb-6">
                   <div className="w-10 h-10 bg-red-100 rounded-lg flex items-center justify-center">
                     <AlertCircle className="w-5 h-5 text-red-600" />
@@ -64,7 +64,7 @@ const UseCaseSection = () => {
               </div>
 
               {/* Solution */}
-              <div className="p-6 md:p-8">
+              <div className="p-6 md:p-8 bg-gradient-to-br from-yellow-50 to-yellow-50">
                 <div className="flex items-center gap-3 mb-6">
                   <div className="w-10 h-10 bg-brand-orange/10 rounded-lg flex items-center justify-center">
                     <Wrench className="w-5 h-5 text-brand-orange" />

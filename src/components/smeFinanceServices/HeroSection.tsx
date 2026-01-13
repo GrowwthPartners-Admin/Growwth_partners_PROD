@@ -33,7 +33,7 @@ const HeroSection = () => {
               Finance Built for Speed, Scale & Fundraising
             </motion.div>
 
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-8 leading-tight">
               SME Finance Services in{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-orange-400">
                 Singapore
@@ -45,7 +45,7 @@ const HeroSection = () => {
             </p>
 
             <p className="text-gray-400 text-lg mb-8 max-w-xl">
-              Growwth Partners' SME Finance services in Singapore help small and medium-sized businesses build financial control, improve profitability, and make confident decisions—without the cost or complexity of building a large in-house finance team.
+              Growwth Partners delivers scalable financial control and profitability insights for Singapore SMEs—enabling confident decision-making without the overhead of a large in-house team
             </p>
 
             <motion.div

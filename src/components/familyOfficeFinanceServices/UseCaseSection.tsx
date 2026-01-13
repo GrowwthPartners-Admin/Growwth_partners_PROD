@@ -59,7 +59,7 @@ const UseCaseSection: React.FC = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="max-w-5xl mx-auto"
+          className="max-w-8xl mx-auto"
         >
           <div className="bg-gradient-to-br from-slate-900 to-slate-800 rounded-3xl p-8 lg:p-12 shadow-2xl mb-8">
             <div className="flex flex-col md:flex-row md:items-center gap-6 mb-8 pb-8 border-b border-white/10">

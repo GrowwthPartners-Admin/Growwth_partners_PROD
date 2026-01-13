@@ -5,7 +5,6 @@ import { Button } from '@/components/ui/button';
 import { ContactModal } from '@/components/ui/contact-modal';
 
 const CTASection: React.FC = () => {
-  const [contactModalOpen, setContactModalOpen] = useState(false);
 
   return (
     <section className="py-20 lg:py-28 bg-gradient-to-br from-slate-900 via-slate-800 to-emerald-900 relative overflow-hidden">
@@ -49,7 +48,7 @@ const CTASection: React.FC = () => {
           >
             <Button
               size="lg"
-              onClick={() => setContactModalOpen(true)}
+              onClick={() => window.open('https://calendly.com/jd-growwthpartners/15min?month=2025-11', '_blank')}
               className="bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-600 hover:to-emerald-700 text-white px-10 py-7 text-lg rounded-xl shadow-lg shadow-emerald-500/25 hover:shadow-emerald-500/40 transition-all duration-300 group"
             >
               👉 Schedule a Family Office Finance Consultation
@@ -57,29 +56,10 @@ const CTASection: React.FC = () => {
             </Button>
           </motion.div>
 
-          {/* Trust Indicators */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            className="mt-12 flex flex-wrap justify-center gap-8"
-          >
-            {[
-              { icon: Shield, text: 'CFO-Led Governance' },
-              { icon: Lock, text: 'Complete Confidentiality' },
-              { icon: Building2, text: 'Multi-Asset Expertise' }
-            ].map((item, index) => (
-              <div key={index} className="flex items-center gap-2 text-slate-400">
-                <item.icon className="w-5 h-5 text-emerald-400" />
-                <span>{item.text}</span>
-              </div>
-            ))}
-          </motion.div>
+
         </motion.div>
       </div>
 
-      <ContactModal open={contactModalOpen} onOpenChange={setContactModalOpen} />
     </section>
   );
 };

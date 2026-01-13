@@ -75,7 +75,7 @@ const WhatIsSection: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="group bg-white rounded-2xl p-6 lg:p-8 shadow-lg shadow-slate-200/50 border border-slate-100 hover:shadow-xl hover:border-emerald-200 transition-all duration-300"
+              className="group bg-white rounded-2xl p-6 lg:p-8 shadow-lg shadow-slate-200/50 border hover:shadow-xl border-emerald-200 transition-all duration-300"
             >
               <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-emerald-500 to-emerald-600 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300">
                 <area.icon className="w-7 h-7 text-white" />

@@ -2,10 +2,8 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Shield, TrendingUp, Lock, BarChart3 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { ContactModal } from '@/components/ui/contact-modal';
 
 const HeroSection: React.FC = () => {
-  const [contactModalOpen, setContactModalOpen] = useState(false);
 
   return (
     <section className="relative min-h-[90vh] flex items-center overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-emerald-900">
@@ -42,7 +40,7 @@ const HeroSection: React.FC = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3, duration: 0.6 }}
-              className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6"
+              className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-10"
             >
               Family Office Finance Services in{' '}
               <span className="bg-gradient-to-r from-emerald-400 to-amber-400 bg-clip-text text-transparent">
@@ -56,10 +54,7 @@ const HeroSection: React.FC = () => {
               transition={{ delay: 0.4, duration: 0.6 }}
               className="text-lg sm:text-xl text-slate-300 mb-8 max-w-2xl mx-auto lg:mx-0 leading-relaxed"
             >
-              Confidential, Institutional-Grade Financial Control for Multi-Asset Family Wealth. 
-              Growwth Partners' Family Office Finance services deliver CFO-led financial governance, 
-              consolidated reporting, and disciplined controls—designed to protect wealth, enhance 
-              transparency, and support long-term capital allocation with complete confidentiality.
+            Confidential, CFO-led financial governance and consolidated reporting for multi-asset family wealth—built to protect capital, improve transparency, and support disciplined long-term allocation
             </motion.p>
 
             <motion.div
@@ -69,7 +64,7 @@ const HeroSection: React.FC = () => {
             >
               <Button
                 size="lg"
-                onClick={() => setContactModalOpen(true)}
+                onClick={() => window.open('https://calendly.com/jd-growwthpartners/15min?month=2025-11', '_blank')}
                 className="bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-600 hover:to-emerald-700 text-white px-8 py-6 text-lg rounded-xl shadow-lg shadow-emerald-500/25 hover:shadow-emerald-500/40 transition-all duration-300"
               >
                 👉 Speak to a Family Office Finance Expert
@@ -132,7 +127,6 @@ const HeroSection: React.FC = () => {
         </div>
       </div>
 
-      <ContactModal open={contactModalOpen} onOpenChange={setContactModalOpen} />
     </section>
   );
 };

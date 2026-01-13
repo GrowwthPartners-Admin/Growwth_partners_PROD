@@ -54,6 +54,15 @@ const services = [
   }
 ];
 
+// Define a light gradient for each card (you can adjust colors as needed)
+const cardGradients = [
+  "bg-gradient-to-br from-slate-50 to-blue-50",      // 01 - Planning
+  "bg-gradient-to-br from-slate-50 to-green-50",     // 02 - Cash Flow
+  "bg-gradient-to-br from-slate-50 to-amber-50",     // 03 - Profitability
+  "bg-gradient-to-br from-slate-50 to-purple-50",    // 04 - Reporting
+  "bg-gradient-to-br from-slate-50 to-pink-50"       // 05 - Strategy
+];
+
 const HowWeDeliverSection = () => {
   return (
     <section className="py-20 bg-gradient-to-b from-gray-50 to-white">
@@ -84,11 +93,13 @@ const HowWeDeliverSection = () => {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className="group"
             >
-              <div className="bg-white rounded-2xl border p-6 md:p-8 hover:shadow-xl transition-all duration-300 border-brand-orange/30 shadow">
+              <div
+                className={`rounded-2xl border p-6 md:p-8 hover:shadow-xl transition-all duration-300 border-brand-orange/30 shadow ${cardGradients[index]}`}
+              >
                 <div className="flex flex-col md:flex-row md:items-start gap-6">
                   {/* Number and Icon */}
                   <div className="flex items-center gap-4">
-                    <span className="text-5xl font-bold text-gray-100 group-hover:text-brand-orange/20 transition-colors">
+                    <span className="text-5xl font-bold text-orange-300 group-hover:text-brand-orange/20 transition-colors">
                       {service.number}
                     </span>
                     <div className="w-14 h-14 bg-brand-orange/10 rounded-xl flex items-center justify-center group-hover:bg-brand-orange/20 transition-colors">
