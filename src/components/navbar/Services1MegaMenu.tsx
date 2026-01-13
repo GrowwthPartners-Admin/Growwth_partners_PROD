@@ -27,7 +27,7 @@ export const Services1MegaMenu = ({ onNavigate }: Services1MegaMenuProps) => {
       {/* Trigger Button */}
       <button
         type="button"
-        className="group px-3 py-2 text-gray-700 hover:text-brand-orange font-medium flex items-center gap-1.5 transition-all duration-300"
+        className="group px-3 py-3 text-gray-700 hover:text-brand-orange font-medium flex items-center gap-2 transition-all duration-300"
         onClick={() => setIsOpen(!isOpen)}
       >
         <span className="relative">
@@ -63,7 +63,7 @@ export const Services1MegaMenu = ({ onNavigate }: Services1MegaMenuProps) => {
               
               <div className="relative flex">
                 {/* Categories Panel */}
-                <div className="w-[260px] bg-gradient-to-br from-slate-50/80 to-slate-100/60 backdrop-blur-sm border-r border-gray-200/60 py-4">
+                <div className="w-[290px] bg-gradient-to-br from-slate-50/80 to-slate-100/60 backdrop-blur-sm border-r border-gray-200/60 py-4">
                   <div className="px-5 pb-3 mb-2">
                     <div className="flex items-center gap-2">
                       <Sparkles className="w-4 h-4 text-brand-orange" />
@@ -73,7 +73,7 @@ export const Services1MegaMenu = ({ onNavigate }: Services1MegaMenuProps) => {
                     </div>
                   </div>
                   
-                  <div className="space-y-1 px-2">
+                  <div className="space-y-1.3 px-2">
                     {services1Categories.map((category, index) => {
                       const Icon = category.icon;
                       const isActive = activeCategory === category.id;
@@ -181,7 +181,7 @@ export const Services1MegaMenu = ({ onNavigate }: Services1MegaMenuProps) => {
                                   setIsOpen(false);
                                   onNavigate?.();
                                 }}
-                                className="group flex items-center gap-3 px-3 py-3 rounded-xl text-gray-700 hover:bg-gradient-to-r hover:from-brand-orange/5 hover:via-orange-50 hover:to-amber-50 transition-all duration-300 relative overflow-hidden"
+                                className="group flex items-center gap-4 px-3 py-3 rounded-xl text-gray-700 hover:bg-gradient-to-r hover:from-orange-50 hover:via-orange-100 hover:to-amber-100 transition-all duration-300 relative overflow-hidden"
                               >
                                 {/* Hover effect line */}
                                 <div className="absolute left-0 top-0 bottom-0 w-0.5 bg-gradient-to-b from-brand-orange to-orange-400 scale-y-0 group-hover:scale-y-100 transition-transform duration-300 origin-top" />

@@ -2,10 +2,8 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { MessageCircle, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { ContactModal } from "@/components/ui/contact-modal";
 
 const CTASection = () => {
-  const [contactModalOpen, setContactModalOpen] = useState(false);
 
   return (
     <section className="relative py-20 px-4 sm:px-6 lg:px-8">
@@ -35,7 +33,7 @@ const CTASection = () => {
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button
-              onClick={() => setContactModalOpen(true)}
+              onClick={() => window.open('https://calendly.com/jd-growwthpartners/15min?month=2025-11', '_blank')}
               className="bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white px-8 py-6 text-lg rounded-xl group"
             >
               Speak to an Expert
@@ -56,7 +54,6 @@ const CTASection = () => {
         </motion.div>
       </div>
 
-      <ContactModal open={contactModalOpen} onOpenChange={setContactModalOpen} />
     </section>
   );
 };
