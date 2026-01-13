@@ -5,6 +5,7 @@ import { Menu, X, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ContactModal } from "@/components/ui/contact-modal";
 import { CountrySwitcher } from "@/components/CountrySwitcher";
+import { Services1MegaMenu, MobileServices1Menu } from "@/components/navbar/Services1MegaMenu";
 
 // Import the company logo
 import companyLogo from "/lovable-uploads/5f2bc1cf-2bab-424d-8245-eb52af504603.png";
@@ -22,9 +23,9 @@ const navItems = [
     dropdown: false,
   },
   {
-    title: "Contact Us",
-    path: "/contact-us",
-    dropdown: false,
+    title: "Services1",
+    path: "/services",
+    dropdown: "mega-menu", // Special type for mega menu
   },
   {
     title: "AI in Finance",
@@ -125,7 +126,9 @@ export const Navbar = () => {
           <nav className="hidden lg:flex items-center space-x-2">
             {navItems.map((item) => (
               <div key={item.title} className="relative group">
-                {item.dropdown ? (
+                {item.dropdown === "mega-menu" ? (
+                  <Services1MegaMenu onNavigate={closeMobileMenu} />
+                ) : item.dropdown ? (
                   <div className="flex flex-col">
                     <button
                       type="button"
@@ -197,7 +200,13 @@ export const Navbar = () => {
           <nav className="lg:hidden mt-4 border-t pt-4">
             {navItems.map((item) => (
               <div key={item.title} className="py-1">
-                {item.dropdown ? (
+                {item.dropdown === "mega-menu" ? (
+                  <MobileServices1Menu
+                    isOpen={openDropdown === "Services1"}
+                    onToggle={() => toggleDropdown("Services1")}
+                    onNavigate={closeMobileMenu}
+                  />
+                ) : item.dropdown ? (
                   <div>
                     <button
                       onClick={() => toggleDropdown(item.title)}
