@@ -36,14 +36,14 @@ export const useBlogPostsListing = (country: string = 'sg') => {
       const allPosts = data as BlogPostListing[];
       
       // Filter posts based on country/region
-      // Australia shows only 'australia' region posts
+      // Australia shows ONLY 'australia' region posts
       // Singapore and UAE show 'global' or 'all' region posts
       const filteredPosts = allPosts.filter(post => {
         const postRegion = post.region || 'global';
         
         if (country === 'au') {
-          // Australia: show only 'australia' or 'all' region posts
-          return postRegion === 'australia' || postRegion === 'all';
+          // Australia: show ONLY 'australia' region posts
+          return postRegion === 'australia';
         } else {
           // Singapore (sg) and UAE (uae): show 'global' or 'all' region posts
           return postRegion === 'global' || postRegion === 'all';
