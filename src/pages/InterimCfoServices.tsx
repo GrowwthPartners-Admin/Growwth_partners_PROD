@@ -89,6 +89,7 @@ const InterimCfoServices = () => {
         title="Interim CFO Services in Singapore | Leadership Through Transition"
         description="Expert interim CFO support during leadership gaps, restructuring, mergers, or transitions."
         keywords="interim CFO Singapore, temporary CFO, CFO replacement, transition finance leadership"
+        canonicalUrl="https://growwthpartners.com/interim-cfo-services"
         structuredData={structuredData}
       />
       <Navbar />
