@@ -81,8 +81,10 @@ const navItems = [
         path: "/about",
         dropdown: false,
       },
+      
       { title: "Blog", path: "/blog" },
       { title: "Success Stories", path: "/success-stories" },
+      { title: "Help & Support", path: "/help-support" },
       { title: "Guide", path: "/guide" },
       { title: "Achievements & Awards", path: "/achievements" },
       { title: "In The News", path: "/news" },
