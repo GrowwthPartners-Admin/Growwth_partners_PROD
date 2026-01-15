@@ -24,6 +24,7 @@ export type Database = {
           Hero_image: string | null
           id: string
           publishdate: string | null
+          region: string | null
           slug: string | null
           title: string
         }
@@ -36,6 +37,7 @@ export type Database = {
           Hero_image?: string | null
           id?: string
           publishdate?: string | null
+          region?: string | null
           slug?: string | null
           title: string
         }
@@ -48,6 +50,7 @@ export type Database = {
           Hero_image?: string | null
           id?: string
           publishdate?: string | null
+          region?: string | null
           slug?: string | null
           title?: string
         }

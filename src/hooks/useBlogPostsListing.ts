@@ -10,9 +10,10 @@ export interface BlogPostListing {
   author: string;
   categories: string[];
   publishDate: string;
+  region?: string;
 }
 
-export const useBlogPostsListing = () => {
+export const useBlogPostsListing = (country: string = 'sg') => {
   const [posts, setPosts] = useState<BlogPostListing[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -32,22 +33,37 @@ export const useBlogPostsListing = () => {
 
       // data already transformed by backend if you use service mapping;
       // if not, you can transform here. (In my backend service, it's already transformed.)
-      const transformed = data as BlogPostListing[];
+      const allPosts = data as BlogPostListing[];
+      
+      // Filter posts based on country/region
+      // Australia shows only 'australia' region posts
+      // Singapore and UAE show 'global' or 'all' region posts
+      const filteredPosts = allPosts.filter(post => {
+        const postRegion = post.region || 'global';
+        
+        if (country === 'au') {
+          // Australia: show only 'australia' or 'all' region posts
+          return postRegion === 'australia' || postRegion === 'all';
+        } else {
+          // Singapore (sg) and UAE (uae): show 'global' or 'all' region posts
+          return postRegion === 'global' || postRegion === 'all';
+        }
+      });
       
       try {
-        localStorage.setItem("blog_posts_listing_cache", JSON.stringify(transformed));
-        localStorage.setItem("blog_posts_listing_timestamp", Date.now().toString());
+        localStorage.setItem(`blog_posts_listing_cache_${country}`, JSON.stringify(filteredPosts));
+        localStorage.setItem(`blog_posts_listing_timestamp_${country}`, Date.now().toString());
       } catch (cacheError) {
         console.warn("Failed to cache blog posts:", cacheError);
         try {
-          localStorage.removeItem("blog_posts_listing_cache");
-          localStorage.removeItem("blog_posts_listing_timestamp");
+          localStorage.removeItem(`blog_posts_listing_cache_${country}`);
+          localStorage.removeItem(`blog_posts_listing_timestamp_${country}`);
         } catch(err) {
           console.error(err)
         }
       }
 
-      setPosts(transformed);
+      setPosts(filteredPosts);
       setLoading(false);
     } catch (err: any) {
       clearTimeout(timeoutId);
@@ -59,8 +75,8 @@ export const useBlogPostsListing = () => {
         return fetchPosts(retryCount + 1);
       }
 
-      const cached = localStorage.getItem("blog_posts_listing_cache");
-      const timestamp = localStorage.getItem("blog_posts_listing_timestamp");
+      const cached = localStorage.getItem(`blog_posts_listing_cache_${country}`);
+      const timestamp = localStorage.getItem(`blog_posts_listing_timestamp_${country}`);
       const cacheAge = timestamp ? Date.now() - parseInt(timestamp) : Infinity;
 
       if (cached && cacheAge < 24 * 60 * 60 * 1000) {
@@ -72,7 +88,7 @@ export const useBlogPostsListing = () => {
 
       setLoading(false);
     }
-  }, []);
+  }, [country]);
 
   useEffect(() => {
     fetchPosts();

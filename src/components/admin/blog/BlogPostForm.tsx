@@ -14,11 +14,24 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import { blogData } from "@/data/blog";
 import { useBlogPosts, BlogPost } from "@/hooks/useBlogPosts";
 import { RichTextEditor } from "./RichTextEditor";
 import { ImageUpload } from "./ImageUpload";
 import { FAQManager } from "./FAQManager";
+
+const regionOptions = [
+  { value: "global", label: "Global (Singapore & UAE)" },
+  { value: "australia", label: "Australia Only" },
+  { value: "all", label: "All Regions" },
+];
 
 const formSchema = z.object({
   title: z.string().min(1, "Title is required"),
@@ -32,6 +45,7 @@ const formSchema = z.object({
     question: z.string().optional(),
     answer: z.string().optional(),
   })).default([]),
+  region: z.string().default("global"),
 });
 
 type FormValues = z.infer<typeof formSchema>;
@@ -61,6 +75,7 @@ export const BlogPostForm = ({ initialData, mode = "create", onSuccess }: BlogPo
           ? initialData.categories.split(",").map(c => c.trim())
           : [],
       faqs: initialData.faqs || [],
+      region: initialData.region || "global",
     } : {
       title: "",
       slug: "",
@@ -70,6 +85,7 @@ export const BlogPostForm = ({ initialData, mode = "create", onSuccess }: BlogPo
       author: "",
       categories: [],
       faqs: [],
+      region: "global",
     },
   });
 
@@ -85,6 +101,7 @@ export const BlogPostForm = ({ initialData, mode = "create", onSuccess }: BlogPo
           author: data.author,
           categories: data.categories,
           faqs: data.faqs,
+          region: data.region,
         });
         toast({
           title: "Success",
@@ -100,6 +117,7 @@ export const BlogPostForm = ({ initialData, mode = "create", onSuccess }: BlogPo
           author: data.author,
           categories: data.categories,
           faqs: data.faqs,
+          region: data.region,
         });
         form.reset();
         toast({
@@ -205,6 +223,31 @@ export const BlogPostForm = ({ initialData, mode = "create", onSuccess }: BlogPo
                   </Button>
                 ))}
               </div>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+
+        <FormField
+          control={form.control}
+          name="region"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>Region</FormLabel>
+              <Select onValueChange={field.onChange} defaultValue={field.value}>
+                <FormControl>
+                  <SelectTrigger>
+                    <SelectValue placeholder="Select region" />
+                  </SelectTrigger>
+                </FormControl>
+                <SelectContent>
+                  {regionOptions.map((option) => (
+                    <SelectItem key={option.value} value={option.value}>
+                      {option.label}
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
               <FormMessage />
             </FormItem>
           )}

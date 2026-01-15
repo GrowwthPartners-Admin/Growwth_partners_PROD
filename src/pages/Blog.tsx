@@ -28,8 +28,8 @@ import {
 const BlogPage = () => {
   const navigate = useNavigate();
   const location = useLocation();
-  const { getCountryUrl } = useCountry();
-  const { posts, loading, error, refetch } = useBlogPostsListing();
+  const { getCountryUrl, country } = useCountry();
+  const { posts, loading, error, refetch } = useBlogPostsListing(country);
   const [currentPage, setCurrentPage] = useState(1);
   const [activeCategory, setActiveCategory] = useState("");
   const [subscribeModalOpen, setSubscribeModalOpen] = useState(false);

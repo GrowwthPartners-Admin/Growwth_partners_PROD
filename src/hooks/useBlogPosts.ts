@@ -17,6 +17,7 @@ export interface BlogPost {
   categories?: string[] | string;
   publishDate?: string;
   faqs?: Array<{ question?: string; answer?: string }>;
+  region?: string;
 }
 
 const serializeCategories = (categories: string[]) => categories.join(",");
@@ -50,6 +51,7 @@ export const useBlogPosts = () => {
           : deserializeCategories(post.categories ?? post.Categories ?? ""),
         publishDate: post.publishDate ?? post.publishdate ?? "",
         faqs: Array.isArray(post.faqs) ? post.faqs : [],
+        region: post.region || "global",
       }));
 
       setPosts(transformed);
@@ -81,6 +83,7 @@ export const useBlogPosts = () => {
           ? serializeCategories(post.categories)
           : post.categories ?? "",
         faqs: post.faqs || [],
+        region: post.region || "global",
       };
 
       const created = await apiCreatePost(payload);
@@ -128,6 +131,7 @@ export const useBlogPosts = () => {
       }
 
       if (updatedPost.faqs !== undefined) payload.faqs = updatedPost.faqs;
+      if (updatedPost.region !== undefined) payload.region = updatedPost.region;
 
       const updated = await apiUpdatePost(payload);
       await fetchPosts();
