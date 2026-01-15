@@ -27,8 +27,7 @@ export const useBlogPostsListing = (country: string = 'sg') => {
 
     try {
       const data = await fetchBlogPostsListing();
-
-      console.log({data});
+      console.log({data})
       clearTimeout(timeoutId);
 
       // data already transformed by backend if you use service mapping;
@@ -40,10 +39,9 @@ export const useBlogPostsListing = (country: string = 'sg') => {
       // Singapore and UAE show 'global' or 'all' region posts
       const filteredPosts = allPosts.filter(post => {
         const postRegion = post.region || 'global';
-        
-        if (country === 'au') {
+        if (country === 'australia' ||  country === 'au') {
           // Australia: show ONLY 'australia' region posts
-          return postRegion === 'australia';
+          return postRegion === 'australia' || postRegion=== "all";
         } else {
           // Singapore (sg) and UAE (uae): show 'global' or 'all' region posts
           return postRegion === 'global' || postRegion === 'all';
