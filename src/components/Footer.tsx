@@ -169,6 +169,14 @@ export const Footer = () => {
                   Contact Us
                 </Link>
               </li>
+               <li>
+                <Link 
+                  to={getCountryUrl("/help-support")} 
+                  className="hover:text-brand-orange transition-colors"
+                >
+                  Help & Support
+                </Link>
+              </li>
               <li>
                 <Link 
                   to={getCountryUrl("/blog")} 
