@@ -556,6 +556,27 @@ export const routes: RouteRecord[] = [
           return { Component };
         },
       },
+      {
+        path: "medtech-finance",
+        async lazy() {
+          const { default: Component } = await import("./pages/MedTechFinance");
+          return { Component };
+        },
+      },
+      {
+        path: "uae/medtech-finance",
+        async lazy() {
+          const { default: Component } = await import("./pages/MedTechFinance");
+          return { Component };
+        },
+      },
+      {
+        path: "au/medtech-finance",
+        async lazy() {
+          const { default: Component } = await import("./pages/MedTechFinance");
+          return { Component };
+        },
+      },
 
 
             {
