@@ -650,6 +650,35 @@ export const routes: RouteRecord[] = [
           return { Component };
         },
       },
+
+       {
+        path: "help-support",
+        async lazy() {
+          const { default: Component } = await import(
+            "./pages/HelpandSupport"
+          );
+          return { Component };
+        },
+      },
+      {
+        path: "uae/help-support",
+        async lazy() {
+          const { default: Component } = await import(
+            "./pages/HelpandSupport"
+          );
+          return { Component };
+        },
+      },
+      {
+        path: "au/help-support",
+        async lazy() {
+          const { default: Component } = await import(
+            "./pages/HelpandSupport"
+          );
+          return { Component };
+        },
+      },
+
       {
         path: "fractional-finance-team",
         async lazy() {
