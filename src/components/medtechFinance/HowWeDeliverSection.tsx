@@ -6,12 +6,7 @@ import {
   Receipt,
   TrendingUp,
   Users,
-  Shield,
-  ClipboardCheck,
-  PieChart,
-  LineChart,
-  Target,
-  Briefcase
+  Shield
 } from "lucide-react";
 
 const services = [
@@ -79,7 +74,7 @@ const services = [
 
 const HowWeDeliverSection = () => {
   return (
-    <section className="py-20 lg:py-28 bg-gradient-to-b from-slate-900 to-slate-800">
+    <section className="py-20 bg-gradient-to-b from-white to-slate-50">
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -88,10 +83,13 @@ const HowWeDeliverSection = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6">
+          <span className="text-brand-orange font-semibold text-sm uppercase tracking-wider">
+            Our Approach
+          </span>
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mt-4 mb-6">
             How Growwth Partners Delivers Healthcare Finance Value
           </h2>
-          <p className="text-lg text-slate-300 max-w-3xl mx-auto">
+          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
             Our MedTech & Healthcare Finance services are designed to deliver control, transparency, and regulatory confidence.
           </p>
         </motion.div>
@@ -106,23 +104,23 @@ const HowWeDeliverSection = () => {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className="group"
             >
-              <div className="h-full bg-gradient-to-br from-slate-800/80 to-slate-900/80 rounded-3xl p-8 border border-slate-700/50 hover:border-orange-500/30 transition-all duration-300 hover:shadow-xl hover:shadow-orange-500/10">
+              <div className="h-full bg-gradient-to-br from-gray-50 to-white rounded-3xl p-8 border border-gray-100 hover:shadow-xl transition-all duration-300 shadow-lg">
                 <div className="flex items-start justify-between mb-6">
-                  <div className="w-14 h-14 bg-gradient-to-br from-orange-500/20 to-orange-600/20 rounded-2xl flex items-center justify-center group-hover:from-orange-500/30 group-hover:to-orange-600/30 transition-all">
-                    <service.icon className="w-7 h-7 text-orange-400" />
+                  <div className="w-14 h-14 bg-gradient-to-br from-orange-500 to-amber-500 rounded-2xl flex items-center justify-center shadow-lg shadow-orange-500/20">
+                    <service.icon className="w-7 h-7 text-white" />
                   </div>
-                  <span className="text-4xl font-bold text-orange-500/30 group-hover:text-orange-500/50 transition-colors">
+                  <span className="text-4xl font-bold text-brand-orange/30 group-hover:text-brand-orange/50 transition-colors">
                     {service.number}
                   </span>
                 </div>
-                <h3 className="text-xl font-bold text-white mb-4 group-hover:text-orange-400 transition-colors">
+                <h3 className="text-xl font-bold text-gray-900 mb-4 group-hover:text-brand-orange transition-colors">
                   {service.title}
                 </h3>
                 <ul className="space-y-3">
                   {service.items.map((item, itemIndex) => (
                     <li key={itemIndex} className="flex items-start gap-3">
-                      <Shield className="w-5 h-5 text-orange-500 mt-0.5 flex-shrink-0" />
-                      <span className="text-slate-300 text-sm">{item}</span>
+                      <Shield className="w-5 h-5 text-brand-orange mt-0.5 flex-shrink-0" />
+                      <span className="text-gray-600 text-sm">{item}</span>
                     </li>
                   ))}
                 </ul>

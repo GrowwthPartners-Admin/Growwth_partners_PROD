@@ -10,7 +10,6 @@ import {
   CheckCircle2,
   Users,
   BarChart3,
-  Wallet,
   TrendingUp,
   Award
 } from "lucide-react";
@@ -34,7 +33,7 @@ const solutions = [
 
 const ChallengesSection = () => {
   return (
-    <section className="py-20 lg:py-28 bg-gradient-to-br from-slate-900 via-slate-800 to-brand-orange/10">
+    <section className="py-20 bg-white">
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -43,94 +42,92 @@ const ChallengesSection = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6">
+          <span className="text-brand-orange font-semibold text-sm uppercase tracking-wider">Challenges & Solutions</span>
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mt-4">
             Common Financial Challenges in Healthcare Businesses
           </h2>
-          <p className="text-lg text-slate-300 max-w-3xl mx-auto">
-            Without healthcare-specific finance expertise, businesses often face:
-          </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
-          {/* Challenges Column */}
+        <div className="grid lg:grid-cols-2 gap-8 max-w-8xl mx-auto mb-12">
+          {/* Challenges Card */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
+            className="bg-gradient-to-br from-red-50 to-orange-50 rounded-3xl p-8 border border-red-100"
           >
-            <div className="bg-gradient-to-br from-slate-800/80 to-slate-900/80 rounded-3xl p-8 border border-red-500/20">
-              <div className="flex items-center gap-3 mb-8">
-                <AlertTriangle className="w-8 h-8 text-red-400" />
-                <h3 className="text-2xl font-semibold text-red-400">
-                  Key Challenges
-                </h3>
+            <div className="flex items-center gap-3 mb-6">
+              <div className="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center">
+                <AlertTriangle className="w-6 h-6 text-red-500" />
               </div>
-              <div className="space-y-4">
-                {challenges.map((challenge, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.4, delay: index * 0.1 }}
-                    className="flex items-center gap-4 p-4 bg-red-500/5 rounded-xl border border-red-500/10"
-                  >
-                    <challenge.icon className="w-6 h-6 text-red-400 flex-shrink-0" />
-                    <span className="text-slate-300">{challenge.title}</span>
-                  </motion.div>
-                ))}
-              </div>
-              <motion.p
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.6 }}
-                className="mt-6 text-red-300 text-center font-medium"
-              >
-                These challenges can delay growth and damage credibility.
-              </motion.p>
+              <h3 className="text-xl font-bold text-gray-900">Without healthcare-specific finance expertise</h3>
             </div>
+            
+            <p className="text-gray-600 mb-6">
+              Businesses often face:
+            </p>
+
+            <div className="space-y-3">
+              {challenges.map((item, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.1 }}
+                  className="flex items-center gap-3 bg-white p-4 rounded-xl shadow"
+                >
+                  <div className="w-10 h-10 bg-red-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <item.icon className="w-5 h-5 text-red-500" />
+                  </div>
+                  <p className="text-gray-700">{item.title}</p>
+                </motion.div>
+              ))}
+            </div>
+
+            <p className="mt-6 text-gray-600 text-sm italic">
+              These challenges can delay growth and damage credibility.
+            </p>
           </motion.div>
 
-          {/* Solutions Column */}
+          {/* Benefits Card */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
+            className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-3xl p-8 border border-green-100"
           >
-            <div className="bg-gradient-to-br from-orange-500/10 to-orange-600/10 rounded-3xl p-8 border border-orange-500/30">
-              <div className="flex items-center gap-3 mb-8">
-                <CheckCircle2 className="w-8 h-8 text-orange-400" />
-                <h3 className="text-2xl font-semibold text-orange-400">
-                  What You Get with Our Services
-                </h3>
+            <div className="flex items-center gap-3 mb-6">
+              <div className="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center">
+                <CheckCircle2 className="w-6 h-6 text-green-500" />
               </div>
-              <div className="space-y-4">
-                {solutions.map((solution, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, x: 20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.4, delay: index * 0.1 }}
-                    className="flex items-center gap-4 p-4 bg-orange-500/10 rounded-xl border border-orange-500/20"
-                  >
-                    <solution.icon className="w-6 h-6 text-orange-400 flex-shrink-0" />
-                    <span className="text-slate-200">{solution.title}</span>
-                  </motion.div>
-                ))}
-              </div>
-              <motion.p
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.6 }}
-                className="mt-6 text-orange-300 text-center font-medium"
-              >
-                Designed to support sustainable, compliant healthcare growth.
-              </motion.p>
+              <h3 className="text-xl font-bold text-gray-900">What You Get with Our Services</h3>
+            </div>
+
+            <div className="space-y-3">
+              {solutions.map((item, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, x: 20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.1 }}
+                  className="flex items-center gap-3 bg-white p-4 rounded-xl shadow"
+                >
+                  <div className="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <item.icon className="w-5 h-5 text-green-500" />
+                  </div>
+                  <p className="text-gray-700">{item.title}</p>
+                </motion.div>
+              ))}
+            </div>
+
+            <div className="mt-6 bg-gradient-to-r from-green-500 to-emerald-500 rounded-xl p-4 text-center">
+              <p className="text-white font-medium flex items-center justify-center gap-2">
+                Designed to support sustainable, compliant healthcare growth
+              </p>
             </div>
           </motion.div>
         </div>

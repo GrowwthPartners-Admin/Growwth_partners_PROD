@@ -24,7 +24,7 @@ const faqs = [
 
 const FaqSection = () => {
   return (
-    <section className="py-20 lg:py-28 bg-gradient-to-b from-slate-900 to-slate-800">
+    <section className="py-20 bg-gradient-to-b from-white to-slate-50">
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -33,11 +33,10 @@ const FaqSection = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-orange-500/20 border border-orange-500/30 rounded-full mb-6">
-            <HelpCircle className="w-4 h-4 text-orange-400" />
-            <span className="text-orange-300 text-sm font-medium">Frequently Asked Questions</span>
-          </div>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6">
+          <span className="text-brand-orange font-semibold text-sm uppercase tracking-wider">
+            FAQs
+          </span>
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mt-4 mb-6">
             FAQs – MedTech & Healthcare Finance Services
           </h2>
         </motion.div>
@@ -54,12 +53,12 @@ const FaqSection = () => {
               <AccordionItem
                 key={index}
                 value={`item-${index}`}
-                className="bg-gradient-to-br from-slate-800/80 to-slate-900/80 rounded-2xl border border-slate-700/50 hover:border-orange-500/30 transition-all px-6 overflow-hidden"
+                className="bg-gradient-to-br from-gray-50 to-white rounded-2xl border border-gray-200 hover:border-brand-orange/30 transition-all px-6 overflow-hidden shadow"
               >
-                <AccordionTrigger className="text-left text-white hover:text-orange-400 py-6 text-lg font-medium hover:no-underline">
+                <AccordionTrigger className="text-left text-gray-900 hover:text-brand-orange py-6 text-lg font-medium hover:no-underline">
                   {faq.question}
                 </AccordionTrigger>
-                <AccordionContent className="text-slate-300 pb-6 text-base leading-relaxed">
+                <AccordionContent className="text-gray-600 pb-6 text-base leading-relaxed">
                   {faq.answer}
                 </AccordionContent>
               </AccordionItem>
