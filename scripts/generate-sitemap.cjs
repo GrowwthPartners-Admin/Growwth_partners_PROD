@@ -248,9 +248,26 @@ const staticRoutes = [
     priority: "0.8",
     changefreq: "weekly",
   },
+  {
+    path: "/esports-finance",
+    priority: "0.8",
+    changefreq: "weekly",
+  },
 
   {
     path: "/help-support",
+    priority: "0.8",
+    changefreq: "weekly",
+  },
+
+    {
+    path: "/edtech-finance",
+    priority: "0.8",
+    changefreq: "weekly",
+  },
+
+    {
+    path: "/esports-finance",
     priority: "0.8",
     changefreq: "weekly",
   },

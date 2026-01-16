@@ -1,11 +1,9 @@
 
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { ContactModal } from "@/components/ui/contact-modal";
 import { useState } from "react";
 
 export const AboutHero = () => {
-  const [contactModalOpen, setContactModalOpen] = useState(false);
 
   return (
     <section className="relative min-h-[80vh] flex items-center bg-gradient-to-r from-brand-dark to-gray-900 text-white py-20">
@@ -34,7 +32,7 @@ export const AboutHero = () => {
             Enjoy the freedom to focus solely on your business while we seamlessly take care of the rest. Let Growwth handle the intricacies of finance, compliance, and legality. At every stage – startup, growth, or expansion – consider Growwth your indispensable ally.
           </p>
           <Button 
-            onClick={() => setContactModalOpen(true)}
+            onClick={() => window.open('https://calendly.com/jd-growwthpartners/15min?month=2025-11', '_blank')}
             className="bg-brand-orange hover:bg-brand-orange/90 text-white px-8 py-6 text-lg rounded-full"
           >
             Book Free Call
@@ -42,10 +40,6 @@ export const AboutHero = () => {
         </motion.div>
       </div>
 
-      <ContactModal 
-        open={contactModalOpen} 
-        onOpenChange={setContactModalOpen} 
-      />
     </section>
   );
 };
