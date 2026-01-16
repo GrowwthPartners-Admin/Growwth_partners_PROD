@@ -8,9 +8,24 @@ import ChallengesSection from "@/components/peFinance/ChallengesSection";
 import HowWeDeliverSection from "@/components/peFinance/HowWeDeliverSection";
 import WhyChooseSection from "@/components/peFinance/WhyChooseSection";
 import UseCaseSection from "@/components/peFinance/UseCaseSection";
-import FAQSection from "@/components/peFinance/FAQSection";
+import { FaqSection } from "@/components/accounting/FaqSection";
 import CTASection from "@/components/peFinance/CTASection";
 
+
+const faqs = [
+  {
+    question: "How are PE finance services different from fund finance services?",
+    answer: "PE finance focuses on portfolio company performance, integration, and exits, while fund finance focuses on LP reporting and capital flows. PE finance prioritises operational value creation and deal readiness across portfolio companies."
+  },
+  {
+    question: "Can these services support exit preparation?",
+    answer: "Yes. Exit readiness and vendor diligence support are core components of our PE finance services. We help prepare exit-quality financial statements, coordinate vendor due diligence, and ensure data room and buyer readiness."
+  },
+  {
+    question: "Are these services suitable for growth equity funds?",
+    answer: "Yes. Services scale across buyout, growth equity, and minority investments. We adapt our approach based on the investment type, providing appropriate financial governance and reporting frameworks for each."
+  }
+];
 const structuredData = {
   "@context": "https://schema.org",
   "@type": "Service",
@@ -43,7 +58,10 @@ const PEFinance = () => {
         <HowWeDeliverSection />
         <WhyChooseSection />
         <UseCaseSection />
-        <FAQSection />
+          <FaqSection
+                  faqs={faqs}
+                  subtitle="Find answers to common questions about Trading & Distribution Finance"
+                />
         <CTASection />
       </main>
       <Footer />

@@ -1,13 +1,13 @@
 import { useState, useEffect } from "react";
 import { ArrowRight, ArrowDown, DollarSign, Trophy, Users, Clock, Award } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { ContactModal } from "@/components/ui/contact-modal";
+
 import { motion } from "framer-motion";
 import { OptimizedImage } from "@/components/ui/optimized-image";
 import { Badge } from "@/components/ui/badge";
 
 export const HeroSection = () => {
-  const [contactModalOpen, setContactModalOpen] = useState(false);
+
   const [imageLoaded, setImageLoaded] = useState(false);
   const [showContent, setShowContent] = useState(false);
   
@@ -95,14 +95,14 @@ export const HeroSection = () => {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button onClick={() => setContactModalOpen(true)} className="bg-brand-orange hover:bg-brand-orange/90 text-white rounded-full px-8 py-6 text-lg font-medium group">
+              <Button onClick={() => window.open('https://calendly.com/jd-growwthpartners/15min?month=2025-11', '_blank')} className="bg-brand-orange hover:bg-brand-orange/90 text-white rounded-full px-8 py-6 text-lg font-medium group">
                 Book My Free 30-Min Finance Clarity Call
                 <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
               </Button>
               
-              <Button variant="outline" onClick={scrollToServices} className="border-brand-orange text-brand-orange hover:bg-brand-orange/10 rounded-full px-8 py-6 text-lg font-medium">
+              {/* <Button variant="outline" onClick={scrollToServices} className="border-brand-orange text-brand-orange hover:bg-brand-orange/10 rounded-full px-8 py-6 text-lg font-medium">
                 Our Services
-              </Button>
+              </Button> */}
             </div>
             
             <div className="mt-12 hidden md:block">
@@ -171,10 +171,6 @@ export const HeroSection = () => {
         </div>
       </div>
 
-      <ContactModal 
-        open={contactModalOpen} 
-        onOpenChange={setContactModalOpen} 
-      />
     </section>
   );
 };

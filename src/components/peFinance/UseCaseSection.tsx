@@ -30,7 +30,7 @@ const UseCaseSection = () => {
   return (
     <section className="py-20 lg:py-28 bg-background">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-8xl mx-auto">
           {/* Header */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -41,7 +41,7 @@ const UseCaseSection = () => {
           >
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-6">
               Practical{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-teal-600">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-orange-600">
                 Use Case
               </span>
             </h2>
@@ -56,7 +56,7 @@ const UseCaseSection = () => {
             className="bg-gradient-to-br from-slate-50 to-emerald-50/50 dark:from-slate-900 dark:to-emerald-950/30 rounded-3xl border border-slate-200 dark:border-slate-800 overflow-hidden"
           >
             {/* Client Header */}
-            <div className="p-6 lg:p-8 bg-gradient-to-r from-emerald-600 to-teal-600 text-white">
+            <div className="p-6 lg:p-8 bg-gradient-to-r from-orange-600 to-orange-600 text-white">
               <div className="flex items-center gap-4">
                 <div className="p-3 bg-white/20 rounded-xl">
                   <Building2 className="w-8 h-8" />

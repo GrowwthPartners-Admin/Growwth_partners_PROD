@@ -75,7 +75,7 @@ const HowWeDeliverSection = () => {
   return (
     <section className="py-20 lg:py-28 bg-gradient-to-b from-slate-50 to-white dark:from-slate-900/50 dark:to-background">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-8xl mx-auto">
           {/* Header */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -86,7 +86,7 @@ const HowWeDeliverSection = () => {
           >
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-6">
               How Growwth Partners Delivers{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-teal-600">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-600 to-orange-500">
                 Private Equity Finance Value
               </span>
             </h2>
@@ -106,16 +106,16 @@ const HowWeDeliverSection = () => {
                 viewport={{ once: true }}
                 className="group relative"
               >
-                <div className="absolute inset-0 bg-gradient-to-br from-emerald-500 to-teal-500 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-xl" />
-                <div className="relative h-full p-6 lg:p-8 bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 hover:border-emerald-300 dark:hover:border-emerald-700 transition-all duration-300 shadow-sm hover:shadow-xl">
+                <div className="absolute inset-0 shadow bg-gradient-to-br from-orange-500 to-orange-600 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-xl" />
+                <div className="relative h-full p-6 lg:p-8 bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 hover:border-orange-300 dark:hover:border-orange-700 transition-all duration-300 shadow-sm hover:shadow-xl">
                   {/* Number Badge */}
-                  <div className="absolute top-4 right-4 text-4xl font-bold text-emerald-100 dark:text-emerald-900/50">
+                  <div className="absolute top-4 right-4 text-4xl font-bold text-orange-100 dark:text-orange-900/50">
                     {service.number}
                   </div>
 
                   {/* Icon */}
                   <div className="mb-6">
-                    <div className="w-14 h-14 bg-gradient-to-br from-emerald-500 to-teal-500 rounded-xl flex items-center justify-center text-white group-hover:scale-110 transition-transform duration-300">
+                    <div className="w-14 h-14 bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl flex items-center justify-center text-white group-hover:scale-110 transition-transform duration-300">
                       <service.icon className="w-7 h-7" />
                     </div>
                   </div>
@@ -129,7 +129,7 @@ const HowWeDeliverSection = () => {
                   <ul className="space-y-3">
                     {service.items.map((item, itemIndex) => (
                       <li key={itemIndex} className="flex items-start gap-3">
-                        <div className="w-1.5 h-1.5 bg-emerald-500 rounded-full mt-2 shrink-0" />
+                        <div className="w-1.5 h-1.5 bg-orange-500 rounded-full mt-2 shrink-0" />
                         <span className="text-muted-foreground text-sm">{item}</span>
                       </li>
                     ))}
