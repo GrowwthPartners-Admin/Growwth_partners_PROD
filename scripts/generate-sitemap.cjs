@@ -127,6 +127,11 @@ const staticRoutes = [
     changefreq: "weekly",
   },
   {
+    path: "/private-equity-finance",
+    priority: "0.8",
+    changefreq: "monthly",
+  },
+  {
     path: "/incorporation",
     priority: "0.8",
     changefreq: "weekly",
