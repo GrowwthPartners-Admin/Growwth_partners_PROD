@@ -107,6 +107,7 @@ export const services1Categories: ServiceCategory[] = [
       { title: "Tech Business Finance", path: "/tech-business-finance", icon: Laptop },
       { title: "SaaS Finance Services", path: "/saas-finance", icon: Cloud },
       { title: "Crypto & Web3 Finance", path: "/crypto-web3-finance", icon: Bitcoin },
+      { title: "EdTech Finance Services", path: "/edtech-finance", icon: Laptop },
     ],
   },
   {
