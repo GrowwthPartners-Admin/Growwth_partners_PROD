@@ -17,12 +17,7 @@ const teamMembers = [{
   role: "Financial Services Expert",
   image: "/lovable-uploads/65c4db5e-29e5-4f58-ac84-22c7dfd540c0.png",
   description: "With 13 years of experience in financial services, internal and statutory audits, taxation, and regulatory compliance across sectors like banks, corporates, and trusts. She brings expertise in data analytics, risk analysis, and Indian Accounting Standards."
-}, {
-  name: "Pooja Agarwal",
-  role: "Financial Consultant",
-  image: "/lovable-uploads/a7c74764-af55-4450-9ba3-c4f194ca96c6.png",
-  description: "A Chartered Accountant with over 10 years of experience in commercial lending analysis, audits, corporate finance, legal compliance, bookkeeping, treasury, risk consulting, taxation, and budgeting. Her versatile job profile spans various industries."
-}];
+},];
 
 export const TeamSection = () => {
   return <section className="bg-gradient-to-br from-gray-50 to-gray-100 py-[60px]">
@@ -44,7 +39,7 @@ export const TeamSection = () => {
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {teamMembers.map((member, index) => <motion.div key={index} initial={{
           opacity: 0,
           y: 20

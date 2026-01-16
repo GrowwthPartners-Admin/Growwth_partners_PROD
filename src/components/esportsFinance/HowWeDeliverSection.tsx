@@ -85,7 +85,7 @@ const HowWeDeliverSection = () => {
         >
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 mb-6">
             How Growwth Partners Delivers{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-fuchsia-600">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-600 to-orange-500">
               Gaming Finance Value
             </span>
           </h2>
@@ -103,13 +103,13 @@ const HowWeDeliverSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="group bg-slate-50 hover:bg-white rounded-2xl p-6 lg:p-8 border border-slate-100 hover:border-purple-200 hover:shadow-xl transition-all duration-300"
+              className="group bg-slate-50 hover:bg-white rounded-2xl p-6 lg:p-8 border border-slate-100 hover:border-orange-200 hover:shadow-xl transition-all duration-300"
             >
               <div className="flex items-center gap-4 mb-6">
-                <span className="text-4xl font-bold text-purple-200 group-hover:text-purple-300 transition-colors">
+                <span className="text-4xl font-bold text-orange-200 group-hover:text-orange-300 transition-colors">
                   {item.number}
                 </span>
-                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-purple-500 to-fuchsia-500 flex items-center justify-center">
+                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-orange-500 to-orange-400 flex items-center justify-center">
                   <item.icon className="w-6 h-6 text-white" />
                 </div>
               </div>
@@ -121,7 +121,7 @@ const HowWeDeliverSection = () => {
               <ul className="space-y-3">
                 {item.items.map((listItem, itemIndex) => (
                   <li key={itemIndex} className="flex items-start gap-3 text-slate-600">
-                    <ArrowRight className="w-4 h-4 text-purple-500 flex-shrink-0 mt-1" />
+                    <ArrowRight className="w-4 h-4 text-orange-500 flex-shrink-0 mt-1" />
                     <span className="text-sm">{listItem}</span>
                   </li>
                 ))}

@@ -260,6 +260,18 @@ const staticRoutes = [
     changefreq: "weekly",
   },
 
+    {
+    path: "/edtech-finance",
+    priority: "0.8",
+    changefreq: "weekly",
+  },
+
+    {
+    path: "/esports-finance",
+    priority: "0.8",
+    changefreq: "weekly",
+  },
+
   // UAE pages
   { path: "/uae", priority: "1.0", changefreq: "daily" },
   { path: "/uae/about", priority: "0.8", changefreq: "weekly" },

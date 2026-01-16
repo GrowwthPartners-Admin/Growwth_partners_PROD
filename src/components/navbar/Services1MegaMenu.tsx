@@ -209,22 +209,22 @@ export const Services1MegaMenu = ({ onNavigate }: Services1MegaMenuProps) => {
                             setIsOpen(false);
                             onNavigate?.();
                           }}
-                          className="group relative flex items-start gap-3.5 rounded-2xl border border-gray-100 bg-white/85 p-3.5 shadow-sm transition-all hover:-translate-y-0.5 hover:border-orange-200 hover:shadow-md"
+                          className="group relative justify-center items-center flex gap-5 rounded-2xl border border-gray-100 bg-white/85 p-2 shadow-sm transition-all hover:-translate-y-0.5 hover:border-orange-200 hover:shadow-md"
                         >
                           {/* left accent */}
                           <div className="absolute left-0 top-0 h-full w-1 rounded-l-2xl bg-gradient-to-b from-brand-orange/70 to-orange-400/70 opacity-0 group-hover:opacity-100 transition-opacity" />
 
-                          <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-orange-50 text-brand-orange group-hover:bg-brand-orange group-hover:text-white transition-all">
-                            <Icon className="h-4 w-4" />
+                          <div className="flex h-6 w-6 items-center justify-center rounded-2xl bg-orange-50 text-brand-orange group-hover:bg-brand-orange group-hover:text-white transition-all">
+                            <Icon className="h-3 w-3" />
                           </div>
 
                           <div className="min-w-0">
-                            <div className="text-sm font-semibold text-gray-900">
+                            <div className="text-sm font-semibold items-center justify-center text-gray-900">
                               {service.title}
                             </div>
-                            <div className="mt-1 text-xs text-gray-500">
+                            {/* <div className="mt-1 text-xs text-gray-500">
                               View details → scope & deliverables
-                            </div>
+                            </div> */}
                           </div>
 
                           <ChevronRight className="ml-auto mt-1 h-4 w-4 text-gray-300 group-hover:text-brand-orange transition-all" />

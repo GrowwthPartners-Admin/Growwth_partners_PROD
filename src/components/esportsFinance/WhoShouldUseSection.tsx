@@ -37,7 +37,7 @@ const WhoShouldUseSection = () => {
           >
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 mb-6">
               Who Should Use{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-fuchsia-600">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-600 to-orange-500">
                 Gaming Finance Services?
               </span>
             </h2>
@@ -55,9 +55,9 @@ const WhoShouldUseSection = () => {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: index * 0.1 }}
-                  className="flex items-center gap-4 p-4 bg-slate-50 rounded-xl hover:bg-purple-50 transition-colors duration-300"
+                  className="flex items-center gap-4 p-4 bg-slate-50 rounded-xl hover:bg-orange-50 transition-colors duration-300"
                 >
-                  <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-purple-500 to-fuchsia-500 flex items-center justify-center flex-shrink-0">
+                  <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-orange-500 to-orange-400 flex items-center justify-center flex-shrink-0">
                     <user.icon className="w-6 h-6 text-white" />
                   </div>
                   <span className="text-slate-700 font-medium">{user.text}</span>
@@ -73,13 +73,13 @@ const WhoShouldUseSection = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <div className="bg-gradient-to-br from-purple-600 to-fuchsia-600 rounded-3xl p-8 lg:p-10 text-white">
+            <div className="bg-gradient-to-br from-orange-600 to-orange-500 rounded-3xl p-8 lg:p-10 text-white">
               <div className="flex items-center gap-3 mb-6">
                 <HelpCircle className="w-8 h-8" />
                 <h3 className="text-2xl font-bold">Do You Need Gaming Finance?</h3>
               </div>
               
-              <p className="text-purple-100 mb-8 text-lg">
+              <p className="text-orange-100 mb-8 text-lg">
                 If your business struggles to answer these questions, you need gaming-specific finance leadership:
               </p>
 
@@ -93,14 +93,14 @@ const WhoShouldUseSection = () => {
                     transition={{ duration: 0.4, delay: 0.3 + index * 0.1 }}
                     className="flex items-start gap-3 bg-white/10 backdrop-blur-sm rounded-xl p-4"
                   >
-                    <CheckCircle2 className="w-6 h-6 text-purple-200 flex-shrink-0 mt-0.5" />
+                    <CheckCircle2 className="w-6 h-6 text-orange-200 flex-shrink-0 mt-0.5" />
                     <span className="text-white font-medium">{question}</span>
                   </motion.div>
                 ))}
               </div>
 
               <div className="mt-8 pt-6 border-t border-white/20">
-                <p className="text-purple-100 italic">
+                <p className="text-orange-100 italic">
                   "Gaming-specific finance leadership brings the clarity needed for sustainable growth."
                 </p>
               </div>

@@ -50,7 +50,7 @@ const WhyChooseSection = () => {
           >
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 mb-6">
               Why Choose Growwth Partners for{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-fuchsia-600">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-600 to-orange-500">
                 Gaming Finance?
               </span>
             </h2>
@@ -69,7 +69,7 @@ const WhyChooseSection = () => {
                   transition={{ duration: 0.4, delay: index * 0.1 }}
                   className="flex items-start gap-4 p-4 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300"
                 >
-                  <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-purple-500 to-fuchsia-500 flex items-center justify-center flex-shrink-0">
+                  <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-orange-500 to-orange-400 flex items-center justify-center flex-shrink-0">
                     <reason.icon className="w-6 h-6 text-white" />
                   </div>
                   <div>
@@ -93,12 +93,12 @@ const WhyChooseSection = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="relative"
           >
-            <div className="bg-gradient-to-br from-purple-600 to-fuchsia-600 rounded-3xl p-8 lg:p-10">
+            <div className="bg-gradient-to-br from-orange-600 to-orange-500 rounded-3xl p-8 lg:p-10">
               <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 mb-6">
                 <h3 className="text-2xl font-bold text-white mb-4">
                   From Hit-Driven to Scalable Growth
                 </h3>
-                <p className="text-purple-100">
+                <p className="text-orange-100">
                   Our approach transforms gaming businesses from relying on unpredictable successes 
                   to building structured, sustainable financial foundations.
                 </p>
@@ -113,15 +113,15 @@ const WhyChooseSection = () => {
                 ].map((stat, index) => (
                   <div key={index} className="bg-white/10 backdrop-blur-sm rounded-xl p-4 text-center">
                     <div className="text-2xl font-bold text-white">{stat.value}</div>
-                    <div className="text-purple-200 text-sm">{stat.label}</div>
+                    <div className="text-orange-200 text-sm">{stat.label}</div>
                   </div>
                 ))}
               </div>
             </div>
 
             {/* Decorative elements */}
-            <div className="absolute -top-4 -right-4 w-24 h-24 bg-gradient-to-br from-fuchsia-400 to-pink-400 rounded-full opacity-20 blur-2xl" />
-            <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-gradient-to-br from-purple-400 to-violet-400 rounded-full opacity-20 blur-2xl" />
+            <div className="absolute -top-4 -right-4 w-24 h-24 bg-gradient-to-br from-orange-400 to-orange-300 rounded-full opacity-20 blur-2xl" />
+            <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-gradient-to-br from-orange-400 to-orange-300 rounded-full opacity-20 blur-2xl" />
           </motion.div>
         </div>
       </div>

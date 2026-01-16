@@ -22,22 +22,22 @@ const UseCaseSection = () => {
         >
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 mb-6">
             Practical{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-fuchsia-600">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-600 to-orange-500">
               Use Case
             </span>
           </h2>
         </motion.div>
 
-        <div className="max-w-5xl mx-auto">
+        <div className="max-w-8xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="bg-gradient-to-br from-slate-900 to-purple-950 rounded-3xl overflow-hidden"
+            className="bg-gradient-to-br from-slate-800 via-slate-600 to-slate-900 rounded-3xl overflow-hidden"
           >
             {/* Header */}
-            <div className="bg-gradient-to-r from-purple-600 to-fuchsia-600 p-6 lg:p-8">
+            <div className="bg-gradient-to-r from-orange-600 to-orange-500 p-6 lg:p-8">
               <div className="flex items-center gap-4">
                 <div className="w-14 h-14 rounded-2xl bg-white/20 backdrop-blur-sm flex items-center justify-center">
                   <Building2 className="w-7 h-7 text-white" />
@@ -74,7 +74,7 @@ const UseCaseSection = () => {
                 {/* Solution */}
                 <div className="bg-slate-800/50 rounded-2xl p-6 border border-purple-500/30">
                   <div className="flex items-center gap-3 mb-4">
-                    <Wrench className="w-6 h-6 text-purple-400" />
+                    <Wrench className="w-6 h-6 text-yellow-600" />
                     <h4 className="text-lg font-semibold text-white">Our Solution</h4>
                   </div>
                   <ul className="space-y-3">
@@ -84,7 +84,7 @@ const UseCaseSection = () => {
                       "Introduced release-cycle cash flow forecasting",
                     ].map((item, index) => (
                       <li key={index} className="flex items-start gap-2 text-slate-300">
-                        <span className="w-1.5 h-1.5 rounded-full bg-purple-400 mt-2 flex-shrink-0" />
+                        <span className="w-1.5 h-1.5 rounded-full bg-yellow-600 mt-2 flex-shrink-0" />
                         {item}
                       </li>
                     ))}
@@ -92,7 +92,7 @@ const UseCaseSection = () => {
                 </div>
 
                 {/* Outcome */}
-                <div className="bg-gradient-to-br from-purple-600/20 to-fuchsia-600/20 rounded-2xl p-6 border border-purple-500/30">
+                <div className="bg-slate-800/50 rounded-2xl p-6 border border-purple-500/30">
                   <div className="flex items-center gap-3 mb-4">
                     <CheckCircle2 className="w-6 h-6 text-emerald-400" />
                     <h4 className="text-lg font-semibold text-white">Outcome</h4>
@@ -120,7 +120,7 @@ const UseCaseSection = () => {
                   { icon: LineChart, label: "Investor Confidence", value: "Significantly Increased" },
                 ].map((metric, index) => (
                   <div key={index} className="text-center">
-                    <metric.icon className="w-8 h-8 text-purple-400 mx-auto mb-2" />
+                    <metric.icon className="w-8 h-8 text-orange-400 mx-auto mb-2" />
                     <div className="text-white font-semibold">{metric.value}</div>
                     <div className="text-slate-400 text-sm">{metric.label}</div>
                   </div>

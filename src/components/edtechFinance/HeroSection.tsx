@@ -54,8 +54,7 @@ const HeroSection = () => {
             </p>
 
             <p className="text-lg text-slate-400 leading-relaxed max-w-xl">
-              Growwth Partners' EdTech Finance services in Singapore provide CFO-led financial leadership, education-specific reporting, and scalable finance systems—helping EdTech companies manage cash, optimise unit economics, and build investor-ready financial credibility.
-            </p>
+Helping Singapore’s EdTech leaders scale through CFO-led financial strategy, education-specific insights, and robust systems built for investor credibility            </p>
 
             <motion.div
               initial={{ opacity: 0, y: 20 }}

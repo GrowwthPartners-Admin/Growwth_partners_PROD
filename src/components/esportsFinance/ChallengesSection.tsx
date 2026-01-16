@@ -57,7 +57,7 @@ const solutions = [
 
 const ChallengesSection = () => {
   return (
-    <section className="py-20 lg:py-28 bg-gradient-to-br from-slate-900 via-purple-950 to-slate-900">
+    <section className="py-20 lg:py-28 bg-gradient-to-br from-slate-800 via-slate-600 to-slate-900">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -68,7 +68,7 @@ const ChallengesSection = () => {
         >
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6">
             Common Financial Challenges in{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-fuchsia-400">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-orange-500">
               Esports & Gaming
             </span>
           </h2>
@@ -103,48 +103,50 @@ const ChallengesSection = () => {
         </div>
 
         {/* Solutions section */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="bg-gradient-to-br from-purple-600/20 to-fuchsia-600/20 backdrop-blur-sm rounded-3xl p-8 lg:p-12 border border-purple-500/30"
-        >
-          <div className="grid lg:grid-cols-2 gap-10 items-center">
-            <div>
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-purple-500/20 text-purple-300 text-sm font-medium mb-6">
-                <Zap className="w-4 h-4" />
-                <span>The Solution</span>
-              </div>
-              
-              <h3 className="text-2xl sm:text-3xl font-bold text-white mb-4">
-                What You Get with Our Gaming Finance Services
-              </h3>
-              
-              <p className="text-slate-300 mb-6">
-                Designed to support commercially successful, financially sustainable gaming businesses.
-              </p>
-            </div>
+       {/* Solutions section */}
+<motion.div
+  initial={{ opacity: 0, y: 20 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: true }}
+  transition={{ duration: 0.6 }}
+  className="bg-gradient-to-br from-emerald-50 to-green-50 backdrop-blur-sm rounded-3xl p-8 lg:p-12 border border-emerald-200"
+>
+  <div className="grid lg:grid-cols-2 gap-10 items-center">
+    <div>
+      <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-orange-500/20 text-orange-700 text-sm font-medium mb-6">
+        <Zap className="w-4 h-4" />
+        <span>The Solution</span>
+      </div>
+      
+      <h3 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-4">
+        What You Get with Our Gaming Finance Services
+      </h3>
+      
+      <p className="text-slate-600 mb-6">
+        Designed to support commercially successful, financially sustainable gaming businesses.
+      </p>
+    </div>
 
-            <div className="space-y-4">
-              {solutions.map((solution, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, x: 20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: index * 0.1 }}
-                  className="flex items-center gap-4 bg-slate-800/50 rounded-xl p-4 border border-slate-700/50"
-                >
-                  <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-purple-500 to-fuchsia-500 flex items-center justify-center flex-shrink-0">
-                    <solution.icon className="w-5 h-5 text-white" />
-                  </div>
-                  <span className="text-white font-medium">{solution.text}</span>
-                </motion.div>
-              ))}
-            </div>
+    <div className="space-y-4">
+      {solutions.map((solution, index) => (
+        <motion.div
+          key={index}
+          initial={{ opacity: 0, x: 20 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.4, delay: index * 0.1 }}
+          className="flex items-center gap-4 bg-white rounded-xl p-4 border border-slate-200"
+        >
+          <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-orange-500 to-orange-500 flex items-center justify-center flex-shrink-0">
+            <solution.icon className="w-5 h-5 text-white" />
           </div>
+          <span className="text-slate-700 font-medium">{solution.text}</span>
         </motion.div>
+      ))}
+    </div>
+  </div>
+</motion.div>
+
       </div>
     </section>
   );
