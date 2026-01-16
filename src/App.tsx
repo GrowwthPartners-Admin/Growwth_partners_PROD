@@ -302,6 +302,27 @@ export const routes: RouteRecord[] = [
         },
       },
       {
+        path: "esports-finance",
+        async lazy() {
+          const { default: Component } = await import("./pages/EsportsFinance");
+          return { Component };
+        },
+      },
+      {
+        path: "uae/esports-finance",
+        async lazy() {
+          const { default: Component } = await import("./pages/EsportsFinance");
+          return { Component };
+        },
+      },
+      {
+        path: "au/esports-finance",
+        async lazy() {
+          const { default: Component } = await import("./pages/EsportsFinance");
+          return { Component };
+        },
+      },
+      {
         path: "fintech-finance",
         async lazy() {
           const { default: Component } = await import("./pages/FintechFinance");

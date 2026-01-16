@@ -26,6 +26,7 @@ import {
   UsersRound, 
   ClipboardList, 
   Receipt,
+  Gamepad2,
   type LucideIcon
 } from "lucide-react";
 
@@ -108,6 +109,7 @@ export const services1Categories: ServiceCategory[] = [
       { title: "SaaS Finance Services", path: "/saas-finance", icon: Cloud },
       { title: "Crypto & Web3 Finance", path: "/crypto-web3-finance", icon: Bitcoin },
       { title: "EdTech Finance Services", path: "/edtech-finance", icon: Laptop },
+      { title: "Esports & Gaming Finance", path: "/esports-finance", icon: Gamepad2 },
     ],
   },
   {
