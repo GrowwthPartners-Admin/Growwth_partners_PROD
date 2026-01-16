@@ -27,6 +27,7 @@ import {
   ClipboardList, 
   Receipt,
   Gamepad2,
+  Landmark,
   type LucideIcon
 } from "lucide-react";
 
@@ -90,6 +91,7 @@ export const services1Categories: ServiceCategory[] = [
       { title: "Startup Finance Services", path: "/startup-finance-services", icon: Rocket },
       { title: "SME Finance Services", path: "/sme-finance-services", icon: Building },
       { title: "Family Office Finance", path: "/family-office-finance-services", icon: Briefcase },
+      { title: "VC & Fund Finance", path: "/vc-fund-finance", icon: Landmark },
     ],
   },
   {
@@ -110,6 +112,7 @@ export const services1Categories: ServiceCategory[] = [
       { title: "Crypto & Web3 Finance", path: "/crypto-web3-finance", icon: Bitcoin },
       { title: "EdTech Finance Services", path: "/edtech-finance", icon: Laptop },
       { title: "Esports & Gaming Finance", path: "/esports-finance", icon: Gamepad2 },
+      
     ],
   },
   {

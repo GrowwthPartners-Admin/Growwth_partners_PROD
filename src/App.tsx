@@ -323,6 +323,27 @@ export const routes: RouteRecord[] = [
         },
       },
       {
+        path: "vc-fund-finance",
+        async lazy() {
+          const { default: Component } = await import("./pages/VCFinance");
+          return { Component };
+        },
+      },
+      {
+        path: "uae/vc-fund-finance",
+        async lazy() {
+          const { default: Component } = await import("./pages/VCFinance");
+          return { Component };
+        },
+      },
+      {
+        path: "au/vc-fund-finance",
+        async lazy() {
+          const { default: Component } = await import("./pages/VCFinance");
+          return { Component };
+        },
+      },
+      {
         path: "fintech-finance",
         async lazy() {
           const { default: Component } = await import("./pages/FintechFinance");
