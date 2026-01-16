@@ -28,6 +28,7 @@ import {
   Receipt,
   Gamepad2,
   Landmark,
+  PiggyBank,
   type LucideIcon
 } from "lucide-react";
 
@@ -112,7 +113,7 @@ export const services1Categories: ServiceCategory[] = [
       { title: "Crypto & Web3 Finance", path: "/crypto-web3-finance", icon: Bitcoin },
       { title: "EdTech Finance Services", path: "/edtech-finance", icon: Laptop },
       { title: "Esports & Gaming Finance", path: "/esports-finance", icon: Gamepad2 },
-      
+      { title: "Private Equity Finance", path: "/private-equity-finance", icon: PiggyBank },
     ],
   },
   {

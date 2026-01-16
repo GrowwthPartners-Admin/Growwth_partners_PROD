@@ -344,6 +344,27 @@ export const routes: RouteRecord[] = [
         },
       },
       {
+        path: "private-equity-finance",
+        async lazy() {
+          const { default: Component } = await import("./pages/PEFinance");
+          return { Component };
+        },
+      },
+      {
+        path: "uae/private-equity-finance",
+        async lazy() {
+          const { default: Component } = await import("./pages/PEFinance");
+          return { Component };
+        },
+      },
+      {
+        path: "au/private-equity-finance",
+        async lazy() {
+          const { default: Component } = await import("./pages/PEFinance");
+          return { Component };
+        },
+      },
+      {
         path: "fintech-finance",
         async lazy() {
           const { default: Component } = await import("./pages/FintechFinance");
